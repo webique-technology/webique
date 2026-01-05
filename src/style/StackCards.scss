@@ -1,0 +1,104 @@
+.stack-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Each stacked section */
+.stack-section {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 120px;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+/* Stacking order */
+.stack-section:nth-child(1) {
+  z-index: 1;
+}
+.stack-section:nth-child(2) {
+  z-index: 2;
+}
+.stack-section:nth-child(3) {
+  z-index: 3;
+}
+.stack-section:nth-child(4) {
+  z-index: 4;
+}
+
+/* Typography */
+.stack-section h2 {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.stack-section p {
+  font-size: 18px;
+  max-width: 520px;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stack-section {
+    padding: 0 24px;
+  }
+
+  .stack-section h2 {
+    font-size: 40px;
+  }
+}
+
+
+/* ---------- Typing Cursor ---------- */
+.hero-title .typed {
+  color: #ffb703;
+  position: relative;
+}
+
+.hero-title .typed::after {
+  content: "|";
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* ---------- Infinite Image Scroll ---------- */
+.header-portfolio {
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.hero-images-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scrollImages 30s linear infinite;
+}
+
+.hero-images-track img {
+  width: 260px;
+  height: auto;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+@keyframes scrollImages {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
