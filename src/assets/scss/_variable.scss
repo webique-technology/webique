@@ -1,14 +1,17 @@
 // Base colors
-$primary: #0d6efd;
+$primary: #022B5B;
 $secondary: #6c757d;
-$trinery: #6c757d;
+$trinery: #F5F5F5;
 $success: #198754;
 $info: #0dcaf0;
 $warning: #ffc107;
 $danger: #dc3545;
 $light: #f8f9fa;
 $dark: #212529;
-
+$text: #1B1D1E99;
+$blue: #0F6DDA;
+$dark-blue: #083A74;
+$gray-text: #D5D5D5D1;
 // Grayscale
 $gray-100: #f8f9fa;
 $gray-600: #6c757d;
@@ -25,19 +28,38 @@ $theme-light: $light;
 $theme-dark: $dark;
 
 // Headings
-$font-size-h1: 5.625rem;
-$font-size-h2: 70px;
-$font-size-h3: 60px;
-$font-size-h4: 50px;
-$font-size-h5: 40px;
-$font-size-h6: 30px;
+$font-size-primery: 5rem;
+$font-size-secondery: 4.5rem;
+$font-size-third: 3.75rem;
+$font-size-fourth: 40px;
+$font-size-fifth: 30px;
+$font-size-sixith: 25px;
 
 // Body text
-$font-size-base1: 1.25rem;
-$font-size-base2: 1rem;
+$font-size-base1: 1rem;
+$font-size-base2: 1.25rem;
+$font-size-base3: 1.5rem;
 
 // line height
+$h1-lh: 96px;
+$h2-lh: 70px;
+$h3-lh: 60px;
+$h4-lh: 46px;
+$h5-lh: 40px;
 $head-lh: 36px;
-$base-lh: 28px;
+$base-lh-1: 30px;
+$base-lh-2: 28px;
 $medium-lh: 24px;
 $small-lh: 20px;
+$x-small-lh: 18px;
+
+
+// radius
+$radius-round: 50%;
+$radius-pill: 50PX;
+$radius-xxl: 25px;
+$radius-xl: 20px;
+$radius-l: 16px;
+$radius-m: 10px;
+$radius-s: 8px;
+$radius-xs: 4px;
