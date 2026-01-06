@@ -1,3 +1,284 @@
 @import "./mixin";
 @import "./common";
 @import "./variable";
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.sub-title {
+    color: $primary;
+}
+
+.title-line {
+    width: 30px;
+    height: 1px;
+    background: $dark;
+}
+
+.title-light {
+    color: $light
+}
+
+.title-count {
+    position: relative;
+    z-index: 1;
+}
+
+.strok-text {
+    @include flex(column, center, center, 0);
+    color: $light;
+    -webkit-text-stroke: 2px $dark-blue;
+    padding: 30px;
+    background: $light;
+    border-radius: $radius-m;
+    height: 100%;
+
+    h2 {
+        font-size: $font-size-primery;
+        line-height: 72px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    @media(max-width:1400px) {
+        padding: 35px 40px;
+    }
+
+    @media(max-width:1300px) {
+        h2 {
+            font-size: $font-size-secondery;
+            line-height: 62px;
+        }
+    }
+
+    @media(max-width:1200px) {
+        padding: 25px 30px;
+
+        h2 {
+            font-size: $font-size-third;
+            line-height: 42px;
+        }
+    }
+}
+
+// why choose us
+.why-choose-us {
+
+    .wo-centent {
+        @include flex(column, flex-start, center, 15px);
+
+        h2 {
+            font-size: $font-size-third;
+            line-height: 1;
+            margin-bottom: 10px;
+
+            @media(max-width:768px) {
+                font-size: $font-size-fourth;
+            }
+        }
+    }
+
+    .wo-agency-card {
+        @include flex(column, flex-start, flex-start, 15px);
+        background: $trinery;
+        height: 100%;
+        padding: 25px 20px;
+        border-radius: $radius-xs;
+
+        h3 {
+            margin: 0;
+            font-size: $font-size-base2;
+        }
+
+        @media(max-width:576px) {
+            gap: 10px
+        }
+    }
+
+    .count-row {
+        background: $dark-blue;
+        border-radius: $radius-m;
+        position: relative;
+
+        .count-card {
+            @include flex(column, center, center, 0);
+            color: $light;
+            padding: 20px;
+            height: 100%;
+        }
+
+        h2 {
+            font-size: $font-size-primery;
+            line-height: 72px;
+            font-weight: 700;
+            margin: 0;
+
+            @media(max-width:1300px) {
+                font-size: $font-size-secondery;
+                line-height: 62px;
+            }
+
+            @media(max-width:1200px) {
+                font-size: $font-size-third;
+                line-height: 42px;
+            }
+        }
+
+        .wha-col:nth-child(2),
+        .wha-col:nth-child(3) {
+            border-right: 1px solid #acadaf;
+        }
+
+        @media(max-width:1200px) {
+            h2 {
+                font-size: $font-size-fourth;
+            }
+        }
+
+        @media(max-width:992px) {}
+
+        @media(max-width:767px) {
+
+            &::after {
+                position: absolute;
+                content: " ";
+                width: 97%;
+                height: 1px;
+                top: 50%;
+                background: $light;
+            }
+
+            &::before {
+                position: absolute;
+                content: " ";
+                width: 1px;
+                height: 95%;
+                left: 50%;
+                background: $light;
+            }
+
+            .strok-text {
+                background: none;
+                color: $dark-blue;
+                -webkit-text-stroke: 2px $light;
+                padding: 14px 20px;
+            }
+
+            .wha-col:nth-child(1) {
+                border-left: 1px solid $light;
+                border-bottom: 1px solid $light;
+                border-right: none;
+            }
+
+            .wha-col:nth-child(2) {
+                border: 0;
+            }
+
+            .wha-col:nth-child(3) {
+                border: 0;
+            }
+        }
+
+        @media(max-width:576px) {
+
+            &::after,
+            &::before {
+                content: none;
+            }
+
+            .wha-col,
+            .strok-box {
+                border-bottom: 1px solid #acadaf !important;
+            }
+
+            .wha-col:nth-child(4) {
+                border-bottom: 0 !important;
+            }
+        }
+    }
+
+    .wo-card-grid {
+        @include flex(row, flex-start, center, 15px);
+
+        .wo-card-slide {
+            @include flex(row, flex-start, center, 15px);
+
+            @media(max-width:576px) {
+                display: flex !important;
+                justify-content: flex-start;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 1rem !important;
+
+                .slide-card {
+                    flex: 0 0 75% !important;
+                }
+            }
+        }
+
+        @media(max-width:768px) {
+            overflow: hidden;
+
+            .wo-centent {
+                gap: 0;
+            }
+        }
+
+        @media(max-width:992px) {
+            flex-direction: column;
+        }
+    }
+
+}
+
+// worldwide business
+.worldwide-business {
+    background: linear-gradient(0deg, rgba(15, 109, 218, 1) 0%, rgba(8, 58, 116, 1) 100%);
+    position: relative;
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("../images/bussiness-ww-bg.png");
+        width: 639px;
+        height: 490px;
+        z-index: 0;
+    }
+
+    h2 {
+        span {
+            font-weight: 400;
+        }
+    }
+
+    p {
+        color: $gray-text;
+    }
+
+    .business-logo {
+        @include flex(row, center, center, 0);
+        padding: 30px;
+        border: 1px solid $light;
+        height: 100%;
+        border-radius: $radius-xs;
+        height: 100%;
+        transition: background 0.3s ease;
+        background: rgba(255, 255, 255, 0.06);
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+
+    @media(max-width:768px) {
+        &::before {
+            width: 100%;
+        }
+    }
+}
