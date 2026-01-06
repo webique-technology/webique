@@ -183,19 +183,17 @@ const IndustrySliders = () => {
                 <div className="title-count text-center mb-5">
                     <h2>Trusted by Businesses</h2>
                 </div>
-            </Container>
+                <div className="marquee-main-container">
+                    <div className="overlay overlay-left"></div>
+                    <div className="overlay overlay-right"></div>
 
-            <div className="marquee-main-container">
-                <div className="overlay overlay-left"></div>
-                <div className="overlay overlay-right"></div>
+                    <MarqueeRow items={industryData} speed={20} />
+                    <MarqueeRow items={industryData} speed={26} reverse />
+                    <MarqueeRow items={industryData} speed={19} />
+                    <MarqueeRow items={industryData} speed={25} reverse />
 
-                <MarqueeRow items={industryData} speed={20} />
-                <MarqueeRow items={industryData} speed={26} reverse />
-                <MarqueeRow items={industryData} speed={19} />
-                <MarqueeRow items={industryData} speed={25} reverse />
-
-                {/* for gsap reactbits component */}
-                {/* <CurvedLoop
+                    {/* for gsap reactbits component */}
+                    {/* <CurvedLoop
                     marqueeText="E-commarce Dental Induxrty"
                     speed={8}
                     curveAmount={0}
@@ -213,7 +211,8 @@ const IndustrySliders = () => {
                     speed={10}
                     curveAmount={0}
                 /> */}
-            </div>
+                </div>
+            </Container>
         </section>
     );
 };
