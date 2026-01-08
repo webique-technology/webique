@@ -21,14 +21,17 @@ const woAgencyCard = [
 
 const AgencyCounter = [
     {
+        id: 1,
         no: 500,
         title: "Satisfied Clients"
     },
     {
+        id: 2,
         no: 150,
         title: "Project Completed",
     },
     {
+        id: 3,
         no: 5,
         title: "Years Completed",
     },
@@ -39,10 +42,11 @@ const ChooseAgencySec = () => {
         <>
             <section className='why-choose-us section-padding'>
                 <Container className='d-flex flex-column row-gap-4 row-gap-lg-5'>
-                    <Row  className='row-gap-4 d-none d-sm-flex'>
+                    {/* row section for desk */}
+                    <Row className='row-gap-4 d-none d-sm-flex'>
                         <Col xs={12} lg={4} className='wo-centent'>
                             <div className='d-flex sub-title'>
-                                <p className='d-flex align-items-center gap-3 mb-2'>Why Choose Us <div className='title-line'></div></p>
+                                <p className='d-flex align-items-center gap-3 mb-2'>Why Choose Us <span className='title-line'></span></p>
                             </div>
                             <h2>
                                 Why Our Agency
@@ -53,7 +57,7 @@ const ChooseAgencySec = () => {
                         </Col>
                         {woAgencyCard.map((value, i) => {
                             return (
-                                <Col sm={6} md={6} lg={4}>
+                                <Col sm={6} md={6} lg={4} key={i}>
                                     <div key={i} className='wo-agency-card'>
                                         <img src={value.src} alt={value.title} />
                                         <h3>{value.title}</h3>
@@ -63,10 +67,11 @@ const ChooseAgencySec = () => {
                             )
                         })}
                     </Row>
+                    {/* grid section for tab - mobile */}
                     <div className='wo-card-grid d-flex d-sm-none'>
                         <div className='wo-centent'>
                             <div className='d-flex sub-title'>
-                                <p className='d-flex align-items-center gap-3 mb-2'>Why Choose Us <div className='title-line'></div></p>
+                                <p className='d-flex align-items-center gap-3 mb-2'>Why Choose Us <span className='title-line'></span></p>
                             </div>
                             <h2>
                                 Why Our Agency
@@ -78,7 +83,7 @@ const ChooseAgencySec = () => {
                         <div className="wo-card-slide">
                             {woAgencyCard.map((value, i) => {
                                 return (
-                                    <div sm={6} md={6} lg={4} className='slide-card'>
+                                    <div sm={6} md={6} lg={4} key={i} className='slide-card'>
                                         <div key={i} className='wo-agency-card'>
                                             <img src={value.src} alt={value.title} />
                                             <h3>{value.title}</h3>
@@ -89,15 +94,16 @@ const ChooseAgencySec = () => {
                             })}
                         </div>
                     </div>
+                    {/* counter */}
                     <Row className='p-2 mx-1 mx-md-0 count-row'>
                         <Col xs={12} sm={6} md={{ order: 1, span: 3 }} lg={3} className='p-0 strok-box'>
                             <div className='strok-text'>
                                 <h2 className='text-uppercase text-center text-md-start'>Fun Facts</h2>
                             </div>
                         </Col>
-                        {AgencyCounter.map(({ no, title }) => {
+                        {AgencyCounter.map(({ no, title, id }) => {
                             return (
-                                <Col xs={12} sm={6} md={3} lg={3} className='wha-col'>
+                                <Col xs={12} sm={6} md={3} lg={3} key={id} className='wha-col'>
                                     <div className="count-card text-center">
                                         <h2 className='mb-1'>
                                             <CountUp start={0} end={no} duration={2} separator="" />+

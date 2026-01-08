@@ -1,0 +1,239 @@
+// @import "../assets/scss/common";
+@import "../assets/scss/mixin";
+@import "../assets/scss/variable";
+
+/*
+.stack-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.stack-section {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 120px;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.stack-section:nth-child(1) {
+  z-index: 1;
+}
+.stack-section:nth-child(2) {
+  z-index: 2;
+}
+.stack-section:nth-child(3) {
+  z-index: 3;
+}
+.stack-section:nth-child(4) {
+  z-index: 4;
+}
+
+.stack-section h2 {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .stack-section {
+    padding: 0 24px;
+  }
+
+  .stack-section h2 {
+    font-size: 40px;
+  }
+}
+
+
+.hero-title .typed {
+  color: #ffb703;
+  position: relative;
+}
+
+.hero-title .typed::after {
+  content: "|";
+  margin-left: 4px;
+  // animation: blink 1s infinite;
+}
+
+// @keyframes blink {
+//   0%, 50%, 100% { opacity: 1; }
+//   25%, 75% { opacity: 0; }
+// }
+
+.header-portfolio {
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.hero-images-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scrollImages 30s linear infinite;
+}
+
+.hero-images-track img {
+  width: 260px;
+  height: auto;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+@keyframes scrollImages {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.swiper-scrollbar {
+  height: 6px;
+  background: #e6e6e6;
+  border-radius: 10px;
+  margin-top: 20px;
+
+  .swiper-scrollbar-drag {
+    background: #000;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 25px 20px;
+  }
+
+  .swiper-slide-active .testimonial-card {
+    transform: scale(1.05);
+  }
+}
+*/
+
+.what-we-offer {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: " ";
+    width: 387px;
+    height: 379px;
+    background: #DEC5FF;
+    background: radial-gradient(circle, rgb(222, 197, 255) 0%, rgba(0, 0, 0, 0) 70%);
+    top: -180px;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+.stack-scroll-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stack-scroll-container {
+  overflow: hidden;
+  // height: 100vh;
+  position: relative;
+  height: calc(590px); // container shows 4 rows
+  border-top: 2px dashed $gray-text;
+  border-bottom: 2px dashed $gray-text;
+
+  .stack-content {
+    padding: 0 40px;
+  }
+
+  .stack-img img {
+    width: 200px;
+    height: auto;
+  }
+}
+
+.stack-row {
+  /* 4 cards = 100vh */
+  // height: 25vh;
+  height: calc(590px / 4);
+  border-bottom: 2px dashed $gray-text;
+  transition: all 0.4s ease;
+
+  // stack row hover
+  &:hover {
+    background: #E5F1FF;
+    background: linear-gradient(275deg, rgba(229, 241, 255, 0.8) 67%, rgba(237, 245, 255, 0.74) 94%, rgba(223, 249, 255, 0.75) 100%);
+    padding: 0 2px;
+
+    .stack-content {
+      padding: 0 2px;
+
+      .stack-img {
+        width: 145px;
+        height: 145px;
+
+        &::before {
+          opacity: 0;
+          transform: translate(-50px, -50px);
+        }
+      }
+    }
+  }
+
+  .stack-content {
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    justify-items: stretch;
+    align-items: center;
+    transition: all 0.4s ease;
+
+    .stack-img {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      transition: all 0.4s ease;
+      // @include flex (row, center, center, 0);
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        // @include flex(row, center, center, 0);
+        background: $primary;
+        border-radius: $radius-round;
+        z-index: 2;
+        opacity: 1;
+
+        mask: url('../assets/images/arrow-one.svg') center/24px 24px no-repeat;
+        -webkit-mask: url('../assets/images/arrow-one.svg') center/24px 24px no-repeat;
+
+        background-color: $light;
+      }
+
+    }
+  }
+
+  h4 {
+    padding: 54px 0;
+
+    span {
+      font-weight: 300;
+    }
+  }
+}

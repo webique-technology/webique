@@ -1,4 +1,5 @@
 @import "./variable";
+@import "./mixin";
 
 h1 {
     font-weight: 700;
@@ -22,16 +23,32 @@ h3 {
     letter-spacing: -0.8px;
 }
 
+h4 {
+    font-size: $font-size-fifth;
+    font-family: 600;
+    line-height: $base-lh-1;
+    letter-spacing: -0.8px;
+}
+
+
 p {
     font-size: $font-size-base1;
     line-height: $base-lh-2;
     font-weight: 400;
 }
 
+@media(max-width:1440px) {
+    h1 {
+        font-size: $font-size-third;
+    }
+}
+
 @media(max-width:992px) {
-    h2 {
+    h1 {
         font-size: $font-size-fourth;
-        // line-height: $h5-lh;
+    }
+
+    h2 {
         margin-bottom: 18px;
     }
 
@@ -40,9 +57,36 @@ p {
     }
 }
 
+@media(max-width:768px) {
+    h1 {
+        font-size: $font-size-36;
+    }
+}
+
 @media(max-width:576px) {
+    h1 {
+        font-size: $font-size-sixith;
+    }
+
     h3 {
         font-size: $font-size-base2;
         line-height: auto;
     }
+}
+
+.down-arrow {
+    width: 18px;
+    filter: invert(1);
+}
+
+.down-arrow-nav {
+    width: 18px;
+}
+
+.title-gap {
+    @include flex(column, flex-start, center, 15px)
+}
+
+a {
+    text-decoration: none;
 }
