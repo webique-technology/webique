@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useMemo, useId } from 'react';
+import React, { useRef, useEffect} from 'react';
 import { Container } from 'react-bootstrap';
 import gsap from 'gsap';
 import "../assets/scss/marqueeSlides.scss";
@@ -11,10 +11,6 @@ const industryData = [
     "Real Estate",
     "Healthcare"
 ];
-
-
-
-
 
 
 const MarqueeRow = ({ items, speed = 20, reverse = false }) => {
@@ -54,37 +50,16 @@ const IndustrySliders = () => {
                 <div className="title-count text-center mb-5">
                     <h2>Trusted by Businesses</h2>
                 </div>
+                <div className="marquee-main-container">
+                    <div className="overlay overlay-left"></div>
+                    <div className="overlay overlay-right"></div>
+
+                    <MarqueeRow items={industryData} speed={20} />
+                    <MarqueeRow items={industryData} speed={26} reverse />
+                    <MarqueeRow items={industryData} speed={19} />
+                    <MarqueeRow items={industryData} speed={25} reverse />
+                </div>
             </Container>
-
-            <div className="marquee-main-container">
-                <div className="overlay overlay-left"></div>
-                <div className="overlay overlay-right"></div>
-
-                <MarqueeRow items={industryData} speed={20} />
-                <MarqueeRow items={industryData} speed={26} reverse />
-                <MarqueeRow items={industryData} speed={19} />
-                <MarqueeRow items={industryData} speed={25} reverse />
-
-                {/* for gsap reactbits component */}
-                {/* <CurvedLoop
-                    marqueeText="E-commarce Dental Induxrty"
-                    speed={8}
-                    curveAmount={0}
-                />
-
-                <CurvedLoop
-                    marqueeText="E-commarce Dental Induxrty"
-                    speed={9}
-                    curveAmount={0}
-                    className="custom-text-style text-dark"
-                />
-
-                <CurvedLoop
-                    marqueeText="E-commarce Dental Induxrty"
-                    speed={10}
-                    curveAmount={0}
-                /> */}
-            </div>
         </section>
     );
 };

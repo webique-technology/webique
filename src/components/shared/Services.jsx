@@ -9,7 +9,7 @@ import wdOne from '../../assets/images/check.svg'
 export const ServicesIntro = ({ Data, IntroImage }) => {
     return (
         <>
-            <section className='service-intro'>
+            <section className='service-intro section-padding'>
                 <Container>
                     <Row className='align-items-center justify-content-between d-flex'>
                         <Col md={6} lg={6} xs={12}>
@@ -19,9 +19,9 @@ export const ServicesIntro = ({ Data, IntroImage }) => {
                                         <div className="service-card" key={item.id}>
                                             <Row className='d-flex gap-2 gap-md-5'>
                                             <div className='ui-wrap'>
-                                                <h2>
+                                                <h1>
                                                     <span>{item.highlight}</span> {item.title}
-                                                </h2>
+                                                </h1>
 
                                                 <h4>{item.subtitle}</h4>
                                             </div>
@@ -43,7 +43,7 @@ export const ServicesIntro = ({ Data, IntroImage }) => {
                         </Col>
                         <Col md={5} lg={5} xs={12}>
                             <div className='image-full-inner'>
-                                <img src={IntroImage} alt='ui-image' />
+                                <img src={IntroImage} alt='ui-image' className='img-fluid'/>
                             </div>
                         </Col>
                     </Row>
@@ -60,14 +60,14 @@ export const ServicesIntro = ({ Data, IntroImage }) => {
 export const WhatWeDeliver = ({ Title, Image, CheckMark, Data }) => {
     return (
         <>
-            <section className='what-we-deliver'>
+            <section className='what-we-deliver section-padding'>
                 <Container>
                     <Row className=' justify-content-between d-flex'>
 
                         <Col md={5} lg={5} xs={12} className='title-gap'>
                             <h2>{Title}</h2>
                             <div className='image-full-inner d-none d-md-block'>
-                                <img src={Image} alt='ui-image' />
+                                <img src={Image} alt='ui-image' className='img-fluid'/>
                             </div>
                         </Col>
                         <Col md={6} lg={6} xs={12}>
@@ -94,7 +94,7 @@ export const WhatWeDeliver = ({ Title, Image, CheckMark, Data }) => {
 export const PortfolioSection = ({ Title, Data }) => {
     return (
         <>
-            <section className="Portfolio-inner">
+            <section className="Portfolio-inner section-padding">
                 <Container className="title-gap">
                     <Row className="w-100">
                         <h2 className="text-center justify-content-center">{Title}</h2>
@@ -104,7 +104,7 @@ export const PortfolioSection = ({ Title, Data }) => {
                         {Data.map((item) => (
                             <Col key={item.id} md={6} lg={6} xs={12}>
                                 <div className="portfolio-full-inner">
-                                    <img src={item.image} alt="webique-portfolio" />
+                                    <img src={item.image} alt="webique-portfolio"  />
 
                                     <div className="portfolio-backgrd">
                                         <h5>{item.title}</h5>

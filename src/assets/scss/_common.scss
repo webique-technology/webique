@@ -3,10 +3,18 @@
 
 h1 {
     font-weight: 700;
-    font-size: $font-size-primery;
-    line-height: $h1-lh;
+    font-size: $font-size-third;
+    line-height: 100%;
     letter-spacing: -0.8px;
     font-style: bold;
+     
+    @media(max-width:1200px) {
+        font-size: $font-footer-heading;
+    }
+    @media(max-width:992px) {
+        font-size: $font-size-fourth;
+    }
+
 }
 
 h2 {
@@ -41,10 +49,19 @@ p {
     font-weight: 400;
 }
 
+// @media(max-width:1440px) {
+//     h1 {
+//         font-size: $font-size-third;
+//     }
+// }
+
 @media(max-width:992px) {
+    h1 {
+        font-size: $font-size-fourth;
+    }
+
     h2 {
-        font-size: $font-size-sixith;
-        // line-height: $h5-lh;
+        margin-bottom: 18px;
     }
 
     p {
@@ -52,45 +69,36 @@ p {
     }
 }
 
+// @media(max-width:768px) {
+//     h1 {
+//         font-size: $font-size-36;
+//     }
+// }
+
 @media(max-width:576px) {
+    h1 {
+        font-size: $font-size-sixith;
+    }
+
     h3 {
         font-size: $font-size-sixith;
         line-height: auto;
     }
 }
 
-// used for all section full images
-.image-full-inner {
-    width: 100%;
-    height: auto;
-    position: relative;
-
-    img {
-        width: 100%;
-        height: auto;
-    }
-
-    @media(max-width:576px) {
-        margin-bottom: 20px;
-    }
-
+.down-arrow {
+    width: 18px;
+    filter: invert(1);
 }
 
-// .inner-h4 {
-//     font-weight: 700;
-//     margin: 0 0 36px;
-//     font-size: $font-size-fourth;
-//     line-height: 100%;
-//     text-transform: uppercase;
+.down-arrow-nav {
+    width: 18px;
+}
 
-//     @media(max-width:576px) {
-//         font-size: $font-size-fifth;
-//     }
-// }
+.title-gap {
+    @include flex(column, flex-start, center, 15px)
+}
 
-.font-18{
-    font-size: $font-size-base05; line-height: $base-lh-1;
-    @media(max-width:576px) {
-        font-size: $font-size-base1; line-height: 28px;
-    }
+a {
+    text-decoration: none;
 }

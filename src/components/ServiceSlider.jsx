@@ -14,7 +14,7 @@ const ServiceSlider = ({figmaImg, Title, pText, data, prevRef, nextRef}) => {
 
 
 
-      <section className="uiux-design-service">
+      <section className="uiux-design-service section-padding">
         <Container>
           <Row className='justify-content-between'>
             <Col md={12} lg={10}>
