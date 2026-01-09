@@ -1,31 +1,36 @@
+@import "./mixin";
+@import "./common";
+@import "./variable";
+
 section.footer-section {
-   padding: 120px 0 38px 0;
-    min-height: 300px;
-    background: #000000;
-    width: 100%;
-    position: relative;
-    text-align: center;
-    color: #fff;
+  padding: 120px 0 38px 0;
+  min-height: 300px;
+  background: $black;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: $white;
 
-    &::before {
-        content: '';
-  position: absolute;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 265px;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to top, rgb(255 255 255), rgb(255 255 255));
+    top: -95px;
+    mask: url('../images/footer-circles.svg') no-repeat center / contain;
+    -webkit-mask: url('../images/footer-circles.svg') no-repeat center / contain;
 
-  width: 114px;
-  height: 114px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0)
-  );
-  mask: url('../images/footer-circles.svg') no-repeat center / contain;
-  -webkit-mask: url('../images/footer-circles.svg') no-repeat center / contain;
+    @media(max-width:768px) {
+      width: 200px;
+    height: 200px;
+    top:-97px;
     }
+  }
 
-    ul.nav-list {
+  ul.nav-list {
     margin: 0px;
     padding: 0;
     list-style: none;
@@ -33,35 +38,137 @@ section.footer-section {
     align-items: center;
     justify-content: center;
     gap: 61px;
-}
-a.call-btn {
-    background: #083A74;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+
+    @media (max-width: 767px) {
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+  }
+
+  a.call-btn {
+    background: $dark-blue;
     width: 230px;
     align-items: center;
     display: flex;
-    border-radius: 30px;
+    border-radius: 60px;
     text-align: left;
     padding: 13px 10px 13px 32px;
     margin: 36px 0 46px 0;
     font-size: 24px;
     font-weight: 500;
-    color: #fff;
+    color: $white;
     line-height: 30px;
     text-decoration: none;
-}
-p{width: 807px;}
-h2{font-size: 50px;
+    justify-content: space-between;
+
+    img.btn-icon {
+      width: 40px;
+      height: 40px;
+      background: $white;
+      border-radius: 50%;
+      padding: 7px;
+    }
+
+    @media (max-width: 767px) {
+      margin: 15px 0 30px 0;
+    }
+
+  }
+
+  p {
+    width: 807px;
+  }
+
+  h2 {
+    font-size: $font-footer-heading;
     font-weight: 700;
     margin: 0 0 50px;
     line-height: 75px;
-  span{color: transparent;          // no fill
-  -webkit-text-stroke: 2px #ffffff;  // outline color
-  font-weight: 700;
-border: 2px solid;
 
-// border-image-source: linear-gradient(94.69deg, #F89500 3.75%, #DEC5FF 13.94%, #6BB2FF 80.47%);
+    span {
+      font-weight: 700;
+    background: -webkit-linear-gradient(-86deg, #F89500 5%, #DEC5FF 53%, #6BB2FF 91%);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 4px transparent;
+    color: #232D2D;
+
+      // border-image-source: linear-gradient(94.69deg, #F89500 3.75%, #DEC5FF 13.94%, #6BB2FF 80.47%);
+    }
+
+    @media(max-width:576px) {
+      font-size: $font-size-fourth;
+      line-height: 50px;
+      margin: 0 0 30px;
+    }
+
+    @media(max-width:992px) {
+      font-size: $font-size-fourth;
+      line-height: 50px;
+      margin: 0 0 30px;
+    }
 
 
   }
+
+  img.futar-lgo {
+    position: absolute;
+    left: 50%;
+    top: 1%;
+    transform: translate(-50%, -50%);
+
+     @media(max-width:576px) {
+      width: 29%;
+    }
+
+ 
+  }
 }
+
+section.footer-bottom {
+  width: 100%;
+  padding: 15px;
+  background: $black;
+  border-top: dashed 1px $futer-txt-btm;
+
+  p,
+  a {
+    color: $futer-txt-btm;
+    margin-bottom: 0;
+
+    @media(max-width:768px) {
+      text-align: center;
+    }
+  }
+
+  .company-link {
+    text-align: right;
+  }
+
+  ul.footer-icns {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+
+    @media(max-width:768px) {
+      padding: 20px 0;
+    }
+  }
+
+  @media(max-width:768px) {
+    text-align: center;
+  }
+
+  @media(max-width:992px) {}
+
+  @media(max-width:1024px) {}
 }

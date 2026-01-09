@@ -13,13 +13,15 @@ $blue: #0F6DDA;
 $dark-blue: #083A74;
 $gray-text: #D5D5D5D1;
 $black:#000000;
-$white:#fff;
+$white:#ffffff;
 // Grayscale
 $gray-100: #f8f9fa;
 $gray-600: #6c757d;
 $gray-900: #212529;
 $testi-text:#2C2C2C;
 $testi-border:#EDEDED;
+$futer-txt-btm:#9E9E9E;
+$inner-testi-background:#F2F3EF;
 $link-blue:#1A85F8;
 
 // Theme color
@@ -33,20 +35,23 @@ $theme-light: $light;
 $theme-dark: $dark;
 
 // Headings
-$font-size-primery: 5rem; /* 80px */
-$font-size-secondery: 4.5rem; /* 72px */
-$font-size-third: 3.75rem; /* 60px */
-$font-size-fourth: 40px;
-$font-size-fifth: 30px;
-$font-size-sixith: 26px;
-$font-size-36:2.188rem; /* 35px */
+$font-size-primery: 5rem; //80px
+$font-size-secondery: 4.5rem; //72px
+$font-size-third: 3.75rem; //60px
+$font-size-fourth: 2.5rem; //40px
+$font-size-fifth: 1.875rem; //30px 
+$font-size-sixith: 1.5rem; //24px
+$font-size-seventh: 1.25rem; //20px
+$font-size-eight: 1rem; //16px
+$font-size-eighteen: 1.125rem; //18px
+$font-footer-heading:3.125rem; //50px
 
 // Body text
-$font-size-base075: 0.75rem;
-$font-size-base05: 1.125rem;
-$font-size-base1: 1rem;
-$font-size-base2: 1.25rem;
-$font-size-base3: 1.5rem;
+$font-size-base075: 0.75rem; //12px
+$font-size-base05: 1.125rem; //18px
+$font-size-base1: 1rem; //16px
+$font-size-base2: 1.25rem; // 20px
+$font-size-base3: 1.5rem; //24px
 
 // line height
 $h1-lh: 96px;

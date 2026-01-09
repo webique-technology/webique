@@ -4,25 +4,37 @@
 h1 {
     font-weight: 700;
     font-size: $font-size-third;
-    line-height: $h1-lh;
+    line-height: 100%;
     letter-spacing: -0.8px;
     font-style: bold;
-}
+     
+    @media(max-width:1200px) {
+        font-size: $font-footer-heading;
+    }
+    @media(max-width:992px) {
+        font-size: $font-size-fourth;
+    }
 
+}
 
 .hero-title {
     font-size: $font-size-primery ;
-
     span {
         color: #022B5B;
     }
 }
 
 h2 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: $font-size-fourth;
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
     // line-height: $h2-lh;
     // line-height: 1.2;
+}
+
+.title-gap{
+    @include flex(column, flex-start, center, 15px);
 }
 
 h3 {
@@ -33,12 +45,10 @@ h3 {
 }
 
 h4 {
-    font-size: $font-size-fifth;
-    font-family: 600;
-    line-height: $base-lh-1;
+    font-size: $font-size-base05;
+    font-family: 500;
     letter-spacing: -0.8px;
 }
-
 
 p {
     font-size: $font-size-base1;
@@ -46,14 +56,14 @@ p {
     font-weight: 400;
 }
 
-@media(max-width:1440px) {
-    h1 {
-        font-size: $font-size-third;
-    }
-}
+// @media(max-width:1440px) {
+//     h1 {
+//         font-size: $font-size-third;
+//     }
+// }
 
 @media(max-width:992px) {
-    h1 {
+    .hero-title {
         font-size: $font-size-fourth;
     }
 
@@ -66,11 +76,11 @@ p {
     }
 }
 
-@media(max-width:768px) {
-    h1 {
-        font-size: $font-size-36;
-    }
-}
+// @media(max-width:768px) {
+//     h1 {
+//         font-size: $font-size-36;
+//     }
+// }
 
 @media(max-width:576px) {
     h1 {
@@ -78,7 +88,7 @@ p {
     }
 
     h3 {
-        font-size: $font-size-base2;
+        font-size: $font-size-sixith;
         line-height: auto;
     }
 }

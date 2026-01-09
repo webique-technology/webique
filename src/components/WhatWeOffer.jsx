@@ -37,16 +37,16 @@ const WhatWeOffer = () => {
 
     const scrollToSection = (direction) => {
       const section = sectionRef.current;
-      console.log("section:", section);
+      // console.log("section:", section);
 
       const target =
         direction === "down"
           ? section.nextElementSibling
           : section.previousElementSibling;
 
-      console.log("target:", target);
+      // console.log("target:", target);
 
-      console.log("target logic", target && target.tagName === section);
+      // console.log("target logic", target && target.tagName === section);
       if (target) {
 
         gsap.to(window, {
@@ -94,9 +94,9 @@ const WhatWeOffer = () => {
       },
     });
 
-    console.log("scroll up:", observer.onUp);
-    console.log("scroll down:", observer.onDown);
-    console.log("gsap observer:", observer);
+    // console.log("scroll up:", observer.onUp);
+    // console.log("scroll down:", observer.onDown);
+    // console.log("gsap observer:", observer);
 
 
     return () => observer.kill();

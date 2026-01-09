@@ -7,7 +7,6 @@ import ChooseAgencySec from "../components/ChooseAgencySec";
 import WorldwideBusiness from "../components/WorldwideBusiness";
 import IndusterySliders from "../components/industerySliders";
 import TestimonialCarousel from "../components/TestimonialCarousel";
-import Footer from "../components/Footer";
 import WhatWeOffer from "../components/WhatWeOffer";
 
 gsap.registerPlugin(MotionPathPlugin);

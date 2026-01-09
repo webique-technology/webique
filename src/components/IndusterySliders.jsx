@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useMemo, useId } from 'react';
+import React, { useRef, useEffect} from 'react';
 import { Container } from 'react-bootstrap';
 import gsap from 'gsap';
 import "../assets/scss/marqueeSlides.scss";
@@ -11,6 +11,7 @@ const industryData = [
     "Real Estate",
     "Healthcare"
 ];
+
 
 const MarqueeRow = ({ items, speed = 20, reverse = false }) => {
     const rowRef = useRef(null);
@@ -57,26 +58,6 @@ const IndustrySliders = () => {
                     <MarqueeRow items={industryData} speed={26} reverse />
                     <MarqueeRow items={industryData} speed={19} />
                     <MarqueeRow items={industryData} speed={25} reverse />
-
-                    {/* for gsap reactbits component */}
-                    {/* <CurvedLoop
-                    marqueeText="E-commarce Dental Induxrty"
-                    speed={8}
-                    curveAmount={0}
-                />
-
-                <CurvedLoop
-                    marqueeText="E-commarce Dental Induxrty"
-                    speed={9}
-                    curveAmount={0}
-                    className="custom-text-style text-dark"
-                />
-
-                <CurvedLoop
-                    marqueeText="E-commarce Dental Induxrty"
-                    speed={10}
-                    curveAmount={0}
-                /> */}
                 </div>
             </Container>
         </section>
