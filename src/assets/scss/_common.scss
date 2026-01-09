@@ -3,10 +3,19 @@
 
 h1 {
     font-weight: 700;
-    font-size: $font-size-primery;
+    font-size: $font-size-third;
     line-height: $h1-lh;
     letter-spacing: -0.8px;
     font-style: bold;
+}
+
+
+.hero-title {
+    font-size: $font-size-primery ;
+
+    span {
+        color: #022B5B;
+    }
 }
 
 h2 {
