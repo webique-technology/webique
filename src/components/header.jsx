@@ -71,14 +71,14 @@ const Header = () => {
       if (position === 0) {
         // Center slide animation
 
-        if (screenWidth < 420) y = 20;         // Mobile
+        if (screenWidth < 420) y = 50;         // Mobile
         else if (screenWidth < 768) y = 60;    // Small tablet
         else y = 120;                           // Desktop
       } else if (Math.abs(position) === 1) {
         // Adjacent slides animation
 
         if (screenWidth < 480) y = 10;
-        else if (screenWidth < 768) y = 30;
+        else if (screenWidth < 768) y = 10;
         else y = 60;
       }
 
@@ -91,8 +91,8 @@ const Header = () => {
   };
 
   return (
-    <section className="header-wrap">
-      <div className="w-lgo-wrap">
+    <section className="header-wrap section-padding pb-0">
+      <div className="w-lgo-wrap d-none d-xl-block">
         <img src={wLgo} alt="Header Logo" />
       </div>
 
@@ -105,7 +105,7 @@ const Header = () => {
                 className="hero-title"
                 dangerouslySetInnerHTML={{ __html: item.title }}
               />
-              <p>{item.subtitle}</p>
+              <p className="d-none d-md-block">{item.subtitle}</p>
 
               <div className="hero-buttons">
                 {item.buttons.map((btn, index) => (
@@ -140,7 +140,7 @@ const Header = () => {
               }}
               breakpoints={{
                 0: {
-                  slidesPerView: 1,
+                  slidesPerView: 2,
                   spaceBetween: 20,
                 },
                 420: {

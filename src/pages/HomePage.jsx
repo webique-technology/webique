@@ -8,6 +8,7 @@ import WorldwideBusiness from "../components/WorldwideBusiness";
 import IndusterySliders from "../components/industerySliders";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 import WhatWeOffer from "../components/WhatWeOffer";
+import PricingSection from "../components/pricing";
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -19,6 +20,7 @@ const Home = () => {
             <ChooseAgencySec />
             <WhatWeOffer />
             <WorldwideBusiness />
+            <PricingSection />
             <IndusterySliders />
             <TestimonialCarousel/>
             {/* <CurveArrow /> */}

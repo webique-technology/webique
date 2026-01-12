@@ -1,4 +1,4 @@
-import React, { useRef, useEffect} from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import gsap from 'gsap';
 import "../assets/scss/marqueeSlides.scss";

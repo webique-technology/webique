@@ -144,6 +144,10 @@
   inset: 0;
   display: flex;
   flex-direction: column;
+
+  @media(max-width:768px) {
+    overflow-y: auto;
+  }
 }
 
 .stack-scroll-container {
@@ -165,7 +169,6 @@
 }
 
 .stack-row {
-  /* 4 cards = 100vh */
   // height: 25vh;
   height: calc(590px / 4);
   border-bottom: 2px dashed $gray-text;
@@ -184,9 +187,18 @@
         width: 145px;
         height: 145px;
 
-        &::before {
+        &::before,
+        &::after {
           opacity: 0;
           transform: translate(-50px, -50px);
+        }
+      }
+    }
+    @media(max-width:768px){
+      &:hover{
+        .stack-content .stack-img{
+          width: 120px;
+          height: 120px;
         }
       }
     }
@@ -200,6 +212,14 @@
     justify-items: stretch;
     align-items: center;
     transition: all 0.4s ease;
+    height: 145px;
+
+    h4 {
+
+      span {
+        font-weight: 300;
+      }
+    }
 
     .stack-img {
       position: relative;
@@ -207,10 +227,25 @@
       height: 56px;
       transition: all 0.4s ease;
       // @include flex (row, center, center, 0);
+      overflow: hidden;
 
       img {
         width: 100%;
         height: 100%;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        // @include flex(row, center, center, 0);
+        background: $primary;
+        border-radius: $radius-round;
+        z-index: 2;
+        left: 0;
+        opacity: 0.8;
+        transform: translate(0px, 0px);
       }
 
       &::before {
@@ -221,7 +256,7 @@
         // @include flex(row, center, center, 0);
         background: $primary;
         border-radius: $radius-round;
-        z-index: 2;
+        z-index: 3;
         opacity: 1;
 
         mask: url('../assets/images/arrow-one.svg') center/24px 24px no-repeat;
@@ -229,15 +264,20 @@
 
         background-color: $light;
       }
+    }
+
+    // @media(max-width:1200px) {}
+
+    @media(max-width:992px) {
+      grid-template-columns: 1fr auto;
 
     }
-  }
 
-  h4 {
-    padding: 54px 0;
-
-    span {
-      font-weight: 300;
+    @media(max-width:576px) {
+      h4 {
+        font-size: $font-size-sixith;
+      }
     }
   }
 }
+

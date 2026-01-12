@@ -249,6 +249,11 @@
         width: 410px;
     }
 
+    @media(max-width:576px) {
+        padding: 20px;
+        width: 300px;
+    }
+
 }
 
 // use in sidebar sub link to open like accordian
@@ -256,12 +261,13 @@
     list-style: none;
     padding: 0;
     overflow: hidden;
+    margin-top: 10px;
 
     li {
+        padding-left: 15px !important;
         border-bottom: 1px solid $gray-text !important;
 
         &:hover {
-            background: $light;
 
             a {
                 color: $link-blue;
@@ -270,6 +276,12 @@
 
         &:nth-child(1) {
             border-top: 1px solid $gray-text !important;
+        }
+    }
+
+    @media (max-width:768px) {
+        a {
+            font-size: $font-size-base0875;
         }
     }
 }
@@ -287,6 +299,28 @@
         height: 35px;
     }
 
+    a {
+        color: $white;
+
+        &:hover {
+            color: $link-blue;
+        }
+    }
+
+    @media(max-width:576px) {
+        img {
+            width: 18px;
+            height: 18px;
+        }
+
+        a {
+            font-size: $font-size-base0875;
+        }
+    }
+}
+
+
+.top-bar-link {
     a {
         color: $white;
 
