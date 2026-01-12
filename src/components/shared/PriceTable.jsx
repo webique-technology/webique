@@ -9,6 +9,9 @@ const PricingTable = () => {
     { key: "ecommerce", label: "E-Commerce Website ₹41999" },
   ];
 
+
+
+
   const tableData = [
     { feature: "Pages Included", starter: "5", business: "10", enterprise: "15", ecommerce: "Unlimited" },
     { feature: "Custom Layout Design", starter: "✖", business: "✔", enterprise: "✔", ecommerce: "✔" },

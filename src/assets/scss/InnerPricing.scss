@@ -170,9 +170,17 @@ background: linear-gradient(32deg, rgba(199, 245, 255, 0.65) 0%, rgba(242, 243, 
 // }
 }
 
-.pricing-table-section{background: #d6bcf7;
-background: linear-gradient(32deg, rgba(214, 188, 247, 0.54) 0%, rgba(242, 243, 239, 1) 35%, rgba(255, 255, 255, 1) 52%, rgba(235, 235, 235, 1) 73%, rgba(163, 238, 255, 0.45) 100%);
-table.pricing-table {
+.pricing-table-section{background: #DEC5FF8C;
+background: linear-gradient(51deg, rgba(222, 197, 255, 0.54) 0%, rgba(255, 255, 255, 0.82) 35%, rgba(173, 240, 255, 0.25) 67%, rgba(255, 255, 255, 0.71) 100%);
+padding: 0 0 80px;
+.pricing-table {
     background: #fff;
+    thead{
+      position: sticky; top:0;
+
+      @media(max-width:992px) {
+        display: none;
+    }
+    }
 }
 }

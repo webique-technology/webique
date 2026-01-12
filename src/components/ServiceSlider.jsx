@@ -36,32 +36,31 @@ const ServiceSlider = ({figmaImg, Title, pText, data, prevRef, nextRef}) => {
           </Row>
 <div className="design-slider-wrapper">
         <Swiper
-        modules={[Navigation, Autoplay]}
-        slidesPerView={3}
-        spaceBetween={30}
-        slidesPerGroup={1} // move ONE item at a time
-        loop={true}
-        speed={800}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        onBeforeInit={(swiper) => {
-          swiper.params.navigation.prevEl = prevRef.current;
-          swiper.params.navigation.nextEl = nextRef.current;
-        }}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
-
-        breakpoints={{
+  modules={[Navigation, Autoplay]}
+  slidesPerView={3}
+  spaceBetween={30}
+  slidesPerGroup={1}
+  loop={true}
+  speed={800}
+  autoplay={{
+    delay: 3000,
+    disableOnInteraction: false,
+  }}
+  onBeforeInit={(swiper) => {
+    swiper.params.navigation.prevEl = prevRef.current;
+    swiper.params.navigation.nextEl = nextRef.current;
+  }}
+  navigation={{
+    prevEl: prevRef.current,
+    nextEl: nextRef.current,
+  }}
+  breakpoints={{
     0: {
-      slidesPerView: 1,
+      slidesPerView: "auto",
       spaceBetween: 16,
     },
     576: {
-      slidesPerView: 1,
+      slidesPerView: "auto",
       spaceBetween: 20,
     },
     768: {
@@ -73,16 +72,17 @@ const ServiceSlider = ({figmaImg, Title, pText, data, prevRef, nextRef}) => {
       spaceBetween: 30,
     },
   }}
-      >
-        {data.map((item) => (
-          <SwiperSlide key={item.id}>
-            <div className="service-card">
-              <h3 className='fst-italic fw-semibold mb-3'>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+>
+  {data.map((item) => (
+    <SwiperSlide key={item.id} className="service-slide">
+      <div className="service-card">
+        <h3 className="fst-italic fw-semibold mb-3">{item.title}</h3>
+        <p>{item.text}</p>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
       
       
     </div>

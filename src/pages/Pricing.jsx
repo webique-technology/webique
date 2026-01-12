@@ -20,6 +20,7 @@ import designImg from "../assets/images/pricing-design.png";
 import devImg from "../assets/images/pricing-developemnt.png";
 import deployImg from "../assets/images/pricing-deploy.png";
 import PriceTable from '../components/shared/PriceTable'
+import { CurveArrow } from '../components/shared/gsapAnimation'
 const Pricing = () => {
 
     const [activeId, setActiveId] = useState(1); // first accordion active
@@ -129,8 +130,9 @@ const Pricing = () => {
             </section>
 
             
-            <section className='section-padding pricing-table-section' >
-                <Container>
+            <section className='pricing-table-section' >
+                <Container className='container-relative'>
+                    <CurveArrow/>
                     <PriceTable />
                 </Container>
             </section>
