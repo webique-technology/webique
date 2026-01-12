@@ -11,6 +11,7 @@ import BrandingSupport from "./pages/services/BrandingSupport";
 import WordPress from "./pages/services/WordPress";
 import NavigationBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import Pricing from "./pages/Pricing";
 
 
 const AppRoutes = () => {
@@ -27,6 +28,7 @@ const AppRoutes = () => {
                 <Route path="/performance-seo" element={<SeoService/>} />
                 <Route path="/security-maintenance-support" element={<Maintenance/>} />
                 <Route path="/branding-support" element={<BrandingSupport/>} />
+                <Route path="/pricing" element={<Pricing/>} />
                 
 
                 {/* error */}

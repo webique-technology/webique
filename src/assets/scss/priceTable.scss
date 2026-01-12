@@ -1,0 +1,72 @@
+@import "./mixin";
+@import "./common";
+@import "./variable";
+.pricing-carousel-table {
+  width: 100%;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid $tbl-borders;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background: $dark-blue;
+  font-weight: 600;
+  color:$white;
+}
+
+/* Sticky Feature Column */
+.sticky-col {
+  text-align: left;
+  font-weight: 500;
+  background: #fff;
+}
+
+/* Mobile plan switcher */
+.plan-switcher {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  button {
+    border: none;
+    background: #000;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 20px;
+  }
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: table-cell;
+    font-weight: 600;
+  }
+
+  .plan-switcher {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
+}
