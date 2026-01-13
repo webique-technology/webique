@@ -6,7 +6,7 @@ import circleYes from "../assets/images/circle-yes.svg"
 const priceData = [
     // wordpress
     {
-        servicePriceType: "wordpress",
+        servicePriceType: "cms-website",
         priceTypeData: [
             {
                 priceType: "Basic",
@@ -40,7 +40,7 @@ const priceData = [
     },
     // custome
     {
-        servicePriceType: "custom",
+        servicePriceType: "custome-website",
         priceTypeData: [
             {
                 priceType: "Basic",
@@ -75,7 +75,7 @@ const priceData = [
 ];
 
 const PricingSection = () => {
-    const [key, setKey] = useState("wordpress");
+    const [key, setKey] = useState("cms-website");
     const [ghostStyle, setGhostStyle] = useState({
         width: 0,
         left: 0,
@@ -141,8 +141,8 @@ const PricingSection = () => {
         <section className="section-padding pricing-section">
             <Container>
                 <div className="title-content title-gap align-items-center mb-4">
-                    <h2>Our Affordable Web Design & Development Pricing</h2>
-                    <p className="text-center">
+                    <h2 className="text-center">Our Affordable Web Design & Development Pricing</h2>
+                    <p className="text-start text-md-center">
                         Our goal is to make web design affordable for startups, small businesses, and big companies. We help them grow online from the start. Because of our honest work and happy clients, we have received thousands of kind words from around the world.
                     </p>
                 </div>
@@ -166,16 +166,16 @@ const PricingSection = () => {
 
                                 <Nav.Item>
                                     <Nav.Link
-                                        ref={(el) => (navRefs.current["wordpress"] = el)}
-                                        eventKey="wordpress"
+                                        ref={(el) => (navRefs.current["cms-website"] = el)}
+                                        eventKey="cms-website"
                                     >
-                                        <span>WordPress Website</span>
+                                        <span>CMS Website</span>
                                     </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
                                     <Nav.Link
-                                        ref={(el) => (navRefs.current["custom"] = el)}
-                                        eventKey="custom"
+                                        ref={(el) => (navRefs.current["custome-website"] = el)}
+                                        eventKey="custome-website"
                                     >
                                         <span>Custom Website</span>
                                     </Nav.Link>

@@ -61,77 +61,75 @@ const testimonials = [
 
 
 const TestimonialCarousel = () => {
-    const scrollbarRef = useRef(null);
+  const scrollbarRef = useRef(null);
   return (
     <section className="testimonial-wrap">
-    <Container>
+      <Container>
         <div className="title-count text-center mb-5">
-            <h2>Testimonials</h2>
+          <h2>Testimonials</h2>
         </div>
-    </Container>
-    <Container>
-      <Swiper
-        modules={[Autoplay, Scrollbar]}
-        slidesPerView={3}
-        spaceBetween={30}
-        centeredSlides
-        loop
-        autoplay={{
-          delay: 50000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        scrollbar={{
-          el: ".swiper-scrollbar",
-          draggable: true,
-        }}
-        breakpoints={{
-          0: { slidesPerView: 1.2 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-        className="testimonial-swiper"
-      >
-        {testimonials.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="testimonial-card">
-              
+      </Container>
+      <Container>
+        <Swiper
+          modules={[Autoplay, Scrollbar]}
+          slidesPerView={3}
+          spaceBetween={30}
+          centeredSlides
+          loop
+          autoplay={{
+            delay: 50000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          scrollbar={{
+            el: ".swiper-scrollbar",
+            draggable: true,
+          }}
+          breakpoints={{
+            0: { slidesPerView: 1.5 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="testimonial-swiper"
+        >
+          {testimonials.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="testimonial-card">
+
                 <p className="review-text">{item.text}</p>
-            <div className="image-testiomnial-wrap">
-            <div className="user-img">
-                <img src={item.img} alt={item.name} />
-                
-              </div>
-            <div className="rating-name">
-                <h4 className="user-name">{item.name}</h4>
-                <h5 className="designation">{item.designation}</h5>
+                <div className="image-testiomnial-wrap">
+                  <div className="user-img">
+                    <img src={item.img} alt={item.name} />
 
-              <div className="rating">
-                {[...Array(5)].map((_, i) => (
-                  <span
-                    key={i}
-                    className={i < item.rating ? "star filled" : "star"}
-                  >
-                    ★
-                  </span>
-                ))}
-              </div>
-              
-              
-              </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+                  </div>
+                  <div className="rating-name">
+                    <h4 className="user-name">{item.name}</h4>
+                    <h5 className="designation">{item.designation}</h5>
 
-       {/* SINGLE DRAGGABLE SCROLLBAR */}
-      <div className="horizontal-line">
-        
-      </div>
-        </Container>
-     
- 
+                    <div className="rating">
+                      {[...Array(5)].map((_, i) => (
+                        <span
+                          key={i}
+                          className={i < item.rating ? "star filled" : "star"}
+                        >
+                          ★
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* SINGLE DRAGGABLE SCROLLBAR */}
+        <div className="horizontal-line">
+
+        </div>
+      </Container>
+
+
     </section>
   );
 };

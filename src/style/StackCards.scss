@@ -2,7 +2,7 @@
 @import "../assets/scss/mixin";
 @import "../assets/scss/variable";
 
-/*
+
 .stack-container {
   position: relative;
   width: 100%;
@@ -13,35 +13,38 @@
 .stack-section {
   position: absolute;
   inset: 0;
-
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   padding: 0 120px;
-  background: #0b0b0b;
-  color: #fff;
+  background: #ffffff;
+  // color: #fff;
+  // border: 1px solid #000;
 }
 
 .stack-section:nth-child(1) {
+  height: 100%;
   z-index: 1;
 }
 
 .stack-section:nth-child(2) {
+  height: 100%;
   z-index: 2;
-}
-
-.stack-section:nth-child(3) {
-  z-index: 3;
-}
-
-.stack-section:nth-child(4) {
-  z-index: 4;
 }
 
 .stack-section h2 {
   font-size: 64px;
   margin-bottom: 16px;
+}
+
+.stack-section {
+  pointer-events: none;
+}
+
+.stack-section.active {
+  pointer-events: auto;
 }
 
 @media (max-width: 768px) {
@@ -51,52 +54,6 @@
 
   .stack-section h2 {
     font-size: 40px;
-  }
-}
-
-
-.hero-title .typed {
-  color: #ffb703;
-  position: relative;
-}
-
-.hero-title .typed::after {
-  content: "|";
-  margin-left: 4px;
-  // animation: blink 1s infinite;
-}
-
-// @keyframes blink {
-//   0%, 50%, 100% { opacity: 1; }
-//   25%, 75% { opacity: 0; }
-// }
-
-.header-portfolio {
-  overflow: hidden;
-  margin-top: 60px;
-}
-
-.hero-images-track {
-  display: flex;
-  gap: 24px;
-  width: max-content;
-  animation: scrollImages 30s linear infinite;
-}
-
-.hero-images-track img {
-  width: 260px;
-  height: auto;
-  border-radius: 16px;
-  flex-shrink: 0;
-}
-
-@keyframes scrollImages {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
   }
 }
 
@@ -112,19 +69,12 @@
   }
 }
 
-@media (max-width: 768px) {
-  .testimonial-card {
-    padding: 25px 20px;
-  }
-
-  .swiper-slide-active .testimonial-card {
-    transform: scale(1.05);
-  }
-}
-*/
+// ====================================
 
 .what-we-offer {
   position: relative;
+  height: 80vh;
+  overflow: hidden;
 
   &::before {
     position: absolute;
@@ -139,39 +89,85 @@
   }
 }
 
-.stack-scroll-inner {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
+// .stack-scroll-inner {
+//   position: absolute;
+//   inset: 0;
+//   display: flex;
+//   flex-direction: column;
 
-  @media(max-width:768px) {
-    overflow-y: auto;
+//   @media(max-width:768px) {
+//     overflow-y: auto;
+//   }
+// }
+
+// .stack-scroll-container {
+//   overflow: hidden;
+//   // height: 100vh;
+//   position: relative;
+//   height: calc(590px); // container shows 4 rows
+//   border-top: 2px dashed $gray-text;
+//   border-bottom: 2px dashed $gray-text;
+
+//   .stack-content {
+//     padding: 0 40px;
+//   }
+
+//   .stack-img img {
+//     width: 200px;
+//     height: auto;
+//   }
+// }
+
+.item-content {
+  @include flex(column, center, center, 0);
+  height: 600px;
+}
+
+// stack-scroll section
+.scroll-section {
+  .wrapper {
+    height: 100vh;
+  }
+
+  .list {
+    height: 100%;
+    position: relative;
+  }
+
+  .item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    overflow: hidden;
+  }
+
+  .item:nth-child(2) {
+    z-index: 5;
+  }
+
+  .item-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 0;
+    width: 100%;
+    height: 100vh;
+    background: $white;
   }
 }
 
-.stack-scroll-container {
-  overflow: hidden;
-  // height: 100vh;
-  position: relative;
-  height: calc(590px); // container shows 4 rows
-  border-top: 2px dashed $gray-text;
-  border-bottom: 2px dashed $gray-text;
-
-  .stack-content {
-    padding: 0 40px;
-  }
-
-  .stack-img img {
-    width: 200px;
-    height: auto;
-  }
+.padding-global {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .stack-row {
   // height: 25vh;
-  height: calc(590px / 4);
-  border-bottom: 2px dashed $gray-text;
+  width: 100%;
+  height: calc(600px / 4);
+  border-top: 2px dashed $gray-text;
   transition: all 0.4s ease;
 
   // stack row hover
@@ -194,9 +190,10 @@
         }
       }
     }
-    @media(max-width:768px){
-      &:hover{
-        .stack-content .stack-img{
+
+    @media(max-width:768px) {
+      &:hover {
+        .stack-content .stack-img {
           width: 120px;
           height: 120px;
         }
@@ -212,7 +209,9 @@
     justify-items: stretch;
     align-items: center;
     transition: all 0.4s ease;
-    height: 145px;
+    height: 150px;
+    border-bottom: 2px dashed $gray-text;
+    padding: 0 35px;
 
     h4 {
 
@@ -281,3 +280,27 @@
   }
 }
 
+.stack-scroll-count {
+  padding: 50px 0;
+
+  .stack-row:nth-child(1) {
+    border-top: 2px dashed $gray-text;
+  }
+}
+
+.stack-wrapper {
+  position: relative;
+  height: 100vh;
+}
+
+.stack-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}

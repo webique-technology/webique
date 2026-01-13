@@ -71,6 +71,12 @@
     background: transparent;
     transition: border-color 0.3s ease;
     overflow: hidden;
+
+    @media(max-width:768px) {
+        img {
+            width: 120px !important;
+        }
+    }
 }
 
 
@@ -106,6 +112,10 @@
     position: relative;
     z-index: 3;
 }
+
+
+
+
 
 
 /*

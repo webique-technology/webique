@@ -94,6 +94,12 @@ const Sidebar = ({ open, onClose, linkItems }) => {
         (item) => item.name === "Services"
     );
 
+    const handleLinkClick = () => {
+        setActiveDropdown(null);
+        onClose();
+    };
+
+
     return (
         <AnimatePresence>
             {open && (
@@ -119,7 +125,7 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                         <Row className="row-gap-3 row-gap-md-4">
                             {/* logo */}
                             <Col xs={8}>
-                                <img src={webiqueLogoWhite} alt="Webique" className="img-fluid"/>
+                                <img src={webiqueLogoWhite} alt="Webique" className="img-fluid" />
                             </Col>
 
                             <Col xs={4} className="d-flex align-items-center justify-content-end">
@@ -149,6 +155,8 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                                                             if (item.dropdown.length) {
                                                                 e.preventDefault();
                                                                 setActiveDropdown(activeDropdown === i ? null : i);
+                                                            } else {
+                                                                handleLinkClick();
                                                             }
                                                         }}
 
@@ -192,7 +200,7 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                                                                         >
                                                                             <Link
                                                                                 to={`/${sub.dropLink}`}
-                                                                                onClick={() => setActiveDropdown(null)}
+                                                                                 onClick={handleLinkClick}
                                                                             >
                                                                                 {sub.dropName}
                                                                             </Link>
@@ -230,7 +238,7 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                                                     <li key={i}>
                                                         <Link
                                                             to={`/${sub.dropLink}`}
-                                                            onClick={onClose}
+                                                             onClick={handleLinkClick}
                                                         >
                                                             {sub.dropName}
                                                         </Link>

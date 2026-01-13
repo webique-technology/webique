@@ -120,6 +120,16 @@
         gap: 12px;
         border-radius: 60PX;
       }
+
+      @media(max-width:768px) {
+        padding: 6px 6px 6px 18px;
+        font-size: $font-size-base1;
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
     }
 
   }

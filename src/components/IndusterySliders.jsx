@@ -47,7 +47,7 @@ const IndustrySliders = () => {
     return (
         <section className="industery-marquee section-padding">
             <Container>
-                <div className="title-count text-center mb-5">
+                <div className="title-count text-center mb-2 mb-md-5">
                     <h2>Trusted by Businesses</h2>
                 </div>
                 <div className="marquee-main-container">

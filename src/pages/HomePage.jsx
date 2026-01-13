@@ -1,4 +1,4 @@
-import React,{ useEffect, useRef }  from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "../components/header";
 // import WhatWeOffer from "../components/WhatWeOffer";
 import gsap from 'gsap';
@@ -7,7 +7,7 @@ import ChooseAgencySec from "../components/ChooseAgencySec";
 import WorldwideBusiness from "../components/WorldwideBusiness";
 import IndusterySliders from "../components/industerySliders";
 import TestimonialCarousel from "../components/TestimonialCarousel";
-import WhatWeOffer from "../components/WhatWeOffer";
+import { StackSlider } from "../components/WhatWeOffer";
 import PricingSection from "../components/pricing";
 
 gsap.registerPlugin(MotionPathPlugin);
@@ -16,13 +16,17 @@ const Home = () => {
 
     return (
         <>
-            <Header/>
+            <Header />
             <ChooseAgencySec />
-            <WhatWeOffer />
+
+            {/* <WhatWeOffer /> */}
+            <StackSlider />
             <WorldwideBusiness />
             <PricingSection />
             <IndusterySliders />
-            <TestimonialCarousel/>
+            <TestimonialCarousel />
+
+
             {/* <CurveArrow /> */}
         </>
     )

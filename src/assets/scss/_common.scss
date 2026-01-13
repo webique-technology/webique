@@ -123,3 +123,8 @@ a {
 .dashed-border {
     border-bottom: 1px dashed $gray-text;
 }
+
+.title-content{
+    position: relative;
+    z-index: 4;
+}
