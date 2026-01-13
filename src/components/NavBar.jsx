@@ -15,7 +15,7 @@ import downArrow from "../assets/images/caret-down-bold.svg"
 /* ---------------- topbar ---------------- */
 
 const TopBar = () => (
-    <div className="top-bar">
+    <div className="top-bar d-none d-sm-block">
         <Container fluid="xxl">
             <Row>
                 <Col xs={12} sm={9} className="d-flex align-items-center">
@@ -23,7 +23,7 @@ const TopBar = () => (
                         🎨 Custom Website Design & React Development – Let’s Talk
                     </p>
                 </Col>
-                <Col sm={3} className="d-none d-sm-flex justify-content-end">
+                <Col sm={3} className="d-none d-sm-flex justify-content-end top-bar-link">
                     <Link className="m-0 me-4" to={"#"}>Blog</Link>
                     <Link className="m-0" to={"#"}>Career</Link>
                 </Col>

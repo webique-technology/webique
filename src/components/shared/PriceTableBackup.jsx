@@ -1,14 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Container, Tab, Nav, Row } from "react-bootstrap";
-import { motion } from "framer-motion";
-
+import React, { useState } from "react";
 import tableCheck from "../../assets/images/table-check.svg";
 import tableReject from "../../assets/images/table-reject.svg";
-import "../../assets/scss/priceTable.scss";
+import "../../assets/scss/priceTable.scss"
 
-/* =======================
-   JSON DATA
-======================= */
 
 const PricingPgaeData = [
   // wordpress website
@@ -389,188 +383,106 @@ const PricingPgaeData = [
   },
 ]
 
-/* =======================
-   COMPONENT
-======================= */
 
 const PriceTable = () => {
+
   const [activeType, setActiveType] = useState("wordpress");
   const [activePlan, setActivePlan] = useState(0);
 
-  const navRefs = useRef({});
-  const [ghostStyle, setGhostStyle] = useState({});
-
-  const currentData = PricingPgaeData.find(
+  const pricingData = PricingPgaeData.find(
     (item) => item.pricingType === activeType
   );
 
-  const plans = currentData.plans;
-  const features = currentData.features;
-
-  /* =======================
-     ICON RENDER
-  ======================= */
+  const plans = pricingData.plans;
+  const features = pricingData.features;
 
   const renderValue = (value) => {
     if (!value) return null;
     const v = value.toLowerCase();
 
     if (v === "right" || v === "✔")
-      return <img src={tableCheck} alt="Yes" />;
+      return <img src={tableCheck} alt="Yes" className="icon" />;
 
     if (v === "wrong" || v === "✖")
-      return <img src={tableReject} alt="No" />;
+      return <img src={tableReject} alt="No" className="icon" />;
 
     return value;
   };
 
-  /* =======================
-     GHOST TAB ANIMATION
-  ======================= */
 
-  useEffect(() => {
-    const el = navRefs.current[activeType];
-    if (!el) return;
-
-    setGhostStyle({
-      width: el.offsetWidth,
-      left: el.offsetLeft,
-      height: "85%",
-      top: 5,
-    });
-  }, [activeType]);
-
-  /* =======================
-     JSX
-  ======================= */
 
   return (
-    <section className="pricing-section">
-      <Container className="arrow-container">
-        <Tab.Container
-          activeKey={activeType}
-          onSelect={(k) => {
-            setActiveType(k);
-            setActivePlan(0);
-          }}
-        >
-          {/* ---------- TABS ---------- */}
-          <div className="nav-tab-div position-relative mb-3 mb-md-5">
-            <Row className="align-items-center justify-content-center ">
-            <Nav className="nav-tabs justify-content-center position-relative">
-              <motion.div
-                className="nav-ghost-div position-absolute"
-                animate={ghostStyle}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              />
+    <div className="pricing-wrapper">
+      {/* Tabs */}
+      <div className="pricing-tabs">
+        <div className="nav-tabs">
+          {PricingPgaeData.map((tab) => (
+            <button
+              key={tab.pricingType}
+              className={activeType === tab.pricingType ? "active" : ""}
+              onClick={() => {
+                setActiveType(tab.pricingType);
+                setActivePlan(0);
+              }}
+            >
+              {tab.pricingType}
+            </button>
+          ))}
+        </div>
+      </div>
+      {/* Mobile Plan Switch */}
+      <div className="mobile-plan-switcher">
+        <button onClick={() => setActivePlan(p => (p === 0 ? plans.length - 1 : p - 1))}>‹</button>
+        <div>
+          <h4>{plans[activePlan].pricingPackName}</h4>
+          <p>{plans[activePlan].packPrice}</p>
+        </div>
+        <button onClick={() => setActivePlan(p => (p === plans.length - 1 ? 0 : p + 1))}>›</button>
+      </div>
 
-              {PricingPgaeData.map((item) => (
-                <Nav.Item key={item.pricingType}>
-                  <Nav.Link
-                    eventKey={item.pricingType}
-                    ref={(el) => (navRefs.current[item.pricingType] = el)}
-                  >
-                    {item.pricingType === "wordpress"
-                      ? "CMS"
-                      : "Custom Website"}
-                  </Nav.Link>
-                </Nav.Item>
-              ))}
-            </Nav>
-            </Row>
-          </div>
+      {/* Table */}
+      <table className="pricing-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
 
-          {/* ---------- CONTENT ---------- */}
-          <Tab.Content>
-            {PricingPgaeData.map((tab) => (
-              <Tab.Pane eventKey={tab.pricingType} key={tab.pricingType}>
-                {/* Mobile Switch */}
-                <div className="mobile-plan-switcher">
-                  <button
-                    onClick={() =>
-                      setActivePlan((p) =>
-                        p === 0 ? plans.length - 1 : p - 1
-                      )
-                    }
-                  >
-                    ‹
-                  </button>
-
-                  <div>
-                    <h4>{plans[activePlan].pricingPackName}</h4>
-                    <p>{plans[activePlan].packPrice}</p>
-                  </div>
-
-                  <button
-                    onClick={() =>
-                      setActivePlan((p) =>
-                        p === plans.length - 1 ? 0 : p + 1
-                      )
-                    }
-                  >
-                    ›
-                  </button>
-                </div>
-
-                {/* Table */}
-                <table className="pricing-table">
-                  <thead>
-                    <tr>
-                      <th>Feature</th>
-
-                      {plans.map((plan, i) => (
-                        <th key={i} className="desktop-only">
-                          {plan.pricingPackName}
-                          <br />
-                          <span>{plan.packPrice}</span>
-                        </th>
-                      ))}
-
-                      <th className="mobile-only">
-                        {plans[activePlan].pricingPackName}
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    {features.map((row, i) => (
-                      <tr key={i}>
-                        <td>{row.feature}</td>
-
-                        {plans.map((_, idx) => {
-                          const mapKey = [
-                            "starter",
-                            "business",
-                            "enterprise",
-                            "ecommerce",
-                          ][idx];
-
-                          return (
-                            <td key={idx} className="desktop-only">
-                              {renderValue(row[mapKey])}
-                            </td>
-                          );
-                        })}
-
-                        <td className="mobile-only">
-                          {renderValue(
-                            row[
-                              ["starter", "business", "enterprise", "ecommerce"][
-                                activePlan
-                              ]
-                            ]
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </Tab.Pane>
+            {plans.map((p, i) => (
+              <th key={i} className="desktop-only">
+                {p.pricingPackName}<br />
+                <span>{p.packPrice}</span>
+              </th>
             ))}
-          </Tab.Content>
-        </Tab.Container>
-      </Container>
-    </section>
+
+            <th className="mobile-only">
+              {plans[activePlan].pricingPackName}
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {features.map((row, i) => (
+            <tr key={i}>
+              <td className="feature-cell">{row.feature}</td>
+
+              {plans.map((_, idx) => {
+                const key = ["starter", "business", "enterprise", "ecommerce"][idx];
+                return (
+                  <td key={idx} className="desktop-only">
+                    {renderValue(row[key])}
+                  </td>
+                );
+              })}
+
+              <td className="mobile-only">
+                {renderValue(
+                  row[["starter", "business", "enterprise", "ecommerce"][activePlan]]
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

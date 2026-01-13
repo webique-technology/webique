@@ -116,13 +116,13 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                         animate="visible"
                         exit="exit"
                     >
-                        <Row className="row-gap-4">
+                        <Row className="row-gap-3 row-gap-md-4">
                             {/* logo */}
-                            <Col xs={6}>
-                                <img src={webiqueLogoWhite} alt="Webique" />
+                            <Col xs={8}>
+                                <img src={webiqueLogoWhite} alt="Webique" className="img-fluid"/>
                             </Col>
 
-                            <Col xs={6} className="d-flex align-items-center justify-content-end">
+                            <Col xs={4} className="d-flex align-items-center justify-content-end">
                                 <div className="desk-ham" onClick={onClose}>
                                     <CloseButton />
                                 </div>
@@ -210,7 +210,7 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                                     <li className="d-block d-sm-none"><Link to={"career"}>Career</Link></li>
                                     <li className="d-block d-lg-none"><Link to={"contact"}>Contact</Link></li>
                                     {/* for desltop view to show only services sub links */}
-                                    <li className="">
+                                    <li className="d-none d-lg-block">
                                         <Link
                                             to={servicesItem.link}
                                             onClick={(e) => {

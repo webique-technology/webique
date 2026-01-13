@@ -6,14 +6,9 @@ import "../assets/scss/marqueeSlides.scss"
 import '../assets/scss/innerServices.scss'
 import { HiArrowSmallLeft } from "react-icons/hi2";
 import { HiArrowSmallRight } from "react-icons/hi2";
-const ServiceSlider = ({figmaImg, Title, pText, data, prevRef, nextRef}) => {
+const ServiceSlider = ({ figmaImg, Title, pText, data, prevRef, nextRef }) => {
   return (
     <div>
-
-
-
-
-
       <section className="uiux-design-service section-padding">
         <Container>
           <Row className='justify-content-between'>
@@ -34,61 +29,61 @@ const ServiceSlider = ({figmaImg, Title, pText, data, prevRef, nextRef}) => {
               </div>
             </Col>
           </Row>
-<div className="design-slider-wrapper">
-        <Swiper
-  modules={[Navigation, Autoplay]}
-  slidesPerView={3}
-  spaceBetween={30}
-  slidesPerGroup={1}
-  loop={true}
-  speed={800}
-  autoplay={{
-    delay: 3000,
-    disableOnInteraction: false,
-  }}
-  onBeforeInit={(swiper) => {
-    swiper.params.navigation.prevEl = prevRef.current;
-    swiper.params.navigation.nextEl = nextRef.current;
-  }}
-  navigation={{
-    prevEl: prevRef.current,
-    nextEl: nextRef.current,
-  }}
-  breakpoints={{
-    0: {
-      slidesPerView: "auto",
-      spaceBetween: 16,
-    },
-    576: {
-      slidesPerView: "auto",
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 24,
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-  }}
->
-  {data.map((item) => (
-    <SwiperSlide key={item.id} className="service-slide">
-      <div className="service-card">
-        <h3 className="fst-italic fw-semibold mb-3">{item.title}</h3>
-        <p>{item.text}</p>
-      </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
+          <div className="design-slider-wrapper">
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              slidesPerView={3}
+              spaceBetween={30}
+              slidesPerGroup={1} // move ONE item at a time
+              loop={true}
+              speed={800}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              onBeforeInit={(swiper) => {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+              }}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
 
-      
-      
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 16,
+                },
+                576: {
+                  slidesPerView: 1.7,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 24,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+              }}
+            >
+              {data.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <div className="service-card">
+                    <h3 className='fst-italic fw-semibold mb-3'>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+
+          </div>
+        </Container>
+      </section>
     </div>
-    </Container>
-    </section>
-    </div> 
   )
 }
 

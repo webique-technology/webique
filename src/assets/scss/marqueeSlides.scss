@@ -71,6 +71,11 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
             font-weight: 500;
             flex-shrink: 0;
+
+            @media(max-width:768px) {
+                padding: 6px 12px;
+                font-size: $font-size-base0875;
+            }
         }
     }
 }

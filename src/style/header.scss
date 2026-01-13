@@ -8,8 +8,10 @@
   text-align: center;
 
   .w-lgo-wrap {
-    @include flex(column, end, end, 0);
-    padding-right: 30px;
+    position: absolute;
+    top: 150px;
+    right: 30px;
+    opacity: 0.7;
 
     img {
       width: 120px; // adjust size
@@ -63,16 +65,6 @@
 
   .hero-content {
     align-items: center;
-
-    .hero-title {
-      color: $black;
-      font-weight: 700;
-      line-height: 1.2;
-
-      span {
-        color: #022B5B; // highlight typed span
-      }
-    }
 
     p {
       max-width: 50%;
@@ -149,7 +141,7 @@
 }
 
 .header-portfolio {
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 .mySwiper {
@@ -187,5 +179,15 @@
   @media(max-width:1440px) {
     left: 130px !important;
     top: 150px;
+  }
+
+  @media(max-width:992px) {
+    left: 120px !important;
+    top: 80px;
+  }
+
+  @media(max-width:768px) {
+    display: none;
+    top: 50px;
   }
 }

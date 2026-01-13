@@ -131,14 +131,14 @@ const Pricing = () => {
 
             
             <section className='pricing-table-section' >
-                <Container className='container-relative'>
-                    <CurveArrow/>
+                <Container className='arrow-container'>
+                    <CurveArrow className="pricing-arrow"/>
                     <PriceTable />
                 </Container>
             </section>
             <section className='section-padding'>
                 <Container>
-                    <Row>
+                    <Row className='g-3 g-md-0'>
                         <Col md={6} lg={6} sm={12} className='title-gap'>
                             <h2>What You Get With Every Plan</h2>
                             <p>The following features are common across all our plans. Every package includes responsive mobile-first design, SEO-optimized structure, secure coding practices, ongoing post-launch support, and clear, consistent communication.</p>
@@ -184,8 +184,8 @@ const Pricing = () => {
                     <h2>from concept to launch  our website process</h2>
 
 
-                    <Row>
-                        <Col lg={3} md={3} sm={12}>
+                    <Row className='g-3'>
+                        <Col lg={3} md={3} sm={12} className="">
                             <div className='process-card'>
                                 <img src={planImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg-1'>

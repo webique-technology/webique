@@ -126,7 +126,7 @@ const WorldwideBusiness = ({ items }) => {
 
                 >
                     {data.map((c, i) => (
-                        <Col key={i} xs={12} sm={6} md={4} lg={3} xl={2} className="chroma-card">
+                        <Col key={i} xs={6} sm={6} md={4} lg={3} xl={2} className="chroma-card">
                             <div
                                 className="chroma-img-wrapper"
                                 onPointerMove={handleMove}
