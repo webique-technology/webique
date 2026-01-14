@@ -169,47 +169,48 @@ export const StackSlider = () => {
 
   return (
     <>
-      {/* <h2 className="text-center mb-5">Vertical Stack Scroll Animation</h2> */}
-      <div className="scroll-section vertical-section">
-        <div className="wrapper" ref={wrapperRef}>
-          <div role="list" className="list">
-            {sections.map((section, index) => (
-              <div
-                key={index}
-                role="listitem"
-                className="item"
-                ref={(el) => (itemsRef.current[index] = el)}
-              >
-                <Container>
-                  <div className="item-content">
-                    {/* Example: render stack items later */}
-                    {section.stack.map(card => (
-                      <div className="stack-row">
-                        <div className="stack-content" key={index}>
-                          <h4 className="d-flex align-items-center gap-4 scroll-h4 m-0 pe-4 pe-md-0">
-                            <span className="d-none d-md-block">
-                              {`0${card.id}`}
-                            </span>
-                            {card.title}
-                          </h4>
-                          <p className="m-0 d-none d-lg-block">
-                            {card.desc}
-                          </p>
+      <section className="section-padding pb-0">
+        <div className="scroll-section vertical-section">
+          <div className="wrapper" ref={wrapperRef}>
+            <h2 className="text-center mb-0">What we offer</h2>
+            <div role="list" className="list">
+              {sections.map((section, index) => (
+                <div
+                  key={index}
+                  role="listitem"
+                  className="item"
+                  ref={(el) => (itemsRef.current[index] = el)}
+                >
+                  <Container>
+                    <div className="item-content">
+                      {/* Example: render stack items later */}
+                      {section.stack.map(card => (
+                        <div className="stack-row">
+                          <div className="stack-content" key={index}>
+                            <h4 className="d-flex align-items-center gap-4 scroll-h4 m-0 pe-4 pe-md-0">
+                              <span className="d-none d-md-block">
+                                {`0${card.id}`}
+                              </span>
+                              {card.title}
+                            </h4>
+                            <p className="m-0 d-none d-lg-block">
+                              {card.desc}
+                            </p>
 
-                          <div className="stack-img">
-                            <img
-                              src={card.img}
-                              alt={card.title}
-                            />
+                            <div className="stack-img">
+                              <img
+                                src={card.img}
+                                alt={card.title}
+                              />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </Container>
-              </div>
-            ))}
-            {/* {sections.map((num, index) => (
+                      ))}
+                    </div>
+                  </Container>
+                </div>
+              ))}
+              {/* {sections.map((num, index) => (
               <div
                 key={num}
                 role="listitem"
@@ -224,9 +225,10 @@ export const StackSlider = () => {
                 </Container>
               </div>
             ))} */}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

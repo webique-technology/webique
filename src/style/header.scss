@@ -81,57 +81,6 @@
     .hero-buttons {
       @include flex(row, flex-end, space-between, 30px);
     }
-
-    .hero-btn {
-      padding: 12px 12px 12px 20px;
-      font-size: 24px;
-      // line-height: 30px;
-      font-weight: 500;
-      @include flex(row, center, center, 30px);
-      border-radius: $radius-pill;
-      width: fit-content;
-      background: $primary;
-      color: $light;
-      border: none;
-      transition: .5s all ease-in;
-
-      img {
-        width: 40px;
-        height: 40px;
-        padding: 5px;
-        border-radius: 50%;
-        transition: .5s all ease-in;
-        background: $light;
-      }
-
-      &:hover {
-        background-color: #000000;
-        transition: .5s all ease-in;
-      }
-
-      &:hover img {
-        transform: rotate(45deg);
-        transition: .5s all ease-in;
-      }
-
-      @media(max-width:992px) {
-        padding: 6px 6px 6px 18px;
-        font-size: $font-size-base2;
-        gap: 12px;
-        border-radius: 60PX;
-      }
-
-      @media(max-width:768px) {
-        padding: 6px 6px 6px 18px;
-        font-size: $font-size-base1;
-
-        img {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-
   }
 
   @keyframes blink {

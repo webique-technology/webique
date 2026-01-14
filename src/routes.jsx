@@ -11,6 +11,7 @@ import BrandingSupport from "./pages/services/BrandingSupport";
 import WordPress from "./pages/services/WordPress";
 import NavigationBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import Contact from "./pages/Contact";
 
 
 const AppRoutes = () => {
@@ -19,15 +20,16 @@ const AppRoutes = () => {
             <NavigationBar />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/ui-ux-design" element={<UiUx/>} />
-                <Route path="/wordpress" element={<WordPress/>} />
-                <Route path="/custom-website-development" element={<CustomWebsite/>} />
-                <Route path="/e-commerce-woocommerce" element={<Ecommerce/>} />
-                <Route path="/emailer-template-design" element={<EmailerTemplate/>} />
-                <Route path="/performance-seo" element={<SeoService/>} />
-                <Route path="/security-maintenance-support" element={<Maintenance/>} />
-                <Route path="/branding-support" element={<BrandingSupport/>} />
-                
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/ui-ux-design" element={<UiUx />} />
+                <Route path="/wordpress" element={<WordPress />} />
+                <Route path="/custom-website-development" element={<CustomWebsite />} />
+                <Route path="/e-commerce-woocommerce" element={<Ecommerce />} />
+                <Route path="/emailer-template-design" element={<EmailerTemplate />} />
+                <Route path="/performance-seo" element={<SeoService />} />
+                <Route path="/security-maintenance-support" element={<Maintenance />} />
+                <Route path="/branding-support" element={<BrandingSupport />} />
+
 
                 {/* error */}
             </Routes>

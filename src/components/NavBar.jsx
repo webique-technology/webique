@@ -77,6 +77,7 @@ const navLinks = [
     },
     { name: "Pricing", link: "/pricing", dropdown: [] },
     { name: "Portfolio", link: "/portfolio", dropdown: [] },
+    { name: "Contact", link: "/contact", dropdown: [] },
 ];
 
 /* ---------------- navbar ---------------- */
@@ -201,7 +202,7 @@ const NavigationBar = () => {
                         {/* RIGHT ACTIONS */}
                         <div className="d-flex justify-content-end gap-3">
                             <div className="d-none d-lg-block">
-                                <button className="hero-btn">
+                                <button className="nav-btn">
                                     <span>Contact</span>
                                     <img src={arrowOne} alt="arrow" />
                                 </button>
