@@ -1,6 +1,8 @@
 @import "./variable";
 @import "./mixin";
 
+
+.container-relative{position: relative;}
 h1 {
     font-weight: 700;
     font-size: $font-size-third;
@@ -114,6 +116,7 @@ a {
     text-decoration: none;
 }
 
+ul{margin: 0; padding: 0; list-style: none;}
 .scroll-h4 {
     font-size: $font-size-fifth;
     font-weight: 700;

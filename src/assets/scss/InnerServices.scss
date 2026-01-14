@@ -327,6 +327,18 @@ section.uiux-design-service {
         margin: 40px 0 0;
     }
 
+    @media (max-width: 767px) {
+  .service-slide {
+    width: 80%;
+  }
+}
+
+/* Tablet & above: reset */
+@media (min-width: 768px) {
+  .service-slide {
+    width: auto;
+  }
+}
     .service-card {
         background: $white;
         color: $black;

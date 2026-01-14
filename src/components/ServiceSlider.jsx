@@ -56,7 +56,7 @@ const ServiceSlider = ({ figmaImg, Title, pText, data, prevRef, nextRef }) => {
                   spaceBetween: 16,
                 },
                 576: {
-                  slidesPerView: 1,
+                  slidesPerView: 1.7,
                   spaceBetween: 20,
                 },
                 768: {

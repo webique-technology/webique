@@ -39,7 +39,7 @@ const LogoSlider = ({ data, title }) => {
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 5,
             spaceBetween: 24,
           },
           1024: {
