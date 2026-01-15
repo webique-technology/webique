@@ -1,0 +1,77 @@
+import React from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
+import '../../src/assets/scss/About.scss'
+import abtImg from '../assets/images/about-img.svg'
+import vIcn from '../assets/images/vision-icn.svg'
+import wWe from '../assets/images/ww-exist.svg'
+import Diff from '../assets/images/diffrent.svg'
+
+
+
+const About = () => {
+  return (
+    <>
+<section className="about-history section-padding">
+      <Container>
+  
+          <Row>
+            <Col className="title-gap" md={6} xs={12}>
+              <h2>Our History</h2>
+
+              <p>Webique Technology has evolved from a small startup to a trusted partner for businesses worldwide. Over the years, we have grown our expertise, expanded our capabilities, and earned a reputation for excellence in web development, design, and consulting services.</p>
+              <p>At Webique Technology, we are committed to empowering businesses with cutting-edge web services to thrive in the digital landscape. With a rich legacy of innovation and a passion for technology, we have been at the forefront of delivering tailor-made solutions that drive success for our clients.</p>
+            </Col>
+
+            <Col md={6} xs={12}>
+              <img src={abtImg} alt="about-img" />
+            </Col>
+          </Row>
+     
+      </Container>
+    </section>
+
+    <section className='vision-section section-padding'>
+      <Container>
+        <div className='title-gap text-center align-items-center'>
+        <img src={vIcn}/>
+        <h2>Vision & Mission</h2>
+        <p>Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.</p>
+        <p>Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.</p>
+        </div>
+      </Container>
+
+    </section>
+
+    <section className='exist-section section-padding'>
+      <Container>
+        <div className='title-gap text-center align-items-center'>
+        <img src={wWe}/>
+        <h2>Why We Exist?</h2>
+        <p className='w-50'>Many businesses struggle with outdated websites, low visibility, and poor lead conversion. We exist to simplify digital transformation by delivering clean design, reliable technology, and measurable results.</p>
+        </div>
+      </Container>
+
+    </section>
+
+    <section className='diffrent-section section-padding'>
+      <Container>
+        <div className='title-gap text-center align-items-center'>
+        <img src={Diff}/>
+        <h2>What Makes Us Different</h2>
+        <div>
+        <p>Business-first approach, not just design</p>
+        <p>Clean UI/UX aligned with brand goals</p>
+        <p>Performance, SEO & scalability focused</p>
+        <p>Transparent pricing & process</p>
+        <p>Long-term support mindset</p>
+        </div>
+
+        </div>
+      </Container>
+
+    </section>
+    </>
+  )
+}
+
+export default About
