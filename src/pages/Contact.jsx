@@ -11,8 +11,31 @@ import insta from "../assets/images/insta-cp.png"
 import facebook from "../assets/images/fb-cp.png"
 import linkedin from "../assets/images/linkedin-cp.png"
 import twitterX from "../assets/images/x-cp.png"
+import { span } from "motion/react-client";
 
-
+// faq Accordian data
+const accordionData = [
+    {
+        id: 1,
+        title: "Faq quest",
+        content: "We design experiences starting from mobile screens first, ensuring fast performance and seamless scaling.",
+    },
+    {
+        id: 2,
+        title: "Faq quest",
+        content: "Our code follows best security practices to protect applications from vulnerabilities.",
+    },
+    {
+        id: 3,
+        title: "Faq quest",
+        content: "Layouts are optimized for touch interactions and progressively enhanced for larger screens.",
+    },
+    {
+        id: 4,
+        title: "Faq quest",
+        content: "Clean and semantic HTML structures improve search engine visibility and indexing.",
+    },
+];
 
 // use for text fields
 export const TextField = ({
@@ -83,7 +106,7 @@ export const ContactLink = ({ linkImg, linkName, link, linkPath }) => {
                     {link}
                 </a>
             </div>
-            <div className="circle-btn">
+            <div className="circle-btn d-none d-sm-flex">
                 <img src={linkArrow} alt="" />
             </div>
         </div>
@@ -113,9 +136,12 @@ const socialLinkData = [
     },
 ]
 
-
+// main page component
 const Contact = () => {
+    const [activeId, setActiveId] = useState(1);
     const [validated, setValidated] = useState(false);
+
+    // form
     const [form, setForm] = useState({
         fullName: "",
         email: "",
@@ -123,39 +149,50 @@ const Contact = () => {
         subject: "",
     });
 
-    console.log("form data:", form);
+    // console.log("form data:", form);
+    // handle submit for form submit
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        const formElement = event.currentTarget;
+        const formElement = e.currentTarget;
 
         if (formElement.checkValidity() === false) {
-            event.stopPropagation();
+            e.stopPropagation();
         }
 
         setValidated(true);
     };
+
+    // for accordian toggel
+    const toggleAccordion = (id) => {
+        setActiveId(activeId === id ? null : id);
+    };
+
+    const activeItem = accordionData.find(
+        (item) => item.id === activeId
+    );
+
     return (
         <>
             <section className='section-padding contact-section'>
-                <Container className="d-flex flex-column row-gap-5">
-                    <div className="title-content title-gap align-items-center mb-4">
+                <Container className="d-flex flex-column row-gap-5 row-gap-md-5">
+                    {/* title content  */}
+                    <div className="title-content title-gap align-items-center mb-0">
                         <h2 className="text-center m-0">Let’s talk about your journey </h2>
-                        <p className="text-center">
+                        <p className="text-center m-0">
                             We’re here to answer your questions, guide your steps, and help you take control of your money with confidence.
                         </p>
                     </div>
+                    {/* contact form and contact links */}
                     <div className="contact-content-container">
-                        <Row className="justify-content-between row-gap-4">
-                            {/* colf for contact form */}
-                            <Col sm={12} md={12} lg={6}>
+                        <Row className="justify-content-between row-gap-5 row-gap-md-5">
+                            {/* col for contact form */}
+                            <Col xs={{ order: 2, span: 12 }} lg={{ order: 1, span: 6 }}>
                                 <div className="contact-form">
                                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                                        <Row className="mb-3">
+                                        <Row className="mb-3 row-gap-2 row-gap-md-4">
                                             <Col md={6}>
-                                                <Form.Label className="m-0">Full Name</Form.Label>
+                                                <Form.Label className="m-0 d-none">Full Name</Form.Label>
                                                 <TextField
                                                     label="Full name"
                                                     name="fullName"
@@ -175,7 +212,7 @@ const Contact = () => {
                                             </Col>
 
                                             <Col md={6}>
-                                                <Form.Label className="m-0">Email</Form.Label>
+                                                <Form.Label className="m-0 d-none">Email</Form.Label>
                                                 <TextField
                                                     label="Email"
                                                     name="email"
@@ -193,10 +230,9 @@ const Contact = () => {
                                                     </div>
                                                 )}
                                             </Col>
-                                        </Row>
-                                        <Row className="mb-3">
+
                                             <Col md={6}>
-                                                <Form.Label className="m-0">Phone number</Form.Label>
+                                                <Form.Label className="m-0 d-none">Phone number</Form.Label>
                                                 <TextField
                                                     label="Phone number"
                                                     name="phone"
@@ -217,7 +253,7 @@ const Contact = () => {
                                             </Col>
 
                                             <Col md={6}>
-                                                <Form.Label className="m-0">Subject</Form.Label>
+                                                <Form.Label className="m-0 d-none">Subject</Form.Label>
                                                 <TextField
                                                     label="Subject"
                                                     name="subject"
@@ -236,14 +272,12 @@ const Contact = () => {
                                                 )}
                                             </Col>
                                         </Row>
-
                                         <Form.Group className="mb-4">
                                             <Form.Label>Message</Form.Label>
                                             <Form.Control
                                                 required
                                                 as="textarea"
                                                 rows={4}
-                                                placeholder="Tell us more about your project..."
                                             />
                                             <Form.Control.Feedback type="invalid">
                                                 Please enter a message.
@@ -256,29 +290,35 @@ const Contact = () => {
                                     </Form>
                                 </div>
                             </Col>
-                            <Col sm={12} md={12} lg={5}>
+                            {/* col for contact links */}
+                            <Col xs={{ order: 1, span: 12 }} lg={{ order: 2, span: 5 }}>
                                 <div className="contact-links-count d-flex flex-column gap-4">
-                                    <ContactLink
-                                        linkImg={address}
-                                        linkName="Address"
-                                        linkPath="https://maps.app.goo.gl/iNPJVhtMfUWuNWHz8"
-                                        link="G-110, Atlanta Shoppers, Pathardi road, Pathardi Phata, Nashik-422010"
-                                    />
-
-                                    <ContactLink
-                                        linkImg={mail}
-                                        linkName="Send us an email"
-                                        linkPath=""
-                                        link="contact@webique.in"
-                                    />
-
-                                    <ContactLink
-                                        linkImg={phone}
-                                        linkName="Give us a call"
-                                        linkPath=""
-                                        link="9860188007"
-                                    />
-
+                                    <Row className="row-gap-4">
+                                        <Col sm={12}>
+                                            <ContactLink
+                                                linkImg={address}
+                                                linkName="Address"
+                                                linkPath="https://maps.app.goo.gl/iNPJVhtMfUWuNWHz8"
+                                                link="G-110, Atlanta Shoppers, Pathardi road, Pathardi Phata, Nashik-422010"
+                                            />
+                                        </Col>
+                                        <Col sm={12} md={6} lg={12}>
+                                            <ContactLink
+                                                linkImg={mail}
+                                                linkName="Send us an email"
+                                                linkPath=""
+                                                link="contact@webique.in"
+                                            />
+                                        </Col>
+                                        <Col sm={12} md={6} lg={12}>
+                                            <ContactLink
+                                                linkImg={phone}
+                                                linkName="Give us a call"
+                                                linkPath=""
+                                                link="9860188007"
+                                            />
+                                        </Col>
+                                    </Row>
                                     {/* social links */}
                                     <div className="social-links">
                                         <h4 className="mb-1">Follow us on social media</h4>
@@ -287,13 +327,11 @@ const Contact = () => {
                                         <ul className="d-flex gap-3 align-items-center">
                                             {socialLinkData.map((item, i) => {
                                                 return (
-                                                    <>
-                                                        <li>
-                                                            <a href={item.link}>
-                                                                <img src={item.src} alt={item.alt} />
-                                                            </a>
-                                                        </li>
-                                                    </>
+                                                    <li key={i}>
+                                                        <a href={item.link}>
+                                                            <img src={item.src} alt={item.alt} />
+                                                        </a>
+                                                    </li>
                                                 )
                                             })}
                                         </ul>
@@ -302,14 +340,15 @@ const Contact = () => {
                             </Col>
                         </Row>
                     </div>
-                    <div className="map-conatiner">
+                    {/* map section */}
+                    <div className="map-conatiner pb-4 pb-md-0">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4487.666904269915!2d73.7666468!3d19.9537683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd95f5ba76ff57%3A0x44e1830bb9d40a86!2sWebique%20technology!5e1!3m2!1sen!2sin!4v1768369224159!5m2!1sen!2sin"
                             width="100%"
                             height="100%"
                             className="map"
                             loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                 </Container>
@@ -319,3 +358,46 @@ const Contact = () => {
 }
 
 export default Contact
+
+
+// faq 
+{/* faq & accordian */ }
+{/* <div className="faq-container">
+    <Row>
+        <Col sm={12} md={12} lg={6}>
+            <div className="title-content faq-content">
+                <h2>
+                    Frequently asked questions
+                </h2>
+                <p className="w-100">Find quick answers to common questions about using
+                    Fintiq, security, transfers, savings, and more.</p>
+            </div>
+        </Col>
+        <Col sm={12} md={12} lg={6}>
+            <div className="accordion-wrap">
+                {accordionData.map((item) => (
+                    <div
+                        key={item.id}
+                        className={`accordion-item ${activeId === item.id ? "active" : ""
+                            }`}
+                    >
+                        <button
+                            className="accordion-header"
+                            onClick={() => setActiveId(item.id)}
+                        >
+                            <span className="title">{item.title} {item.id}</span>
+                            <span className="icon">
+                                {activeId === item.id ? "−" : "+"}
+                            </span>
+                        </button>
+                        <div className="accordion-content">
+                            <div className="accordion-inner">
+                                <p>{item.content}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </Col>
+    </Row>
+</div> */}

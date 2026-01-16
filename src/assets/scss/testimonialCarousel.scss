@@ -5,31 +5,41 @@
 @import "./variable";
 
 
+
+
 .testimonial-wrap {
   // padding: 0px 0 60px;
   width: 100%;
   position: relative;
 
+  .title-count,
+  .swiper {
+    position: relative;
+    z-index: 2;
+  }
+
   &::before {
     content: "";
     width: 70%;
     position: absolute;
-    height: 100%;
+    height: 1000px;
     background-image: url("/src/assets/images/tback-1.svg");
     background-size: cover;
-    left: 5%;
-    top: 0px;
+    left: 70px;
+    top: -30px;
+    z-index: 1;
   }
 
   &::after {
     content: "";
     width: 70%;
     position: absolute;
-    height: 100%;
+    height: 1000px;
     background-image: url("/src/assets/images/tback-2.svg");
     background-size: cover;
-    right: 5%;
-    top: 0px;
+    right: 70px;
+    top: -30px;
+    z-index: 1;
   }
 
   @media(max-width:1200px) {

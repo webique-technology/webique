@@ -74,7 +74,7 @@ const businessLogo = [
 ];
 
 const WorldwideBusiness = ({ items }) => {
-    const rootRef = useRef(null);
+    const sectionRef = useRef(null);
     const fadeRef = useRef(null);
     const setX = useRef(null);
     const setY = useRef(null);
@@ -82,7 +82,7 @@ const WorldwideBusiness = ({ items }) => {
     const data = items?.length ? items : businessLogo;
 
     useEffect(() => {
-        const el = rootRef.current;
+        const el = sectionRef.current;
         if (!el) return;
 
         setX.current = gsap.quickSetter(el, '--x', 'px');
@@ -94,7 +94,7 @@ const WorldwideBusiness = ({ items }) => {
     }, []);
 
     const handleMove = (e) => {
-        const rect = rootRef.current.getBoundingClientRect();
+        const rect = sectionRef.current.getBoundingClientRect();
         setX.current(e.clientX - rect.left);
         setY.current(e.clientY - rect.top);
 
@@ -106,7 +106,16 @@ const WorldwideBusiness = ({ items }) => {
     };
 
     return (
-        <section className="worldwide-business section-padding">
+        <section
+            ref={sectionRef}
+            className="worldwide-business section-padding"
+            onPointerMove={handleMove}
+            onPointerLeave={handleLeave}
+        >
+            {/* FULL WIDTH CHROME LAYERS */}
+            <div className="chroma-grid-bg" />
+            <div className="chroma-fade" ref={fadeRef} />
+
             <Container>
                 <div className="title-count title-light text-center mb-5">
                     <h2>
@@ -120,28 +129,20 @@ const WorldwideBusiness = ({ items }) => {
                     </p>
                 </div>
 
-                <Row
-                    ref={rootRef}
-                    className="chroma-grid row-gap-4"
-
-                >
+                <Row className="row-gap-4">
                     {data.map((c, i) => (
                         <Col key={i} xs={6} sm={4} md={4} lg={3} xl={2} className="chroma-card">
                             <div
                                 className="chroma-img-wrapper"
-                                onPointerMove={handleMove}
-                                onPointerLeave={handleLeave}
                                 style={{
                                     '--card-border': c.borderColor,
-                                    '--card-gradient': c.gradient
+                                    '--card-gradient': c.gradient,
                                 }}
                             >
                                 <img src={c.image} alt="" />
                             </div>
                         </Col>
                     ))}
-
-                    <div className="chroma-fade" ref={fadeRef} />
                 </Row>
             </Container>
         </section>

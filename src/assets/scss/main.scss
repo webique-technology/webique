@@ -336,10 +336,6 @@
     @media(max-width:768px) {
         .nav-tab-div {
             width: 100% !important;
-
-            .nav-tabs {
-                width: 100%;
-            }
         }
 
         &:before,
@@ -400,6 +396,7 @@
         }
 
         @media(max-width:768px) {
+            width: 100%;
 
             .nav-item {
                 width: 50%;

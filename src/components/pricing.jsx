@@ -86,81 +86,85 @@ const PricingSection = () => {
     const navRefs = useRef({});
     const [isMobile, setIsMobile] = useState(false);
 
-    const updateGhost = () => {
-        const currentTab = navRefs.current[key];
-        if (!currentTab) return;
+    // this code is not wirkin on tab 768 screen and mobile
 
-        const mobile = window.innerWidth <= 576;
-        setIsMobile(mobile);
-
-        setGhostStyle({
-            width: currentTab.offsetWidth,
-            left: mobile ? 0 : currentTab.offsetLeft,
-            top: mobile ? currentTab.offsetTop : 5,
-            height: mobile ? currentTab.offsetHeight : "85%",
-        });
-    };
-
-    useEffect(() => {
-        updateGhost();
-    }, [key]);
-
-    useEffect(() => {
-        window.addEventListener("resize", updateGhost);
-        return () => window.removeEventListener("resize", updateGhost);
-    }, []);
-
-
-    // useEffect(() => {
-    //     const handleResize = () => {
-    //         const currentTab = navRefs.current[key];
-    //         // setIsMobile(window.innerWidth <= 576);
-    //         if (currentTab) {
-    //             setGhostStyle({
-    //                 width: currentTab.offsetWidth,
-    //                 left: currentTab.offsetLeft,
-    //                 top: currentTab.offsetTop,
-    //                 height: "85%",
-    //             });
-    //         }
-    //     };
-
-    //     window.addEventListener("resize", handleResize);
-    //     return () => window.removeEventListener("resize", handleResize);
-    // }, [key]);
-
-
-    // useEffect(() => {
+    // const updateGhost = () => {
     //     const currentTab = navRefs.current[key];
     //     if (!currentTab) return;
-    //     // setIsMobile(576);
-    //     requestAnimationFrame(() => {
-    //         if (isMobile) {
-    //             setGhostStyle({
-    //                 width: currentTab.offsetWidth,
-    //                 left: 0,
-    //                 top: currentTab.offsetTop,
-    //                 height: currentTab.offsetHeight,
-    //             });
-    //         } else {
-    //             setGhostStyle({
-    //                 width: currentTab.offsetWidth,
-    //                 left: currentTab.offsetLeft,
-    //                 top: 5,
-    //                 height: "85%",
-    //             });
-    //         }
-    //     });
-    // }, [key, isMobile]);
 
+    //     const mobile = window.innerWidth <= 768;
+    //     setIsMobile(mobile);
+
+    //     setGhostStyle({
+    //         width: currentTab.offsetWidth,
+    //         left: mobile ? 0 : currentTab.offsetLeft,
+    //         top: mobile ? currentTab.offsetTop : 5,
+    //         height: mobile ? currentTab.offsetHeight : "85%",
+    //     });
+    //     console.log("ghost btn click:", currentTab.offsetWidth);
+
+    // };
 
     // useEffect(() => {
-    //     const currentTab = navRefs.current[key];
-    //     if (currentTab) {
-    //         const { offsetLeft, offsetWidth } = currentTab;
-    //         setGhostStyle({ width: offsetWidth, left: offsetLeft });
-    //     }
+    //     updateGhost();
     // }, [key]);
+
+    // useEffect(() => {
+    //     window.addEventListener("resize", updateGhost);
+    //     return () => window.removeEventListener("resize", updateGhost);
+    // }, []);
+
+    
+    useEffect(() => {
+        const handleResize = () => {
+            const currentTab = navRefs.current[key];
+            // setIsMobile(window.innerWidth <= 576);
+            if (currentTab) {
+                setGhostStyle({
+                    width: currentTab.offsetWidth,
+                    left: currentTab.offsetLeft,
+                    top: currentTab.offsetTop,
+                    height: "85%",
+                });
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [key]);
+
+
+    useEffect(() => {
+        const currentTab = navRefs.current[key];
+        if (!currentTab) return;
+        // setIsMobile(576);
+        requestAnimationFrame(() => {
+            if (isMobile) {
+                setGhostStyle({
+                    width: currentTab.offsetWidth,
+                    left: 0,
+                    top: currentTab.offsetTop,
+                    height: currentTab.offsetHeight,
+                });
+            } else {
+                setGhostStyle({
+                    width: currentTab.offsetWidth,
+                    left: currentTab.offsetLeft,
+                    top: 5,
+                    height: "85%",
+                });
+            }
+        });
+    }, [key, isMobile]);
+
+
+    useEffect(() => {
+        const currentTab = navRefs.current[key];
+        if (currentTab) {
+            const { offsetLeft, offsetWidth } = currentTab;
+            setGhostStyle({ width: offsetWidth, left: offsetLeft });
+        }
+    }, [key]);
 
     return (
         <section className="section-padding pricing-section">

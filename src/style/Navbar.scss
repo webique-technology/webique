@@ -14,6 +14,18 @@
 
 .nav {
     background: linear-gradient(102.85deg, rgba(153, 229, 255, 0.38) 20.09%, rgba(241, 250, 254, 0.477673) 34.54%, rgba(235, 248, 253, 0.45132) 30.09%, rgba(255, 255, 255, 0.54) 65.01%, rgba(255, 240, 201, 0.66) 95.61%);
+
+    @media(max-width:768px) {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+}
+
+.nav-img {
+    @media(max-width:768px) {
+        width: 90% !important;
+    }
 }
 
 .navbar-ul {
@@ -26,7 +38,7 @@
     li {
         border-right: 1px solid #D5D5D5D1;
 
-        &:nth-child(6) {
+        &:nth-child(5) {
             border: 0;
         }
     }

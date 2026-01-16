@@ -24,7 +24,7 @@ const TopBar = () => (
                     </p>
                 </Col>
                 <Col sm={3} className="d-none d-sm-flex justify-content-end top-bar-link">
-                    <Link className="m-0 me-4" to={"#"}>Blog</Link>
+                    <Link className="m-0 me-4" to={"#"}>About</Link>
                     <Link className="m-0" to={"#"}>Career</Link>
                 </Col>
             </Row>
@@ -36,7 +36,7 @@ const TopBar = () => (
 
 const navLinks = [
     { name: "Home", link: "/", dropdown: [] },
-    { name: "About Us", link: "/about", dropdown: [] },
+    // { name: "About Us", link: "/about", dropdown: [] },
     {
         name: "Services",
         link: "#",
@@ -122,7 +122,7 @@ const NavigationBar = () => {
                     <div className="d-flex align-items-center justify-content-between">
                         {/* nav logo */}
                         <div>
-                            <img src={webiqueLogo} alt="Webique" className="img-fluid" />
+                            <img src={webiqueLogo} alt="Webique" className="img-fluid nav-img" />
                         </div>
 
                         {/* DESKTOP NAV */}

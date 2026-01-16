@@ -200,7 +200,7 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                                                                         >
                                                                             <Link
                                                                                 to={`/${sub.dropLink}`}
-                                                                                 onClick={handleLinkClick}
+                                                                                onClick={handleLinkClick}
                                                                             >
                                                                                 {sub.dropName}
                                                                             </Link>
@@ -214,9 +214,8 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                                             )
                                         })
                                     )}
-                                    <li className="d-block d-sm-none"><Link to={"blog"}>Blog</Link></li>
+                                    <li className="d-block d-sm-none"><Link to={"about"}>About Us</Link></li>
                                     <li className="d-block d-sm-none"><Link to={"career"}>Career</Link></li>
-                                    <li className="d-block d-lg-none"><Link to={"contact"}>Contact</Link></li>
                                     {/* for desltop view to show only services sub links */}
                                     <li className="d-none d-lg-block">
                                         <Link
@@ -238,7 +237,7 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                                                     <li key={i}>
                                                         <Link
                                                             to={`/${sub.dropLink}`}
-                                                             onClick={handleLinkClick}
+                                                            onClick={handleLinkClick}
                                                         >
                                                             {sub.dropName}
                                                         </Link>

@@ -68,10 +68,8 @@ const TestimonialCarousel = () => {
     <section className="testimonial-wrap section-padding">
       <Container>
         <div className="title-count text-center mb-0 mb-sm-4">
-          <h2 className="">Testimonials</h2>
+          <h2 className="mb-5">Testimonials</h2>
         </div>
-      </Container>
-      <Container>
         <Swiper
           modules={[Autoplay, Scrollbar]}
           slidesPerView={3}

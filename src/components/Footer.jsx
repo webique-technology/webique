@@ -10,16 +10,17 @@ import linkd from "../assets/images/linkdin.svg"
 import ButtonCall from './ButtonLink'
 const Footer = () => {
   return (
-    <div>
-      <section className='footer-section'>
-        <img src={FutarLog} alt='waqbiue log' className='futar-lgo' />
+    <footer>
+      {/* fotter main section */}
+      <div className='footer-section'>
+        <img src={FutarLog} alt='waqbiue log' className='futar-lgo d-none d-md-block' />
         <Container>
           <Row className="align-items-center justify-content-center d-flex flex-column">
             <h2>Have An <span>Idea ?</span><br /> Let’s work together!</h2>
             <p>Ready to bring your vision to life? Our design Unlimited service makes it easy to get started with high-quality, unlimited design support.</p>
 
             <ButtonCall
-              className='call-btn'
+              className='hero-btn my-4'
               phone="+919876543210"
               label="Book a Call"
               icon={phoneIcon}
@@ -43,25 +44,31 @@ const Footer = () => {
             </ul>
           </Row>
         </Container>
-      </section>
-      <section className='footer-bottom'>
+      </div>
+      {/* footer bottom section  */}
+      <div className='footer-bottom'>
         <Container>
-          <Row className='d-flex justify-content-between'>
-            <Col md={12} lg={4}  xs={12}>
+          <Row className='d-flex justify-content-between row-gap-3'>
+            <Col xs={{ order: 3, span: 12 }} md={12} lg={{ order: 1, span: 4 }} className=' d-flex align-items-center justify-content-center justify-content-lg-start'>
               <p>© {new Date().getFullYear()} All Rights Reserved</p>
             </Col>
-            <Col md={12} lg={4} >
+            <Col xs={{ order: 0, span: 12 }} md={12} lg={{ order: 1, span: 4 }} className=' d-flex align-items-center justify-content-center'>
               <ul className='footer-icns'>
                 <li><a href='#'><img src={Insta} /></a></li>
                 <li><a href='#'><img src={fbk} /></a></li>
                 <li><a href='#'><img src={linkd} /></a></li>
               </ul>
             </Col>
-            <Col md={12} lg={4}  className='company-link'><p>Designed and developed by <a href='https://www.webique.in/' target='_blank'>Webique Technology</a></p></Col>
+            <Col xs={{ order: 4, span: 12 }} md={12} lg={{ order: 1, span: 4 }} className='company-link d-flex align-items-center justify-content-center justify-content-lg-end'>
+              <p className='text-center text-lg-end'>
+                Designed and developed by
+                <a href='https://www.webique.in/' target='_blank'>Webique Technology</a>
+              </p>
+            </Col>
           </Row>
         </Container>
-      </section>
-    </div>
+      </div>
+    </footer>
   )
 }
 

@@ -21,6 +21,7 @@ import devImg from "../assets/images/pricing-developemnt.png";
 import deployImg from "../assets/images/pricing-deploy.png";
 import PriceTable from '../components/shared/PriceTable'
 import { CurveArrow } from '../components/shared/gsapAnimation'
+
 const Pricing = () => {
 
     const [activeId, setActiveId] = useState(1); // first accordion active
@@ -129,13 +130,16 @@ const Pricing = () => {
 
             </section>
 
-            
-            <section className='pricing-table-section' >
+
+            <section className='pricing-table-section section-padding' >
                 <Container className='arrow-container'>
-                    <CurveArrow className="pricing-arrow"/>
+                    <div className="pricing-arrow">
+                        <CurveArrow />
+                    </div>
                     <PriceTable />
                 </Container>
             </section>
+
             <section className='section-padding'>
                 <Container>
                     <Row className='g-3 g-md-0'>
@@ -179,11 +183,9 @@ const Pricing = () => {
                     </Row>
                 </Container>
             </section>
-            <section className='website-process section-padding'>
+            <section className='website-process section-padding footer-gradient-pb'>
                 <Container className='title-gap align-items-center'>
                     <h2>from concept to launch  our website process</h2>
-
-
                     <Row className='g-3'>
                         <Col lg={3} md={3} sm={12} className="">
                             <div className='process-card'>
@@ -222,13 +224,6 @@ const Pricing = () => {
                             </div>
                         </Col>
                     </Row>
-
-
-
-
-
-
-
                 </Container>
 
             </section>

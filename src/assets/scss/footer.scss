@@ -2,31 +2,64 @@
 @import "./common";
 @import "./variable";
 
-section.footer-section {
+footer {
+  // background: $black;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 38%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 63%, rgba(0, 0, 0, 1) 0%);
+  @include flex(column, center, center, 0);
+  position: relative;
+  z-index: 1;
+  @media(max-width:1598px){
+    background: none;
+  }
+}
+
+.footer-section {
   padding: 100px 0 38px 0;
   min-height: 300px;
-  background: $black;
-  width: 100%;
+  // background: $white;
+  background-image: url("../images/webiqui_footer.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 1598px;
   position: relative;
   text-align: center;
   color: $white;
+  z-index: 2;
 
-  &::before {
-    content: "";
+  // use for the footer background img responsive
+  @media(max-width:1598px) {
+    width: 100%;
+  }
+
+  @media(max-width:768px){
+    padding-top: 40px;
+    background: $black;
+  }
+
+  // overflow: hidden;
+  // clip-path: ellipse(100% 100% at 50% 80%);
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+
+  &::after {
+    background-image: url("../images/footer-map.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 903px;
+    height: 375px;
+    content: " ";
     position: absolute;
-    width: 265px;
-    height: 200px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(to top, rgb(255 255 255), rgb(255 255 255));
-    top: -95px;
-    mask: url('../images/footer-circles.svg') no-repeat center / contain;
-    -webkit-mask: url('../images/footer-circles.svg') no-repeat center / contain;
+    transform: translate(-50%, -40%);
 
-    @media(max-width:768px) {
-      width: 200px;
-      height: 200px;
-      top: -97px;
+    @media(max-width:992px) {
+      width: 100%;
+      height: 365px;
+      transform: translate(-50%, -30%);
     }
   }
 
@@ -52,36 +85,6 @@ section.footer-section {
     }
   }
 
-  a.call-btn {
-    background: $dark-blue;
-    width: 230px;
-    align-items: center;
-    display: flex;
-    border-radius: 60px;
-    text-align: left;
-    padding: 13px 10px 13px 32px;
-    margin: 25px 0 25px 0;
-    font-size: 24px;
-    font-weight: 500;
-    color: $white;
-    line-height: 30px;
-    text-decoration: none;
-    justify-content: space-between;
-
-    img.btn-icon {
-      width: 40px;
-      height: 40px;
-      background: $white;
-      border-radius: 50%;
-      padding: 7px;
-    }
-
-    @media (max-width: 767px) {
-      margin: 15px 0 30px 0;
-    }
-
-  }
-
   p {
     width: 807px;
     margin: 0;
@@ -99,14 +102,6 @@ section.footer-section {
       -webkit-background-clip: text;
       -webkit-text-stroke: 4px transparent;
       color: #232D2D;
-
-      // border-image-source: linear-gradient(94.69deg, #F89500 3.75%, #DEC5FF 13.94%, #6BB2FF 80.47%);
-    }
-
-    @media(max-width:576px) {
-      font-size: $font-size-fourth;
-      line-height: 50px;
-      margin: 0 0 30px;
     }
 
     @media(max-width:992px) {
@@ -114,25 +109,21 @@ section.footer-section {
       line-height: 50px;
       margin: 0 0 30px;
     }
-
-
   }
 
   img.futar-lgo {
     position: absolute;
     left: 50%;
-    top: 1%;
+    top: 25px;
     transform: translate(-50%, -50%);
 
-    @media(max-width:576px) {
-      width: 29%;
+    @media(max-width:768px) {
+      width: 121px;
     }
-
-
   }
 }
 
-section.footer-bottom {
+.footer-bottom {
   width: 100%;
   padding: 15px;
   background: $black;
@@ -142,34 +133,14 @@ section.footer-bottom {
   a {
     color: $futer-txt-btm;
     margin-bottom: 0;
-
-    @media(max-width:768px) {
-      text-align: center;
-    }
-  }
-
-  .company-link {
-    text-align: right;
   }
 
   ul.footer-icns {
+    position: relative;
+    z-index: 5;
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    gap: 36px;
-    justify-content: center;
-
-    @media(max-width:768px) {
-      padding: 20px 0;
-    }
+    @include flex(row, center, center, 36px);
   }
-
-  @media(max-width:768px) {
-    text-align: center;
-  }
-
-  @media(max-width:992px) {}
-
-  @media(max-width:1024px) {}
 }

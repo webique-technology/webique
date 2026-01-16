@@ -445,8 +445,8 @@ const PriceTable = () => {
   ======================= */
 
   return (
-    <section className="pricing-section">
-      <Container className="arrow-container">
+    <div className="pricing-section">
+      <Container className="">
         <Tab.Container
           activeKey={activeType}
           onSelect={(k) => {
@@ -457,26 +457,26 @@ const PriceTable = () => {
           {/* ---------- TABS ---------- */}
           <div className="nav-tab-div position-relative mb-3 mb-md-5">
             <Row className="align-items-center justify-content-center ">
-            <Nav className="nav-tabs justify-content-center position-relative">
-              <motion.div
-                className="nav-ghost-div position-absolute"
-                animate={ghostStyle}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              />
+              <Nav className="nav-tabs justify-content-center position-relative">
+                <motion.div
+                  className="nav-ghost-div position-absolute"
+                  animate={ghostStyle}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
 
-              {PricingPgaeData.map((item) => (
-                <Nav.Item key={item.pricingType}>
-                  <Nav.Link
-                    eventKey={item.pricingType}
-                    ref={(el) => (navRefs.current[item.pricingType] = el)}
-                  >
-                    {item.pricingType === "wordpress"
-                      ? "CMS"
-                      : "Custom Website"}
-                  </Nav.Link>
-                </Nav.Item>
-              ))}
-            </Nav>
+                {PricingPgaeData.map((item) => (
+                  <Nav.Item key={item.pricingType}>
+                    <Nav.Link
+                      eventKey={item.pricingType}
+                      ref={(el) => (navRefs.current[item.pricingType] = el)}
+                    >
+                      {item.pricingType === "wordpress"
+                        ? "CMS"
+                        : "Custom Website"}
+                    </Nav.Link>
+                  </Nav.Item>
+                ))}
+              </Nav>
             </Row>
           </div>
 
@@ -497,8 +497,8 @@ const PriceTable = () => {
                   </button>
 
                   <div>
-                    <h4>{plans[activePlan].pricingPackName}</h4>
-                    <p>{plans[activePlan].packPrice}</p>
+                    <h4 className="m-0">{plans[activePlan].pricingPackName}</h4>
+                    <p className="m-0">{plans[activePlan].packPrice}</p>
                   </div>
 
                   <button
@@ -555,9 +555,9 @@ const PriceTable = () => {
                         <td className="mobile-only">
                           {renderValue(
                             row[
-                              ["starter", "business", "enterprise", "ecommerce"][
-                                activePlan
-                              ]
+                            ["starter", "business", "enterprise", "ecommerce"][
+                            activePlan
+                            ]
                             ]
                           )}
                         </td>
@@ -570,7 +570,7 @@ const PriceTable = () => {
           </Tab.Content>
         </Tab.Container>
       </Container>
-    </section>
+    </div>
   );
 };
 
