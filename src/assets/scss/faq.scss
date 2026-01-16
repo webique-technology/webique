@@ -1,0 +1,62 @@
+@import "./mixin";
+@import "./common";
+@import "./variable";
+
+
+
+
+.faq-section{
+  background: #DEC5FF8C;
+  background: linear-gradient(51deg, rgba(222, 197, 255, 0.54) 0%, rgba(255, 255, 255, 0.82) 35%, rgba(173, 240, 255, 0.25) 67%, rgba(255, 255, 255, 0.71) 100%);
+  }
+.custom-accordion {
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+
+    .accordion-item {
+        background: #f5f5f5;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .accordion-header {
+            button {
+                background-color: $dark-blue;
+                color: $trinery;
+                outline: none;
+                font-size: 20px;
+                padding: 20px 18px;
+                box-shadow: none;
+
+                
+            }
+
+            .collapsed{
+                    background-color: $trinery;
+                    color: $dark-blue;
+                }
+        }
+    }
+
+    /* Remove default caret */
+    .accordion-button::after {
+        display: none;
+    }
+
+    /* Add PLUS icon */
+    .accordion-button::before {
+        content: "+";
+        font-size: 22px;
+        font-weight: 500;
+        margin-left: auto;
+        transition: transform 0.3s ease;
+        position: absolute;
+        right: 0;
+        right: 20px;
+    }
+
+    /* When accordion is OPEN → show MINUS */
+    .accordion-button:not(.collapsed)::before {
+        content: "−";
+    }
+}

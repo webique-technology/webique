@@ -138,7 +138,7 @@ const Pricing = () => {
             </section>
             <section className='section-padding'>
                 <Container>
-                    <Row className='g-3 g-md-0'>
+                    <Row className='g-3 g-md-0 justify-content-between'>
                         <Col md={6} lg={6} sm={12} className='title-gap'>
                             <h2>What You Get With Every Plan</h2>
                             <p>The following features are common across all our plans. Every package includes responsive mobile-first design, SEO-optimized structure, secure coding practices, ongoing post-launch support, and clear, consistent communication.</p>
@@ -149,7 +149,7 @@ const Pricing = () => {
 
 
                         {/* ACCORDION COLUMN */}
-                        <Col md={6} lg={6} sm={12}>
+                        <Col md={5} lg={5} sm={12}>
                             <div className="accordion-wrap">
                                 {accordionData.map((item) => (
                                     <div

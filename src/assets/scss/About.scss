@@ -1,19 +1,113 @@
 @import "./mixin";
 @import "./common";
 @import "./variable";
+// .vision-section {
+//   position: relative;
+//   background: url('../images/vision-backgound.png');
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   color: $white;
+//   overflow: hidden;
+
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     inset: 0;
+//     background:linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
+//     z-index: 1;
+//   }
+
+//   > * {
+//     position: relative;
+//     z-index: 2;
+//   }
+// }
+
+// .exist-section {
+//   position: relative;
+//   background: url('../images/exist-background.png');
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   color: $white;
+//   overflow: hidden;
+
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     inset: 0;
+//     background:linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
+//     z-index: 1;
+//   }
+
+//   > * {
+//     position: relative;
+//     z-index: 2;
+//   }
+// }
+
+
+// .diffrent-section {
+//   position: relative;
+//   background: url('../images/diffrent-background.png');
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   color: $white;
+//   overflow: hidden;
+
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     inset: 0;
+//     background:linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
+//     z-index: 1;
+//   }
+
+//   > * {
+//     position: relative;
+//     z-index: 2;
+//   }
+// }
+
+.section-padding {
+  padding: 100px 0;
+}
+
+/* STACK WRAPPER */
+.stack-wrapper {
+  position: relative;
+  height:50vh;
+  overflow: hidden;
+}
+
+/* STACK CARDS */
+.stack-card {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  position: sticky;
+  top: 0;
+}
+
+/* Your existing background styles can remain */
+
+
+/* ================= VISION ================= */
 .vision-section {
   position: relative;
-  background: url('../images/vision-backgound.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: $white;
-  overflow: hidden;
+  background: url("../images/vision-backgound.png") center/cover no-repeat;
+  color: #fff;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background:linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.7)
+    );
     z-index: 1;
   }
 
@@ -23,19 +117,22 @@
   }
 }
 
+/* ================= EXIST ================= */
 .exist-section {
   position: relative;
-  background: url('../images/exist-background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: $white;
-  overflow: hidden;
+  background: url("../images/exist-background.png") center/cover no-repeat;
+  color: #fff;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background:linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.7)
+    );
     z-index: 1;
   }
 
@@ -45,20 +142,22 @@
   }
 }
 
-
+/* ================= DIFFERENT ================= */
 .diffrent-section {
   position: relative;
-  background: url('../images/diffrent-background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: $white;
-  overflow: hidden;
+  background: url("../images/diffrent-background.png") center/cover no-repeat;
+  color: #fff;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background:linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.7)
+    );
     z-index: 1;
   }
 
@@ -104,3 +203,15 @@ h2{margin-bottom: 70px;}
 
 
 
+.stack-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.stack-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}

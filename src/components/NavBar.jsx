@@ -24,6 +24,7 @@ const TopBar = () => (
                     </p>
                 </Col>
                 <Col sm={3} className="d-none d-sm-flex justify-content-end top-bar-link">
+                    <Link className="m-0 me-4" to='/faq'>Faq</Link>
                     <Link className="m-0 me-4" to={"#"}>Blog</Link>
                     <Link className="m-0" to={"#"}>Career</Link>
                 </Col>
