@@ -13,6 +13,7 @@ import NavigationBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
+import Portfolio from "./pages/portfolio";
 
 
 const AppRoutes = () => {
@@ -31,6 +32,7 @@ const AppRoutes = () => {
                 <Route path="/security-maintenance-support" element={<Maintenance />} />
                 <Route path="/branding-support" element={<BrandingSupport />} />
                 <Route path="/pricing" element={<Pricing />} />
+                <Route path="/portfolio" element={<Portfolio />} /> 
 
 
                 {/* error */}
