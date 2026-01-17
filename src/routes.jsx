@@ -17,6 +17,7 @@ import About from "./pages/About";
 import Faq from "./pages/Faq";
 import FAQSection from "./pages/FAQSection";
 import Portfolio from "./pages/portfolio";
+import Career from "./pages/Career";
 
 
 const AppRoutes = () => {
@@ -48,6 +49,7 @@ const AppRoutes = () => {
                 <Route path="/branding-support" element={<BrandingSupport />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/portfolio" element={<Portfolio />} /> 
+                <Route path="/careers" element={<Career/>} /> 
 
 
                 {/* error */}

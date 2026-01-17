@@ -456,7 +456,8 @@ const PriceTable = () => {
         >
           {/* ---------- TABS ---------- */}
           <div className="nav-tab-div position-relative mb-3 mb-md-5">
-            <Row className="align-items-center justify-content-center ">
+            <Row className="align-items-center justify-content-center text-center title-gap">
+              <h2 className="mb-4">Website Development Pricing Plans</h2>
               <Nav className="nav-tabs justify-content-center position-relative">
                 <motion.div
                   className="nav-ghost-div position-absolute"

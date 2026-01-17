@@ -21,47 +21,68 @@ import devImg from "../assets/images/pricing-developemnt.png";
 import deployImg from "../assets/images/pricing-deploy.png";
 import PriceTable from '../components/shared/PriceTable'
 import { CurveArrow } from '../components/shared/gsapAnimation'
+import FAQAccordionComp from '../components/shared/FAQAccordionComp'
+import PriceAccordion from '../components/shared/PriceAccordion'
 
 const Pricing = () => {
 
-    const [activeId, setActiveId] = useState(1); // first accordion active
 
-    const accordionData = [
+
+   const accordionData = [
         {
-            id: 1,
             title: "Mobile-first Design",
-            content:
-                "We design experiences starting from mobile screens first, ensuring fast performance and seamless scaling.",
+            para: "We design experiences starting from mobile screens first, ensuring fast performance and seamless scaling.",
+            listTitle: "",
+            lists: [],
             image: img1,
         },
         {
-            id: 2,
             title: "Secure Code",
-            content: "Our code follows best security practices to protect applications from vulnerabilities.",
+            para: "Our code follows best security practices to protect applications from vulnerabilities.",
+            listTitle: "",
+            lists: [],
             image: img2,
         },
         {
-            id: 3,
             title: "Mobile-first Design",
-            content:
-                "Layouts are optimized for touch interactions and progressively enhanced for larger screens.",
+            para: "Layouts are optimized for touch interactions and progressively enhanced for larger screens.",
+            listTitle: "",
+            lists: [],
             image: img3,
         },
         {
-            id: 4,
             title: "SEO-friendly Structure",
-            content:
-                "Clean and semantic HTML structures improve search engine visibility and indexing.",
+            para: "Clean and semantic HTML structures improve search engine visibility and indexing.",
+            listTitle: "",
+            lists: [],
             image: img4,
         },
-        {
-            id: 5,
+         {
             title: "Clear Communication",
-            content:
-                "Transparent communication ensures clarity, alignment, and timely delivery.",
-            image: img5,
+            para: "Transparent communication ensures clarity, alignment, and timely delivery.",
+            listTitle: "",
+            lists: [],
+            image: img1,
         },
-    ];
+    ]
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     const processData = [
         {
@@ -92,14 +113,7 @@ const Pricing = () => {
 
 
 
-    const toggleAccordion = (id) => {
-        setActiveId(activeId === id ? null : id);
-    };
 
-
-    const activeItem = accordionData.find(
-        (item) => item.id === activeId
-    );
 
 
     return (
@@ -143,43 +157,13 @@ const Pricing = () => {
             <section className='section-padding'>
                 <Container>
                     <Row className='g-3 g-md-0 justify-content-between'>
-                        <Col md={6} lg={6} sm={12} className='title-gap'>
-                            <h2>What You Get With Every Plan</h2>
-                            <p>The following features are common across all our plans. Every package includes responsive mobile-first design, SEO-optimized structure, secure coding practices, ongoing post-launch support, and clear, consistent communication.</p>
-                            <div className="accordion-image">
-                                <img src={activeItem?.image} alt={activeItem?.title} className="accordion-img" />
-                            </div>
-                        </Col>
 
+                        <div className="accordion-wrap">
+                            {/* <PriceAccordion data={accordionData}/> */}
 
-                        {/* ACCORDION COLUMN */}
-                        <Col md={5} lg={5} sm={12}>
-                            <div className="accordion-wrap">
-                                {accordionData.map((item) => (
-                                    <div
-                                        key={item.id}
-                                        className={`accordion-item ${activeId === item.id ? "active" : ""
-                                            }`}
-                                    >
-                                        <button
-                                            className="accordion-header"
-                                            onClick={() => setActiveId(item.id)}
-                                        >
-                                            <span className="title">{item.title}</span>
-                                            <span className="icon">
-                                                {activeId === item.id ? "−" : "+"}
-                                            </span>
-                                        </button>
+                            <FAQAccordionComp data={accordionData} showImage={true}/>
+                        </div>
 
-                                        <div className="accordion-content">
-                                            <div className="accordion-inner">
-                                                <p>{item.content}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </Col>
                     </Row>
                 </Container>
             </section>

@@ -1,0 +1,107 @@
+@import "./mixin";
+@import "./common";
+@import "./variable";
+
+
+.career-head{
+    h1{font-size: $font-size-primery; font-weight: 700; line-height: $h1-lh; margin: 0 0 15px;
+    span{color: $dark-blue;}
+    }
+}
+
+.careers-outer{
+    display: flex; gap: 40px; flex-direction: column;
+
+    .career-inner{ display: flex; gap: 15px; flex-direction: column;
+    ul{display: flex; gap:36px;}
+    .txt-sm{
+    color: #4E5255;
+    font-size: 16px; margin: 0;
+    font-weight: 400;
+}
+.txt-email{font-size: 25px; color: $dark-blue; font-style: italic; margin: 0;}
+}
+
+}
+
+.accordion-header-wrap{ display: flex; flex-direction: column;
+    p{font-size: 12px; margin: 0; line-height: 0;}
+    h4{font-size: 20px; font-weight: 500; margin: 0; margin: 21px 0;}
+    ul{display: flex; gap: 50px; font-size: 15px; color: #888888;}
+}
+
+.career-accordion {
+  .accordion-item {
+    border: none;
+    border-bottom: 1px solid #e5e7eb; // thin line under each item
+  }
+
+  .accordion-header {
+    background: transparent;
+  }
+
+  .accordion-button {
+    background: transparent !important;
+    box-shadow: none;
+    padding: 1.25rem 0;
+    align-items: flex-start;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:not(.collapsed) {
+      background: transparent;
+      color: inherit;
+    }
+
+    &::after {
+      filter: brightness(0.4); // optional: darken arrow
+    }
+  }
+
+  .accordion-header-content {
+    width: 100%;
+  }
+
+  .role-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: #7AB8C4;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    line-height: 0;
+  }
+
+  .role-title {
+    font-size: $font-size-seventh; color: $dark-blue;
+    font-weight: 600; margin: 20px 0;
+
+  }
+
+  .role-meta {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      font-size: 14px;
+      color: #6c757d;
+      position: relative;
+
+      &:not(:last-child)::after {
+        content: "•";
+        position: absolute;
+        right: -10px;
+        color: #adb5bd;
+      }
+    }
+  }
+
+  .accordion-body {
+    padding: 1rem 0 1.5rem;
+  }
+}
+
