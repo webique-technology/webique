@@ -1,0 +1,324 @@
+@import "../assets/scss/variable";
+@import "../assets/scss/mixin";
+
+.contact-section {
+    .title-content {
+        p {
+            width: 50%;
+
+            @media(max-width:992px) {
+                width: 75%;
+            }
+
+            @media(max-width:768px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .contact-content-container {
+        .contact-form {
+            background: $primary;
+            padding: 63px 44px 62px;
+            border-radius: $radius-xxl;
+
+            @media(max-width:768px) {
+                padding: 35px;
+            }
+
+            @media(max-width:576px) {
+                padding: 20px;
+            }
+        }
+
+        .contact-form label {
+            color: $white;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .contact-form .form-control {
+            background-color: transparent;
+            border: 1px solid $white;
+            border-radius: $radius-l-2;
+            color: $white;
+            padding: $font-size-base075;
+        }
+
+        .contact-form .form-control::placeholder {
+            color: #cfd8e3;
+        }
+
+        .contact-form .form-control:focus {
+            background-color: transparent;
+            color: $white;
+            border-color: $white;
+            box-shadow: none;
+        }
+
+        .send-btn {
+            width: 100%;
+            background-color: $white;
+            color: #000;
+            border-radius: $radius-m;
+            padding: $font-size-base075;
+            font-weight: 600;
+            border: 1px solid $white;
+
+
+            &:hover {
+                background: $primary;
+                color: $white;
+                border: 1px solid $white;
+            }
+        }
+    }
+
+    .faq-container {
+        .faq-content {
+            width: 75%;
+            @media(max-width:1400px){
+                width: 100%;
+            }
+        }
+    }
+
+    .map-conatiner {
+        width: 100%;
+        height: 456px;
+        border-radius: $radius-m;
+
+        .map {
+            border-radius: $radius-m;
+        }
+        @media(max-width:992px){
+            height: 300px;
+        }
+    }
+}
+
+// for floting text fields
+.mui-textfield {
+    position: relative;
+    width: 100%;
+    margin-top: 16px;
+    font-family: Arial, sans-serif;
+}
+
+/* Input */
+.mui-textfield input {
+    width: 100%;
+    padding: 16px 14px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: $white;
+    z-index: 1;
+    position: relative;
+}
+
+/* Label */
+.mui-textfield label {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    color: #cfd8e3;
+    font-size: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.2s ease;
+    background-color: #0b3a6f;
+    padding: 0 6px;
+}
+
+/* Fieldset (outline) */
+.mui-textfield fieldset {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid $white;
+    border-radius: $radius-m;
+    pointer-events: none;
+    padding: 0 8px;
+}
+
+/* Legend */
+.mui-textfield legend {
+    font-size: $font-size-base075;
+    padding: 0 6px;
+    visibility: hidden;
+}
+
+/* Focus & Filled State */
+.mui-textfield input:focus+label,
+.mui-textfield input:not(:placeholder-shown)+label {
+    top: -6px;
+    font-size: $font-size-base075;
+    color: $white;
+}
+
+/* Show legend when active */
+.mui-textfield input:focus~fieldset legend,
+.mui-textfield input:not(:placeholder-shown)~fieldset legend {
+    visibility: visible;
+}
+
+/* Focus border */
+.mui-textfield input:focus~fieldset {
+    border-color: $white;
+}
+
+// =============================================
+// float text
+.float-field {
+    position: relative;
+    width: 100%;
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+    cursor: text;
+}
+
+/* Input */
+.float-field input {
+    width: 100%;
+    padding: 16px 14px;
+    font-size: 16px;
+    border: 1px solid $white;
+    border-radius: $radius-m;
+    // outline: 1px;
+    background: $primary !important;
+    color: $white;
+    position: relative;
+    z-index: 2;
+}
+
+/* Outline */
+.float-field fieldset {
+    position: absolute;
+    inset: 0;
+    border: 1px solid $white;
+    border-radius: $radius-m;
+    pointer-events: none;
+}
+
+/* Label (inside input) */
+.float-field label {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: #cfd8e3;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    background-color: $primary;
+    padding: 0 6px;
+    z-index: 3;
+}
+
+/* Active = float top-left */
+.float-field.active label {
+    top: -9px;
+    left: 14px;
+    transform: none;
+    font-size: $font-size-base075;
+    color: $white;
+}
+
+/* Legend */
+.float-field legend {
+    font-size: $font-size-base075;
+    padding: 0 6px;
+    visibility: hidden;
+}
+
+/* Show legend when active */
+.float-field.active legend {
+    visibility: visible;
+}
+
+/* Focus border */
+.float-field.active fieldset {
+    border-color: $white;
+}
+
+// .float-field.is-invalid input {
+//     border-color: #dc3545;
+// }
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.contact-links-count {
+    .cl-count {
+        position: relative;
+        padding: 24px;
+        border: 1px solid $black;
+        border-radius: $radius-xxl;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        align-items: center;
+
+        h5 {
+            font-weight: 600;
+        }
+
+        a {
+            color: $link-black;
+
+            &:hover {
+                color: $link-blue;
+            }
+        }
+
+        .circle-btn {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            border: 1px solid $black;
+            width: fit-content;
+            border-radius: $radius-round;
+            width: 36px;
+            height: 36px;
+            @include flex(row, center, center, 0);
+
+            img {
+                width: 16px;
+            }
+        }
+        @media(max-width:576px){
+            padding: 15px;
+        }
+    }
+
+    .social-links {
+        width: 80%;
+
+        h4 {
+            font-size: $font-size-base3;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+        }
+
+        @media(max-width:768px) {
+            width: 100%;
+        }
+    }
+}

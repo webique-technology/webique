@@ -11,7 +11,7 @@
         font-weight: 400;
         margin: 0 0 10px;
 
-       
+
 
 
 
@@ -20,10 +20,10 @@
             line-height: 100%;
         }
 
-         @media(max-width:767px) {
+        @media(max-width:767px) {
             font-size: $font-size-fourth;
             line-height: 100%;
-            margin:0 0 10px;
+            margin: 0 0 10px;
         }
 
         span {
@@ -31,7 +31,7 @@
             font-weight: 700;
             line-height: 100%;
 
-            
+
 
 
 
@@ -46,7 +46,7 @@
         }
     }
 
-  
+
 }
 
 .what-we-deliver {
@@ -82,7 +82,8 @@
                 }
 
                 @media(max-width:767px) {
-                    width: 30px; height: 30px;
+                    width: 30px;
+                    height: 30px;
                 }
             }
 
@@ -130,8 +131,8 @@
     // }
 }
 
-.Portfolio-inner {
-  
+.portfolio-inner {
+
     background: #F2F3EF;
     position: relative;
 
@@ -152,78 +153,54 @@
             height: auto;
         }
 
- 
+
         .portfolio-backgrd {
-  height: auto;
-    width: 100%;
-    min-height: 200px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    color: #fff;
-    padding: 0px 30px 10px 30px;
-    background: linear-gradient(180.21deg, rgba(0, 0, 0, 0) 0.18%, #000000 58.67%);
+            height: auto;
+            width: 100%;
+            min-height: 200px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: #fff;
+            padding: 0px 30px 10px 30px;
+            background: linear-gradient(180.21deg, rgba(0, 0, 0, 0) 0.18%, #000000 58.67%);
 
-        h5 {
-            font-size: $font-size-base3;
-    margin: 0 0 10px;
-    color: #fff;
+            h5 {
+                font-size: $font-size-base3;
+                margin: 0 0 10px;
+                color: #fff;
 
-            span {
-                font-size: $font-size-base2;
-                font-weight: 300;
+                span {
+                    font-size: $font-size-base2;
+                    font-weight: 300;
+
+                    @media(max-width:1024px) {
+                        font-size: $font-size-base05;
+                    }
+
+                    @media(max-width:767px) {
+                        font-size: $font-size-seventh;
+                    }
+                }
 
                 @media(max-width:1024px) {
-                font-size: $font-size-base05;
-            }
+                    font-size: $font-size-base2;
+                }
 
-            @media(max-width:767px) {
-                font-size: $font-size-seventh;
-            }
-            }
-
-             @media(max-width:1024px) {
-                font-size: $font-size-base2;
-            }
-
-            @media(max-width:767px) {
-                font-size: $font-size-sixith;
+                @media(max-width:767px) {
+                    font-size: $font-size-sixith;
+                }
             }
         }
-    }
+
         @media(max-width:768px) {
             margin: 0 0 20px;
         }
     }
 
-
-
-    &::before {
-        content: "";
-        width: 50%;
-        position: absolute;
-        height: 100%;
-        background-image: url("/src/assets/images/portfolio-blur-1.svg");
-        background-size: cover;
-        left: 0%;
-        bottom: 0;
-        z-index: 70;
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 100%;
-        background: radial-gradient(circle at top right, rgb(222 197 255 / 26%), rgb(222 197 255 / 28%), transparent 64%);
-        pointer-events: none;
-        z-index: 70;
-    }
 
     @media(max-width:767px) {
         margin: 0 0;
@@ -311,12 +288,17 @@ section.uiux-design-service {
     min-height: 300px;
     background: linear-gradient(98.98deg, rgb(191 144 253 / 28%) 0.37%, rgb(240 255 254 / 65%) 50.1%, rgb(255 218 173 / 67%) 99.83%);
 
-    .figma-title{display: flex; gap:15px}
-    img.figma-text {
-    width: 34px;
+    .figma-title {
+        display: flex;
+        gap: 15px
+    }
 
- 
-}
+    img.figma-text {
+        width: 34px;
+
+
+    }
+
     .design-slider-wrapper {
         position: relative;
     }
@@ -328,17 +310,18 @@ section.uiux-design-service {
     }
 
     @media (max-width: 767px) {
-  .service-slide {
-    width: 80%;
-  }
-}
+        .service-slide {
+            width: 80%;
+        }
+    }
 
-/* Tablet & above: reset */
-@media (min-width: 768px) {
-  .service-slide {
-    width: auto;
-  }
-}
+    /* Tablet & above: reset */
+    @media (min-width: 768px) {
+        .service-slide {
+            width: auto;
+        }
+    }
+
     .service-card {
         background: $white;
         color: $black;

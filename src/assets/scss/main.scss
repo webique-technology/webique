@@ -336,10 +336,6 @@
     @media(max-width:768px) {
         .nav-tab-div {
             width: 100% !important;
-
-            .nav-tabs {
-                width: 100%;
-            }
         }
 
         &:before,
@@ -389,17 +385,18 @@
                 }
 
                 @media(max-width:420px) {
-                    padding: 5px 35px;
+                    padding: 5px 45px;
                     font-size: $font-size-base0875;
                 }
 
                 @media(max-width:330px) {
-                    padding: 5px 15px;
+                    // padding: 5px 15px;
                 }
             }
         }
 
         @media(max-width:768px) {
+            width: 100%;
 
             .nav-item {
                 width: 50%;
@@ -497,7 +494,7 @@
             flex-wrap: nowrap;
             overflow-x: auto !important;
             scroll-snap-type: x mandatory !important;
-            gap: 1rem !important;
+            gap: 0.5rem !important;
             padding-top: 50px;
             padding-bottom: 20px;
 

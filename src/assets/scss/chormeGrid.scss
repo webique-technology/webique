@@ -3,25 +3,30 @@
 @import "./variable";
 
 .worldwide-business {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+
+  --x: 50%;
+  --y: 50%;
+  --r: 420px;
 }
+
 
 // grid bg
-.chroma-grid {
-    position: relative;
-    --x: 0px;
-    --y: 0px;
-    --r: 420px;
+.chroma-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 
-    background:
-        radial-gradient(circle var(--r) at var(--x) var(--y),
-            rgba(255, 255, 255, 0.18),
-            transparent 75%);
-
-    padding: 20px 0;
-    z-index: 2;
+  background:
+    radial-gradient(
+      circle var(--r) at var(--x) var(--y),
+      rgba(255, 255, 255, 0.18),
+      transparent 75%
+    );
 }
+
 
 
 // overlay
@@ -40,16 +45,20 @@
 
 
 .chroma-fade {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
 
-    background:
-        radial-gradient(420px circle at var(--x) var(--y),
-            rgba(255, 255, 255, 0.12),
-            transparent 70%);
+  background:
+    radial-gradient(
+      420px circle at var(--x) var(--y),
+      rgba(255, 255, 255, 0.12),
+      transparent 70%
+    );
 }
+
 
 // card
 .chroma-card {
@@ -71,6 +80,12 @@
     background: transparent;
     transition: border-color 0.3s ease;
     overflow: hidden;
+
+    @media(max-width:768px) {
+        img {
+            width: 120px !important;
+        }
+    }
 }
 
 
@@ -106,6 +121,10 @@
     position: relative;
     z-index: 3;
 }
+
+
+
+
 
 
 /*

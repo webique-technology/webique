@@ -12,10 +12,10 @@ $text: #1B1D1E99;
 $blue: #0F6DDA;
 $dark-blue: #083A74;
 $gray-text: #D5D5D5D1;
-$black:#000000;
-$white:#ffffff;
-$tbl-borders:#DBDBDB;
-$gray-text-2:#BABABA;
+$black: #000000;
+$white: #ffffff;
+$tbl-borders: #DBDBDB;
+$gray-text-2: #BABABA;
 $black: #000000;
 $white: #ffffff;
 // Grayscale
@@ -27,6 +27,7 @@ $testi-border: #EDEDED;
 $futer-txt-btm: #9E9E9E;
 $inner-testi-background: #F2F3EF;
 $link-blue: #1A85F8;
+$link-black: #0C0C0C;
 
 // Theme color
 $theme-primary: $primary;
@@ -59,6 +60,7 @@ $font-size-base1: 1rem; //16px
 $font-size-base05: 1.125rem; //18px
 $font-size-base2: 1.25rem; // 20px
 $font-size-base3: 1.5rem; //24px
+$font-size-base8: 3rem; //48px
 
 // line height
 $h1-lh: 96px;
@@ -72,7 +74,9 @@ $base-lh-1: 30px;
 $base-lh-2: 28px;
 $medium-lh: 24px;
 $small-lh: 20px;
+$small-lh-2: 22px;
 $x-small-lh: 18px;
+$medium-lh-2: 26px;
 
 // radius
 $radius-round: 50%;
@@ -80,6 +84,8 @@ $radius-pill: 50PX;
 $radius-xxl: 25px;
 $radius-xl: 20px;
 $radius-l: 16px;
+$radius-l-2: 14px;
 $radius-m: 10px;
 $radius-s: 8px;
 $radius-xs: 4px;
+$radius-30: 30px;

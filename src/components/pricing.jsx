@@ -40,7 +40,7 @@ const priceData = [
     },
     // custome
     {
-        servicePriceType: "custom",
+        servicePriceType: "custome-website",
         priceTypeData: [
             {
                 priceType: "Basic",
@@ -86,88 +86,92 @@ const PricingSection = () => {
     const navRefs = useRef({});
     const [isMobile, setIsMobile] = useState(false);
 
-    const updateGhost = () => {
-        const currentTab = navRefs.current[key];
-        if (!currentTab) return;
+    // this code is not wirkin on tab 768 screen and mobile
 
-        const mobile = window.innerWidth <= 576;
-        setIsMobile(mobile);
-
-        setGhostStyle({
-            width: currentTab.offsetWidth,
-            left: mobile ? 0 : currentTab.offsetLeft,
-            top: mobile ? currentTab.offsetTop : 5,
-            height: mobile ? currentTab.offsetHeight : "85%",
-        });
-    };
-
-    useEffect(() => {
-        updateGhost();
-    }, [key]);
-
-    useEffect(() => {
-        window.addEventListener("resize", updateGhost);
-        return () => window.removeEventListener("resize", updateGhost);
-    }, []);
-
-
-    // useEffect(() => {
-    //     const handleResize = () => {
-    //         const currentTab = navRefs.current[key];
-    //         // setIsMobile(window.innerWidth <= 576);
-    //         if (currentTab) {
-    //             setGhostStyle({
-    //                 width: currentTab.offsetWidth,
-    //                 left: currentTab.offsetLeft,
-    //                 top: currentTab.offsetTop,
-    //                 height: "85%",
-    //             });
-    //         }
-    //     };
-
-    //     window.addEventListener("resize", handleResize);
-    //     return () => window.removeEventListener("resize", handleResize);
-    // }, [key]);
-
-
-    // useEffect(() => {
+    // const updateGhost = () => {
     //     const currentTab = navRefs.current[key];
     //     if (!currentTab) return;
-    //     // setIsMobile(576);
-    //     requestAnimationFrame(() => {
-    //         if (isMobile) {
-    //             setGhostStyle({
-    //                 width: currentTab.offsetWidth,
-    //                 left: 0,
-    //                 top: currentTab.offsetTop,
-    //                 height: currentTab.offsetHeight,
-    //             });
-    //         } else {
-    //             setGhostStyle({
-    //                 width: currentTab.offsetWidth,
-    //                 left: currentTab.offsetLeft,
-    //                 top: 5,
-    //                 height: "85%",
-    //             });
-    //         }
-    //     });
-    // }, [key, isMobile]);
 
+    //     const mobile = window.innerWidth <= 768;
+    //     setIsMobile(mobile);
+
+    //     setGhostStyle({
+    //         width: currentTab.offsetWidth,
+    //         left: mobile ? 0 : currentTab.offsetLeft,
+    //         top: mobile ? currentTab.offsetTop : 5,
+    //         height: mobile ? currentTab.offsetHeight : "85%",
+    //     });
+    //     console.log("ghost btn click:", currentTab.offsetWidth);
+
+    // };
 
     // useEffect(() => {
-    //     const currentTab = navRefs.current[key];
-    //     if (currentTab) {
-    //         const { offsetLeft, offsetWidth } = currentTab;
-    //         setGhostStyle({ width: offsetWidth, left: offsetLeft });
-    //     }
+    //     updateGhost();
     // }, [key]);
+
+    // useEffect(() => {
+    //     window.addEventListener("resize", updateGhost);
+    //     return () => window.removeEventListener("resize", updateGhost);
+    // }, []);
+
+    
+    useEffect(() => {
+        const handleResize = () => {
+            const currentTab = navRefs.current[key];
+            // setIsMobile(window.innerWidth <= 576);
+            if (currentTab) {
+                setGhostStyle({
+                    width: currentTab.offsetWidth,
+                    left: currentTab.offsetLeft,
+                    top: currentTab.offsetTop,
+                    height: "85%",
+                });
+            }
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [key]);
+
+
+    useEffect(() => {
+        const currentTab = navRefs.current[key];
+        if (!currentTab) return;
+        // setIsMobile(576);
+        requestAnimationFrame(() => {
+            if (isMobile) {
+                setGhostStyle({
+                    width: currentTab.offsetWidth,
+                    left: 0,
+                    top: currentTab.offsetTop,
+                    height: currentTab.offsetHeight,
+                });
+            } else {
+                setGhostStyle({
+                    width: currentTab.offsetWidth,
+                    left: currentTab.offsetLeft,
+                    top: 5,
+                    height: "85%",
+                });
+            }
+        });
+    }, [key, isMobile]);
+
+
+    useEffect(() => {
+        const currentTab = navRefs.current[key];
+        if (currentTab) {
+            const { offsetLeft, offsetWidth } = currentTab;
+            setGhostStyle({ width: offsetWidth, left: offsetLeft });
+        }
+    }, [key]);
 
     return (
         <section className="section-padding pricing-section">
             <Container>
                 <div className="title-content title-gap align-items-center mb-4">
-                    <h2>Our Affordable Web Design & Development Pricing</h2>
-                    <p className="text-center">
+                    <h2 className="text-center">Our Affordable Web Design & Development Pricing</h2>
+                    <p className="text-start text-md-center">
                         Our goal is to make web design affordable for startups, small businesses, and big companies. We help them grow online from the start. Because of our honest work and happy clients, we have received thousands of kind words from around the world.
                     </p>
                 </div>
@@ -199,8 +203,8 @@ const PricingSection = () => {
                                 </Nav.Item>
                                 <Nav.Item>
                                     <Nav.Link
-                                        ref={(el) => (navRefs.current["custom"] = el)}
-                                        eventKey="custom"
+                                        ref={(el) => (navRefs.current["custome-website"] = el)}
+                                        eventKey="custome-website"
                                     >
                                         <span>Custom Website</span>
                                     </Nav.Link>

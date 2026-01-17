@@ -2,7 +2,10 @@
 @import "./mixin";
 
 
-.container-relative{position: relative;}
+.container-relative {
+    position: relative;
+}
+
 h1 {
     font-weight: 700;
     font-size: $font-size-third;
@@ -116,7 +119,12 @@ a {
     text-decoration: none;
 }
 
-ul{margin: 0; padding: 0; list-style: none;}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .scroll-h4 {
     font-size: $font-size-fifth;
     font-weight: 700;
@@ -125,4 +133,89 @@ ul{margin: 0; padding: 0; list-style: none;}
 
 .dashed-border {
     border-bottom: 1px dashed $gray-text;
+}
+
+.title-content {
+    position: relative;
+    z-index: 4;
+}
+
+.hero-btn {
+    padding: 12px 12px 12px 20px;
+    font-size: 24px;
+    // line-height: 30px;
+    font-weight: 500;
+    @include flex(row, center, center, 10px);
+    border-radius: $radius-pill;
+    width: fit-content;
+    background: $primary;
+    color: $light;
+    border: none;
+    transition: .5s all ease-in;
+    text-decoration: none;
+
+    img {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        border-radius: 50%;
+        transition: .5s all ease-in;
+        background: $light;
+    }
+
+    &:hover {
+        background-color: #000000;
+        transition: .5s all ease-in;
+    }
+
+    &:hover img {
+        transform: rotate(45deg);
+        transition: .5s all ease-in;
+    }
+
+    @media(max-width:992px) {
+        padding: 6px 6px 6px 18px;
+        font-size: $font-size-base2;
+        gap: 12px;
+        border-radius: 60PX;
+    }
+
+    @media(max-width:768px) {
+        padding: 6px 6px 6px 18px;
+        font-size: $font-size-base1;
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+// ufe for fopter align with other page top sections
+.footer-gradient-pb {
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 70%;
+        position: absolute;
+        height: 1000px;
+        background-image: url("/src/assets/images/tback-1.svg");
+        background-size: cover;
+        left: 70px;
+        top: -30px;
+        z-index: 1;
+    }
+
+    &::after {
+        content: "";
+        width: 70%;
+        position: absolute;
+        height: 1000px;
+        background-image: url("/src/assets/images/tback-2.svg");
+        background-size: cover;
+        right: 70px;
+        top: -30px;
+        z-index: 1;
+    }
 }

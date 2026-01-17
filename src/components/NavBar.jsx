@@ -26,6 +26,7 @@ const TopBar = () => (
                 <Col sm={3} className="d-none d-sm-flex justify-content-end top-bar-link">
                     <Link className="m-0 me-4" to='/faq'>Faq</Link>
                     <Link className="m-0 me-4" to={"#"}>Blog</Link>
+                    <Link className="m-0 me-4" to={"#"}>About</Link>
                     <Link className="m-0" to={"#"}>Career</Link>
                 </Col>
             </Row>
@@ -37,7 +38,7 @@ const TopBar = () => (
 
 const navLinks = [
     { name: "Home", link: "/", dropdown: [] },
-    { name: "About Us", link: "/about", dropdown: [] },
+    // { name: "About Us", link: "/about", dropdown: [] },
     {
         name: "Services",
         link: "#",
@@ -78,6 +79,7 @@ const navLinks = [
     },
     { name: "Pricing", link: "/pricing", dropdown: [] },
     { name: "Portfolio", link: "/portfolio", dropdown: [] },
+    { name: "Contact", link: "/contact", dropdown: [] },
 ];
 
 /* ---------------- navbar ---------------- */
@@ -122,7 +124,7 @@ const NavigationBar = () => {
                     <div className="d-flex align-items-center justify-content-between">
                         {/* nav logo */}
                         <div>
-                            <img src={webiqueLogo} alt="Webique" className="img-fluid" />
+                            <img src={webiqueLogo} alt="Webique" className="img-fluid nav-img" />
                         </div>
 
                         {/* DESKTOP NAV */}
@@ -202,7 +204,7 @@ const NavigationBar = () => {
                         {/* RIGHT ACTIONS */}
                         <div className="d-flex justify-content-end gap-3">
                             <div className="d-none d-lg-block">
-                                <button className="hero-btn">
+                                <button className="nav-btn">
                                     <span>Contact</span>
                                     <img src={arrowOne} alt="arrow" />
                                 </button>

@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
+import { Container } from "react-bootstrap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "../../assets/scss/chormeGrid.scss"
 
-gsap.registerPlugin(DrawSVGPlugin);
+gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
 
 
@@ -123,4 +126,6 @@ export const CloseButton = () => {
         </svg>
     );
 }
+
+
 

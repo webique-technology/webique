@@ -15,11 +15,11 @@ import { gsap } from "gsap";
 import arrowOne from "../assets/images/arrow-one.svg";
 
 // images
-import imgOne from "../assets/images/template-1.png";
+import imgOne from "../assets/images/tocken-web.png";
 import imgTwo from "../assets/images/savita-masale-web.png";
 import imgThree from "../assets/images/ideal-corporation-web.png";
-import imgFour from "../assets/images/neelkanth-web.jpeg";
-import imgFive from "../assets/images/template-5.png";
+import imgFour from "../assets/images/neelkantha-web.png";
+import imgFive from "../assets/images/unicorn-web.png";
 import { CurveArrow } from "./shared/gsapAnimation";
 import { Container } from "react-bootstrap";
 

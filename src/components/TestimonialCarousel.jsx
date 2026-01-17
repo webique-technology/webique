@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Scrollbar } from "swiper/modules";
+import { Container } from "react-bootstrap";
 
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -13,11 +14,12 @@ import img2 from "../assets/images/user2.jpg";
 import img3 from "../assets/images/user3.jpg";
 import img4 from "../assets/images/user1.jpg";
 import img5 from "../assets/images/user2.jpg";
-import { Container } from "react-bootstrap";
+
+import placeholderImg from "../assets/images/placeholder-img.png"
 
 const testimonials = [
   {
-    img: img1,
+    img: placeholderImg,
     name: "Swapnil Araj",
     designation: "Unicorns Hospital",
     text:
@@ -25,7 +27,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    img: img2,
+    img: placeholderImg,
     name: "Sarah Johnson",
     designation: "Unicorns Hospital",
     text:
@@ -33,7 +35,7 @@ const testimonials = [
     rating: 4,
   },
   {
-    img: img3,
+    img: placeholderImg,
     name: "Vipin Parve",
     designation: "KGTS Tech",
     text:
@@ -41,7 +43,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    img: img4,
+    img: placeholderImg,
     name: "Atul Parve",
     designation: "KGTS Tech",
     text:
@@ -49,7 +51,7 @@ const testimonials = [
     rating: 4,
   },
   {
-    img: img5,
+    img: placeholderImg,
     name: "Rohit Sharma",
     designation: "KGTS Tech",
     text:
@@ -61,77 +63,61 @@ const testimonials = [
 
 
 const TestimonialCarousel = () => {
-    const scrollbarRef = useRef(null);
+  const scrollbarRef = useRef(null);
   return (
-    <section className="testimonial-wrap">
-    <Container>
-        <div className="title-count text-center mb-5">
-            <h2>Testimonials</h2>
+    <section className="testimonial-wrap section-padding">
+      <Container>
+        <div className="title-count text-center mb-0 mb-sm-4">
+          <h2 className="mb-5">Testimonials</h2>
         </div>
-    </Container>
-    <Container>
-      <Swiper
-        modules={[Autoplay, Scrollbar]}
-        slidesPerView={3}
-        spaceBetween={30}
-        centeredSlides
-        loop
-        autoplay={{
-          delay: 50000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        scrollbar={{
-          el: ".swiper-scrollbar",
-          draggable: true,
-        }}
-        breakpoints={{
-          0: { slidesPerView: 1.2 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-        className="testimonial-swiper"
-      >
-        {testimonials.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="testimonial-card">
-              
-                <p className="review-text">{item.text}</p>
-            <div className="image-testiomnial-wrap">
-            <div className="user-img">
-                <img src={item.img} alt={item.name} />
-                
-              </div>
-            <div className="rating-name">
-                <h4 className="user-name">{item.name}</h4>
-                <h5 className="designation">{item.designation}</h5>
+        <Swiper
+          modules={[Autoplay, Scrollbar]}
+          slidesPerView={3}
+          spaceBetween={30}
+          centeredSlides
+          loop
+          autoplay={{
+            delay: 50000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          scrollbar={{
+            el: ".swiper-scrollbar",
+            draggable: true,
+          }}
+          breakpoints={{
+            0: { slidesPerView: 1.5 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="testimonial-swiper"
+        >
+          {testimonials.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="testimonial-card">
 
-              <div className="rating">
-                {[...Array(5)].map((_, i) => (
-                  <span
-                    key={i}
-                    className={i < item.rating ? "star filled" : "star"}
-                  >
-                    ★
-                  </span>
-                ))}
+                <p className="review-text text-center text-sm-start">{item.text}</p>
+                <div className="image-testiomnial-wrap">
+                  <div className="user-img d-none d-sm-block">
+                    <img src={item.img} alt={item.name} />
+                  </div>
+                  <div className="rating-name text-center text-sm-start">
+                    <h4 className="user-name m-0">{item.name}</h4>
+                    <h5 className="designation">{item.designation}</h5>
+                  </div>
+                </div>
               </div>
-              
-              
-              </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-       {/* SINGLE DRAGGABLE SCROLLBAR */}
-      <div className="horizontal-line">
-        
-      </div>
-        </Container>
-     
- 
+        {/* SINGLE DRAGGABLE SCROLLBAR */}
+        <div className="horizontal-line">
+
+        </div>
+      </Container>
+
+
     </section>
   );
 };
