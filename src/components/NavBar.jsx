@@ -18,7 +18,7 @@ const TopBar = () => (
     <div className="top-bar d-none d-sm-block">
         <Container fluid="xxl">
             <Row>
-                <Col xs={12} sm={9} className="d-flex align-items-center">
+                <Col xs={12} sm={9} className="d-flex align-items-center items-center">
                     <p className="m-0">
                         🎨 Custom Website Design & React Development – Let’s Talk
                     </p>

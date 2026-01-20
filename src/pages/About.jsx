@@ -12,50 +12,12 @@ import Diff from "../assets/images/diffrent.svg";
 import PhiloOne from "../assets/images/lion.png";
 import PhiloTwo from "../assets/images/eagle.png";
 import PhiloThr from "../assets/images/wolf.png";
+import WorldwideBusiness from "../components/WorldwideBusiness";
 
-gsap.registerPlugin(ScrollTrigger);
+
+
 
 const About = () => {
-   const stackRef = useRef(null);
-  const cardsRef = useRef([]);
-
-  useEffect(() => {
-    const cards = cardsRef.current;
-
-    // Initial positions
-    gsap.set(cards, {
-      yPercent: 100,
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-    });
-
-    // First card visible
-    gsap.set(cards[0], { yPercent: 0 });
-
-    // Timeline controls stacking
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: stackRef.current,
-        start: "top top",
-        end: `+=${cards.length * window.innerHeight}`,
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    // Stack cards one by one
-    cards.forEach((card, index) => {
-      if (index === 0) return;
-      tl.to(card, { yPercent: 0, duration: 1 }, index);
-    });
-
-    return () => ScrollTrigger.killAll();
-  }, []);
-
 
 
   return (
@@ -70,98 +32,125 @@ const About = () => {
               <p>                      At Webique Technology, we are committed to empowering businesses with cutting-edge web services to thrive in the digital landscape. With a rich legacy of innovation and a passion for technology, we have been at the forefront of delivering tailor-made solutions that drive success for our clients.</p>
             </Col>
             <Col md={6} xs={12}>
-              <img src={abtImg} alt="about-img" />
+              <img src={abtImg} alt="about-img" className="img-fluid" />
             </Col>
           </Row>
         </Container>
       </section>
 
       {/* ================= STACK SECTIONS ================= */}
-      <div className="stack-wrapper" ref={stackRef}>
-         <section
-          className="vision-section stack-card"
-          ref={(el) => (cardsRef.current[0] = el)}
-        >
-          <Container>
-            <div className="title-gap text-center align-items-center">
-              <img src={vIcn} alt="Vision" />
-              <h2>Vision & Mission</h2>
-              <p>
-                Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.
-              </p>
-              <p>
-                Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.
-              </p>
-            </div>
-          </Container>
-        </section>
+      
 
-        <section
-          className="exist-section stack-card"
-          ref={(el) => (cardsRef.current[1] = el)}
-        >
-          <Container>
-            <div className="title-gap text-center align-items-center">
-              <img src={wWe} alt="Exist" />
-              <h2>Why We Exist?</h2>
-              <p className="w-50 mx-auto">
-                Many businesses struggle with outdated websites, low visibility, and poor lead conversion. We exist to simplify digital transformation by delivering clean design, reliable technology, and measurable results.
-              </p>
-            </div>
-          </Container>
-        </section>
 
-        <section
-          className="diffrent-section stack-card"
-          ref={(el) => (cardsRef.current[2] = el)}
-        >
-          <Container>
-            <div className="title-gap text-center align-items-center">
-              <img src={Diff} alt="Different" />
-              <h2>What Makes Us Different</h2>
-              <p>Business-first approach, not just design</p>
-              <p>Clean UI/UX aligned with brand goals</p>
-              <p>Performance, SEO & scalability focused</p>
-              <p>Transparent pricing & process</p>
-              <p>Long-term support mindset</p>
+
+
+
+
+
+
+
+
+
+
+<div className="custome-stack-section">
+      {/* ===== VISION ===== */}
+<div class="div-container div1">
+      <section className="vision-section ">
+        
+        <Container>
+          <div className="title-gap text-center align-items-center position-relative z-3">
+            <img src={vIcn} alt="Vision" />
+            <h2>Vision & Mission</h2>
+            <p className="col-12 col-lg-9 mx-auto text-center">
+              Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.
+            </p>
+            <p className="col-12 col-lg-9 mx-auto text-center">
+              Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.
+            </p>
+          </div>
+        </Container>
+      </section>
+</div>
+      {/* ===== EXIST ===== */}
+      <div class="div-container div2">
+      <section
+        className="exist-section">
+        <Container>
+          <div className="title-gap text-center align-items-center position-relative z-3">
+            <img src={wWe} alt="Exist" />
+            <h2>Why We Exist?</h2>
+            <p className="col-12 col-lg-9 mx-auto text-center">
+              Many businesses struggle with outdated websites, low online visibility, and poor lead conversion. We exist to simplify digital transformation by delivering clean, user-focused design and reliable, future-ready technology. Our approach is driven by strategy and performance, helping brands build a strong digital presence that generates measurable results and long-term growth.
+            </p>
+          </div>
+        </Container>
+      </section>
+</div>
+      {/* ===== DIFFERENT ===== */}
+      <div class="div-container div3">
+      <section
+        className="diffrent-section">
+        <Container>
+          <div className="title-gap text-center align-items-center position-relative z-3">
+            <img src={Diff} alt="Different" />
+            <div className="aboutt-text">
+            <h2>What Makes Us Different</h2>
             </div>
-          </Container>
-        </section>
+            <p className="col-12 col-lg-9 mx-auto text-center">
+              We follow a business-first approach, focusing on outcomes rather than just visuals. Our clean and intuitive UI/UX is thoughtfully aligned with your brand goals to enhance user engagement. Every solution is built with performance, SEO, and scalability in mind to support long-term growth. We believe in transparent pricing and clear processes, ensuring trust at every step.
+            </p>
+            {/* <p>Business-first approach, not just design</p>
+            <p>Clean UI/UX aligned with brand goals</p>
+            <p>Performance, SEO & scalability focused</p>
+            <p>Transparent pricing & process</p>
+            <p>Long-term support mindset</p> */}
+          </div>
+        </Container>
+      </section>
       </div>
-
+    </div>
 
       {/* ================= PHILOSOPHY ================= */}
       <section className="philosophy-section section-padding">
         <Container>
           <div className="title-gap text-center align-items-center">
             <h2>Our Work Philosophy</h2>
-            <p className="w-70 mx-auto">
+            <p className="col-12 col-md-9 mx-auto text-center mb-5">
               We believe great digital outcomes are achieved through a disciplined approach, strategic focus, and flawless execution There three princliples guide every project we deliver. 
             </p>
           </div>
 
-          <Row>
-            <Col md={4}>
+          <Row className="g-3 g-md-4 tab-card-576">
+            <Col md={4} className="price-card-576">
               <div className="img-box">
-                <img src={PhiloOne} alt="Discipline" />
+                <div className="img-wrap">
+                <img src={PhiloOne} alt="Discipline" className="img-fluid"/>
+                </div>
                 <h2>Discipline</h2>
               </div>
             </Col>
-            <Col md={4}>
+            <Col md={4} className="price-card-576">
               <div className="img-box">
-                <img src={PhiloTwo} alt="Focus" />
+                <div className="img-wrap">
+                <img src={PhiloTwo} alt="Focus" className="img-fluid"/>
+                </div>
                 <h2>Focus</h2>
               </div>
             </Col>
-            <Col md={4}>
+            <Col md={4} className="price-card-576">
               <div className="img-box">
-                <img src={PhiloThr} alt="Execution" />
+                 <div className="img-wrap">
+                <img src={PhiloThr} alt="Execution" className="img-fluid"/>
+                </div>
                 <h2>Execution</h2>
               </div>
             </Col>
           </Row>
         </Container>
       </section>
+      <div className="about-wwb">
+          <WorldwideBusiness/>
+      </div>
     </>
   );
 };

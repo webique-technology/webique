@@ -3,34 +3,87 @@
 @import "./variable";
 
 
-.career-head{
-    h1{font-size: $font-size-primery; font-weight: 700; line-height: $h1-lh; margin: 0 0 15px;
-    span{color: $dark-blue;}
+.career-head {
+  h1 {
+    font-size: $font-size-primery;
+    font-weight: 700;
+    line-height: $h1-lh;
+    margin: 0 0 15px;
+
+    span {
+      color: $dark-blue;
     }
+
+    @media(max-width:768px) {font-size: $font-size-fourth; line-height:$lh-hundred;}
+  }
 }
 
-.careers-outer{
-    display: flex; gap: 40px; flex-direction: column;
+.careers-outer {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
 
-    .career-inner{ display: flex; gap: 15px; flex-direction: column;
-    ul{display: flex; gap:36px;}
-    .txt-sm{
-    color: #4E5255;
-    font-size: 16px; margin: 0;
-    font-weight: 400;
-}
-.txt-email{font-size: 25px; color: $dark-blue; font-style: italic; margin: 0;}
-}
+  .career-inner {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+
+    ul {
+      display: flex;
+      gap: 36px;
+    }
+
+    .txt-sm {
+      color: #4E5255;
+      font-size: 16px;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .txt-email {
+      font-size: 25px;
+      color: $dark-blue;
+      font-style: italic;
+      margin: 0;
+
+      @media(max-width:992px) {font-size: 20px;}
+    }
+  }
 
 }
 
-.accordion-header-wrap{ display: flex; flex-direction: column;
-    p{font-size: 12px; margin: 0; line-height: 0;}
-    h4{font-size: 20px; font-weight: 500; margin: 0; margin: 21px 0;}
-    ul{display: flex; gap: 50px; font-size: 15px; color: #888888;}
+.accordion-header-wrap {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    font-size: 12px;
+    margin: 0;
+    line-height: 0;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    margin: 21px 0;
+  }
+
+  ul {
+    display: flex;
+    gap: 50px;
+    font-size: 15px;
+    color: #888888;
+  }
 }
 
 .career-accordion {
+  .accordion-button {
+    &::after {
+      display: none;
+    }
+  }
+
   .accordion-item {
     border: none;
     border-bottom: 1px solid #e5e7eb; // thin line under each item
@@ -62,20 +115,26 @@
 
   .accordion-header-content {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
   }
 
   .role-tag {
     font-size: 12px;
     font-weight: 600;
-    color: #7AB8C4;
+    color: $career-title;
     margin-bottom: 0;
     text-transform: uppercase;
     line-height: 0;
   }
 
   .role-title {
-    font-size: $font-size-seventh; color: $dark-blue;
-    font-weight: 600; margin: 20px 0;
+    font-size: $font-size-seventh;
+    color: $dark-blue;
+    font-weight: 600;
+    margin: 20px 0;
 
   }
 
@@ -103,5 +162,79 @@
   .accordion-body {
     padding: 1rem 0 1.5rem;
   }
+
+
+
+
+  .custom-arrow {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid $gray-600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .arrow-icon {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid $dark;
+    border-bottom: 2px solid $dark;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+
+  /* Rotate arrow when accordion is open */
+  .accordion-button:not(.collapsed) .arrow-icon {
+    transform: rotate(-135deg);
+  }
+
+
 }
 
+.opening-section-wrap {
+  width: 100%;
+  height: auto;
+  padding: 0 0 120px 0;
+
+.opening-section {
+  width: 100%;
+  min-height: 120px;
+  padding: 70px 0;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px;
+  color: $white;
+
+  background:
+    url('../images/career-background.png') no-repeat left center,
+    linear-gradient(180deg, #083A74 0%, #0F6DDA 100%);
+
+  background-size: auto 100%, cover;
+
+  &::before{content: "";
+    content: "";
+  width: 118px;
+  height: 118px;
+  position: absolute;
+  left: 50px;
+  top: -59px;
+
+  border-radius: 50%;
+  background-color: #ffffff;
+
+  background-image: url('../images/quotes.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;}
+}
+
+
+}

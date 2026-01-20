@@ -27,11 +27,11 @@ const servicesData = [
   },
   {
     id: 2,
-    title: "Promotional & service email layouts",
+    title: "Promotional & service-based email layouts",
   },
   {
     id: 3,
-    title: "Newsletter-style templates",
+    title: "Newsletter-style email templates",
   },
   {
     id: 4,
@@ -63,6 +63,16 @@ const marqData = [
 
 
 
+// •	Brand-consistent layout and visual identity
+// 
+// •	
+// 
+// •	Clean, structured format for better readability
+// 
+// •	
+// 
+// •	
+// 
 
 
 
@@ -73,33 +83,29 @@ const DesignServices = [
   {
     id: 1,
     title: "Brand-consistent layout and visual identity",
-    text: "A trusted platform that ensures stability, security, and consistent performance over time.",
+    text: "We design templates that align seamlessly with your brand guidelines, ensuring consistent colors, typography, and visual language across all email communications.",
   },
   {
     id: 2,
-    title: "Mobile-responsive email-friendly design",
-    text: "Content can be managed and updated easily without coding knowledge.",
+    title: "Mobile-responsive, email-friendly design",
+    text: "Templates are optimized for mobile and desktop viewing, ensuring your emails render correctly and remain user-friendly on all screen sizes.",
   },
   {
     id: 3,
     title: "Clean, structured format for better readability",
-    text: "Thousands of plugins extend functionality while maintaining security and scalability.",
+    text: "Clear layouts, proper spacing, and visual hierarchy make content easy to scan and improve message clarity and engagement.",
   },
    {
     id: 4,
-    title: "Brand-consistent layout and visual identity",
-    text: "A trusted platform that ensures stability, security, and consistent performance over time.",
+    title: "Optimized for major email clients",
+    text: "Designed and tested for compatibility across popular email platforms such as Gmail, Outlook, Apple Mail, and more—ensuring consistent appearance.",
   },
   {
     id: 5,
-    title: "Mobile-responsive email-friendly design",
-    text: "Content can be managed and updated easily without coding knowledge.",
+    title: "Easy-to-edit templates for future use",
+    text: "Reusable designs that allow quick content updates without redesigning the entire email, saving time and effort for future campaigns.",
   },
-  {
-    id: 6,
-    title: "Clean, structured format for better readability",
-    text: "Thousands of plugins extend functionality while maintaining security and scalability.",
-  },
+
 ];
 
 const portfolioData = [
@@ -117,13 +123,16 @@ const portfolioData = [
   },
 ];
 
+
+
+
 const serviceData = [
   {
     id: 1,
-    title: "Design",
-    highlight: "Email",
+    // title: "Design",
+    highlight: "Emailer Template Design",
     subtitle: "(Emailer Template Design)",
-    text: "Professionally crafted emailer templates designed to deliver clear communication, consistent branding, and improved engagement across all email platforms. A well-designed emailer template ensures your message looks professional, readable, and impactful across devices. It strengthens brand identity and improves user response without compromising inbox compatibility."
+    text: "Professionally crafted emailer templates designed to deliver clear communication, consistent branding, and improved engagement across all email platforms. Our designs ensure your emails look polished, perform reliably, and drive meaningful user actions."
   }
 ];
 
@@ -134,29 +143,22 @@ const EmailerTemplate = () => {
   const nextRef = useRef(null);
   return (
     <>
-      <ServicesIntro
-        Data={serviceData}
-        IntroImage={uiImage}
-      />
-
-
-      
-
-
-
+      <ServicesIntro  Data={serviceData}  IntroImage={uiImage} />
 
         <ServiceSlider 
         figmaImg={marImg1} 
-        Title="Why We Design Emailer Templates"
-        data={DesignServices} pText="WordPress is an industry-leading CMS known for long-term reliability, ease of use, and scalability. It offers cost-effective solutions with powerful plugins and an SEO-friendly structure, making it ideal for startups and growing businesses." 
+        Title="Why Choose Our Emailer Template Design?"
+        data={DesignServices} pText="A well-designed emailer template plays a crucial role in capturing attention and conveying your message effectively. Our templates are built to look professional, remain readable across devices, and maintain inbox compatibility—helping strengthen brand identity and improve open rates, click-throughs, and user response." 
         prevRef={prevRef}
         nextRef={nextRef} />
 
         <LogoSlider data={marqData} title="Tools & Technologies We Use" />
     
 
+
+
     
-        <WhatWeDeliver Title="Best suited for"  Data={servicesData} Image={wwd}/>
+        <WhatWeDeliver Title="What We Deliver"  Data={servicesData} Image={wwd}/>
 
         <PortfolioSection Title="Portfolio" Data={portfolioData}/>
 

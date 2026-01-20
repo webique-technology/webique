@@ -486,7 +486,10 @@
         }
     }
 
-    .tab-card-576 {
+    
+}
+
+.tab-card-576 {
         @media(max-width:576px) {
             display: flex !important;
             justify-content: flex-start !important;
@@ -504,4 +507,3 @@
             }
         }
     }
-}

@@ -14,6 +14,11 @@ import LogoSlider from "../../components/LogoSlider";
 import ServiceSlider from '../../components/ServiceSlider';
 import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components/shared/Services';
 
+
+
+
+
+
 const servicesData = [
   {
     id: 1,
@@ -44,37 +49,45 @@ const marqData = [
 ];
 
 
+// 1) 
+// 
+// 2) 
+// 
+// 3) 
+// 
+// 4) 
+// 
+// 5) 
+// 
+
+
 const DesignServices = [
   {
     id: 1,
-    title: "Custom UI & UX Design",
-    text: "Custom UI & UX design creates a unique brand experience aligned with your business goals and user needs. Our tailored approach blends creativity, usability, and consistency to give your website a distinct identity.",
+    title: "Tailor-made architecture aligned with business goals",
+    text: "We design and develop websites from the ground up to match your specific business objectives, workflows, and target audience—ensuring every feature serves a purpose.",
   },
   {
     id: 2,
-    title: "Responsive UI & UX Design",
-    text: "Responsive design ensures a seamless experience across desktops, tablets, and mobile devices. We create flexible, fast-loading layouts that adapt to every screen enhance user engagement across platforms.",
+    title: "High-performance, lightweight, and fast-loading code",
+    text: "Clean, optimized code improves page speed, enhances user experience, and boosts search engine rankings across all devices.",
   },
   {
     id: 3,
-    title: "UI & UX Redesign",
-    text: "Our website redesign services modernize outdated websites by improving user flow  UI & UX redesign. We simplify complex journeys to deliver smooth, engaging experiences that support business growth.",
+    title: "Complete design and functionality freedom",
+    text: "Custom development gives you full control over UI/UX, layouts, animations, and features without template limitations.",
   },
   {
     id: 4,
-    title: "Custom UI & UX Design",
-    text: "Custom UI & UX design creates a unique brand experience aligned with your business goals and user needs. Our tailored approach blends creativity, usability, and consistency to give your website a distinct identity.",
+    title: "Better scalability for future integrations",
+    text: "Built to grow with your business, custom websites easily support future integrations like CRM tools, APIs, payment gateways, and third-party services.",
   },
   {
     id: 5,
-    title: "Responsive UI & UX Design",
-    text: "Responsive design ensures a seamless experience across desktops, tablets, and mobile devices. We create flexible, fast-loading layouts that adapt to every screen enhance user engagement across platforms.",
+    title: "Enhanced security and control over features",
+    text: "With custom-built functionality and controlled code, we reduce security risks and give you greater control over updates, access, and system behavior.",
   },
-  {
-    id: 6,
-    title: "UI & UX Redesign",
-    text: "Our website redesign services modernize outdated websites by improving user flow  UI & UX redesign. We simplify complex journeys to deliver smooth, engaging experiences that support business growth.",
-  },
+
 ];
 
 const portfolioData = [
@@ -120,18 +133,21 @@ const CustomWebsite = () => {
 
 
 
+
+
         <ServiceSlider 
         figmaImg={marImg1} 
-        Title="Our UI & UX Design Services"
-        data={DesignServices} pText="We use Figma as our core design platform to build modern, scalable, and user-centric digital experiences.Its real-time collaboration keeps teams aligned and speeds up decision-making. With structured design systems and precise layouts, we ensure consistency across web and mobile products." 
+        Title="Why We Build Custom Websites"
+        data={DesignServices} pText="We build custom websites to deliver tailored digital experiences that align perfectly with your business goals, brand identity, and user needs. Unlike template-based solutions, custom websites are designed for flexibility, performance, and long-term growth." 
         prevRef={prevRef}
         nextRef={nextRef} />
 
         <LogoSlider data={marqData} title="Tools & Technologies We Use" />
     
 
+
     
-        <WhatWeDeliver Title="What We Deliver"  Data={servicesData} Image={wwd}/>
+        <WhatWeDeliver Title="Best Suited For"  Data={servicesData} Image={wwd}/>
 
         <PortfolioSection Title="Portfolio" Data={portfolioData}/>
 

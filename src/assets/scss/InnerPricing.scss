@@ -158,19 +158,16 @@
     }
 
     .process-bg {
-      background: linear-gradient(179deg, rgba(0, 0, 0, 0) -2.7%, #ffffff 25.25%);
+      background: linear-gradient(360deg, rgba(0, 0, 0, 0) -2.7%, #ffffff 25.25%);
       top: 0;
       bottom: auto;
       padding-bottom: 70px !important;
 
-      @media(max-width:992px) {
-        bottom: 0;
-        top: auto;
-      }
+  
     }
 
     .process-bg-1 {
-      background: linear-gradient(179deg, rgba(0, 0, 0, 0) -2.7%, #ffffff 25.25%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) -2.7%, #ffffff 25.25%);
       bottom: 0;
       padding-top: 70px !important;
     }
@@ -205,7 +202,7 @@
 
 .pricing-table-section {
   background: #DEC5FF8C;
-  background: linear-gradient(51deg, rgba(222, 197, 255, 0.54) 0%, rgba(255, 255, 255, 0.82) 35%, rgba(173, 240, 255, 0.25) 67%, rgba(255, 255, 255, 0.71) 100%);
+  background: linear-gradient(51deg, rgba(233, 216, 255, 0.54) -31%, rgba(255, 255, 255, 0.82) 27%, rgba(173, 240, 255, 0.25) 48%, rgba(255, 255, 255, 0.71) 100%);
 
   .pricing-section {
     background: none;

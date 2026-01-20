@@ -18,6 +18,9 @@ import { useRef } from 'react'
 
 
 
+ 
+ 
+
 
 
 
@@ -32,7 +35,7 @@ const servicesData = [
   },
   {
     id: 3,
-    title: "Blogs, portfolios, and informational websites",
+    title: "Blogs, portfolios, and informational websites ",
   },
   {
     id: 4,
@@ -61,6 +64,16 @@ const marqData = [
 
 
 
+// •	
+// 
+// •	
+// 
+// •	
+// 
+// •	
+// 
+// •	
+// 
 
 
 
@@ -71,33 +84,28 @@ const marqData = [
 const DesignServices = [
   {
     id: 1,
-    title: "Tailor-made architecture aligned with business goals",
-    text: "A trusted platform that ensures stability, security, and consistent performance over time.",
+    title: "Industry-leading CMS with long-term reliability",
+    text: "WordPress is a mature and stable platform that powers a significant portion of the web. Regular updates, strong community support, and proven performance ensure long-term stability, security, and consistent website functionality.",
   },
   {
     id: 2,
-    title: "High-performance, lightweight, and fast-loading code",
-    text: "Content can be managed and updated easily without coding knowledge.",
+    title: "Easy content updates without technical dependency",
+    text: "The intuitive admin dashboard allows teams to update text, images, pages, and blogs without any coding knowledge. This removes technical dependency and enables faster content changes, saving both time and operational costs.",
   },
   {
     id: 3,
-    title: "Complete design and functionality freedom",
-    text: "Thousands of plugins extend functionality while maintaining security and scalability.",
+    title: "Scalable Plugin Ecosystem",
+    text: "With thousands of secure and well-maintained plugins, WordPress can be easily extended to support advanced features such as forms, eCommerce, bookings, analytics, and integrations—while maintaining speed and scalability as your business grows.",
   },
     {
     id: 4,
-    title: "Tailor-made architecture aligned with business goals",
-    text: "A trusted platform that ensures stability, security, and consistent performance over time.",
+    title: "Cost-Effective Solution",
+    text: "Compared to fully custom-built platforms, WordPress significantly reduces development and maintenance costs. It delivers enterprise-level features without the need for heavy custom development, making it an ideal choice for businesses of all sizes.",
   },
   {
     id: 5,
-    title: "High-performance, lightweight, and fast-loading code",
-    text: "Content can be managed and updated easily without coding knowledge.",
-  },
-  {
-    id: 6,
-    title: "Complete design and functionality freedom",
-    text: "Thousands of plugins extend functionality while maintaining security and scalability.",
+    title: "SEO-Friendly Structure",
+    text: "WordPress is built with clean code and SEO best practices in mind. With customizable URLs, fast-loading pages, mobile responsiveness, and powerful SEO plugins, it helps improve search engine rankings and increase online visibility.",
   },
 ];
 
@@ -119,8 +127,8 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    title: "Website",
-    highlight: "WordPress",
+    title: "Solutions",
+    highlight: "CMS Website",
     subtitle: "(WordPress Website Solutions)",
     text: "WordPress is a powerful and flexible CMS used worldwide to build professional, scalable, and easy-to-manage websites. We deliver custom WordPress solutions with optimized plugins, CMS customization, and an SEO-friendly structure for growing businesses."
 
@@ -147,7 +155,7 @@ const WordPress = () => {
 
         <ServiceSlider 
         figmaImg={marImg1} 
-        Title="Why We Build Custom Websites"
+        Title="Why We Use CMS WEBSITES"
         data={DesignServices} 
         pText="WordPress is an industry-leading CMS known for long-term reliability, ease of use, and scalability. It offers cost-effective solutions with powerful plugins and an SEO-friendly structure, making it ideal for startups and growing businesses." 
         prevRef={prevRef}
@@ -155,9 +163,11 @@ const WordPress = () => {
 
         <LogoSlider data={marqData} title="Best Suited For" />
     
+ 
+
 
     
-        <WhatWeDeliver Title="What We Deliver"  Data={servicesData} Image={wwd}/>
+        <WhatWeDeliver Title="Best Suited For"  Data={servicesData} Image={wwd}/>
 
         <PortfolioSection Title="Portfolio" Data={portfolioData}/>
 

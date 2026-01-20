@@ -16,23 +16,6 @@ import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const servicesData = [
   {
     id: 1,
@@ -71,37 +54,29 @@ const marqData = [
 
 
 
+
+
 const DesignServices = [
   {
     id: 1,
     title: "Creates a strong and memorable brand presence",
-    text: "A trusted platform that ensures stability, security, and consistent performance over time.",
+    text: "A well-defined brand identity helps your business stand out, stay recognizable, and leave a lasting impression on your audience.",
   },
   {
     id: 2,
     title: "Ensures consistency across digital platforms",
-    text: "Content can be managed and updated easily without coding knowledge.",
+    text: "Consistent visuals, colors, and messaging across platforms reinforce brand recognition and professionalism.",
   },
   {
     id: 3,
     title: "Enhances brand credibility and professionalism",
-    text: "Thousands of plugins extend functionality while maintaining security and scalability.",
+    text: "A polished and unified brand presentation builds trust and positions your business as reliable and established.",
   },
   {
     id: 4,
-    title: "Creates a strong and memorable brand presence",
-    text: "A trusted platform that ensures stability, security, and consistent performance over time.",
-  },
-  {
-    id: 5,
-    title: "Ensures consistency across digital platforms",
-    text: "Content can be managed and updated easily without coding knowledge.",
-  },
-  {
-    id: 6,
-    title: "Enhances brand credibility and professionalism",
-    text: "Thousands of plugins extend functionality while maintaining security and scalability.",
-  },
+    title: "Supports long-term business growth",
+    text: "Strong branding creates a foundation for marketing, expansion, and customer loyalty as your business scales.",
+  }
 ];
 
 const portfolioData = [
@@ -122,10 +97,10 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    title: "Support",
-    highlight: "Branding",
-    subtitle: "(Branding  &  Logo  Design)",
-    text: "Strategic branding solutions designed to build a strong, consistent, and professional brand identity across all digital touchpoints.A clear and consistent brand identity strengthens trust, recognition, and credibility. Our branding support ensures your business communicates a unified message visually and strategically."
+    // title: "Support",
+    highlight: "Branding Support",
+    // subtitle: "(Branding  &  Logo  Design)",
+    text: "Strategic branding solutions designed to build a strong, consistent, and professional brand identity across all digital touchpoints. We help businesses create a cohesive visual and strategic presence that stands out and builds lasting recognition."
   }
 ];
 
@@ -145,12 +120,14 @@ const BrandingSupport = () => {
 
 
 
+ 
+
 
 
       <ServiceSlider
         figmaImg={marImg1}
-        Title="Why This Service Matters"
-        data={DesignServices} pText="WordPress is an industry-leading CMS known for long-term reliability, ease of use, and scalability. It offers cost-effective solutions with powerful plugins and an SEO-friendly structure, making it ideal for startups and growing businesses."
+        Title="Why Choose Our Branding Support?"
+        data={DesignServices} pText="A clear and consistent brand identity is essential for building trust, recognition, and credibility. Our branding support ensures your business communicates a unified message across websites, digital platforms, and marketing materials—strengthening your overall brand perception."
         prevRef={prevRef}
         nextRef={nextRef} />
 

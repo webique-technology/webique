@@ -170,8 +170,8 @@ const Pricing = () => {
             <section className='website-process section-padding footer-gradient-pb'>
                 <Container className='title-gap align-items-center'>
                     <h2>from concept to launch  our website process</h2>
-                    <Row className='g-3'>
-                        <Col lg={3} md={3} sm={12} className="">
+                    <Row className='g-3 g-md-4 tab-card-576'>
+                        <Col lg={3} md={6} sm={12} className="price-card-576 col-md-4">
                             <div className='process-card'>
                                 <img src={planImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg-1'>
@@ -180,7 +180,7 @@ const Pricing = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={3} md={3} sm={12}>
+                        <Col lg={3} md={6} sm={12} className='price-card-576 col-md-4'>
                             <div className='process-card'>
                                 <img src={designImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg'>
@@ -189,7 +189,7 @@ const Pricing = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={3} md={3} sm={12}>
+                        <Col lg={3} md={6} sm={12} className='price-card-576 col-md-4'>
                             <div className='process-card'>
                                 <img src={devImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg-1'>
@@ -198,7 +198,7 @@ const Pricing = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={3} md={3} sm={12}>
+                        <Col lg={3} md={6} sm={12} className='price-card-576 col-md-4'>
                             <div className='process-card'>
                                 <img src={deployImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg'>

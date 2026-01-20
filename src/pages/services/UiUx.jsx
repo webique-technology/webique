@@ -14,14 +14,20 @@ import LogoSlider from "../../components/LogoSlider";
 import ServiceSlider from '../../components/ServiceSlider';
 import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components/shared/Services';
 import { useRef } from 'react'
+
+
+
+
+
+
 const servicesData = [
   {
     id: 1,
-    title: "Mobile-first Design",
+    title: "Website UI/UX design",
   },
   {
     id: 2,
-    title: "Mobile app UI/UX design",
+    title: "Mobile app UI/UX design (Android & iOS)",
   },
   {
     id: 3,
@@ -29,17 +35,17 @@ const servicesData = [
   },
   {
     id: 4,
-    title: "High-fidelity UI screens",
+    title: "High-fidelity UI screens Interactive prototypes",
 
   },
   {
     id: 5,
-    title: "Interactive prototypes",
+    title: "Design systems & style guides",
 
   },
   {
     id: 6,
-    title: "Design systems & style guides",
+    title: "Interactive prototypes",
   },
 ];
 
@@ -56,13 +62,13 @@ const marqData = [
 const DesignServices = [
   {
     id: 1,
-    title: "Custom UI & UX Design",
+    title: "•	Custom UI & UX Design",
     text: "Custom UI & UX design creates a unique brand experience aligned with your business goals and user needs. Our tailored approach blends creativity, usability, and consistency to give your website a distinct identity.",
   },
   {
     id: 2,
     title: "Responsive UI & UX Design",
-    text: "Responsive design ensures a seamless experience across desktops, tablets, and mobile devices. We create flexible, fast-loading layouts that adapt to every screen enhance user engagement across platforms.",
+    text: "Responsive design ensures a seamless experience across desktops, tablets, and mobile devices. We create flexible, fast-loading layouts that adapt to every screen enhance user engagement across platforms",
   },
   {
     id: 3,
@@ -71,18 +77,8 @@ const DesignServices = [
   },
   {
     id: 4,
-    title: "Custom UI & UX Design",
-    text: "Custom UI & UX design creates a unique brand experience aligned with your business goals and user needs. Our tailored approach blends creativity, usability, and consistency to give your website a distinct identity.",
-  },
-  {
-    id: 5,
-    title: "Responsive UI & UX Design",
-    text: "Responsive design ensures a seamless experience across desktops, tablets, and mobile devices. We create flexible, fast-loading layouts that adapt to every screen enhance user engagement across platforms.",
-  },
-  {
-    id: 6,
-    title: "UI & UX Redesign",
-    text: "Our website redesign services modernize outdated websites by improving user flow  UI & UX redesign. We simplify complex journeys to deliver smooth, engaging experiences that support business growth.",
+    title: "eCommerce UI & UX Design",
+    text: "eCommerce websites need more than visual appeal—they need to convert. We design intuitive, high-performing online stores with smart navigation, fast shopping experiences, and mobile-first layouts that drive results.",
   },
 ];
 
@@ -107,7 +103,7 @@ const serviceData = [
     title: "Design",
     highlight: "UI & UX",
     subtitle: "(Website & Mobile App)",
-    text: "Strategic UI/UX design for websites and mobile apps that balances usability, visual appeal, and business goals—crafted in Figma for precision, collaboration, and scalable, conversion-focused user experiences."
+    text: "Strategic UI/UX design for websites and mobile applications that balances usability, visual appeal, and business goals.Designed in Figma for precision, seamless collaboration, and scalable design systems. Focused on intuitive user journeys that drive engagement, conversions, and long-term growth."
   }
 ];
 
@@ -132,7 +128,7 @@ const UiUx = () => {
         <ServiceSlider 
         figmaImg={marImg1} 
         Title="Our UI & UX Design Services"
-        data={DesignServices} pText="We use Figma as our core design platform to build modern, scalable, and user-centric digital experiences.Its real-time collaboration keeps teams aligned and speeds up decision-making. With structured design systems and precise layouts, we ensure consistency across web and mobile products." 
+        data={DesignServices} pText="We use Figma as our core design platform to build modern, scalable, and user-centric digital experiences. Its real-time collaboration keeps teams aligned and speeds up decision-making. With structured design systems and precise layouts, we ensure consistency across web and mobile products." 
         prevRef={prevRef}
         nextRef={nextRef} />
 

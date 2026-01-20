@@ -194,28 +194,29 @@ ul {
 // ufe for fopter align with other page top sections
 .footer-gradient-pb {
     position: relative;
+    background: linear-gradient(51deg, rgba(233, 216, 255, 0.54) 10%, rgba(255, 255, 255, 0.82) 27%, rgba(173, 240, 255, 0.25) 48%, rgba(255, 255, 255, 0.71) 100%);
 
-    &::before {
-        content: "";
-        width: 70%;
-        position: absolute;
-        height: 1000px;
-        background-image: url("/src/assets/images/tback-1.svg");
-        background-size: cover;
-        left: 70px;
-        top: -30px;
-        z-index: 1;
-    }
+    // &::before {
+    //     content: "";
+    //     width: 70%;
+    //     position: absolute;
+    //     height: 1000px;
+    //     background-image: url("/src/assets/images/tback-1.svg");
+    //     background-size: cover;
+    //     left: 70px;
+    //     top: -30px;
+    //     z-index: 1;
+    // }
 
-    &::after {
-        content: "";
-        width: 70%;
-        position: absolute;
-        height: 1000px;
-        background-image: url("/src/assets/images/tback-2.svg");
-        background-size: cover;
-        right: 70px;
-        top: -30px;
-        z-index: 1;
-    }
+    // &::after {
+    //     content: "";
+    //     width: 70%;
+    //     position: absolute;
+    //     height: 1000px;
+    //     background-image: url("/src/assets/images/tback-2.svg");
+    //     background-size: cover;
+    //     right: 70px;
+    //     top: -30px;
+    //     z-index: 1;
+    // }
 }

@@ -24,11 +24,6 @@ import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components
 
 
 
-
-
-
-
-
 const servicesData = [
   {
     id: 1,
@@ -49,12 +44,12 @@ const servicesData = [
   },
    {
     id: 5,
-    title: "Lead capture & contact forms",
+    title: "Lead capture & contact form setup",
 
   },
      {
     id: 6,
-    title: "WhatsApp, call & CTA integration",
+    title: "•	WhatsApp, call & CTA integrations",
 
   }
 ];
@@ -94,33 +89,24 @@ const DesignServices = [
   {
     id: 1,
     title: "Faster loading websites improve user experience and retention",
-    text: "A trusted platform that ensures stability, security, and consistent performance over time.",
+    text: "Optimized performance reduces bounce rates, improves engagement, and delivers smoother experiences across all devices.",
   },
   {
     id: 2,
     title: "SEO-ready structure increases organic visibility",
-    text: "Content can be managed and updated easily without coding knowledge.",
+    text: "Search-engine-friendly architecture helps your website rank higher, attract relevant traffic, and build long-term visibility.",
   },
   {
     id: 3,
-    title: "Optimized journeys enhance lead conversion",
-    text: "Thousands of plugins extend functionality while maintaining security and scalability.",
+    title: "Optimized user journeys enhance lead conversion",
+    text: "Clear navigation, strategic CTAs, and conversion-focused layouts guide users toward meaningful actions.",
   },
    {
     id: 4,
-    title: "Faster loading websites improve user experience and retention",
-    text: "A trusted platform that ensures stability, security, and consistent performance over time.",
+    title: "Data-driven setup supports long-term growth",
+    text: "Performance and SEO improvements are backed by best practices and analytics-ready setups for continuous optimization.",
   },
-  {
-    id: 5,
-    title: "SEO-ready structure increases organic visibility",
-    text: "Content can be managed and updated easily without coding knowledge.",
-  },
-  {
-    id: 6,
-    title: "Optimized journeys enhance lead conversion",
-    text: "Thousands of plugins extend functionality while maintaining security and scalability.",
-  }
+
 ];
 
 const portfolioData = [
@@ -141,10 +127,10 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    title: "Performance",
-    highlight: "Seo,Lead",
-    subtitle: "(Emailer Template Design)",
-    text: "Professionally crafted emailer templates designed to deliver clear communication, consistent branding, and improved engagement across all email platforms. A well-designed emailer template ensures your message looks professional, readable, and impactful across devices. It strengthens brand identity and improves user response without compromising inbox compatibility."
+    // title: "Performance",
+    highlight: "Performance, SEO & Lead Enablement",
+    // subtitle: "(Emailer Template Design)",
+    text: "Optimized digital solutions designed to enhance website speed, improve search visibility, and enable consistent lead generation—transforming your website into a high-performing business asset."
   }
 ];
 
@@ -166,15 +152,19 @@ const SeoService = () => {
 
 
 
+
+
         <ServiceSlider 
         figmaImg={marImg1} 
-        Title="Why This Service Matters"
-        data={DesignServices} pText="WordPress is an industry-leading CMS known for long-term reliability, ease of use, and scalability. It offers cost-effective solutions with powerful plugins and an SEO-friendly structure, making it ideal for startups and growing businesses." 
+        Title="Why Choose Our eCommerce / WooCommerce Development?"
+        data={DesignServices} pText="A visually appealing website must also be fast, discoverable, and conversion-focused. Our approach combines performance optimization, SEO best practices, and strategic user journeys to ensure your website not only attracts visitors but also converts them into qualified leads." 
         prevRef={prevRef}
         nextRef={nextRef} />
 
         <LogoSlider data={marqData} title="Tools & Technologies We Use" />
     
+
+
 
     
         <WhatWeDeliver Title="What We Deliver"  Data={servicesData} Image={wwd}/>
