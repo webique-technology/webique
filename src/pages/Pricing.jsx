@@ -84,34 +84,6 @@ const Pricing = () => {
 
 
 
-    const processData = [
-        {
-            id: 1,
-            title: "Planning",
-            subtitle: "Understanding business goals, audience & strategy",
-            image: planImg,
-        },
-        {
-            id: 2,
-            title: "Design",
-            subtitle: "UI/UX wireframes, Figma designs & brand identity",
-            image: designImg,
-        },
-        {
-            id: 3,
-            title: "Development",
-            subtitle: "Clean code, responsive layout & performance optimization",
-            image: devImg,
-        },
-        {
-            id: 4,
-            title: "Deploy",
-            subtitle: "Testing, launch, and going live with confidence",
-            image: deployImg,
-        },
-    ];
-
-
 
 
 

@@ -70,7 +70,7 @@
             span {
                 width: 40px;
                 height: 40px;
-                background: $trinery;
+                background: transparent;
                 display: flex;
                 align-items: center;
                 transition: .5s all ease-in;
@@ -78,7 +78,7 @@
                 border-radius: 5px;
 
                 img {
-                    width: 20px;
+                    width: 35px;
                 }
 
                 @media(max-width:767px) {
@@ -278,7 +278,7 @@
         width: 100%;
         display: block;
         margin: auto;
-        max-width: 60px;
+        max-width: 80px;
     }
 
 }

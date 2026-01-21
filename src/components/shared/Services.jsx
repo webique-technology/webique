@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import "../../assets/scss/marqueeSlides.scss"
 import '../../assets/scss/innerServices.scss'
 
-import wdOne from '../../assets/images/check.svg'
+import wdOne from '../../assets/images/arrow-list.svg'
 
 export const ServicesIntro = ({ Data, IntroImage }) => {
     return (

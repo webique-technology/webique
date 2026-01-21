@@ -1,12 +1,12 @@
 import { useRef } from 'react'
 import uiImage from '../../assets/images/uiux.svg'
 import wwd from '../../assets/images/wwd.svg'
-import marImg1 from '../../assets/images/marquee-item-1.svg'
-import marImg2 from '../../assets/images/marquee-item-2.svg'
-import marImg3 from '../../assets/images/marquee-item-3.svg'
-import marImg4 from '../../assets/images/marquee-item-4.svg'
-import marImg5 from '../../assets/images/marquee-item-5.svg'
-import marImg6 from '../../assets/images/marquee-item-6.svg'
+import marImg1 from '../../assets/images/custom-1.png'
+import marImg2 from '../../assets/images/custom-2.png'
+import marImg3 from '../../assets/images/custom-3.png'
+import marImg4 from '../../assets/images/custom-4.png'
+import marImg5 from '../../assets/images/custom-5.png'
+import marImg6 from '../../assets/images/custom-6.png'
 
 import pFo1 from '../../assets/images/portfolio-1.png'
 import pFo2 from '../../assets/images/portfolio-2.png'
@@ -40,12 +40,12 @@ const servicesData = [
 ];
 
 const marqData = [
-  { id: 1, image: marImg1, alt: "figma" },
-  { id: 2, image: marImg2, alt: "xd" },
-  { id: 3, image: marImg3, alt: "ps" },
-  { id: 4, image: marImg4, alt: "ai" },
-  { id: 5, image: marImg5, alt: "coral" },
-  { id: 6, image: marImg6, alt: "ai" },
+  { id: 1, image: marImg1, alt: "react" },
+  { id: 2, image: marImg2, alt: "html5" },
+  { id: 3, image: marImg3, alt: "css3" },
+  { id: 4, image: marImg4, alt: "node" },
+  { id: 5, image: marImg5, alt: "Bootstarp" },
+  { id: 6, image: marImg6, alt: "Github" },
 ];
 
 

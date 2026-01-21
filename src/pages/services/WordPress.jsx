@@ -1,13 +1,14 @@
 
 
-import uiImage from '../../assets/images/wordpress-img.svg'
+import uiImage from '../../assets/images/cms-top-img.svg'
 import wwd from '../../assets/images/wwd.svg'
-import marImg1 from '../../assets/images/marquee-item-1.svg'
-import marImg2 from '../../assets/images/marquee-item-2.svg'
-import marImg3 from '../../assets/images/marquee-item-3.svg'
-import marImg4 from '../../assets/images/marquee-item-4.svg'
-import marImg5 from '../../assets/images/marquee-item-5.svg'
-import marImg6 from '../../assets/images/marquee-item-6.svg'
+import marImg1 from '../../assets/images/ec-1.svg'
+import marImg2 from '../../assets/images/ec-2.svg'
+import marImg3 from '../../assets/images/ec-3.svg'
+import marImg4 from '../../assets/images/ec-4.svg'
+import marImg5 from '../../assets/images/ec-5.svg'
+import marImg6 from '../../assets/images/ec-1.svg'
+import marImg7 from '../../assets/images/ec-2.svg'
 
 import pFo1 from '../../assets/images/portfolio-1.png'
 import pFo2 from '../../assets/images/portfolio-2.png'
@@ -50,7 +51,8 @@ const marqData = [
   { id: 3, image: marImg3, alt: "ps" },
   { id: 4, image: marImg4, alt: "ai" },
   { id: 5, image: marImg5, alt: "coral" },
-  { id: 6, image: marImg6, alt: "ai" },
+  { id: 6, image: marImg1, alt: "figma" },
+  { id: 7, image: marImg2, alt: "xd" },
 ];
 
 
