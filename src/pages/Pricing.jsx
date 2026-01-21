@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useLocation } from "react-router-dom";
+
 import { Col, Container, Row } from 'react-bootstrap'
 import pricingImgOne from '../assets/images/pricing-head-image.svg'
 import '../assets/scss/InnerPricing.scss'
@@ -23,7 +25,18 @@ import PriceTable from '../components/shared/PriceTable'
 import { CurveArrow } from '../components/shared/gsapAnimation'
 
 const Pricing = () => {
+    // getting subscriptionPlan & key from home page pricing section
+    const location = useLocation();
 
+    const subscriptionPlan = location.state?.subscriptionPlan;
+    const selectedKey = location.state?.selectedKey;
+
+    console.log("data getting from homepage pricing section:", subscriptionPlan, selectedKey);
+
+
+    console.log("Location state:", location.state);;
+
+    // ============================================
     const [activeId, setActiveId] = useState(1); // first accordion active
 
     const accordionData = [
@@ -62,35 +75,6 @@ const Pricing = () => {
             image: img5,
         },
     ];
-
-    const processData = [
-        {
-            id: 1,
-            title: "Planning",
-            subtitle: "Understanding business goals, audience & strategy",
-            image: planImg,
-        },
-        {
-            id: 2,
-            title: "Design",
-            subtitle: "UI/UX wireframes, Figma designs & brand identity",
-            image: designImg,
-        },
-        {
-            id: 3,
-            title: "Development",
-            subtitle: "Clean code, responsive layout & performance optimization",
-            image: devImg,
-        },
-        {
-            id: 4,
-            title: "Deploy",
-            subtitle: "Testing, launch, and going live with confidence",
-            image: deployImg,
-        },
-    ];
-
-
 
     const toggleAccordion = (id) => {
         setActiveId(activeId === id ? null : id);
@@ -136,7 +120,10 @@ const Pricing = () => {
                     <div className="pricing-arrow">
                         <CurveArrow />
                     </div>
-                    <PriceTable />
+                    <PriceTable
+                        initialPlan={subscriptionPlan}
+                        initialType={selectedKey}
+                    />
                 </Container>
             </section>
 

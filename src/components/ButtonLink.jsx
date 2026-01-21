@@ -21,10 +21,10 @@ const ButtonCall = ({ phone, label, icon, className = "" }) => {
   return (
     <a
       href={`tel:${phone}`}
-      className={`btn-link ${className}`}
+      className={`${className}`}
       aria-label={`Call ${label}`}
     >
-      
+
       <span className="btn-text">{label}</span>
       {icon && <img src={icon} alt="" className="btn-icon" />}
     </a>

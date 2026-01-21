@@ -8,6 +8,7 @@ import Insta from "../assets/images/insta.svg"
 import fbk from "../assets/images/facebook.svg"
 import linkd from "../assets/images/linkdin.svg"
 import ButtonCall from './ButtonLink'
+import { HoverCallingBtn } from './shared/gsapAnimation'
 const Footer = () => {
   return (
     <footer>

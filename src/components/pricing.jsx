@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Container, Tab, Nav, Card, Button, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
+
+
 import circleYes from "../assets/images/circle-yes.svg"
 
 const priceData = [
@@ -75,7 +79,12 @@ const priceData = [
 ];
 
 const PricingSection = () => {
+    // make for nvigate to the pricing page 
+    let navigate = useNavigate();
+    // make for identifing plan Name and key
+    const [subscriptionPlan, setSubscriptionPlan] = useState();
     const [key, setKey] = useState("cms-website");
+
     const [ghostStyle, setGhostStyle] = useState({
         width: 0,
         left: 0,
@@ -114,7 +123,17 @@ const PricingSection = () => {
     //     return () => window.removeEventListener("resize", updateGhost);
     // }, []);
 
-    
+
+    const planClick = (selectedPlan) => {
+        setSubscriptionPlan(selectedPlan);
+        console.log("Clicked key:", selectedPlan);
+    };
+    const keyClick = (e) => {
+        const text = e.target.innerText;
+        setKey(text);
+        console.log("Clicked key:", text);
+    };
+
     useEffect(() => {
         const handleResize = () => {
             const currentTab = navRefs.current[key];
@@ -197,6 +216,7 @@ const PricingSection = () => {
                                     <Nav.Link
                                         ref={(el) => (navRefs.current["cms-website"] = el)}
                                         eventKey="cms-website"
+                                        onClick={keyClick}
                                     >
                                         <span>CMS Website</span>
                                     </Nav.Link>
@@ -205,6 +225,7 @@ const PricingSection = () => {
                                     <Nav.Link
                                         ref={(el) => (navRefs.current["custome-website"] = el)}
                                         eventKey="custome-website"
+                                        onClick={keyClick}
                                     >
                                         <span>Custom Website</span>
                                     </Nav.Link>
@@ -234,7 +255,24 @@ const PricingSection = () => {
                                                                 </li>
                                                             ))}
                                                         </ul>
-                                                        <Button href={price.priceTypeBtnLink} variant="primary" className="w-100 price-card-btn">
+                                                        <Button
+                                                            as={Link}
+                                                            to="/pricing"
+                                                            state={{
+                                                                subscriptionPlan: price.priceType,
+                                                                selectedKey: tab.servicePriceType,
+                                                            }}
+                                                            variant="primary"
+                                                            className="w-100 price-card-btn"
+                                                        // onClick={() => {
+                                                        //     navigate("/pricing", {
+                                                        //         state: {
+                                                        //             subscriptionPlan: price.priceType,
+                                                        //             selectedKey: tab.servicePriceType,
+                                                        //         },
+                                                        //     });
+                                                        // }}
+                                                        >
                                                             Explore
                                                         </Button>
                                                     </Card.Body>

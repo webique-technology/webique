@@ -7,7 +7,7 @@ import "../../assets/scss/chormeGrid.scss"
 
 gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
-
+import arrowOne from "../../assets/images/arrow-one.svg";
 
 export const CurveArrow = () => {
     const arrowRef = useRef(null);
@@ -127,5 +127,93 @@ export const CloseButton = () => {
     );
 }
 
+export const ArrowButtonSlideXY = ({ link, btnClass }) => {
+    const arrowRef = useRef(null);
+
+    const handleHover = () => {
+        const tl = gsap.timeline();
+
+        // got to top right
+        tl.to(arrowRef.current, {
+            x: 25,
+            y: -25,
+            opacity: 0,
+            duration: 0.25,
+            ease: "power2.in",
+        })
+            // come to bottom left
+            .set(arrowRef.current, {
+                x: -25,
+                y: 25,
+            })
+            .to(arrowRef.current, {
+                x: 0,
+                y: 0,
+                opacity: 1,
+                duration: 0.2,
+                ease: "power2.out",
+            });
+    };
+
+    return (
+        <a
+            onMouseEnter={handleHover}
+            className={`animated-arrow-btn ${btnClass}`}
+            href={link}
+            target="_blank"
+        >
+            <img
+                ref={arrowRef}
+                src={arrowOne}
+                alt="Load more"
+                width={32}
+            />
+        </a>
+    );
+}
+
+// == work in progress ---- not completed calling hover btn 
+export const HoverCallingBtn = () => {
+    return (
+        <>
+            <div>
+                <svg
+                    width="120"
+                    height="120"
+                    viewBox="0 0 120 120"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M30 20
+                           C28 18 24 18 22 20
+                           L18 24
+                           C16 26 16 30 18 34
+                           C28 54 46 72 66 82
+                           C70 84 74 84 76 82
+                           L80 78
+                           C82 76 82 72 80 70
+                           L68 62
+                           C66 60 62 60 60 62
+                           L56 66
+                           C48 62 38 52 34 44
+                           L38 40
+                           C40 38 40 34 38 32
+                           Z"
+                        stroke="#0E1231"
+                        stroke-width="5"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+
+                    <path class="wave wave1" d="M70 30 C85 40 85 80 70 90" />
+                    <path class="wave wave2" d="M80 24 C100 40 100 80 80 96" />
+                    {/* <path class="wave wave3" d="M90 18 C115 40 115 80 90 102" /> */}
+                </svg>
+            </div>
+        </>
+    )
+}
 
 

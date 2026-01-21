@@ -3,299 +3,93 @@
 @import "./variable";
 
 .worldwide-business {
-  position: relative;
-  overflow: hidden;
-
-  --x: 50%;
-  --y: 50%;
-  --r: 420px;
-}
-
-
-// grid bg
-.chroma-grid-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      circle var(--r) at var(--x) var(--y),
-      rgba(255, 255, 255, 0.18),
-      transparent 75%
-    );
-}
-
-
-
-// overlay
-
-.chroma-overlay {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 3;
-
-    background:
-        radial-gradient(circle 520px at var(--x) var(--y),
-            rgba(255, 255, 255, 0.08),
-            transparent 70%);
-}
-
-
-.chroma-fade {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0;
-
-  background:
-    radial-gradient(
-      420px circle at var(--x) var(--y),
-      rgba(255, 255, 255, 0.12),
-      transparent 70%
-    );
-}
-
-
-// card
-.chroma-card {
     position: relative;
-    cursor: pointer;
-    z-index: 4;
-}
-
-
-// image
-.chroma-img-wrapper {
-    padding: 30px;
-    height: 100%;
-    @include flex(row, center, center, 0);
-    border: 1px solid $light;
-    border-radius: $radius-xs;
-    transition: border-color 0.3s ease;
-    position: relative;
-    background: transparent;
-    transition: border-color 0.3s ease;
     overflow: hidden;
+    background: linear-gradient(180deg, #093F7E 0%, #0F6AD3 50%);
 
-    @media(max-width:768px) {
-        img {
-            width: 120px !important;
-        }
-    }
+    // --x: 50%;
+    // --y: 50%;
+    // --r: 300px;
 }
 
-
-.chroma-card:hover .chroma-img-wrapper {
-    border-color: var(--card-border);
-    box-shadow: 0 0 15px color-mix(in srgb, var(--card-border), transparent 60%);
-}
-
-.chroma-card:hover .chroma-img-wrapper::before {
-    opacity: 1;
-}
-
-.chroma-img-wrapper::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--card-gradient);
-
-    mask-image: radial-gradient(140px circle at var(--x) var(--y),
-            white 0%,
-            transparent 65%);
-
-    opacity: 0;
-    transition: opacity 0.25s ease;
-}
-
-.chroma-img-wrapper:hover::before {
-    opacity: 1;
-}
-
-.chroma-img-wrapper img {
-    object-fit: contain;
-    position: relative;
-    z-index: 3;
-}
-
-
-
-
-
-
-/*
-.chroma-grid {
+.chrome-section {
     position: relative;
     width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(var(--cols, 6), 190px);
-    grid-auto-rows: auto;
-    justify-content: center;
-    gap: 0.75rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
+    // height: 100vh;
+    overflow: hidden;
 
+}
+
+/* Cards */
+.chrome-card {
+    background: none;
+    border-radius: 12px;
+    padding: 30px 2px;
+    text-align: center;
+    border: 1px solid $gray-text;
+    position: relative;
+
+    // &:before {
+    //     width: 100%;
+    //     height: 100%;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     content: "";
+    //     backdrop-filter: grayscale(1) brightness(0.5);
+    //     -webkit-backdrop-filter: grayscale(1) brightness(0.5);
+    //     background: rgba(0, 0, 0, 0.001);
+    // }
+}
+
+.chrome-card img {
+    max-width: 170px;
+    height: 60px;
+    object-fit: contain;
+    filter: brightness(0) invert(1) contrast(1.2);
+    transition: filter 0.3s ease;
+}
+
+/* Overlay with gradient */
+.chrome-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.85;
+    backdrop-filter: grayscale(0.1) brightness(0.90);
+    -webkit-backdrop-filter: grayscale(0.1) brightness(0.58);
+    background: rgba(0, 0, 0, 0.001);
+    /* CSS mask for circular reveal */
     --x: 50%;
     --y: 50%;
-    --r: 220px;
-}
+    --r: 0px;
 
-@media (max-width: 1124px) {
-    .chroma-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
-        gap: 0.5rem;
-        padding: 0.5rem;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        // background: linear-gradient(135deg, #083a74, #0f6dda);
+        backdrop-filter: grayscale(1) brightness(0.78);
+        -webkit-backdrop-filter: grayscale(1) brightness(0.78);
+        // background: rgba(0, 0, 0, 0.5);
+        opacity: 0.8;
+        width: 100%;
+        height: 100%;
     }
-}
-
-@media (max-width: 480px) {
-    .chroma-grid {
-        grid-template-columns: 320px;
-        gap: 0.75rem;
-        padding: 1rem;
-    }
-}
-
-.chroma-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 320px;
-    height: auto;
-    border-radius: $radius-xs;
-    overflow: hidden;
-    border: 1px solid $light;
-    transition: border-color 0.3s ease;
-    background: var(--card-gradient);
-
-    --mouse-x: 50%;
-    --mouse-y: 50%;
-    --spotlight-color: rgba(255, 255, 255, 0.3);
-}
-
-.chroma-card:hover {
-    border-color: var(--card-border);
-}
-
-.chroma-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: 2;
-}
-
-.chroma-card:hover::before {
-    opacity: 1;
-}
-
-.chroma-img-wrapper {
-    position: relative;
-    z-index: 1;
-    flex: 1;
-    padding: 10px;
-    box-sizing: border-box;
-    background: transparent;
-    transition: background 0.3s ease;
-    @include flex(row, center, center, 0);
-}
-
-.chroma-img-wrapper img {
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-}
-
-.chroma-info {
-    position: relative;
-    z-index: 1;
-    padding: 0.75rem 1rem;
-    color: #fff;
-    font-family: system-ui, sans-serif;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    row-gap: 0.25rem;
-    column-gap: 0.75rem;
-}
-
-.chroma-info .role,
-.chroma-info .handle {
-    color: #aaa;
-}
-
-.chroma-overlay {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 3;
-    backdrop-filter: grayscale(1) brightness(0.78);
-    -webkit-backdrop-filter: grayscale(1) brightness(0.78);
-    background: rgba(0, 0, 0, 0.001);
 
     mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
-            transparent 0%,
-            transparent 15%,
-            rgba(0, 0, 0, 0.1) 30%,
-            rgba(0, 0, 0, 0.22) 45%,
-            rgba(0, 0, 0, 0.35) 60%,
-            rgba(0, 0, 0, 0.5) 75%,
-            rgba(0, 0, 0, 0.68) 88%,
-            white 100%);
+        transparent 10%,
+        transparent 50%,
+        rgb(218, 209, 209) 150%);
+
     -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
-            transparent 0%,
-            transparent 15%,
-            rgba(0, 0, 0, 0.1) 30%,
-            rgba(0, 0, 0, 0.22) 45%,
-            rgba(0, 0, 0, 0.35) 60%,
-            rgba(0, 0, 0, 0.5) 75%,
-            rgba(0, 0, 0, 0.68) 88%,
-            white 100%);
+        transparent 10%,
+        transparent 50%,
+        rgb(201, 189, 189) 150%);
 }
 
-.chroma-fade {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 4;
-    backdrop-filter: grayscale(1) brightness(0.78);
-    -webkit-backdrop-filter: grayscale(1) brightness(0.78);
-    background: rgba(0, 0, 0, 0.001);
-
-    mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
-            white 0%,
-            white 15%,
-            rgba(255, 255, 255, 0.9) 30%,
-            rgba(255, 255, 255, 0.78) 45%,
-            rgba(255, 255, 255, 0.65) 60%,
-            rgb(255, 255, 255) 75%,
-            rgb(247, 245, 245) 88%,
-             rgba(255, 255, 255, 0.5) 75%,
-            rgba(247, 245, 245, 0.32) 88%,
-            transparent 100%);
-    -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
-            white 0%,
-            white 15%,
-            rgba(255, 255, 255, 0.9) 30%,
-            rgba(255, 255, 255, 0.78) 45%,
-            rgba(255, 255, 255, 0.65) 60%,
-            rgb(255, 255, 255) 75%,
-            rgba(255, 255, 255, 0.979) 88%,
-             rgba(255, 255, 255, 0.5) 75%,
-            rgba(255, 255, 255, 0.32) 88%,
-            transparent 100%);
-
-    opacity: 1;
-    transition: opacity 0.25s ease;
+/* Fade class */
+.fade-overlay {
+    transition: opacity 0.4s ease;
 }
-
-*/

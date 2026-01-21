@@ -5,12 +5,27 @@ import "../assets/scss/marqueeSlides.scss";
 
 const industryData = [
     "E-Commerce & Shopify",
-    "Industrial & Manufacturing",
-    "Home Service",
-    "Dental",
+    "Social Media & Influencer",
     "Real Estate",
-    "Healthcare"
+    "Healthcare & Medical",
+    "Logistics & Transportation",
+    "Automotive",
+    "Industrial & Manufacturing",
+    "Education & School",
+    "Hospitality & Travel",
 ];
+
+const industryData2 = [
+    "Corporate & Enterprise",
+    "Food & Restaurant",
+    "Fashion & Jewellery",
+    "Home Services",
+    "Dental",
+    "Fitness & Gym",
+    "Gaming",
+    "Legal",
+    "B2B & SaaS",
+]
 
 
 const MarqueeRow = ({ items, speed = 20, reverse = false }) => {
@@ -35,7 +50,7 @@ const MarqueeRow = ({ items, speed = 20, reverse = false }) => {
     return (
         <div className="marquee-wrapper">
             <ul className="marquee-content" ref={rowRef}>
-                {[...items, ...items].map((item, index) => (
+                {[...items, ...items, ...items].map((item, index) => (
                     <li key={index}>{item}</li>
                 ))}
             </ul>
@@ -45,19 +60,19 @@ const MarqueeRow = ({ items, speed = 20, reverse = false }) => {
 
 const IndustrySliders = () => {
     return (
-        <section className="industery-marquee section-padding">
+        <section className="industery-marquee section-padding pb-0">
             <Container>
                 <div className="title-count text-center mb-2 mb-md-5">
-                    <h2>Trusted by Businesses</h2>
+                    <h2>Industries We Work With</h2>
                 </div>
                 <div className="marquee-main-container">
                     <div className="overlay overlay-left"></div>
                     <div className="overlay overlay-right"></div>
 
                     <MarqueeRow items={industryData} speed={20} />
-                    <MarqueeRow items={industryData} speed={26} reverse />
+                    <MarqueeRow items={industryData2} speed={29} reverse />
                     <MarqueeRow items={industryData} speed={19} />
-                    <MarqueeRow items={industryData} speed={25} reverse />
+                    <MarqueeRow items={industryData2} speed={25} reverse />
                 </div>
             </Container>
         </section>
