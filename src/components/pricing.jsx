@@ -126,12 +126,12 @@ const PricingSection = () => {
 
     const planClick = (selectedPlan) => {
         setSubscriptionPlan(selectedPlan);
-        console.log("Clicked key:", selectedPlan);
+        // console.log("Clicked key:", selectedPlan);
     };
     const keyClick = (e) => {
         const text = e.target.innerText;
         setKey(text);
-        console.log("Clicked key:", text);
+        // console.log("Clicked key:", text);
     };
 
     useEffect(() => {

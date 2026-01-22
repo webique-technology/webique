@@ -176,8 +176,14 @@
     @media(max-width:768px) {
       &:hover {
         .stack-content .stack-img {
-          width: 120px;
-          height: 120px;
+          width: 56px;
+          height: 56px;
+
+          &::before,
+          &::after {
+            opacity: 1;
+            transform: translate(0px, 0px);
+          }
         }
       }
     }
@@ -226,6 +232,9 @@
         left: 0;
         opacity: 0.8;
         transform: translate(0px, 0px);
+        @media(max-width:768px){
+          opacity: 1;
+        }
       }
 
       &::before {
@@ -321,7 +330,7 @@
   // background: linear-gradient(102.85deg, rgb(153 229 255 / 38%) 16.09%, rgba(241, 250, 254, 0.477673) 29.54%, rgba(235, 248, 253, 0.45132) 46.09%, rgba(255, 255, 255, 0.54) 63.01%, rgb(255 240 201 / 66%) 80.61%);
 }
 
-.stack-pad{
+.stack-pad {
   background: $trinery;
 }
 

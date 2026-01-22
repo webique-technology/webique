@@ -344,6 +344,74 @@
         }
     }
 
+    .pricing-card {
+        // opacity: 0.8;
+        background: $light;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border: 0;
+        cursor: pointer;
+        border-radius: $radius-m;
+
+        .msp-box {
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            background: $dark-blue;
+            color: $white;
+            padding: 10px;
+            border-radius: 0 25px 0 25px;
+        }
+
+        .card-title {
+            padding: 6px 12px;
+            background: $trinery;
+            font-size: $font-size-base075;
+            width: max-content;
+            border-radius: $radius-m;
+            margin: 0;
+            cursor: not-allowed;
+        }
+
+        span {
+            color: $gray-text-2;
+            font-size: $font-size-base0875;
+        }
+
+        ul {
+            li {
+                p {
+                    line-height: $h5-lh;
+                }
+            }
+        }
+
+        .price-card-btn {
+            border: 1px solid $dark-blue;
+            background: none;
+            color: $dark-blue;
+            font-weight: 600;
+            padding: 12px;
+
+            &:hover {
+                background: $dark-blue;
+                color: $white;
+            }
+        }
+
+        &:hover {
+            background: $white;
+        }
+
+        @media(max-width:576px) {
+            .msp-box {
+                top: -27px;
+                right: 0px;
+            }
+        }
+    }
+}
+
+.nav-tab-div {
     .nav-tabs {
         background: $white;
         // box-shadow: rgb(0, 11, 22) 0px 8px 24px;
@@ -419,14 +487,19 @@
             }
         }
     }
+}
 
-    .pricing-card {
-        // opacity: 0.8;
-        background: $light;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        border: 0;
-        cursor: pointer;
-        border-radius: $radius-m;
+.tab-card-576 {
+    @media(max-width:576px) {
+        display: flex !important;
+        justify-content: flex-start !important;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 0.5rem !important;
+        padding-top: 50px;
+        padding-bottom: 20px;
 
         .msp-box {
             position: absolute;
