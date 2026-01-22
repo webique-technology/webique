@@ -346,4 +346,16 @@ svg {
 
 .activeTypePlan {
     background: $warning !important;
+
+    @media (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+.tab-br {
+    display: none;
+
+    @media(max-width:420px) {
+        display: block;
+    }
 }

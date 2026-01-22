@@ -12,6 +12,12 @@
   width: 100%;
   position: relative;
 
+  .container {
+    @media(max-width:576px) {
+      padding: 0 !important;
+    }
+  }
+
   .title-count,
   .swiper {
     position: relative;
@@ -28,6 +34,10 @@
     left: 70px;
     top: -30px;
     z-index: 1;
+
+    @media(max-width:768px) {
+      transform: rotate(180deg);
+    }
   }
 
   &::after {

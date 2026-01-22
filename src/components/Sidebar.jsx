@@ -194,17 +194,18 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                                                             >
                                                                 {item.dropdown.map((sub, j) => (
                                                                     <li key={j}>
-                                                                        <motion.div
-                                                                            whileHover={{ x: 10 }}
-                                                                            transition={{ type: "spring", stiffness: 300 }}
+                                                                        <Link
+                                                                            to={`/${sub.dropLink}`}
+                                                                            onClick={handleLinkClick}
                                                                         >
-                                                                            <Link
-                                                                                to={`/${sub.dropLink}`}
-                                                                                onClick={handleLinkClick}
+                                                                            <motion.div
+                                                                                whileHover={{ x: 10 }}
+                                                                                transition={{ type: "spring", stiffness: 300 }}
                                                                             >
+
                                                                                 {sub.dropName}
-                                                                            </Link>
-                                                                        </motion.div>
+                                                                            </motion.div>
+                                                                        </Link>
                                                                     </li>
                                                                 ))}
                                                             </motion.ul>

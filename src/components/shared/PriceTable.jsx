@@ -271,127 +271,133 @@ const PricingPgaeData = [
         enterprise: "Up to 30 Pages",
         ecommerce: "5 Pages + 30 Products"
       },
-
-      {
-        feature: "Pages Included",
-        starter: "Up to 10 Pages",
-        business: "Up to 20 Pages",
-        enterprise: "Up to 30 Pages",
-        ecommerce: "5 Pages + 30 Products"
-      },
       {
         feature: "Custom Layout Design",
         starter: "Template Based",
         business: "Semi-Custom",
-        enterprise: "Custom",
-        ecommerce: "Custom"
+        enterprise: "Fully Custom",
+        ecommerce: "Fully Custom"
       },
       {
         feature: "CMS (Admin Access)",
-        starter: "wrong",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
+        starter: "Basic",
+        business: "Advanced",
+        enterprise: "Custom Dashboard",
+        ecommerce: "Custom Dashboard"
       },
       {
-        feature: "Mobile Responsive + Bootstrap",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
+        feature: "Database Integration",
+        starter: "Basic Database Setup",
+        business: "Advanced DB Management",
+        enterprise: "Optimized DB Architecture",
+        ecommerce: "Advanced DB + Product Management"
       },
       {
-        feature: "Customized Homepage Design",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
+        feature: "API Integration",
+        starter: "Contact Form, Email",
+        business: "Google Maps, Payment, etc.",
+        enterprise: "Multi-API Integration",
+        ecommerce: "Payment Gateway, Shipping, Tax APIs"
       },
       {
-        feature: "SEO Semantic HTML Code",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
+        feature: "User Authentication",
+        starter: "✖",
+        business: "Login/Registration",
+        enterprise: "Role-Based Access",
+        ecommerce: "Customer Accounts"
       },
       {
-        feature: "Google Map Integration",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
+        feature: "Security Features",
+        starter: "SSL + HTTPS",
+        business: "Malware Protection",
+        enterprise: "Firewall + Malware Protection",
+        ecommerce: "E-Commerce Grade Security"
       },
       {
-        feature: "Click to Call / Email",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
+        feature: "Performance Optimization",
+        starter: "✖",
+        business: "Basic Speed Optimization",
+        enterprise: "CDN + Caching",
+        ecommerce: "CDN + Advanced Speed Optimization"
       },
       {
-        feature: "Social Media Integration",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
-
-      },
-      {
-        feature: "JQuery Effects",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
-
-      },
-      {
-        feature: "Main Banner Management",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
-      },
-      {
-        feature: "Slider on Homepage",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
-      },
-      {
-        feature: "Testimonials Section",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
-      },
-      {
-        feature: "Gallery Section",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
-      },
-      {
-        feature: "Blog / News Module",
+        feature: "Blog/News Module",
         starter: "Blog Only",
         business: "Blog + News",
         enterprise: "Blog + News",
         ecommerce: "Blog + News"
+
+      },
+      {
+        feature: "SEO-Friendly Development",
+        starter: "Basic SEO Setup",
+        business: "On-Page SEO",
+        enterprise: "Advanced SEO Optimization",
+        ecommerce: "SEO-Ready Store"
+
+      },
+      {
+        feature: "Analytics Setup",
+        starter: "✖",
+        business: "Google Analytics",
+        enterprise: "Advanced Analytics + Tracking",
+        ecommerce: "E-Commerce Analytics"
+      },
+      {
+        feature: "E-Commerce Features",
+        starter: "✖",
+        business: "✖",
+        enterprise: "E-Commerce Ready Architecture",
+        ecommerce: "Full Store Setup + Cart, Checkout"
+      },
+      {
+        feature: "Payment Gateway",
+        starter: "✖",
+        business: "Optional",
+        enterprise: "Optional",
+        ecommerce: "Included"
+      },
+      {
+        feature: "Inventory Management",
+        starter: "✖",
+        business: "✖",
+        enterprise: "Optional",
+        ecommerce: "Included"
       },
       {
         feature: "Newsletter Integration",
         starter: "✖",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
+        business: "Included",
+        enterprise: "Included",
+        ecommerce: "Included"
       },
       {
-        feature: "On-page SEO",
-        starter: "Wrong",
-        business: "Wrong",
-        enterprise: "Right",
-        ecommerce: "Right"
+        feature: "Content Writing (₹1/word)",
+        starter: "Optional",
+        business: "Optional",
+        enterprise: "Optional",
+        ecommerce: "Optional"
+      },
+      {
+        feature: "Training (Admin Panel)",
+        starter: "Up to 2 Hrs",
+        business: "Up to 3 Hrs",
+        enterprise: "Up to 5 Hrs",
+        ecommerce: "Up to 5 Hrs"
+      },
+      {
+        feature: "Website Maintenance",
+        starter: "7 Days",
+        business: "30 Days",
+        enterprise: "30 Days",
+        ecommerce: "30 Days"
+      },
+      {
+        feature: "Training (Admin Panel)",
+        starter: "7–10 Days",
+        business: "12-15 Days",
+        enterprise: "15-20 Days",
+        ecommerce: "20-25 Days"
       },
     ]
   },
@@ -403,36 +409,38 @@ const PricingPgaeData = [
 
 const PriceTable = ({ initialPlan, initialType }) => {
   const [activeType, setActiveType] = useState(initialType || "cms-website");
-  const [activePlan, setActivePlan] = useState(0);
+  const [activePlan, setActivePlan] = useState(initialPlan || 0);
+  const [activePlanMobile, setActivePlanMobile] = useState(0);
+  const navRefs = useRef({});
   const [isFromHomePage, setIsFromHomePage] = useState(
     Boolean(initialPlan && initialType)
   );
-
-  const navRefs = useRef({});
-  const [isMobile, setIsMobile] = useState(false);
   const [ghostStyle, setGhostStyle] = useState({
     width: 0,
     left: 0,
     top: 0,
     height: 0,
   });
-  console.log("getting props data from Pricing Page:", initialPlan, initialType);
 
   const selectedData =
     PricingPgaeData.find((item) => item.pricingType === activeType) ||
     PricingPgaeData[0];
-
   const plans = selectedData?.plans || [];
-  // console.log("plans:", plans);
   const features = selectedData?.features || [];
-  // console.log("features:", features);
 
-  console.log("is form home:", isFromHomePage, ":", isFromHomePage && plans.planType === initialPlan);
+  console.log(activePlanMobile);
 
-  // make effect for refresh the tab on click
+  // const mobileSelectedData =
+  //   PricingPgaeData.find((item) => item.pricingType === activePlanMobile) ||
+  //   PricingPgaeData[0];
+
+  const mobilePlans = selectedData?.plans || [];
+
+
   useEffect(() => {
-    setIsFromHomePage(Boolean(initialPlan && initialType));
-  }, [initialPlan, initialType]);
+    setActivePlanMobile(0);
+  }, [activeType]);
+
 
 
   useEffect(() => {
@@ -447,11 +455,15 @@ const PriceTable = ({ initialPlan, initialType }) => {
     }
   }, [initialPlan, plans]);
 
+
+
   useEffect(() => {
     if (initialType) {
       setActiveType(initialType);
     }
   }, [initialType]);
+
+
 
   /* icon render */
   const renderValue = (value) => {
@@ -467,10 +479,14 @@ const PriceTable = ({ initialPlan, initialType }) => {
     return value;
   };
 
+
+
   /* //====ghost div animation */
   const isRTL =
     typeof window !== "undefined" &&
     getComputedStyle(document.documentElement).direction === "rtl";
+
+
 
   const updateGhost = () => {
     const currentTab = navRefs.current[activeType];
@@ -494,6 +510,8 @@ const PriceTable = ({ initialPlan, initialType }) => {
     });
   };
 
+
+
   useEffect(() => {
     updateGhost();
 
@@ -514,6 +532,11 @@ const PriceTable = ({ initialPlan, initialType }) => {
   }, [activeType]);
   /* //============== ghost div animation */
 
+  // console.log("getting props data from Pricing Page:", initialPlan, initialType);
+  // console.log("plans:", plans);
+  // console.log("features:", features);
+  // console.log("is form home:", isFromHomePage, ":", isFromHomePage && plans.planType === initialPlan);
+
   return (
     <div className="pricing-section ">
       <div className="pricing-container d-flex flex-column gap-4 gap-sm-5 align-items-center">
@@ -522,6 +545,7 @@ const PriceTable = ({ initialPlan, initialType }) => {
           onSelect={(k) => {
             setActiveType(k);
             setActivePlan(0);
+            setActivePlanMobile(0);
             setIsFromHomePage(false)
           }}
         >
@@ -571,24 +595,20 @@ const PriceTable = ({ initialPlan, initialType }) => {
                 <div className="mobile-plan-switcher">
                   <button
                     onClick={() =>
-                      setActivePlan((p) =>
-                        p === 0 ? plans.length - 1 : p - 1
-                      )
+                      setActivePlanMobile((p) => (p === 0 ? mobilePlans.length - 1 : p - 1))
                     }
                   >
                     ‹
                   </button>
 
                   <div>
-                    <h4 className="m-0">{plans[activePlan].pricingPackName}</h4>
-                    <p className="m-0">{plans[activePlan].packPrice}</p>
+                    <h4 className="m-0">{plans[activePlanMobile].pricingPackName}</h4>
+                    <p className="m-0">{plans[activePlanMobile].packPrice}</p>
                   </div>
 
                   <button
                     onClick={() =>
-                      setActivePlan((p) =>
-                        p === plans.length - 1 ? 0 : p + 1
-                      )
+                      setActivePlanMobile((p) => (p === mobilePlans.length - 1 ? 0 : p + 1))
                     }
                   >
                     ›
@@ -613,7 +633,7 @@ const PriceTable = ({ initialPlan, initialType }) => {
                         className="mobile-only"
                       // className={initialPlan === plans || initialType === tab.pricingType ? "text-dark" : "text-primary"}
                       >
-                        {plans[activePlan].pricingPackName}
+                        {plans.pricingPackName}
                       </th>
                     </tr>
                   </thead>
@@ -646,7 +666,7 @@ const PriceTable = ({ initialPlan, initialType }) => {
                           {renderValue(
                             row[
                             ["starter", "business", "enterprise", "ecommerce"][
-                            activePlan
+                            activePlanMobile
                             ]
                             ]
                           )}

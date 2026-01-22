@@ -78,11 +78,9 @@ const Pricing = () => {
         setActiveId(activeId === id ? null : id);
     };
 
-
     const activeItem = accordionData.find(
         (item) => item.id === activeId
     );
-
 
     return (
         <>
@@ -101,7 +99,7 @@ const Pricing = () => {
                             </ul>
 
                         </Col>
-                        <Col md={5} lg={5} sm={12}>
+                        <Col md={5} lg={5} sm={12} className='d-none d-md-block'>
                             <div className='image-full-inner'>
                                 <img src={pricingImgOne} className='img-fluid' />
                             </div>
@@ -136,8 +134,6 @@ const Pricing = () => {
                                 <img src={activeItem?.image} alt={activeItem?.title} className="accordion-img" />
                             </div>
                         </Col>
-
-
                         {/* ACCORDION COLUMN */}
                         <Col md={6} lg={6} sm={12}>
                             <div className="accordion-wrap">

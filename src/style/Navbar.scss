@@ -287,10 +287,14 @@
         padding-left: 15px !important;
         border-bottom: 1px solid $gray-text !important;
 
+        a {
+            color: $gray-text !important;
+        }
+
         &:hover {
 
             a {
-                color: $link-blue;
+                color: $link-blue !important;
             }
         }
 

@@ -123,7 +123,9 @@ const NavigationBar = () => {
                         <div className="d-flex align-items-center justify-content-between">
                             {/* nav logo */}
                             <div>
-                                <img src={webiqueLogo} alt="Webique" className="img-fluid nav-img" />
+                                <Link to={"/"}>
+                                    <img src={webiqueLogo} alt="Webique" className="img-fluid nav-img" />
+                                </Link>
                             </div>
 
                             {/* DESKTOP NAV */}
@@ -203,10 +205,10 @@ const NavigationBar = () => {
                             {/* RIGHT ACTIONS */}
                             <div className="d-flex justify-content-end gap-3">
                                 <div className="d-none d-lg-block">
-                                    <button className="nav-btn">
+                                    <Link to={"tel:+919860188007"} className="nav-btn">
                                         <span>Contact</span>
                                         <img src={arrowOne} alt="arrow" />
-                                    </button>
+                                    </Link>
                                 </div>
 
                                 <div
@@ -249,82 +251,3 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
-
-/* nav bar Row and col
-<Col xs={6} lg={2}>
-    <img src={webiqueLogo} alt="Webique" className="img-fluid" />
-</Col>
-
-<Col lg={7} xl={7} xxl={8} className="d-none d-lg-flex justify-content-center">
-    <ul className="navbar-ul">
-        {navLinks.map((item, i) => (
-            <li key={i} className="nav-item">
-                <Link
-                    to={item.link}
-                    onClick={(e) => {
-                        if (item.dropdown.length) {
-                            e.preventDefault();
-                            setActiveDropdown(
-                                activeDropdown === i ? null : i
-                            );
-                        }
-                    }}
-                >
-                    {item.name}
-                </Link>
-
-                <AnimatePresence>
-                    {item.dropdown.length > 0 &&
-                        activeDropdown === i && (
-                            <motion.ul
-                                className="dropdown-menu show"
-                                initial={{ opacity: 0, y: 15 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 10 }}
-                                transition={{ duration: 0.25 }}
-                            >
-                                {item.dropdown.map((sub, j) => (
-                                    <li key={j}>
-                                        <motion.div
-                                            whileHover={{ x: 10 }}
-                                            transition={{ type: "spring", stiffness: 300 }}
-                                        >
-                                            <Link
-                                                to={`/${sub.dropLink}`}
-                                                onClick={() =>
-                                                    setActiveDropdown(null)
-                                                }
-                                            >
-                                                {sub.dropName}
-                                            </Link>
-                                        </motion.div>
-                                    </li>
-                                ))}
-                            </motion.ul>
-                        )}
-                </AnimatePresence>
-            </li>
-        ))}
-    </ul>
-</Col>
-
-<Col xs={6} lg={3} xl={3} xxl={2} className="d-flex justify-content-end gap-3">
-    <div className="d-none d-lg-block">
-        <button className="hero-btn">
-            <span>Contact</span>
-            <img src={arrowOne} alt="arrow" />
-        </button>
-    </div>
-
-    <div
-        className="desk-ham"
-        onClick={() => {
-            setActiveDropdown(null);
-            setSidebarOpen(true);
-        }}
-    >
-        <div className="desk-ham-bar" />
-        <div className="desk-ham-bar" />
-        <div className="desk-ham-bar" />
-    </div>
-</Col> */
