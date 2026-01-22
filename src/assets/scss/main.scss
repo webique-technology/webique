@@ -241,55 +241,55 @@
 }
 
 // worldwide business
-.worldwide-business {
-    background: linear-gradient(0deg, rgba(15, 109, 218, 1) 0%, rgba(8, 58, 116, 1) 100%);
-    position: relative;
+// .worldwide-business {
+//     background: linear-gradient(0deg, rgba(15, 109, 218, 1) 0%, rgba(8, 58, 116, 1) 100%);
+//     position: relative;
 
-    .container {
-        position: relative;
-        z-index: 2;
-    }
+//     .container {
+//         position: relative;
+//         z-index: 2;
+//     }
 
-    &::before {
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: url("../images/bussiness-ww-bg.png");
-        width: 639px;
-        height: 490px;
-        z-index: 0;
-    }
+//     &::before {
+//         content: " ";
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         background-image: url("../images/bussiness-ww-bg.png");
+//         width: 639px;
+//         height: 490px;
+//         z-index: 0;
+//     }
 
-    h2 {
-        span {
-            font-weight: 400;
-        }
-    }
+//     h2 {
+//         span {
+//             font-weight: 400;
+//         }
+//     }
 
-    p {
-        color: $gray-text;
-    }
+//     p {
+//         color: $gray-text;
+//     }
 
-    .business-logo {
-        @include flex(row, center, center, 0);
-        padding: 30px;
-        border: 1px solid $light;
-        height: 100%;
-        border-radius: $radius-xs;
-        height: 100%;
-        transition: background 0.3s ease;
-        background: rgba(255, 255, 255, 0.06);
-        transform: translateZ(0);
-        backface-visibility: hidden;
-    }
+//     .business-logo {
+//         @include flex(row, center, center, 0);
+//         padding: 30px;
+//         border: 1px solid $light;
+//         height: 100%;
+//         border-radius: $radius-xs;
+//         height: 100%;
+//         transition: background 0.3s ease;
+//         background: rgba(255, 255, 255, 0.06);
+//         transform: translateZ(0);
+//         backface-visibility: hidden;
+//     }
 
-    @media(max-width:768px) {
-        &::before {
-            width: 100%;
-        }
-    }
-}
+//     @media(max-width:768px) {
+//         &::before {
+//             width: 100%;
+//         }
+//     }
+// }
 
 // pricing section
 .pricing-section {

@@ -39,7 +39,6 @@ const About = () => {
       </section>
 
       {/* ================= STACK SECTIONS ================= */}
-      
 
 
 
@@ -52,63 +51,64 @@ const About = () => {
 
 
 
-<div className="custome-stack-section">
-      {/* ===== VISION ===== */}
-<div class="div-container div1">
-      <section className="vision-section ">
-        
-        <Container>
-          <div className="title-gap text-center align-items-center position-relative z-3">
-            <img src={vIcn} alt="Vision" />
-            <h2>Vision & Mission</h2>
-            <p className="col-12 col-lg-9 mx-auto text-center">
-              Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.
-            </p>
-            <p className="col-12 col-lg-9 mx-auto text-center">
-              Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.
-            </p>
-          </div>
-        </Container>
-      </section>
-</div>
-      {/* ===== EXIST ===== */}
-      <div class="div-container div2">
-      <section
-        className="exist-section">
-        <Container>
-          <div className="title-gap text-center align-items-center position-relative z-3">
-            <img src={wWe} alt="Exist" />
-            <h2>Why We Exist?</h2>
-            <p className="col-12 col-lg-9 mx-auto text-center">
-              Many businesses struggle with outdated websites, low online visibility, and poor lead conversion. We exist to simplify digital transformation by delivering clean, user-focused design and reliable, future-ready technology. Our approach is driven by strategy and performance, helping brands build a strong digital presence that generates measurable results and long-term growth.
-            </p>
-          </div>
-        </Container>
-      </section>
-</div>
-      {/* ===== DIFFERENT ===== */}
-      <div class="div-container div3">
-      <section
-        className="diffrent-section">
-        <Container>
-          <div className="title-gap text-center align-items-center position-relative z-3">
-            <img src={Diff} alt="Different" />
-            <div className="aboutt-text">
-            <h2>What Makes Us Different</h2>
-            </div>
-            <p className="col-12 col-lg-9 mx-auto text-center">
-              We follow a business-first approach, focusing on outcomes rather than just visuals. Our clean and intuitive UI/UX is thoughtfully aligned with your brand goals to enhance user engagement. Every solution is built with performance, SEO, and scalability in mind to support long-term growth. We believe in transparent pricing and clear processes, ensuring trust at every step.
-            </p>
-            {/* <p>Business-first approach, not just design</p>
+
+      <div className="custome-stack-section">
+        {/* ===== VISION ===== */}
+        <div class="div-container div1">
+          <section className="vision-section ">
+
+            <Container>
+              <div className="title-gap text-center align-items-center position-relative z-3">
+                <img src={vIcn} alt="Vision" />
+                <h2>Vision & Mission</h2>
+                <p className="col-12 col-lg-9 mx-auto text-center">
+                  Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.
+                </p>
+                <p className="col-12 col-lg-9 mx-auto text-center">
+                  Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.
+                </p>
+              </div>
+            </Container>
+          </section>
+        </div>
+        {/* ===== EXIST ===== */}
+        <div class="div-container div2">
+          <section
+            className="exist-section">
+            <Container>
+              <div className="title-gap text-center align-items-center position-relative z-3">
+                <img src={wWe} alt="Exist" />
+                <h2>Why We Exist?</h2>
+                <p className="col-12 col-lg-9 mx-auto text-center">
+                  Many businesses struggle with outdated websites, low online visibility, and poor lead conversion. We exist to simplify digital transformation by delivering clean, user-focused design and reliable, future-ready technology. Our approach is driven by strategy and performance, helping brands build a strong digital presence that generates measurable results and long-term growth.
+                </p>
+              </div>
+            </Container>
+          </section>
+        </div>
+        {/* ===== DIFFERENT ===== */}
+        <div class="div-container div3">
+          <section
+            className="diffrent-section">
+            <Container>
+              <div className="title-gap text-center align-items-center position-relative z-3">
+                <img src={Diff} alt="Different" />
+                <div className="aboutt-text">
+                  <h2>What Makes Us Different</h2>
+                </div>
+                <p className="col-12 col-lg-9 mx-auto text-center">
+                  We follow a business-first approach, focusing on outcomes rather than just visuals. Our clean and intuitive UI/UX is thoughtfully aligned with your brand goals to enhance user engagement. Every solution is built with performance, SEO, and scalability in mind to support long-term growth. We believe in transparent pricing and clear processes, ensuring trust at every step.
+                </p>
+                {/* <p>Business-first approach, not just design</p>
             <p>Clean UI/UX aligned with brand goals</p>
             <p>Performance, SEO & scalability focused</p>
             <p>Transparent pricing & process</p>
             <p>Long-term support mindset</p> */}
-          </div>
-        </Container>
-      </section>
+              </div>
+            </Container>
+          </section>
+        </div>
       </div>
-    </div>
 
       {/* ================= PHILOSOPHY ================= */}
       <section className="philosophy-section section-padding">
@@ -116,7 +116,7 @@ const About = () => {
           <div className="title-gap text-center align-items-center">
             <h2>Our Work Philosophy</h2>
             <p className="col-12 col-md-9 mx-auto text-center mb-5">
-              We believe great digital outcomes are achieved through a disciplined approach, strategic focus, and flawless execution There three princliples guide every project we deliver. 
+              We believe great digital outcomes are achieved through a disciplined approach, strategic focus, and flawless execution There three princliples guide every project we deliver.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ const About = () => {
             <Col md={4} className="price-card-576">
               <div className="img-box">
                 <div className="img-wrap">
-                <img src={PhiloOne} alt="Discipline" className="img-fluid"/>
+                  <img src={PhiloOne} alt="Discipline" className="img-fluid" />
                 </div>
                 <h2>Discipline</h2>
               </div>
@@ -132,15 +132,15 @@ const About = () => {
             <Col md={4} className="price-card-576">
               <div className="img-box">
                 <div className="img-wrap">
-                <img src={PhiloTwo} alt="Focus" className="img-fluid"/>
+                  <img src={PhiloTwo} alt="Focus" className="img-fluid" />
                 </div>
                 <h2>Focus</h2>
               </div>
             </Col>
             <Col md={4} className="price-card-576">
               <div className="img-box">
-                 <div className="img-wrap">
-                <img src={PhiloThr} alt="Execution" className="img-fluid"/>
+                <div className="img-wrap">
+                  <img src={PhiloThr} alt="Execution" className="img-fluid" />
                 </div>
                 <h2>Execution</h2>
               </div>
@@ -149,7 +149,7 @@ const About = () => {
         </Container>
       </section>
       <div className="about-wwb">
-          <WorldwideBusiness/>
+        <WorldwideBusiness />
       </div>
     </>
   );

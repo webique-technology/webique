@@ -4,30 +4,38 @@ import gsap from "gsap";
 
 import "../assets/scss/chormeGrid.scss"
 
+// white logo
 import wellnessLogo from "../assets/images/wellness-logo.svg";
 import unicornsLogo from "../assets/images/unicorns-logo.svg";
 import ktLogo from "../assets/images/kt-logo.svg";
-import mangalamLogo from "../assets/images/mangalam-logo.svg";
-import tockenLogo from "../assets/images/tocken-logo.svg";
+
+// color logo 
+import mangalamLogo from "../assets/images/om-mangalam-logo.png";
+import tockenLogo from "../assets/images/tocken-logo.png";
+import neelkanthalogo from "../assets/images/neelkanth-logo.png"
+import boradeLogo from "../assets/images/balasaheb_Borade-logo.png"
+import sanskrutiLogo from "../assets/images/sanskruti-logo.png"
+import dropNpark from "../assets/images/Drop-n-Park-logo.png"
+
 
 const businessLogo = [
     {
-        image: wellnessLogo,
+        image: tockenLogo,
         borderColor: '#4F46E5',
         gradient: 'linear-gradient(145deg, #4F46E5, #000)',
     },
     {
-        image: unicornsLogo,
+        image: neelkanthalogo,
         borderColor: '#10B981',
         gradient: 'linear-gradient(210deg, #10B981, #000)',
     },
     {
-        image: ktLogo,
+        image: boradeLogo,
         borderColor: '#F59E0B',
         gradient: 'linear-gradient(165deg, #F59E0B, #000)',
     },
     {
-        image: tockenLogo,
+        image: sanskrutiLogo,
         borderColor: '#EF4444',
         gradient: 'linear-gradient(195deg, #EF4444, #000)',
     },
@@ -37,115 +45,154 @@ const businessLogo = [
         gradient: 'linear-gradient(225deg, #8B5CF6, #000)',
     },
     {
-        image: unicornsLogo,
+        image: dropNpark,
         borderColor: '#06B6D4',
         gradient: 'linear-gradient(135deg, #06B6D4, #000)',
     },
     {
-        image: wellnessLogo,
+        image: dropNpark,
         borderColor: '#4F46E5',
         gradient: 'linear-gradient(145deg, #4F46E5, #000)',
     },
     {
-        image: unicornsLogo,
+        image: mangalamLogo,
         borderColor: '#10B981',
         gradient: 'linear-gradient(210deg, #10B981, #000)',
     },
     {
-        image: ktLogo,
+        image: sanskrutiLogo,
         borderColor: '#F59E0B',
         gradient: 'linear-gradient(165deg, #F59E0B, #000)',
     },
     {
-        image: tockenLogo,
+        image: boradeLogo,
         borderColor: '#EF4444',
         gradient: 'linear-gradient(195deg, #EF4444, #000)',
     },
     {
-        image: mangalamLogo,
+        image: neelkanthalogo,
         borderColor: '#8B5CF6',
         gradient: 'linear-gradient(225deg, #8B5CF6, #000)',
     },
     {
-        image: unicornsLogo,
+        image: tockenLogo,
         borderColor: '#06B6D4',
         gradient: 'linear-gradient(135deg, #06B6D4, #000)',
     },
 ];
 
-const WorldwideBusiness = ({ items }) => {
+const WorldwideBusiness = () => {
     const sectionRef = useRef(null);
-    const fadeRef = useRef(null);
-    const setX = useRef(null);
-    const setY = useRef(null);
-
-    const data = items?.length ? items : businessLogo;
+    const overlayRef = useRef(null);
+    const logoRefs = useRef([]);
 
     useEffect(() => {
-        const el = sectionRef.current;
-        if (!el) return;
+        const section = sectionRef.current;
+        const overlay = overlayRef.current;
 
-        setX.current = gsap.quickSetter(el, '--x', 'px');
-        setY.current = gsap.quickSetter(el, '--y', 'px');
+        const moveCircle = (e) => {
+            const rect = section.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-        const rect = el.getBoundingClientRect();
-        setX.current(rect.width / 2);
-        setY.current(rect.height / 2);
+            gsap.to(overlay, {
+                "--x": `${x}px`,
+                "--y": `${y}px`,
+                duration: 0.25,
+                ease: "power2.out",
+            });
+
+
+            // check distance for each logo
+            logoRefs.current.forEach((logo) => {
+                const logoRect = logo.getBoundingClientRect();
+                const dx = e.clientX - (logoRect.left + logoRect.width / 2);
+                const dy = e.clientY - (logoRect.top + logoRect.height / 2);
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                // console.log("logo refs:", dx, dy, distance);
+
+
+                if (distance < 120) {
+                    // show normal color
+                    gsap.to(logo, {
+                        filter: "brightness(1) invert(0) contrast(1)",
+                        duration: 0.1,
+                    });
+                } else {
+                    // back to white
+                    gsap.to(logo, {
+                        filter: "brightness(0) invert(1) contrast(1.2)",
+                        duration: 0.1,
+                    });
+                }
+            });
+        };
+
+        const showCircle = () => {
+            gsap.to(overlay, {
+                "--r": "250px",
+                opacity: 0.85,
+                duration: 0.3,
+                ease: "power2.out",
+            });
+        };
+
+        const hideCircle = () => {
+            gsap.to(overlay, {
+                "--r": "0px",
+                opacity: 0.85,
+                duration: 0.3,
+                ease: "power2.inOut",
+            });
+        };
+
+        section.addEventListener("mousemove", moveCircle);
+        section.addEventListener("mouseenter", showCircle);
+        section.addEventListener("mouseleave", hideCircle);
+
+        return () => {
+            section.removeEventListener("mousemove", moveCircle);
+            section.removeEventListener("mouseenter", showCircle);
+            section.removeEventListener("mouseleave", hideCircle);
+        };
     }, []);
 
-    const handleMove = (e) => {
-        const rect = sectionRef.current.getBoundingClientRect();
-        setX.current(e.clientX - rect.left);
-        setY.current(e.clientY - rect.top);
-
-        gsap.to(fadeRef.current, { opacity: 1, duration: 0.2 });
-    };
-
-    const handleLeave = () => {
-        gsap.to(fadeRef.current, { opacity: 0, duration: 0.3 });
-    };
-
     return (
-        <section
-            ref={sectionRef}
-            className="worldwide-business section-padding"
-            onPointerMove={handleMove}
-            onPointerLeave={handleLeave}
-        >
-            {/* FULL WIDTH CHROME LAYERS */}
-            <div className="chroma-grid-bg" />
-            <div className="chroma-fade" ref={fadeRef} />
-
-            <Container>
-                <div className="title-count title-light text-center mb-5">
-                    <h2>
-                        Trusted by Businesses <br />
-                        <span className="fst-italic">Worldwide</span>
-                    </h2>
-                    <p>
-                        We collaborate with companies that value thoughtful design,
-                        <br />
-                        dependable development, and measurable digital growth.
-                    </p>
+        <>
+            <section ref={sectionRef} className="chrome-section section-padding worldwide-business">
+                <div className="container position-relative">
+                    <div className="title-count title-light text-center mb-5">
+                        <h2>
+                            Trusted by Businesses <br />
+                            <span className="fst-italic">Worldwide</span>
+                        </h2>
+                        <p>
+                            We collaborate with companies that value thoughtful design,
+                            <br />
+                            dependable development, and measurable digital growth.
+                        </p>
+                    </div>
+                    <Row className="row g-4">
+                        {businessLogo.map((value, i) => (
+                            <Col className="" key={i}>
+                                <div className="chrome-card">
+                                    <img
+                                        src={value.image}
+                                        alt="logo"
+                                        ref={(el) => (logoRefs.current[i] = el)}
+                                    />
+                                </div>
+                            </Col>
+                        ))}
+                    </Row>
                 </div>
 
-                <Row className="row-gap-4">
-                    {data.map((c, i) => (
-                        <Col key={i} xs={6} sm={4} md={4} lg={3} xl={2} className="chroma-card">
-                            <div
-                                className="chroma-img-wrapper"
-                                style={{
-                                    '--card-border': c.borderColor,
-                                    '--card-gradient': c.gradient,
-                                }}
-                            >
-                                <img src={c.image} alt="" />
-                            </div>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-        </section>
+                {/* Overlay */}
+                <div ref={overlayRef} className="chrome-overlay fade-overlay" />
+            </section>
+
+        </>
     );
 };
 

@@ -15,7 +15,7 @@ const ServiceSlider = ({ figmaImg, Title, pText, data, prevRef, nextRef }) => {
             <Col md={12} lg={10}>
               <row className="title-gap">
                 <h2 className='figma-title'>
-                  <img src={figmaImg} className='figma-text' />
+                  {/* <img src={figmaImg} className='figma-text' /> */}
                   {Title}
                 </h2>
                 <p>{pText}</p>

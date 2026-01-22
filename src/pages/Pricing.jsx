@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useLocation } from "react-router-dom";
+
 import { Col, Container, Row } from 'react-bootstrap'
 import pricingImgOne from '../assets/images/pricing-head-image.svg'
 import '../assets/scss/InnerPricing.scss'
@@ -25,7 +27,19 @@ import FAQAccordionComp from '../components/shared/FAQAccordionComp'
 import PriceAccordion from '../components/shared/PriceAccordion'
 
 const Pricing = () => {
+    // getting subscriptionPlan & key from home page pricing section
+    const location = useLocation();
 
+    const subscriptionPlan = location.state?.subscriptionPlan;
+    const selectedKey = location.state?.selectedKey;
+
+    console.log("data getting from homepage pricing section:", subscriptionPlan, selectedKey);
+
+
+    console.log("Location state:", location.state);;
+
+    // ============================================
+    const [activeId, setActiveId] = useState(1); // first accordion active
 
 
    const accordionData = [
@@ -66,27 +80,9 @@ const Pricing = () => {
         },
     ]
 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    const toggleAccordion = (id) => {
+        setActiveId(activeId === id ? null : id);
+    };
 
     return (
         <>
@@ -122,7 +118,10 @@ const Pricing = () => {
                     <div className="pricing-arrow">
                         <CurveArrow />
                     </div>
-                    <PriceTable />
+                    <PriceTable
+                        initialPlan={subscriptionPlan}
+                        initialType={selectedKey}
+                    />
                 </Container>
             </section>
 

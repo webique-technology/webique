@@ -7,13 +7,21 @@
     padding: 6px 10px;
     color: $light;
 
+    a {
+        font-size: $font-size-base075;
+    }
+
     p {
         font-size: $font-size-base075;
     }
 }
 
 .nav {
-    background: linear-gradient(102.85deg, rgba(153, 229, 255, 0.38) 20.09%, rgba(241, 250, 254, 0.477673) 34.54%, rgba(235, 248, 253, 0.45132) 30.09%, rgba(255, 255, 255, 0.54) 65.01%, rgba(255, 240, 201, 0.66) 95.61%);
+    background: $white;
+
+    .nav-container {
+        background: linear-gradient(102.85deg, rgba(153, 229, 255, 0.38) 20.09%, rgba(241, 250, 254, 0.477673) 34.54%, rgba(235, 248, 253, 0.45132) 30.09%, rgba(255, 255, 255, 0.54) 65.01%, rgba(255, 240, 201, 0.66) 95.61%);
+    }
 
     @media(max-width:768px) {
         position: sticky;

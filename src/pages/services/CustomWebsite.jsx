@@ -136,7 +136,7 @@ const CustomWebsite = () => {
 
 
         <ServiceSlider 
-        figmaImg={marImg1} 
+        // figmaImg={marImg1} 
         Title="Why We Build Custom Websites"
         data={DesignServices} pText="We build custom websites to deliver tailored digital experiences that align perfectly with your business goals, brand identity, and user needs. Unlike template-based solutions, custom websites are designed for flexibility, performance, and long-term growth." 
         prevRef={prevRef}

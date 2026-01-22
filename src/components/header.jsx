@@ -92,9 +92,9 @@ const Header = () => {
 
   return (
     <section className="header-wrap section-padding pb-0">
-      <div className="w-lgo-wrap d-none d-xl-block">
+      {/* <div className="w-lgo-wrap d-none d-xl-block">
         <img src={wLgo} alt="Header Logo" />
-      </div>
+      </div> */}
 
       {heroData.map((item) => (
         <React.Fragment key={item.id}>

@@ -68,7 +68,7 @@ const TestimonialCarousel = () => {
     <section className="testimonial-wrap section-padding">
       <Container>
         <div className="title-count text-center mb-0 mb-sm-4">
-          <h2 className="mb-5">Testimonials</h2>
+          <h2 className="mb-5">What Our Clients Say</h2>
         </div>
         <Swiper
           modules={[Autoplay, Scrollbar]}
@@ -86,7 +86,7 @@ const TestimonialCarousel = () => {
             draggable: true,
           }}
           breakpoints={{
-            0: { slidesPerView: 1.5 },
+            0: { slidesPerView: 1.3, spaceBetween: 15 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}

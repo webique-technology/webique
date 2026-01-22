@@ -3,14 +3,209 @@
 
 .portfolio-page {
 
-    .blue-box {
-        background: rgba(23, 23, 23, 1);
-        padding: 25px;
-        border-radius: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        transition: background 0.3s ease;
+    .mansory-grid {
+
+        column-count: 3;
+        column-gap: 24px;
+
+        @media(max-width:992px) {
+            column-count: 2;
+        }
+
+        @media(max-width:576px) {
+            column-count: 1;
+        }
     }
 
+    .blue-box {
+        background: $dark-blue;
+        padding: 15px;
+        height: max-content;
+        border-radius: $radius-l;
+        @include flex(column, flex-start, flex-start, 18px);
+        transition: background 0.3s ease;
+        width: 100%;
+        margin-bottom: 24px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        /* legacy */
+        -webkit-column-break-inside: avoid;
+        /* Safari */
+        display: inline-block;
+
+        p {
+            color: $white;
+            padding-top: 10px;
+            margin: 0;
+
+            @media(max-width:576px) {
+                font-size: $font-size-base0875;
+                line-height: 18px;
+            }
+        }
+
+        .blue-box-content {
+            width: 100%;
+            background: #FFFFFF1A;
+            border-radius: $radius-l;
+            overflow: hidden;
+
+            .bbc-top {
+                padding: 26px 26px 16px;
+
+                p {
+                    font-size: $font-size-base2;
+                    font-weight: 500;
+                }
+
+                @media(max-width:1200px) {
+                    padding: 16px;
+                }
+
+                @media(max-width:768px) {
+                    padding: 10px;
+
+                    p {
+                        font-size: $font-size-base1;
+                    }
+                }
+            }
+
+            // all cards img same class
+            .bb-img-scroll {
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    transition: transform 8s ease;
+                    will-change: transform;
+                    display: block;
+                }
+
+                @media(max-width:576px) {
+                    height: 300px !important;
+                }
+            }
+
+            // drop-n-park scroll
+            .drop-np-scroll {
+                height: 722px;
+
+                @media(max-width:1400px) {
+                    height: 677px;
+                }
+
+                @media(max-width:1200px) {
+                    height: 480px;
+                }
+            }
+
+            // borade scroll
+            .borade-scroll {
+                height: 697px;
+
+                @media(max-width:1400px) {
+                    height: 532px;
+                }
+
+                @media(max-width:1200px) {
+                    height: 458px;
+                }
+
+                @media(max-width:992px) {
+                    height: 552px;
+                }
+
+                @media(max-width:768px) {
+                    height: 590px;
+                }
+            }
+
+            // tocken-scroll
+            .tocken-scroll {
+                height: 949px;
+
+                @media(max-width:1400px) {
+                    height: 600px;
+                }
+
+                @media(max-width:1200px) {
+                    height: 565px;
+                }
+
+                @media(max-width:992px) {
+                    height: 480px;
+                }
+            }
+
+            // kalyani travale scroll
+            .kt-scroll {
+                height: 400px;
+
+                @media(max-width:1400px) {
+                    height: 458px;
+                }
+
+                @media(max-width:1200px) {
+                    height: 280px;
+                }
+            }
+
+            // ngo web scroll
+            .crsbms-scroll {
+                height: 580px;
+
+                @media(max-width:1400px) {
+                    height: 418px;
+                }
+
+                @media(max-width:1200px) {
+                    height: 354px;
+                }
+
+                @media(max-width:768px) {
+                    height: 250px;
+                }
+            }
+
+            // sanskruti holiday scroll
+            .sanskruti-scroll {
+                height: 514px;
+
+                @media(max-width:1400px) {
+                    height: 413px;
+                }
+
+                @media(max-width:992px) {
+                    height: 650px;
+                }
+
+                @media(max-width:767px) {
+                    height: 470px;
+                }
+            }
+
+            // om mangalam web scroll
+            .om-mangalam-scroll {
+                height: 377px;
+
+                @media(max-width:1200px) {
+                    height: 270px;
+                }
+            }
+
+            // unicorn hospital scroll
+            .unicorn-scroll {
+                height: 650px;
+
+                @media(max-width:1200px) {
+                    height: 390px;
+                }
+
+                @media(max-width:768px) {
+                    height: 243px;
+                }
+            }
+        }
+    }
 }

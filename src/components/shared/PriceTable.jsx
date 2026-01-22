@@ -13,23 +13,27 @@ import "../../assets/scss/priceTable.scss";
 const PricingPgaeData = [
   // wordpress website
   {
-    pricingType: "wordpress",
+    pricingType: "cms-website",
     plans: [
       {
         pricingPackName: "Starter Website",
         packPrice: "₹12999",
+        planType: "Basic"
       },
       {
         pricingPackName: "Business Website",
         packPrice: "₹24999",
+        planType: "Besic popular"
       },
       {
         pricingPackName: "Enterprise Website",
         packPrice: "₹33999",
+        planType: "Advanced"
       },
       {
         pricingPackName: "ECommerce Website",
         packPrice: "₹41999",
+        planType: "Premium"
       },
     ],
     features: [
@@ -241,18 +245,22 @@ const PricingPgaeData = [
       {
         pricingPackName: "Starter Website",
         packPrice: "₹12999",
+        planType: "Basic"
       },
       {
         pricingPackName: "Business Website",
         packPrice: "₹24999",
+        planType: "Besic popular"
       },
       {
         pricingPackName: "Enterprise Website",
         packPrice: "₹33999",
+        planType: "Advanced"
       },
       {
         pricingPackName: "ECommerce Website",
         packPrice: "₹41999",
+        planType: "Premium"
       },
     ],
     features: [
@@ -393,19 +401,44 @@ const PricingPgaeData = [
    COMPONENT
 ======================= */
 
-const PriceTable = () => {
-  const [activeType, setActiveType] = useState("wordpress");
+const PriceTable = ({ initialPlan, initialType }) => {
+  const [activeType, setActiveType] = useState(initialType || "cms-website");
   const [activePlan, setActivePlan] = useState(0);
+
+  console.log("getting props data from Pricing Page:", initialPlan, initialType);
 
   const navRefs = useRef({});
   const [ghostStyle, setGhostStyle] = useState({});
 
-  const currentData = PricingPgaeData.find(
-    (item) => item.pricingType === activeType
-  );
+  const selectedData =
+    PricingPgaeData.find((item) => item.pricingType === activeType) ||
+    PricingPgaeData[0];
 
-  const plans = currentData.plans;
-  const features = currentData.features;
+  const plans = selectedData?.plans || [];
+  console.log("plans:", plans);
+
+  const features = selectedData?.features || [];
+  // console.log("features:", features);
+
+
+  useEffect(() => {
+    if (!initialPlan || plans.length === 0) return;
+
+    const index = plans.findIndex(
+      (p) => p.pricingPackName === initialPlan
+    );
+
+    if (index !== -1) {
+      setActivePlan(index);
+    }
+  }, [initialPlan, plans]);
+
+  useEffect(() => {
+    if (initialType) {
+      setActiveType(initialType);
+    }
+  }, [initialType]);
+
 
   /* =======================
      ICON RENDER
@@ -448,7 +481,7 @@ const PriceTable = () => {
     <div className="pricing-section">
       <Container className="">
         <Tab.Container
-          activeKey={activeType}
+          activeKey={initialType || activeType}
           onSelect={(k) => {
             setActiveType(k);
             setActivePlan(0);
@@ -471,8 +504,8 @@ const PriceTable = () => {
                       eventKey={item.pricingType}
                       ref={(el) => (navRefs.current[item.pricingType] = el)}
                     >
-                      {item.pricingType === "wordpress"
-                        ? "CMS"
+                      {item.pricingType === "custome-website"
+                        ? "CMS Website"
                         : "Custom Website"}
                     </Nav.Link>
                   </Nav.Item>
@@ -520,16 +553,19 @@ const PriceTable = () => {
                       <th>Feature</th>
 
                       {plans.map((plan, i) => (
-                        <th key={i} className="desktop-only">
+                        <th key={i} >
                           {plan.pricingPackName}
                           <br />
                           <span>{plan.packPrice}</span>
                         </th>
                       ))}
 
-                      <th className="mobile-only">
+                      {/* <th
+                        // className="mobile-only"
+                        className={initialPlan === plans || initialType === tab.pricingType ? "text-dark" : "text-primary"}
+                      >
                         {plans[activePlan].pricingPackName}
-                      </th>
+                      </th> */}
                     </tr>
                   </thead>
 
@@ -547,7 +583,7 @@ const PriceTable = () => {
                           ][idx];
 
                           return (
-                            <td key={idx} className="desktop-only">
+                            <td key={idx} /*className="desktop-only"*/ className={mapKey === initialPlan ? "activeTypePlan" : " "}>
                               {renderValue(row[mapKey])}
                             </td>
                           );

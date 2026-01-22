@@ -12,6 +12,19 @@ footer {
   @media(max-width:1598px) {
     background: none;
   }
+
+  .hero-btn {
+    border: 1px solid $primary !important;
+
+    &:hover {
+      border-color: $white !important;
+
+      a {
+        color: $white !important;
+      }
+    }
+
+  }
 }
 
 .footer-section {
@@ -94,7 +107,7 @@ footer {
   h2 {
     font-size: $font-footer-heading;
     font-weight: 700;
-    margin: 0 0 20px;
+    margin: 30px 0;
     line-height: 65px;
 
     span {
