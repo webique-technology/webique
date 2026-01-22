@@ -22,6 +22,7 @@ import imgFour from "../assets/images/neelkantha-web.png";
 import imgFive from "../assets/images/unicorn-web.png";
 import { CurveArrow } from "./shared/gsapAnimation";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const heroData = [
   {
@@ -31,7 +32,7 @@ const heroData = [
     subtitle:
       "We create custom websites and digital platforms that help businesses establish, scale, and succeed online.",
     buttons: [
-      { text: "View Portfolio", icon: arrowOne, type: "primary" },
+      { text: "Get In Touch", icon: arrowOne, type: "primary", Link:'/contact'},
     ]
   },
 ];
@@ -109,10 +110,10 @@ const Header = () => {
 
               <div className="hero-buttons">
                 {item.buttons.map((btn, index) => (
-                  <button key={index} className={`hero-btn ${btn.type}`}>
+                  <Link to='/contact'><button key={index} className={`hero-btn ${btn.type}`}>
                     {btn.text}
                     <img src={btn.icon} alt="arrow" />
-                  </button>
+                  </button></Link>
                 ))}
               </div>
               <div className="arrow-count">

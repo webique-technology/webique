@@ -3,6 +3,7 @@ import Chairs from '../assets/images/career-chairs.svg'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../assets/scss/careers.scss'
 import CareerApply from "../assets/images/career-apply.svg"
+import CaretDn from "../assets/images/caret-down.svg"
 import fb from '../assets/images/career-facebook.svg'
 import insta from '../assets/images/career-insta.svg'
 import linkd from '../assets/images/career-linkdin.svg'
@@ -30,9 +31,12 @@ const Career = () => {
                   <h4 className='txt-small'>OR CONTACT US WITH</h4>
                   <p className='txt-email'>contact@webique.in</p>
                   <ul>
-                    <li><a href='#'><img src={insta} alt='inst' /></a></li>
-                    <li><a href='#'><img src={fb} alt='inst' /></a></li>
-                    <li><a href='#'><img src={linkd} alt='inst' /></a></li>
+                    <li><a href='https://www.facebook.com/share/19Bko6nmR5/?mibextid=qi2Omg' target='_blank'><img src={fb} alt='inst' /></a></li>
+                    <li><a href='https://www.instagram.com/webique_tech?igsh=Z2hzNGoya3dtZ2oy' target='_blank'><img src={insta} alt='inst' /></a></li>
+                    <li><a href='https://www.linkedin.com/company/webiquetech' target='_blank'><img src={linkd} alt='inst' /></a></li>
+
+
+
                   </ul>
                 </div>
               </div>
@@ -52,7 +56,7 @@ const Career = () => {
                       </div>
                       {/* Custom Arrow */}
                       <span className="custom-arrow">
-                        <span className="arrow-icon"></span>
+                         <span className="caret-dn"><img src={CaretDn} alt="caret-down"/></span>
                       </span>
                     </div>
                   </Accordion.Header>
@@ -75,7 +79,7 @@ const Career = () => {
                       </div>
                       {/* Custom Arrow */}
                       <span className="custom-arrow">
-                        <span className="arrow-icon"></span>
+                        <span className="caret-dn"><img src={CaretDn} alt="caret-down"/></span>
                       </span>
                     </div>
                   </Accordion.Header>
@@ -98,7 +102,7 @@ const Career = () => {
                       </div>
                       {/* Custom Arrow */}
                       <span className="custom-arrow">
-                        <span className="arrow-icon"></span>
+                         <span className="caret-dn"><img src={CaretDn} alt="caret-down"/></span>
                       </span>
                     </div>
                   </Accordion.Header>
@@ -121,7 +125,7 @@ const Career = () => {
                       </div>
                       {/* Custom Arrow */}
                       <span className="custom-arrow">
-                        <span className="arrow-icon"></span>
+                        <span className="caret-dn"><img src={CaretDn} alt="caret-down"/></span>
                       </span>
                     </div>
                   </Accordion.Header>
@@ -146,7 +150,7 @@ const Career = () => {
             <h2 className='text-capitalize'>Can't find a maching opening?</h2>
             <p className='w-75'>If there isn’t a current opening that matches your profile or interests, but you’re still keen to work with us, feel free to share your profile. We’d be happy to review it and connect if your skills align with what we’re looking for.</p>
             <ButtonCall className='hero-btn'
-              phone="+919876543210"
+              email="contact@webique.in"
               label="Apply Now"
               icon={CareerApply} />
           </div>

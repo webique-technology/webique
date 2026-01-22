@@ -28,19 +28,19 @@ const Footer = () => {
             />
             <ul className="nav-list">
               <li>
-                <Link to="/">Blogs</Link>
+                <Link to="/about">About us</Link>
               </li>
               <li>
-                <Link to="/service">Service</Link>
-              </li>
-              <li>
-                <Link to="/services">Pricing</Link>
+                <Link to="/pricing">Pricing</Link>
               </li>
               <li>
                 <Link to="/portfolio">Portfolio</Link>
               </li>
               <li>
-                <Link to="/contact">Carreas</Link>
+                <Link to="/careers">career</Link>
+              </li>
+              <li>
+                <Link to="/faq">faq's</Link>
               </li>
             </ul>
           </Row>
@@ -55,15 +55,15 @@ const Footer = () => {
             </Col>
             <Col xs={{ order: 0, span: 12 }} md={12} lg={{ order: 1, span: 4 }} className=' d-flex align-items-center justify-content-center'>
               <ul className='footer-icns'>
-                <li><a href='#'><img src={Insta} /></a></li>
-                <li><a href='#'><img src={fbk} /></a></li>
-                <li><a href='#'><img src={linkd} /></a></li>
+                <li><a href='https://www.facebook.com/share/19Bko6nmR5/?mibextid=qi2Omg' target='_blank'><img src={fbk} /></a></li>
+                <li><a href='https://www.instagram.com/webique_tech?igsh=Z2hzNGoya3dtZ2oy' target='_blank'><img src={Insta} /></a></li>
+                <li><a href='https://www.linkedin.com/company/webiquetech' target='_blank'><img src={linkd} /></a></li>
               </ul>
             </Col>
             <Col xs={{ order: 4, span: 12 }} md={12} lg={{ order: 1, span: 4 }} className='company-link d-flex align-items-center justify-content-center justify-content-lg-end'>
               <p className='text-center text-lg-end'>
-                Designed and developed by
-                <a href='https://www.webique.in/' target='_blank'>Webique Technology</a>
+               Powered by&nbsp;
+                <a href='https://www.webique.in/' target='_blank' className='text-white'>Webique Technology</a>
               </p>
             </Col>
           </Row>

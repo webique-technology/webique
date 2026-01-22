@@ -87,6 +87,7 @@ const Pricing = () => {
     const toggleAccordion = (id) => {
         setActiveId(activeId === id ? null : id);
     };
+
     const activeItem = accordionData.find(
         (item) => item.id === activeId
     );
@@ -108,7 +109,7 @@ const Pricing = () => {
                             </ul>
 
                         </Col>
-                        <Col md={5} lg={5} sm={12}>
+                        <Col md={5} lg={5} sm={12} className='d-none d-md-block'>
                             <div className='image-full-inner'>
                                 <img src={pricingImgOne} className='img-fluid' />
                             </div>

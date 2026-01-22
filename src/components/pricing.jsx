@@ -79,8 +79,6 @@ const priceData = [
 ];
 
 const PricingSection = () => {
-    // make for nvigate to the pricing page 
-    let navigate = useNavigate();
     // make for identifing plan Name and key
     const [subscriptionPlan, setSubscriptionPlan] = useState();
     const [key, setKey] = useState("cms-website");
@@ -218,7 +216,7 @@ const PricingSection = () => {
                                         eventKey="cms-website"
                                         onClick={keyClick}
                                     >
-                                        <span>CMS Website</span>
+                                        <span>CMS <br className="tab-br" /> Website</span>
                                     </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
@@ -264,14 +262,6 @@ const PricingSection = () => {
                                                             }}
                                                             variant="primary"
                                                             className="w-100 price-card-btn"
-                                                        // onClick={() => {
-                                                        //     navigate("/pricing", {
-                                                        //         state: {
-                                                        //             subscriptionPlan: price.priceType,
-                                                        //             selectedKey: tab.servicePriceType,
-                                                        //         },
-                                                        //     });
-                                                        // }}
                                                         >
                                                             Explore
                                                         </Button>

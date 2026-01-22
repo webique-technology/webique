@@ -176,20 +176,18 @@
     justify-content: center;
     flex-shrink: 0;
     transition: all 0.3s ease;
+
+    img{width: 20px; height: auto;}
   }
 
-  .arrow-icon {
-    width: 10px;
-    height: 10px;
-    border-right: 2px solid $dark;
-    border-bottom: 2px solid $dark;
-    transform: rotate(45deg);
+  .caret-dn {
+    transform: rotate(0deg);
     transition: transform 0.3s ease;
   }
 
   /* Rotate arrow when accordion is open */
-  .accordion-button:not(.collapsed) .arrow-icon {
-    transform: rotate(-135deg);
+  .accordion-button:not(.collapsed) .caret-dn {
+    transform: rotate(-180deg);
   }
 
 

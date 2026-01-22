@@ -31,7 +31,7 @@ h1 {
     line-height: $h1-lh;
 
     span {
-        color: #022B5B;
+        color: $primary;
     }
 }
 
@@ -347,4 +347,18 @@ svg {
 
 .activeTypePlan {
     background: $warning !important;
+
+    @media (max-width: 768px) {
+        display: none !important;
+    }
 }
+
+.tab-br {
+    display: none;
+
+    @media(max-width:420px) {
+        display: block;
+    }
+}
+
+
