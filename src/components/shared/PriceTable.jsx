@@ -23,7 +23,7 @@ const PricingPgaeData = [
       {
         pricingPackName: "Business Website",
         packPrice: "₹24999",
-        planType: "Besic popular"
+        planType: "Basic Popular"
       },
       {
         pricingPackName: "Enterprise Website",
@@ -240,7 +240,7 @@ const PricingPgaeData = [
   },
   // custome website
   {
-    pricingType: "custome",
+    pricingType: "custome-website",
     plans: [
       {
         pricingPackName: "Starter Website",
@@ -250,7 +250,7 @@ const PricingPgaeData = [
       {
         pricingPackName: "Business Website",
         packPrice: "₹24999",
-        planType: "Besic popular"
+        planType: "Basic Popular"
       },
       {
         pricingPackName: "Enterprise Website",
@@ -404,21 +404,35 @@ const PricingPgaeData = [
 const PriceTable = ({ initialPlan, initialType }) => {
   const [activeType, setActiveType] = useState(initialType || "cms-website");
   const [activePlan, setActivePlan] = useState(0);
-
-  console.log("getting props data from Pricing Page:", initialPlan, initialType);
+  const [isFromHomePage, setIsFromHomePage] = useState(
+    Boolean(initialPlan && initialType)
+  );
 
   const navRefs = useRef({});
-  const [ghostStyle, setGhostStyle] = useState({});
+  const [isMobile, setIsMobile] = useState(false);
+  const [ghostStyle, setGhostStyle] = useState({
+    width: 0,
+    left: 0,
+    top: 0,
+    height: 0,
+  });
+  console.log("getting props data from Pricing Page:", initialPlan, initialType);
 
   const selectedData =
     PricingPgaeData.find((item) => item.pricingType === activeType) ||
     PricingPgaeData[0];
 
   const plans = selectedData?.plans || [];
-  console.log("plans:", plans);
-
+  // console.log("plans:", plans);
   const features = selectedData?.features || [];
   // console.log("features:", features);
+
+  console.log("is form home:", isFromHomePage, ":", isFromHomePage && plans.planType === initialPlan);
+
+  // make effect for refresh the tab on click
+  useEffect(() => {
+    setIsFromHomePage(Boolean(initialPlan && initialType));
+  }, [initialPlan, initialType]);
 
 
   useEffect(() => {
@@ -439,11 +453,7 @@ const PriceTable = ({ initialPlan, initialType }) => {
     }
   }, [initialType]);
 
-
-  /* =======================
-     ICON RENDER
-  ======================= */
-
+  /* icon render */
   const renderValue = (value) => {
     if (!value) return null;
     const v = value.toLowerCase();
@@ -457,60 +467,100 @@ const PriceTable = ({ initialPlan, initialType }) => {
     return value;
   };
 
-  /* =======================
-     GHOST TAB ANIMATION
-  ======================= */
+  /* //====ghost div animation */
+  const isRTL =
+    typeof window !== "undefined" &&
+    getComputedStyle(document.documentElement).direction === "rtl";
 
-  useEffect(() => {
-    const el = navRefs.current[activeType];
-    if (!el) return;
+  const updateGhost = () => {
+    const currentTab = navRefs.current[activeType];
+    if (!currentTab) return;
+
+    const parent = currentTab.offsetParent;
+    if (!parent) return;
+
+    const tabRect = currentTab.getBoundingClientRect();
+    const parentRect = parent.getBoundingClientRect();
+
+    const x = isRTL
+      ? parentRect.right - tabRect.right
+      : tabRect.left - parentRect.left;
 
     setGhostStyle({
-      width: el.offsetWidth,
-      left: el.offsetLeft,
-      height: "85%",
-      top: 5,
+      width: tabRect.width,
+      height: tabRect.height,
+      top: tabRect.top - parentRect.top,
+      x,
     });
-  }, [activeType]);
+  };
 
-  /* =======================
-     JSX
-  ======================= */
+  useEffect(() => {
+    updateGhost();
+
+    const currentTab = navRefs.current[activeType];
+    if (!currentTab) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      requestAnimationFrame(updateGhost);
+    });
+
+    resizeObserver.observe(currentTab);
+    window.addEventListener("resize", updateGhost);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", updateGhost);
+    };
+  }, [activeType]);
+  /* //============== ghost div animation */
 
   return (
-    <div className="pricing-section">
-      <Container className="">
+    <div className="pricing-section ">
+      <div className="pricing-container d-flex flex-column gap-4 gap-sm-5 align-items-center">
         <Tab.Container
           activeKey={initialType || activeType}
           onSelect={(k) => {
             setActiveType(k);
             setActivePlan(0);
+            setIsFromHomePage(false)
           }}
         >
           {/* ---------- TABS ---------- */}
-          <div className="nav-tab-div position-relative mb-3 mb-md-5">
-            <Row className="align-items-center justify-content-center ">
-              <Nav className="nav-tabs justify-content-center position-relative">
-                <motion.div
-                  className="nav-ghost-div position-absolute"
-                  animate={ghostStyle}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-
-                {PricingPgaeData.map((item) => (
-                  <Nav.Item key={item.pricingType}>
-                    <Nav.Link
-                      eventKey={item.pricingType}
-                      ref={(el) => (navRefs.current[item.pricingType] = el)}
-                    >
-                      {item.pricingType === "custome-website"
-                        ? "CMS Website"
-                        : "Custom Website"}
-                    </Nav.Link>
-                  </Nav.Item>
-                ))}
-              </Nav>
-            </Row>
+          <div className="position-relative nav-tab-div">
+            <Nav className="nav-tabs justify-content-center position-relative">
+              {/* Ghost Div */}
+              <motion.div
+                className="nav-ghost-div position-absolute"
+                style={{
+                  width: ghostStyle.width,
+                  height: ghostStyle.height,
+                  top: ghostStyle.top,
+                  left: 0,
+                }}
+                animate={{ x: ghostStyle.x }}
+                transition={{
+                  type: "spring",
+                  stiffness: 350,
+                  damping: 30,
+                }}
+              />
+              <Nav.Item>
+                <Nav.Link
+                  ref={(el) => (navRefs.current["cms-website"] = el)}
+                  eventKey="cms-website"
+                >
+                  <span>CMS Website</span>
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link
+                  ref={(el) => (navRefs.current["custome-website"] = el)}
+                  eventKey="custome-website"
+                >
+                  <span>Custom Website</span>
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
           </div>
 
           {/* ---------- CONTENT ---------- */}
@@ -559,30 +609,34 @@ const PriceTable = ({ initialPlan, initialType }) => {
                         </th>
                       ))}
 
-                      {/* <th
-                        // className="mobile-only"
-                        className={initialPlan === plans || initialType === tab.pricingType ? "text-dark" : "text-primary"}
+                      <th
+                        className="mobile-only"
+                      // className={initialPlan === plans || initialType === tab.pricingType ? "text-dark" : "text-primary"}
                       >
                         {plans[activePlan].pricingPackName}
-                      </th> */}
+                      </th>
                     </tr>
                   </thead>
 
                   <tbody>
                     {features.map((row, i) => (
                       <tr key={i}>
-                        <td>{row.feature}</td>
+                        <td className="text-start fw-semibold">{row.feature}</td>
 
-                        {plans.map((_, idx) => {
-                          const mapKey = [
-                            "starter",
-                            "business",
-                            "enterprise",
-                            "ecommerce",
-                          ][idx];
+                        {plans.map((plan, idx) => {
+                          const mapKey = ["starter", "business", "enterprise", "ecommerce"][idx];
 
                           return (
-                            <td key={idx} /*className="desktop-only"*/ className={mapKey === initialPlan ? "activeTypePlan" : " "}>
+                            <td
+                              key={idx}
+                              className={
+                                isFromHomePage &&
+                                  activeType === tab.pricingType &&
+                                  plan.planType === activePlan
+                                  ? "activeTypePlan"
+                                  : "desktop-only"
+                              }
+                            >
                               {renderValue(row[mapKey])}
                             </td>
                           );
@@ -605,7 +659,7 @@ const PriceTable = ({ initialPlan, initialType }) => {
             ))}
           </Tab.Content>
         </Tab.Container>
-      </Container>
+      </div>
     </div>
   );
 };

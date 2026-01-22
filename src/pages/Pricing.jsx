@@ -31,10 +31,8 @@ const Pricing = () => {
     const subscriptionPlan = location.state?.subscriptionPlan;
     const selectedKey = location.state?.selectedKey;
 
-    console.log("data getting from homepage pricing section:", subscriptionPlan, selectedKey);
-
-
-    console.log("Location state:", location.state);;
+    // console.log("data getting from homepage pricing section:", subscriptionPlan, selectedKey);
+    // console.log("Location state:", location.state);;
 
     // ============================================
     const [activeId, setActiveId] = useState(1); // first accordion active
@@ -117,9 +115,10 @@ const Pricing = () => {
 
             <section className='pricing-table-section section-padding' >
                 <Container className='arrow-container'>
-                    <div className="pricing-arrow">
+                    {/* curve arrow component call */}
+                    {/* <div className="pricing-arrow">
                         <CurveArrow />
-                    </div>
+                    </div> */}
                     <PriceTable
                         initialPlan={subscriptionPlan}
                         initialType={selectedKey}
@@ -131,9 +130,9 @@ const Pricing = () => {
                 <Container>
                     <Row className='g-3 g-md-0'>
                         <Col md={6} lg={6} sm={12} className='title-gap'>
-                            <h2>What You Get With Every Plan</h2>
+                            <h2 className='m-0'>What You Get With Every Plan</h2>
                             <p>The following features are common across all our plans. Every package includes responsive mobile-first design, SEO-optimized structure, secure coding practices, ongoing post-launch support, and clear, consistent communication.</p>
-                            <div className="accordion-image">
+                            <div className="accordion-image d-none d-md-block">
                                 <img src={activeItem?.image} alt={activeItem?.title} className="accordion-img" />
                             </div>
                         </Col>

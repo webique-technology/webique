@@ -175,7 +175,7 @@ const WorldwideBusiness = () => {
                     </div>
                     <Row className="row g-4">
                         {businessLogo.map((value, i) => (
-                            <Col className="" key={i}>
+                            <Col xs={6} sm={4} md={3} lg={2} className="" key={i}>
                                 <div className="chrome-card">
                                     <img
                                         src={value.image}

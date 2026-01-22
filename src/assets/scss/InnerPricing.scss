@@ -178,7 +178,6 @@
 }
 
 .arrow-container {
-  padding: 80px 0 80px 0;
   position: relative;
 
   .pricing-arrow {
@@ -190,10 +189,6 @@
     @media(max-width:767px) {
       display: none;
     }
-  }
-
-  @media(max-width:767px) {
-    padding: 40px 5px 40px 5px;
   }
 }
 
@@ -208,7 +203,7 @@
   .pricing-table {
     background: $white;
     position: relative;
-    z-index: 10;
+    z-index: 5;
 
     thead {
       position: sticky;
@@ -257,6 +252,10 @@
     }
   }
 
+  .tab-content {
+    width: 100%;
+  }
+
   .pricing-table {
     width: 100%;
     border-collapse: collapse;
@@ -291,6 +290,12 @@
 
     .mobile-plan-switcher {
       display: flex;
+    }
+
+    .pricing-section .nav-tabs {
+      width: 100%;
+      position: relative !important;
+      z-index: 5 !important;
     }
   }
 
