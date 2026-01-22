@@ -214,8 +214,8 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                                             )
                                         })
                                     )}
-                                    <li className="d-block d-sm-none"><Link to={"about"}>About Us</Link></li>
-                                    <li className="d-block d-sm-none"><Link to={"career"}>Career</Link></li>
+                                    <li className="d-block d-sm-none"><Link to={"/about"} onClick={onClose}>About Us</Link></li>
+                                    <li className="d-block d-sm-none"><Link to={"/careers"} onClick={onClose}>Career</Link></li>
                                     {/* for desltop view to show only services sub links */}
                                     <li className="d-none d-lg-block">
                                         <Link

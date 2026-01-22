@@ -77,7 +77,7 @@ const TestimonialCarousel = () => {
           centeredSlides
           loop
           autoplay={{
-            delay: 50000,
+            delay: 2000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}

@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container } from "react-bootstrap";
 import "../style/StackCards.scss";
 import stackImg from "../assets/images/stack-img.png";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,65 +60,105 @@ gsap.registerPlugin(ScrollTrigger);
 //   },
 // ];
 
+// const stack1 = [
+//   {
+//     id: 1,
+//     title: "Website Design & Development",
+//     desc: "Custom websites designed to captivate your audience.",
+//     img: stackImg,
+//     link: "/custom-website-development"
+//   },
+//   {
+//     id: 2,
+//     title: "UI/UX Design & Brand Identity",
+//     desc: "Design and branding solutions for businesses.",
+//     img: stackImg,
+//     link: "/ui-ux-design"
+//   },
+//   {
+//     id: 3,
+//     title: "WordPress Development",
+//     desc: "WordPress websites that are fast and responsive.",
+//     img: stackImg,
+//     link: "/wordpress"
+//   },
+//   {
+//     id: 4,
+//     title: "E-commerce Solutions",
+//     desc: "Online stores that convert visitors into buyers.",
+//     img: stackImg,
+//     link: "/e-commerce-woocommerce"
+//   },
+// ]
+
+
 const stack1 = [
   {
     id: 1,
-    title: "Website Design & Development",
-    desc: "Custom websites designed to captivate your audience.",
-    img: stackImg,
-    link: "/custom-website-development"
-  },
-  {
-    id: 2,
-    title: "UI/UX Design & Brand Identity",
-    desc: "Design and branding solutions for businesses.",
-    img: stackImg,
-    link: "/ui-ux-design"
-  },
-  {
-    id: 3,
     title: "WordPress Development",
     desc: "WordPress websites that are fast and responsive.",
     img: stackImg,
     link: "/wordpress"
   },
   {
-    id: 4,
-    title: "E-commerce Solutions",
+    id: 2,
+    title: "Custom Website Development",
+    desc: "Custom websites designed to captivate your audience.",
+    img: stackImg,
+    link: "/custom-website-development"
+  },
+  {
+    id: 3,
+    title: "E-commerce / WooCommerce",
     desc: "Online stores that convert visitors into buyers.",
     img: stackImg,
     link: "/e-commerce-woocommerce"
   },
+  {
+    id: 4,
+    title: "Emailer Template Design",
+    desc: "High-impact, responsive email designs.",
+    img: stackImg,
+    link: "/emailer-template-design"
+  },
 ]
+
+
+
+
+
+
+
+
 
 const stack2 = [
   {
     id: 5,
-    title: "Emailer Template Design",
-    desc: "Custom websites designed to captivate your audience.",
+    title: "Performance, SEO & Lead Enablement",
+    desc: "Better visibility. More leads.",
     img: stackImg,
-    link: "/emailer-template-design"
+    link: "/performance-seo"
   },
   {
     id: 6,
+    title: "UI & UX Design",
+    desc: "Strategic UI/UX design for websites and mobile applications",
+    img: stackImg,
+    link: "/ui-ux-design"
+  },
+  {
+    id: 7,
     title: "Security, Maintenance & Support",
-    desc: "Design and branding solutions for businesses.",
+    desc: "Ongoing updates, protection, and support.",
     img: stackImg,
     link: "/security-maintenance-support"
   },
   {
-    id: 7,
+    id: 8,
     title: "Branding Support",
-    desc: "WordPress websites that are fast and responsive.",
+    desc: "Strong, consistent brand identity.",
     img: stackImg,
     link: "/branding-support"
-  },
-  {
-    id: 8,
-    title: "SEO & Lead Enablement",
-    desc: "Online stores that convert visitors into buyers.",
-    img: stackImg,
-    link: "/performance-seo"
   },
 ]
 
@@ -150,10 +191,12 @@ export const StackSlider = () => {
                       </p>
 
                       <div className="stack-img">
-                        <img
-                          src={value.img}
-                          alt={value.title}
-                        />
+                        <Link to={value.link}>
+                          <img
+                            src={value.img}
+                            alt={value.title}
+                          />
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -178,10 +221,13 @@ export const StackSlider = () => {
                       </p>
 
                       <div className="stack-img">
+                        
+                        <Link to={value.link}>
                         <img
                           src={value.img}
                           alt={value.title}
                         />
+                        </Link>
                       </div>
                     </div>
                   </div>

@@ -9,7 +9,11 @@ import pIcnOne from '../assets/images/pIcn-1.svg'
 import pIcnTwo from '../assets/images/pIcn-2.svg'
 import pIcnThr from '../assets/images/pIcn-3.svg'
 
+import phoneIcon from "../assets/images/phone-footer.svg"
 
+
+
+import arrowIcn from "../assets/images/arrow-one.svg"
 import img1 from "../assets/images/pricing-accordion.svg";
 import img2 from "../assets/images/pricing-head-image.svg";
 import img3 from "../assets/images/pricing-accordion.svg";
@@ -25,6 +29,8 @@ import PriceTable from '../components/shared/PriceTable'
 import { CurveArrow } from '../components/shared/gsapAnimation'
 import FAQAccordionComp from '../components/shared/FAQAccordionComp'
 import PriceAccordion from '../components/shared/PriceAccordion'
+import ButtonCall from '../components/ButtonLink';
+import questionMrk from '../assets/images/question-mark.svg'
 
 const Pricing = () => {
     // getting subscriptionPlan & key from home page pricing section
@@ -40,7 +46,7 @@ const Pricing = () => {
     const [activeId, setActiveId] = useState(1); // first accordion active
 
 
-   const accordionData = [
+    const accordionData = [
         {
             title: "Mobile-first Design",
             para: "We design experiences starting from mobile screens first, ensuring fast performance and seamless scaling.",
@@ -69,7 +75,7 @@ const Pricing = () => {
             lists: [],
             image: img4,
         },
-         {
+        {
             title: "Clear Communication",
             para: "Transparent communication ensures clarity, alignment, and timely delivery.",
             listTitle: "",
@@ -81,6 +87,9 @@ const Pricing = () => {
     const toggleAccordion = (id) => {
         setActiveId(activeId === id ? null : id);
     };
+    const activeItem = accordionData.find(
+        (item) => item.id === activeId
+    );
 
     return (
         <>
@@ -121,66 +130,75 @@ const Pricing = () => {
                         initialPlan={subscriptionPlan}
                         initialType={selectedKey}
                     />
+                <Row className='align-items-center justify-content-center d-flex gap-4'>
+                    <ButtonCall className='hero-btn my-4'
+                        label="Any Queries"
+                        to="/faq"
+                        icon={questionMrk}
+                    />
+                    <ButtonCall className='hero-btn my-4'
+                        label="Enquiry"
+                        to="/contact"
+                        icon={arrowIcn}
+                    />
+                    </Row>
                 </Container>
             </section>
 
             <section className='section-padding'>
                 <Container>
                     <Row className='g-3 g-md-0'>
-                        <Col md={6} lg={6} sm={12} className='title-gap'>
-                            <h2 className='m-0'>What You Get With Every Plan</h2>
-                            <p>The following features are common across all our plans. Every package includes responsive mobile-first design, SEO-optimized structure, secure coding practices, ongoing post-launch support, and clear, consistent communication.</p>
-                            <div className="accordion-image d-none d-md-block">
-                                <img src={activeItem?.image} alt={activeItem?.title} className="accordion-img" />
-                            </div>
-                        </Col>
+
 
                         <div className="accordion-wrap">
                             {/* <PriceAccordion data={accordionData}/> */}
 
-                            <FAQAccordionComp data={accordionData} showImage={true}/>
+                            <FAQAccordionComp data={accordionData} showImage={true} />
                         </div>
 
                     </Row>
                 </Container>
             </section>
+
+
+
             <section className='website-process section-padding footer-gradient-pb'>
                 <Container className='title-gap align-items-center'>
                     <h2>from concept to launch  our website process</h2>
                     <Row className='g-3 g-md-4 tab-card-576'>
-                        <Col lg={3} md={6} sm={12} className="price-card-576 col-md-4">
+                        <Col lg={3} md={6} sm={12} className="price-card-576">
                             <div className='process-card'>
                                 <img src={planImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg-1'>
-                                    <h4>Planning</h4>
-                                    <p>understanding business goals, audience & strategy</p>
+                                    <h4>Research</h4>
+                                    <p>Understanding your business and user needs before we build.</p>
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={3} md={6} sm={12} className='price-card-576 col-md-4'>
+                        <Col lg={3} md={6} sm={12} className='price-card-576'>
                             <div className='process-card'>
                                 <img src={designImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg'>
-                                    <h4>Planning</h4>
-                                    <p>understanding business goals, audience & strategy</p>
+                                    <h4>Design</h4>
+                                    <p>Clean, modern UI focused on user experience.</p>
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={3} md={6} sm={12} className='price-card-576 col-md-4'>
+                        <Col lg={3} md={6} sm={12} className='price-card-576'>
                             <div className='process-card'>
                                 <img src={devImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg-1'>
-                                    <h4>Planning</h4>
-                                    <p>understanding business goals, audience & strategy</p>
+                                    <h4>Review & Feedback</h4>
+                                    <p>Your feedback refined into the final output.</p>
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={3} md={6} sm={12} className='price-card-576 col-md-4'>
+                        <Col lg={3} md={6} sm={12} className='price-card-576'>
                             <div className='process-card'>
                                 <img src={deployImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg'>
-                                    <h4>Planning</h4>
-                                    <p>understanding business goals, audience & strategy</p>
+                                    <h4>Deployment</h4>
+                                    <p>Tested, optimized, and launched smoothly.</p>
                                 </div>
                             </div>
                         </Col>

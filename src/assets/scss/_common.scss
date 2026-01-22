@@ -270,12 +270,12 @@ ul {
 
     &::after {
         content: "";
-        width: 70%;
+        width: 100%;
         position: absolute;
         height: 1000px;
         background-image: url("/src/assets/images/tback-2.svg");
         background-size: cover;
-        right: 70px;
+        right: 0px;
         top: -30px;
         z-index: 1;
     }

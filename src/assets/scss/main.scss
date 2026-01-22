@@ -109,6 +109,10 @@
         border-radius: $radius-m;
         position: relative;
 
+
+
+
+
         .count-card {
             @include flex(column, center, center, 0);
             color: $light;
@@ -121,6 +125,12 @@
             line-height: 72px;
             font-weight: 700;
             margin: 0;
+
+
+    background: -webkit-linear-gradient(-86deg, #F89500 5%, #DEC5FF 53%, #C7F5FF 91%);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 4px transparent;
+    color: #ffffff;
 
             @media(max-width:1300px) {
                 font-size: $font-size-secondery;

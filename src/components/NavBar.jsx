@@ -23,9 +23,9 @@ const TopBar = () => (
                         🎨 Custom Website Design & React Development – Let’s Talk
                     </p>
                 </Col>
-                <Col sm={3} className="d-none d-sm-flex justify-content-end top-bar-link">
+                <Col sm={3} className="d-none d-sm-flex justify-content-end align-items-center top-bar-link">
                     <Link className="m-0 me-4" to='/faq'>Faqs</Link>
-                    <Link className="m-0 me-4" to={"#"}>Blog</Link>
+                    {/* <Link className="m-0 me-4" to={"#"}>Blog</Link> */}
                     <Link className="m-0 me-4" to='/about'>About</Link>
                     <Link className="m-0" to='/careers'>Career</Link>
                 </Col>

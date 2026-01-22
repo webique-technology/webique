@@ -12,7 +12,7 @@ const FAQSection = () => {
     const faqData = [
         {
             title: "Do you offer customized website packages?",
-            para: "Yes. We don’t believe in one-size-fits-all pricing. Our website packages are fully customizable based on your business goals, features required, and budget.",
+            para: "Yes. Webique don’t believe in one-size-fits-all pricing. Our website packages are fully customizable based on your business goals, features required, and budget.",
             listTitle: "",
             lists: [],
             image: ""
@@ -20,7 +20,7 @@ const FAQSection = () => {
         {
             title: "What types of websites do you design?",
             para: "",
-            listTitle: "We design:",
+            listTitle: "Webique design:",
             lists: [
                 "Business & corporate websites",
                 "WordPress websites",
@@ -32,7 +32,7 @@ const FAQSection = () => {
         },
         {
             title: "How much does a website cost?",
-            para: "We offer affordable packages for local businesses and startups. Final pricing is shared after understanding your requirements.",
+            para: "Webique offer affordable packages for local businesses and startups. Final pricing is shared after understanding your requirements.",
             listTitle: "Website cost depends on:",
             lists: [
                 "Number of pages",
@@ -51,7 +51,7 @@ const FAQSection = () => {
         },
         {
             title: "Will my website be mobile-friendly?",
-            para: "Yes. All our websites are 100% responsive, optimized for mobile, tablet, and desktop devices.",
+            para: "Yes. All Webique websites are 100% responsive, optimized for mobile, tablet, and desktop devices.",
             listTitle: "",
             lists: [],
             image: ""
@@ -59,7 +59,7 @@ const FAQSection = () => {
         {
             title: "Do you provide content and images?",
             para: "(Advanced branding or professional photos can be added separately.)",
-            listTitle: "Yes. We can help with:",
+            listTitle: "Yes. Webique can help with:",
             lists: [
                 "Website content writing",
                 "Royalty-free images",
@@ -70,7 +70,7 @@ const FAQSection = () => {
 
         {
             title: "Which platform is better: WordPress or Custom Website?",
-            para: "We recommend the best option based on your business needs.",
+            para: "Webique recommend the best option based on your business needs.",
             listTitle: "",
             lists: [
                 "WordPress is best for quick launch, blogs, and budget-friendly websites",
@@ -92,14 +92,14 @@ const FAQSection = () => {
         },
         {
             title: "Will I be able to manage the website myself?",
-            para: "Yes. For WordPress websites, you can easily manage content. We also provide basic training or guidance if needed.",
+            para: "Yes. For WordPress websites, you can easily manage content. Webique also provide basic training or guidance if needed.",
             listTitle: "",
             lists: [],
             image: ""
         },
         {
             title: "Do you provide website maintenance and support?",
-            para: "We offer monthly and yearly maintenance plans.",
+            para: "Webique offer monthly and yearly maintenance plans.",
             listTitle: "",
             lists: ["Updates", "Security", "Backup", "Technical support"],
             image: ""
@@ -118,14 +118,14 @@ const FAQSection = () => {
         },
         {
             title: "Do you work with local businesses?",
-            para: "Yes. We specialize in helping local businesses build a strong online presence with affordable and effective solutions.",
+            para: "Yes. Webique specialize in helping local businesses build a strong online presence with affordable and effective solutions.",
             listTitle: "",
             lists: [],
             image: ""
         },
         {
             title: "Can you redesign my existing website?",
-            para: "Yes. We can redesign, optimize, or upgrade your existing website to a modern and professional look.",
+            para: "Yes. Webique can redesign, optimize, or upgrade your existing website to a modern and professional look.",
             listTitle: "",
             lists: [],
             image: ""
@@ -142,7 +142,7 @@ const FAQSection = () => {
         },
         {
             title: "How do we get started?",
-            para: "Simply contact us via call, WhatsApp, or email. We understand your requirements, suggest the best solution, and start the process.",
+            para: "Simply contact Webique via call, WhatsApp, or email. Webique understand your requirements, suggest the best solution, and start the process.",
             listTitle: "",
             lists: [],
             image: ""

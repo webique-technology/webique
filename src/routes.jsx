@@ -18,12 +18,14 @@ import Faq from "./pages/Faq";
 import FAQSection from "./pages/FAQSection";
 import Portfolio from "./pages/portfolio";
 import Career from "./pages/Career";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 const AppRoutes = () => {
     return (
         <BrowserRouter>
             <NavigationBar />
+            <ScrollToTop/>
             <Routes>
                 <Route path="/" element={<Home />} />
 
