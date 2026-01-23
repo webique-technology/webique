@@ -14,7 +14,10 @@
       color: $dark-blue;
     }
 
-    @media(max-width:768px) {font-size: $font-size-fourth; line-height:$lh-hundred;}
+    @media(max-width:768px) {
+      font-size: $font-size-fourth;
+      line-height: $lh-hundred;
+    }
   }
 }
 
@@ -46,7 +49,9 @@
       font-style: italic;
       margin: 0;
 
-      @media(max-width:992px) {font-size: 20px;}
+      @media(max-width:992px) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -84,9 +89,14 @@
     }
   }
 
+  .acordian-active-bg {
+    background: linear-gradient(275deg, rgba(229, 241, 255, 0.8) 67%, rgba(237, 245, 255, 0.74) 94%, rgba(223, 249, 255, 0.75) 100%);
+  }
+
   .accordion-item {
     border: none;
     border-bottom: 1px solid #e5e7eb; // thin line under each item
+    padding: 15px;
   }
 
   .accordion-header {
@@ -177,7 +187,10 @@
     flex-shrink: 0;
     transition: all 0.3s ease;
 
-    img{width: 20px; height: auto;}
+    img {
+      width: 20px;
+      height: auto;
+    }
   }
 
   .caret-dn {
@@ -198,41 +211,43 @@
   height: auto;
   padding: 0 0 120px 0;
 
-.opening-section {
-  width: 100%;
-  min-height: 120px;
-  padding: 70px 0;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  border-radius: 10px;
-  color: $white;
+  .opening-section {
+    width: 100%;
+    min-height: 120px;
+    padding: 70px 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    color: $white;
 
-  background:
-    url('../images/career-background.png') no-repeat left center,
-    linear-gradient(180deg, #083A74 0%, #0F6DDA 100%);
+    background:
+      url('../images/career-background.png') no-repeat left center,
+      linear-gradient(180deg, #083A74 0%, #0F6DDA 100%);
 
-  background-size: auto 100%, cover;
+    background-size: auto 100%, cover;
 
-  &::before{content: "";
-    content: "";
-  width: 118px;
-  height: 118px;
-  position: absolute;
-  left: 50px;
-  top: -59px;
+    &::before {
+      content: "";
+      content: "";
+      width: 118px;
+      height: 118px;
+      position: absolute;
+      left: 50px;
+      top: -59px;
 
-  border-radius: 50%;
-  background-color: #ffffff;
+      border-radius: 50%;
+      background-color: #ffffff;
 
-  background-image: url('../images/quotes.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;}
-}
+      background-image: url('../images/quotes.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto;
+    }
+  }
 
 
 }

@@ -32,7 +32,7 @@ const heroData = [
     subtitle:
       "We create custom websites and digital platforms that help businesses establish, scale, and succeed online.",
     buttons: [
-      { text: "Get In Touch", icon: arrowOne, type: "primary", Link:'/contact'},
+      { text: "Get In Touch", icon: arrowOne, type: "primary", Link: '/contact' },
     ]
   },
 ];
@@ -92,90 +92,86 @@ const Header = () => {
   };
 
   return (
-    <section className="header-wrap section-padding pb-0">
+    <header className="header-wrap section-padding pb-0">
       {/* <div className="w-lgo-wrap d-none d-xl-block">
         <img src={wLgo} alt="Header Logo" />
       </div> */}
+      {/* content */}
+      <Container>
+        <div className="hero-content title-gap">
+          <h1 className="hero-title">
+            Digital <span>Design & Development</span> <br /> Aligned With Business Goals
+          </h1>
+          <p className="d-none d-md-block">
+            We create custom websites and digital platforms that help businesses establish, scale, and succeed online.
+          </p>
 
-      {heroData.map((item) => (
-        <React.Fragment key={item.id}>
-          {/* content */}
-          <Container>
-            <div className="hero-content title-gap">
-              <h1
-                className="hero-title"
-                dangerouslySetInnerHTML={{ __html: item.title }}
-              />
-              <p className="d-none d-md-block">{item.subtitle}</p>
-
-              <div className="hero-buttons">
-                {item.buttons.map((btn, index) => (
-                  <Link to='/contact'><button key={index} className={`hero-btn ${btn.type}`}>
-                    {btn.text}
-                    <img src={btn.icon} alt="arrow" />
-                  </button></Link>
-                ))}
-              </div>
-              <div className="arrow-count">
-                <CurveArrow />
-              </div>
-            </div>
-          </Container>
-
-          {/* card stag slider */}
-          <div className="header-portfolio">
-            <Swiper
-              slidesPerView={5}
-              spaceBetween={20}
-              centeredSlides
-              loop
-              loopAdditionalSlides={4}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              modules={[Autoplay]}
-              onInit={(swiper) => {
-                swiperRef.current = swiper;
-                animateSlides(swiper);
-              }}
-              breakpoints={{
-                0: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                420: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 30,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 40,
-                },
-              }}
-              onSlideChange={animateSlides}
-              className="mySwiper"
-
-            >
-              {webImages.map((img, index) => (
-                <SwiperSlide key={index} className="portfolio-slide">
-                  <img className="p-2 p-sm-0" src={img.src} alt={`slide-${img.alt}${index}`} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+          <div className="hero-buttons">
+            <Link to='/contact' className="hero-btn">
+              {/* <button key={index} className={`hero-btn ${btn.type}`}>
+                      {btn.text}
+                    </button> */}
+              Get In Touch
+              <img src={arrowOne} alt="arrow" />
+            </Link>
           </div>
-        </React.Fragment>
-      ))
-      }
-    </section >
+          <div className="arrow-count">
+            <CurveArrow />
+          </div>
+        </div>
+      </Container>
+
+      {/* card stag slider */}
+      <div className="header-portfolio">
+        <Swiper
+          slidesPerView={5}
+          spaceBetween={20}
+          centeredSlides
+          loop
+          loopAdditionalSlides={4}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          onInit={(swiper) => {
+            swiperRef.current = swiper;
+            animateSlides(swiper);
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            420: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+          }}
+          onSlideChange={animateSlides}
+          className="mySwiper"
+
+        >
+          {webImages.map((img, index) => (
+            <SwiperSlide key={index} className="portfolio-slide">
+              <img className="p-2 p-sm-0" src={img.src} alt={`slide-${img.alt}${index}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </header>
   );
 };
 

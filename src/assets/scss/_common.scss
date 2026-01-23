@@ -346,7 +346,7 @@ svg {
 
 
 .activeTypePlan {
-    background: $warning !important;
+    background: linear-gradient(275deg, rgba(229, 241, 255, 0.8) 67%, rgba(237, 245, 255, 0.74) 94%, rgba(223, 249, 255, 0.75) 100%);
 
     @media (max-width: 768px) {
         display: none !important;
@@ -362,3 +362,6 @@ svg {
 }
 
 
+.plan-desc {
+    font-size: $font-size-base0875;
+}

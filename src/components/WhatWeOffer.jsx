@@ -193,7 +193,7 @@ export const StackSlider = () => {
                         </span>
                         {value.title}
                       </h4>
-                      <p className="m-0 d-none d-lg-block">
+                      <p className="m-0 d-none d-lg-block text-start">
                         {value.desc}
                       </p>
 
@@ -223,7 +223,7 @@ export const StackSlider = () => {
                         </span>
                         {value.title}
                       </h4>
-                      <p className="m-0 d-none d-lg-block">
+                      <p className="m-0 d-none d-lg-block text-start">
                         {value.desc}
                       </p>
 
