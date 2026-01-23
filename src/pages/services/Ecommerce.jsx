@@ -7,8 +7,8 @@ import marImg3 from '../../assets/images/custom-1.png'
 import marImg4 from '../../assets/images/ecom-4.png'
 import marImg5 from '../../assets/images/ecom-5.png'
 
-import pFo1 from '../../assets/images/portfolio-1.png'
-import pFo2 from '../../assets/images/portfolio-2.png'
+import pFo1 from '../../assets/images/ecom-11.png'
+import pFo2 from '../../assets/images/ecom-22.png'
 import LogoSlider from "../../components/LogoSlider";
 import ServiceSlider from '../../components/ServiceSlider';
 import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components/shared/Services';
@@ -115,9 +115,9 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    title: "Website",
-    highlight: "Ecommerce",
-    subtitle: "(e  / Woo Commerce Development)",
+    title: "Ecommerce Website",
+    // highlight: "Ecommerce",
+    subtitle: "(ecommerce / Woo Commerce Development)",
     text: "Scalable and conversion-focused eCommerce solutions designed to deliver seamless shopping experiences and support long-term business growth. We build fast, secure, and user-friendly online stores that turn visitors into loyal customers."
   }
 ];
@@ -153,7 +153,7 @@ const Ecommerce = () => {
     
         <WhatWeDeliver Title="What We Deliver"  Data={servicesData} Image={wwd}/>
 
-        <PortfolioSection Title="Portfolio" Data={portfolioData}/>
+        <PortfolioSection Title="Our Approach" Data={portfolioData}/>
 
    
     </>

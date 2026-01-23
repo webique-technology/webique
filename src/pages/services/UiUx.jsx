@@ -8,8 +8,8 @@ import marImg4 from '../../assets/images/marquee-item-4.svg'
 import marImg5 from '../../assets/images/marquee-item-5.svg'
 import marImg6 from '../../assets/images/marquee-item-6.svg'
 
-import pFo1 from '../../assets/images/portfolio-1.png'
-import pFo2 from '../../assets/images/portfolio-2.png'
+import pFo1 from '../../assets/images/ux-11.png'
+import pFo2 from '../../assets/images/ux-22.png'
 import LogoSlider from "../../components/LogoSlider";
 import ServiceSlider from '../../components/ServiceSlider';
 import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components/shared/Services';
@@ -100,9 +100,9 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    title: "Design",
-    highlight: "UI & UX",
-    subtitle: "(Website & Mobile App)",
+    title: "UI & UX Design",
+    // highlight: "UI & UX",
+    subtitle: " (Website & Mobile App)",
     text: "Strategic UI/UX design for websites and mobile applications that balances usability, visual appeal, and business goals.Designed in Figma for precision, seamless collaboration, and scalable design systems. Focused on intuitive user journeys that drive engagement, conversions, and long-term growth."
   }
 ];
@@ -138,7 +138,7 @@ const UiUx = () => {
     
         <WhatWeDeliver Title="What We Deliver"  Data={servicesData} Image={wwd}/>
 
-        <PortfolioSection Title="Portfolio" Data={portfolioData}/>
+        <PortfolioSection Title="Our Approach" Data={portfolioData}/>
 
  
     </>

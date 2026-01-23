@@ -10,8 +10,8 @@ import marImg5 from '../../assets/images/ec-5.svg'
 import marImg6 from '../../assets/images/ec-1.svg'
 import marImg7 from '../../assets/images/ec-2.svg'
 
-import pFo1 from '../../assets/images/portfolio-1.png'
-import pFo2 from '../../assets/images/portfolio-2.png'
+import pFo1 from '../../assets/images/wp-11.png'
+import pFo2 from '../../assets/images/wp-22.png'
 import LogoSlider from "../../components/LogoSlider";
 import ServiceSlider from '../../components/ServiceSlider';
 import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components/shared/Services';
@@ -129,8 +129,8 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    title: "Solutions",
-    highlight: "CMS Website",
+    title: "CMS Website",
+    // highlight: "CMS Website",
     subtitle: "(WordPress Website Solutions)",
     text: "WordPress is a powerful and flexible CMS used worldwide to build professional, scalable, and easy-to-manage websites. We deliver custom WordPress solutions with optimized plugins, CMS customization, and an SEO-friendly structure for growing businesses."
 
@@ -171,7 +171,7 @@ const WordPress = () => {
     
         <WhatWeDeliver Title="Best Suited For"  Data={servicesData} Image={wwd}/>
 
-        <PortfolioSection Title="Portfolio" Data={portfolioData}/>
+        <PortfolioSection Title="Our Approach" Data={portfolioData}/>
 
 
     </>

@@ -8,8 +8,8 @@ import marImg4 from '../../assets/images/maintenance-1.png'
 import marImg5 from '../../assets/images/maintenance-2.png'
 import marImg6 from '../../assets/images/maintenance-3.png'
 
-import pFo1 from '../../assets/images/portfolio-1.png'
-import pFo2 from '../../assets/images/portfolio-2.png'
+import pFo1 from '../../assets/images/support-11.png'
+import pFo2 from '../../assets/images/support-22.png'
 import LogoSlider from "../../components/LogoSlider";
 import ServiceSlider from '../../components/ServiceSlider';
 import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components/shared/Services';
@@ -121,9 +121,9 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    // title: "Support",
-    highlight: "Security, Maintenance & Support",
-    subtitle: "(Security, Maintenance & Support)",
+    title: "Maintenance Support",
+    // highlight: "Security, Maintenance & Support",
+    subtitle: " (Security, Maintenance & Support)",
     text: "Reliable website protection and ongoing technical support designed to ensure stability, security, and uninterrupted digital operations. We proactively manage and safeguard your website so you can focus on growing your business without technical concerns."
   }
 ];
@@ -163,7 +163,7 @@ const Maintenance = () => {
 
         <WhatWeDeliver Title="What We Deliver"  Data={servicesData} Image={wwd}/>
 
-        <PortfolioSection Title="Portfolio" Data={portfolioData}/>
+        <PortfolioSection Title="Our Approach" Data={portfolioData}/>
 
    
     </>

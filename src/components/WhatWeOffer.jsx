@@ -4,7 +4,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container } from "react-bootstrap";
 import "../style/StackCards.scss";
-import stackImg from "../assets/images/stack-img.png";
+import stackImgOne from "../assets/images/stack-img.png";
+import stackImgTwo from "../assets/images/stack-img-2.png";
+import stackImgthr from "../assets/images/stack-img-3.png";
+import stackImgfvr from "../assets/images/stack-img-4.png";
+import stackImgfiv from "../assets/images/stack-img-5.png";
+import stackImgsix from "../assets/images/stack-img-6.png";
+import stackImgsvn from "../assets/images/stack-img-7.png";
+import stackImgegt from "../assets/images/stack-img-8.png";
 import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -97,28 +104,28 @@ const stack1 = [
     id: 1,
     title: "WordPress Development",
     desc: "WordPress websites that are fast and responsive.",
-    img: stackImg,
+    img: stackImgOne,
     link: "/wordpress"
   },
   {
     id: 2,
     title: "Custom Website Development",
     desc: "Custom websites designed to captivate your audience.",
-    img: stackImg,
+    img: stackImgTwo,
     link: "/custom-website-development"
   },
   {
     id: 3,
     title: "E-commerce / WooCommerce",
     desc: "Online stores that convert visitors into buyers.",
-    img: stackImg,
+    img: stackImgthr,
     link: "/e-commerce-woocommerce"
   },
   {
     id: 4,
     title: "Emailer Template Design",
     desc: "High-impact, responsive email designs.",
-    img: stackImg,
+    img: stackImgfvr,
     link: "/emailer-template-design"
   },
 ]
@@ -136,28 +143,28 @@ const stack2 = [
     id: 5,
     title: "Performance, SEO & Lead Enablement",
     desc: "Better visibility. More leads.",
-    img: stackImg,
+    img: stackImgfiv,
     link: "/performance-seo"
   },
   {
     id: 6,
     title: "UI & UX Design",
     desc: "Strategic UI/UX design for websites and mobile applications",
-    img: stackImg,
+    img: stackImgsix,
     link: "/ui-ux-design"
   },
   {
     id: 7,
     title: "Security, Maintenance & Support",
     desc: "Ongoing updates, protection, and support.",
-    img: stackImg,
+    img: stackImgsvn,
     link: "/security-maintenance-support"
   },
   {
     id: 8,
     title: "Branding Support",
     desc: "Strong, consistent brand identity.",
-    img: stackImg,
+    img: stackImgegt,
     link: "/branding-support"
   },
 ]

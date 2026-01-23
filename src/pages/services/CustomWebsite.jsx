@@ -8,8 +8,8 @@ import marImg4 from '../../assets/images/custom-4.png'
 import marImg5 from '../../assets/images/custom-5.png'
 import marImg6 from '../../assets/images/custom-6.png'
 
-import pFo1 from '../../assets/images/portfolio-1.png'
-import pFo2 from '../../assets/images/portfolio-2.png'
+import pFo1 from '../../assets/images/custom-11.png'
+import pFo2 from '../../assets/images/custom-22.png'
 import LogoSlider from "../../components/LogoSlider";
 import ServiceSlider from '../../components/ServiceSlider';
 import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components/shared/Services';
@@ -108,8 +108,8 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    title: "Website",
-    highlight: "Custom",
+    title: "Custom Website",
+    // highlight: "Custom",
     subtitle: "(Custom Website Development)",
     text: "Custom websites are built from scratch to meet unique business needs, delivering high performance, custom-coded solutions (React & modern frameworks), bespoke UI/UX design, scalable and secure architecture, API & third-party integrations, and performance-optimized experiences for brands seeking a distinctive digital presence."
   }
@@ -149,7 +149,7 @@ const CustomWebsite = () => {
     
         <WhatWeDeliver Title="Best Suited For"  Data={servicesData} Image={wwd}/>
 
-        <PortfolioSection Title="Portfolio" Data={portfolioData}/>
+        <PortfolioSection Title="Our Approach" Data={portfolioData}/>
 
 
     </>

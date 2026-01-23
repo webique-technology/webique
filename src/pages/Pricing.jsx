@@ -14,11 +14,11 @@ import phoneIcon from "../assets/images/phone-footer.svg"
 
 
 import arrowIcn from "../assets/images/arrow-one.svg"
-import img1 from "../assets/images/pricing-accordion.svg";
-import img2 from "../assets/images/pricing-head-image.svg";
-import img3 from "../assets/images/pricing-accordion.svg";
-import img4 from "../assets/images/pricing-head-image.svg";
-import img5 from "../assets/images/pricing-accordion.svg";
+import img1 from "../assets/images/tab-img-1.svg";
+import img2 from "../assets/images/tab-img-2.svg";
+import img3 from "../assets/images/tab-img-3.svg";
+import img4 from "../assets/images/tab-img-4.svg";
+
 
 
 import planImg from "../assets/images/pricing-planning.png";
@@ -61,26 +61,20 @@ const Pricing = () => {
             lists: [],
             image: img2,
         },
-        {
-            title: "Mobile-first Design",
-            para: "Layouts are optimized for touch interactions and progressively enhanced for larger screens.",
-            listTitle: "",
-            lists: [],
-            image: img3,
-        },
+  
         {
             title: "SEO-friendly Structure",
             para: "Clean and semantic HTML structures improve search engine visibility and indexing.",
             listTitle: "",
             lists: [],
-            image: img4,
+            image: img3,
         },
         {
             title: "Clear Communication",
             para: "Transparent communication ensures clarity, alignment, and timely delivery.",
             listTitle: "",
             lists: [],
-            image: img1,
+            image: img4,
         },
     ]
 
@@ -132,12 +126,12 @@ const Pricing = () => {
                         initialType={selectedKey}
                     />
                 <Row className='align-items-center justify-content-center d-flex gap-4'>
-                    <ButtonCall className='hero-btn my-4'
+                    <ButtonCall className='nav-btn my-4 border-btn'
                         label="Any Queries"
                         to="/faq"
                         icon={questionMrk}
                     />
-                    <ButtonCall className='hero-btn my-4'
+                    <ButtonCall className='nav-btn my-4'
                         label="Enquiry"
                         to="/contact"
                         icon={arrowIcn}
@@ -171,7 +165,7 @@ const Pricing = () => {
                             <div className='process-card'>
                                 <img src={planImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg-1'>
-                                    <h4>Research</h4>
+                                    <h4>Research & Strategy</h4>
                                     <p>Understanding your business and user needs before we build.</p>
                                 </div>
                             </div>
@@ -180,7 +174,7 @@ const Pricing = () => {
                             <div className='process-card'>
                                 <img src={designImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg'>
-                                    <h4>Design</h4>
+                                    <h4>Design & Feedback</h4>
                                     <p>Clean, modern UI focused on user experience.</p>
                                 </div>
                             </div>
@@ -189,7 +183,7 @@ const Pricing = () => {
                             <div className='process-card'>
                                 <img src={devImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg-1'>
-                                    <h4>Review & Feedback</h4>
+                                    <h4>Development & Testing</h4>
                                     <p>Your feedback refined into the final output.</p>
                                 </div>
                             </div>
@@ -198,7 +192,7 @@ const Pricing = () => {
                             <div className='process-card'>
                                 <img src={deployImg} alt='process-img' className='img-fluid' />
                                 <div className='process-box process-bg'>
-                                    <h4>Deployment</h4>
+                                    <h4>Deployment & Launch</h4>
                                     <p>Tested, optimized, and launched smoothly.</p>
                                 </div>
                             </div>

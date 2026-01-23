@@ -13,8 +13,8 @@ import marImg4 from '../../assets/images/seo-1.png'
 import marImg5 from '../../assets/images/seo-2.png'
 import marImg6 from '../../assets/images/seo-3.png'
 
-import pFo1 from '../../assets/images/portfolio-1.png'
-import pFo2 from '../../assets/images/portfolio-2.png'
+import pFo1 from '../../assets/images/seo-11.png'
+import pFo2 from '../../assets/images/seo-22.png'
 import LogoSlider from "../../components/LogoSlider";
 import ServiceSlider from '../../components/ServiceSlider';
 import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components/shared/Services';
@@ -127,9 +127,9 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    // title: "Performance",
-    highlight: "Performance, SEO & Lead Enablement",
-    // subtitle: "(Emailer Template Design)",
+    title: "Seo,Lead Performance",
+    // highlight: "Seo,Lead Performance",
+    subtitle: "(Performance, SEO & Lead Enablement)",
     text: "Optimized digital solutions designed to enhance website speed, improve search visibility, and enable consistent lead generation—transforming your website into a high-performing business asset."
   }
 ];
@@ -169,7 +169,7 @@ const SeoService = () => {
     
         <WhatWeDeliver Title="What We Deliver"  Data={servicesData} Image={wwd}/>
 
-        <PortfolioSection Title="Portfolio" Data={portfolioData}/>
+        <PortfolioSection Title="Our Approach" Data={portfolioData}/>
 
 
     </>

@@ -72,7 +72,7 @@
       bottom: auto;
       padding-bottom: 70px !important;
 
-  
+
     }
 
     .process-bg-1 {
@@ -207,4 +207,14 @@
     }
   }
 
+  .border-btn {
+    background-color: $white;
+    box-shadow: 0 0 0 3px $primary inset;
+    color: $primary;
+    box-sizing: border-box;
+
+    .btn-icon {
+      border: solid 1px $primary
+    }
+  }
 }

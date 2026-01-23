@@ -8,8 +8,8 @@ import marImg4 from '../../assets/images/branding-4.png'
 import marImg5 from '../../assets/images/branding-5.png'
 import marImg6 from '../../assets/images/branding-6.png'
 
-import pFo1 from '../../assets/images/portfolio-1.png'
-import pFo2 from '../../assets/images/portfolio-2.png'
+import pFo1 from '../../assets/images/branding-11.png'
+import pFo2 from '../../assets/images/branding-22.png'
 import LogoSlider from "../../components/LogoSlider";
 import ServiceSlider from '../../components/ServiceSlider';
 import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components/shared/Services';
@@ -97,9 +97,9 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    // title: "Support",
-    highlight: "Branding Support",
-    // subtitle: "(Branding  &  Logo  Design)",
+    title: "Branding Support",
+    // highlight: "Branding Support",
+    subtitle: " (Branding  &  Logo  Design)",
     text: "Strategic branding solutions designed to build a strong, consistent, and professional brand identity across all digital touchpoints. We help businesses create a cohesive visual and strategic presence that stands out and builds lasting recognition."
   }
 ];
@@ -137,7 +137,7 @@ const BrandingSupport = () => {
 
       <WhatWeDeliver Title="What We Deliver"  Data={servicesData} Image={wwd} />
 
-      <PortfolioSection Title="Portfolio" Data={portfolioData} />
+      <PortfolioSection Title="Our Approach" Data={portfolioData} />
 
       
     </>

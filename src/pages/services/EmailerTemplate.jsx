@@ -8,8 +8,8 @@ import marImg4 from '../../assets/images/custom-1.png'
 import marImg5 from '../../assets/images/custom-5.png'
 import marImg6 from '../../assets/images/custom-6.png'
 
-import pFo1 from '../../assets/images/portfolio-1.png'
-import pFo2 from '../../assets/images/portfolio-2.png'
+import pFo1 from '../../assets/images/emailer-11.png'
+import pFo2 from '../../assets/images/emailer-22.png'
 import LogoSlider from "../../components/LogoSlider";
 import ServiceSlider from '../../components/ServiceSlider';
 import { PortfolioSection, ServicesIntro, WhatWeDeliver } from '../../components/shared/Services';
@@ -129,8 +129,8 @@ const portfolioData = [
 const serviceData = [
   {
     id: 1,
-    // title: "Design",
-    highlight: "Emailer Template Design",
+    title: "Email Design",
+    // highlight: "Emailer Template Design",
     subtitle: "(Emailer Template Design)",
     text: "Professionally crafted emailer templates designed to deliver clear communication, consistent branding, and improved engagement across all email platforms. Our designs ensure your emails look polished, perform reliably, and drive meaningful user actions."
   }
@@ -160,7 +160,7 @@ const EmailerTemplate = () => {
     
         <WhatWeDeliver Title="What We Deliver"  Data={servicesData} Image={wwd}/>
 
-        <PortfolioSection Title="Portfolio" Data={portfolioData}/>
+        <PortfolioSection Title="Our Approach" Data={portfolioData}/>
 
  
     </>
