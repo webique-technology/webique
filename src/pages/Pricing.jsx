@@ -131,17 +131,17 @@ const Pricing = () => {
                         initialPlan={subscriptionPlan}
                         initialType={selectedKey}
                     />
-                <Row className='align-items-center justify-content-center d-flex gap-4'>
-                    <ButtonCall className='hero-btn my-4'
-                        label="Any Queries"
-                        to="/faq"
-                        icon={questionMrk}
-                    />
-                    <ButtonCall className='hero-btn my-4'
-                        label="Enquiry"
-                        to="/contact"
-                        icon={arrowIcn}
-                    />
+                    <Row className='align-items-center justify-content-center d-flex gap-4'>
+                        <ButtonCall className='hero-btn my-4'
+                            label="Any Queries"
+                            to="/faq"
+                            icon={questionMrk}
+                        />
+                        <ButtonCall className='hero-btn my-4'
+                            label="Enquiry"
+                            to="/contact"
+                            icon={arrowIcn}
+                        />
                     </Row>
                 </Container>
             </section>

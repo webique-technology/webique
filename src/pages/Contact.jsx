@@ -102,7 +102,7 @@ export const ContactLink = ({ linkImg, linkName, link, linkPath }) => {
             </div>
             <div className="d-flex flex-column align-items-start justify-content-start ps-4">
                 <h5 className="mb-1">{linkName}</h5>
-                <a href={href} target={href.startsWith("http") ? "_blank" : "_self"} rel="noreferrer">
+                <a href={href} target={linkPath === "" ? "_self" : "_blank"}>
                     {link}
                 </a>
             </div>
@@ -116,22 +116,22 @@ export const ContactLink = ({ linkImg, linkName, link, linkPath }) => {
 const socialLinkData = [
     {
         src: facebook,
-        link: "www.facebook.com",
+        link: "https://www.facebook.com/share/19Bko6nmR5/?mibextid=qi2Omg",
         alt: "facebook"
     },
     {
         src: insta,
-        link: "www.insta.com",
+        link: "https://www.instagram.com/webique_tech?igsh=Z2hzNGoya3dtZ2oy",
         alt: "instagram"
     },
     {
         src: linkedin,
-        link: "www.linkedin.com",
+        link: "https://www.linkedin.com/company/webiquetech",
         alt: "linkedin"
     },
     {
         src: twitterX,
-        link: "www.x.com",
+        link: "https://x.com",
         alt: "twitterX"
     },
 ]
@@ -162,15 +162,6 @@ const Contact = () => {
 
         setValidated(true);
     };
-
-    // for accordian toggel
-    const toggleAccordion = (id) => {
-        setActiveId(activeId === id ? null : id);
-    };
-
-    const activeItem = accordionData.find(
-        (item) => item.id === activeId
-    );
 
     return (
         <>
@@ -328,7 +319,7 @@ const Contact = () => {
                                             {socialLinkData.map((item, i) => {
                                                 return (
                                                     <li key={i}>
-                                                        <a href={item.link}>
+                                                        <a href={item.link} target="_blank">
                                                             <img src={item.src} alt={item.alt} />
                                                         </a>
                                                     </li>

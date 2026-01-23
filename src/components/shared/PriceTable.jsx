@@ -17,71 +17,49 @@ const PricingPgaeData = [
     plans: [
       {
         pricingPackName: "Starter Website",
-        packPrice: "₹12999",
+        packPrice: "₹12,000",
         planType: "Basic"
       },
       {
         pricingPackName: "Business Website",
-        packPrice: "₹24999",
+        packPrice: "₹20,000",
         planType: "Basic Popular"
       },
       {
         pricingPackName: "Enterprise Website",
-        packPrice: "₹33999",
+        packPrice: "₹30,000",
         planType: "Advanced"
       },
       {
-        pricingPackName: "ECommerce Website",
-        packPrice: "₹41999",
+        pricingPackName: "WooCommerce Website",
+        packPrice: "₹42,000",
         planType: "Premium"
       },
     ],
     features: [
       {
         feature: "Pages Included",
-        starter: "Up to 10 Pages",
-        business: "Up to 20 Pages",
-        enterprise: "Up to 30 Pages",
-        ecommerce: "5 Pages + 30 Products"
-      },
-
-      {
-        feature: "Pages Included",
-        starter: "Up to 10 Pages",
-        business: "Up to 20 Pages",
-        enterprise: "Up to 30 Pages",
-        ecommerce: "5 Pages + 30 Products"
+        starter: "Up to 6 Pages",
+        business: "Up to 12 Pages",
+        enterprise: "Up to 20 Pages",
+        ecommerce: "6 Pages + 30 Products"
       },
       {
         feature: "Custom Layout Design",
         starter: "Template Based",
-        business: "Semi-Custom",
-        enterprise: "Custom",
+        business: "Home + 2 inner page UI",
+        enterprise: "Home + 6 inner page UI",
         ecommerce: "Custom"
       },
       {
         feature: "CMS (Admin Access)",
         starter: "wrong",
-        business: "Right",
+        business: "wrong",
         enterprise: "Right",
         ecommerce: "Right"
       },
       {
         feature: "Mobile Responsive + Bootstrap",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
-      },
-      {
-        feature: "Customized Homepage Design",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
-      },
-      {
-        feature: "SEO Semantic HTML Code",
         starter: "Right",
         business: "Right",
         enterprise: "Right",
@@ -110,21 +88,6 @@ const PricingPgaeData = [
 
       },
       {
-        feature: "JQuery Effects",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
-
-      },
-      {
-        feature: "Main Banner Management",
-        starter: "Right",
-        business: "Right",
-        enterprise: "Right",
-        ecommerce: "Right"
-      },
-      {
         feature: "Slider on Homepage",
         starter: "Right",
         business: "Right",
@@ -147,7 +110,7 @@ const PricingPgaeData = [
       },
       {
         feature: "Blog / News Module",
-        starter: "Blog Only",
+        starter: "wrong",
         business: "Blog + News",
         enterprise: "Blog + News",
         ecommerce: "Blog + News"
@@ -182,15 +145,15 @@ const PricingPgaeData = [
       },
       {
         feature: "Live Chat Feature",
-        starter: "Right",
-        business: "Right",
+        starter: "Wrong",
+        business: "Wrong",
         enterprise: "Right",
         ecommerce: "Right"
       },
       {
         feature: "Malware Removal",
         starter: "Wrong",
-        business: "Right",
+        business: "Wrong",
         enterprise: "Right",
         ecommerce: "Right"
       },
@@ -224,17 +187,24 @@ const PricingPgaeData = [
       },
       {
         feature: "Website Maintenance",
-        starter: "7 Days",
+        starter: "Wrong",
         business: "7 Days",
-        enterprise: "7 Days",
-        ecommerce: "7 Days"
+        enterprise: "1 Month",
+        ecommerce: "1 Month"
       },
       {
         feature: "Delivery Timeline",
         starter: "5-7 Days",
         business: "10-12 Days",
         enterprise: "10-12 Days",
-        ecommerce: "15-20 Days"
+        ecommerce: "20-25 Days"
+      },
+      {
+        feature: "Domain & Hosting",
+        starter: "Wrong",
+        business: "Wrong",
+        enterprise: "Wrong",
+        ecommerce: "Wrong"
       },
     ]
   },
@@ -244,74 +214,67 @@ const PricingPgaeData = [
     plans: [
       {
         pricingPackName: "Starter Website",
-        packPrice: "₹12999",
+        packPrice: "₹18,000",
         planType: "Basic"
       },
       {
         pricingPackName: "Business Website",
-        packPrice: "₹24999",
+        packPrice: "₹28,000",
         planType: "Basic Popular"
       },
       {
         pricingPackName: "Enterprise Website",
-        packPrice: "₹33999",
+        packPrice: "₹40,000",
         planType: "Advanced"
       },
       {
         pricingPackName: "ECommerce Website",
-        packPrice: "₹41999",
+        packPrice: "₹60,000",
         planType: "Premium"
       },
     ],
     features: [
       {
         feature: "Pages Included",
-        starter: "Up to 10 Pages",
-        business: "Up to 20 Pages",
-        enterprise: "Up to 30 Pages",
-        ecommerce: "5 Pages + 30 Products"
+        starter: "Up to 6 Pages",
+        business: "Up to 12 Pages",
+        enterprise: "Up to 12 Dynamic Pages",
+        ecommerce: "6 Pages + 30 Products"
       },
       {
         feature: "Custom Layout Design",
-        starter: "Template Based",
-        business: "Semi-Custom",
-        enterprise: "Fully Custom",
-        ecommerce: "Fully Custom"
+        starter: "Homepage UI mockup",
+        business: "Home + 2 inner page UI",
+        enterprise: "Home + 4 inner page UI",
+        ecommerce: "Home + 4 inner page UI"
       },
       {
-        feature: "CMS (Admin Access)",
-        starter: "Basic",
-        business: "Advanced",
-        enterprise: "Custom Dashboard",
-        ecommerce: "Custom Dashboard"
+        feature: "Admin Access",
+        starter: "Wrong",
+        business: "Wrong",
+        enterprise: "Right",
+        ecommerce: "Right"
       },
       {
         feature: "Database Integration",
-        starter: "Basic Database Setup",
-        business: "Advanced DB Management",
-        enterprise: "Optimized DB Architecture",
-        ecommerce: "Advanced DB + Product Management"
+        starter: "Wrong",
+        business: "Wrong",
+        enterprise: "Right",
+        ecommerce: "Right"
       },
       {
         feature: "API Integration",
-        starter: "Contact Form, Email",
-        business: "Google Maps, Payment, etc.",
-        enterprise: "Multi-API Integration",
-        ecommerce: "Payment Gateway, Shipping, Tax APIs"
+        starter: "Wrong",
+        business: "Wrong",
+        enterprise: "Wrong",
+        ecommerce: "Right"
       },
       {
         feature: "User Authentication",
         starter: "✖",
-        business: "Login/Registration",
+        business: "Wrong",
         enterprise: "Role-Based Access",
         ecommerce: "Customer Accounts"
-      },
-      {
-        feature: "Security Features",
-        starter: "SSL + HTTPS",
-        business: "Malware Protection",
-        enterprise: "Firewall + Malware Protection",
-        ecommerce: "E-Commerce Grade Security"
       },
       {
         feature: "Performance Optimization",
@@ -322,53 +285,39 @@ const PricingPgaeData = [
       },
       {
         feature: "Blog/News Module",
-        starter: "Blog Only",
-        business: "Blog + News",
+        starter: "Wrong",
+        business: "Wrong",
         enterprise: "Blog + News",
         ecommerce: "Blog + News"
 
       },
       {
         feature: "SEO-Friendly Development",
-        starter: "Basic SEO Setup",
-        business: "On-Page SEO",
-        enterprise: "Advanced SEO Optimization",
-        ecommerce: "SEO-Ready Store"
+        starter: "Right",
+        business: "Right",
+        enterprise: "Right",
+        ecommerce: "Right"
 
       },
       {
         feature: "Analytics Setup",
         starter: "✖",
-        business: "Google Analytics",
-        enterprise: "Advanced Analytics + Tracking",
-        ecommerce: "E-Commerce Analytics"
+        business: "Right",
+        enterprise: "Right",
+        ecommerce: "Right"
       },
       {
         feature: "E-Commerce Features",
         starter: "✖",
         business: "✖",
-        enterprise: "E-Commerce Ready Architecture",
+        enterprise: "Wrong",
         ecommerce: "Full Store Setup + Cart, Checkout"
       },
       {
         feature: "Payment Gateway",
         starter: "✖",
-        business: "Optional",
-        enterprise: "Optional",
-        ecommerce: "Included"
-      },
-      {
-        feature: "Inventory Management",
-        starter: "✖",
-        business: "✖",
-        enterprise: "Optional",
-        ecommerce: "Included"
-      },
-      {
-        feature: "Newsletter Integration",
-        starter: "✖",
-        business: "Included",
-        enterprise: "Included",
+        business: "Wrong",
+        enterprise: "Wrong",
         ecommerce: "Included"
       },
       {
@@ -380,24 +329,24 @@ const PricingPgaeData = [
       },
       {
         feature: "Training (Admin Panel)",
-        starter: "Up to 2 Hrs",
-        business: "Up to 3 Hrs",
+        starter: "Wrong",
+        business: "Wrong",
         enterprise: "Up to 5 Hrs",
         ecommerce: "Up to 5 Hrs"
       },
       {
         feature: "Website Maintenance",
         starter: "7 Days",
-        business: "30 Days",
+        business: "15 Days",
         enterprise: "30 Days",
         ecommerce: "30 Days"
       },
       {
-        feature: "Training (Admin Panel)",
-        starter: "7–10 Days",
-        business: "12-15 Days",
-        enterprise: "15-20 Days",
-        ecommerce: "20-25 Days"
+        feature: "Domain & Hosting",
+        starter: "Wrong",
+        business: "Wrong",
+        enterprise: "Wrong",
+        ecommerce: "Wrong"
       },
     ]
   },
@@ -637,7 +586,6 @@ const PriceTable = ({ initialPlan, initialType }) => {
                       </th>
                     </tr>
                   </thead>
-
                   <tbody>
                     {features.map((row, i) => (
                       <tr key={i}>
@@ -653,8 +601,8 @@ const PriceTable = ({ initialPlan, initialType }) => {
                                 isFromHomePage &&
                                   activeType === tab.pricingType &&
                                   plan.planType === activePlan
-                                  ? "activeTypePlan"
-                                  : "desktop-only"
+                                  ? "activeTypePlan plan-desc"
+                                  : "desktop-only plan-desc"
                               }
                             >
                               {renderValue(row[mapKey])}

@@ -26,7 +26,7 @@ const Footer = () => {
               label="Book a Call"
               icon={phoneIcon}
             />
-            <ul className="nav-list">
+            <ul className="nav-list text-capitalize">
               <li>
                 <Link to="/about">About us</Link>
               </li>

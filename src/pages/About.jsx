@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "../../src/assets/scss/About.scss";
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
+import { Col, Container, Row } from 'react-bootstrap';
 
+import "../../src/assets/scss/About.scss";
 import abtImg from "../assets/images/about-img.svg";
 import vIcn from "../assets/images/vision-icn.svg";
 import wWe from "../assets/images/ww-exist.svg";
@@ -14,12 +15,62 @@ import PhiloTwo from "../assets/images/eagle.png";
 import PhiloThr from "../assets/images/wolf.png";
 import WorldwideBusiness from "../components/WorldwideBusiness";
 
-
-
+const AgencyCounter = [
+  { id: 1, no: 500, title: "Satisfied Clients" },
+  { id: 2, no: 150, title: "Project Completed" },
+  { id: 3, no: 5, title: "Years Completed" },
+];
 
 const About = () => {
+  const [runCount, setRunCount] = useState([false, false, false]);
+
+  const strokTextCount = useRef()
+
+  // Intersection Observer
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once
+    threshold: 0.2,    // 30% of section visible
+  });
 
 
+  useEffect(() => {
+    if (!inView || !strokTextCount.current) return;
+
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      strokTextCount.current,
+      { x: -960, opacity: 1 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 2.5,
+        ease: 'power2.out',
+        onComplete: () => {
+          setRunCount((prev) => {
+            const next = [...prev];
+            next[0] = true;
+            return next;
+          });
+        },
+      }
+    )
+      .add(() => {
+        setRunCount((prev) => {
+          const next = [...prev];
+          next[1] = true;
+          return next;
+        });
+      }, '+=0.2')
+      .add(() => {
+        setRunCount((prev) => {
+          const next = [...prev];
+          next[2] = true;
+          return next;
+        });
+      }, '+=0.2');
+
+  }, [inView]);
   return (
     <>
       {/* ================= HISTORY ================= */}
@@ -40,21 +91,9 @@ const About = () => {
 
       {/* ================= STACK SECTIONS ================= */}
 
-
-
-
-
-
-
-
-
-
-
-
-
       <div className="custome-stack-section">
         {/* ===== VISION ===== */}
-        <div class="div-container div1">
+        <div className="div-container div1">
           <section className="vision-section ">
 
             <Container>
@@ -71,8 +110,10 @@ const About = () => {
             </Container>
           </section>
         </div>
+
         {/* ===== EXIST ===== */}
-        <div class="div-container div2">
+
+        <div className="div-container div2">
           <section
             className="exist-section">
             <Container>
@@ -86,8 +127,9 @@ const About = () => {
             </Container>
           </section>
         </div>
+
         {/* ===== DIFFERENT ===== */}
-        <div class="div-container div3">
+        <div className="div-container div3">
           <section
             className="diffrent-section">
             <Container>
@@ -109,7 +151,36 @@ const About = () => {
           </section>
         </div>
       </div>
+      <section className='section-padding'>
+        <Container>
+          {/* Counter Section */}
+          <Row ref={ref} className='p-2 mx-1 mx-md-0 count-row'>
+            <Col xs={12} sm={6} md={{ order: 1, span: 3 }} lg={3} className='p-0 strok-box'>
+              <div className='strok-text' ref={strokTextCount}>
+                <h2 className='text-uppercase text-center text-md-start'>Fun Facts</h2>
+              </div>
+            </Col>
 
+            {AgencyCounter.map(({ no, title, id }, index) => (
+              <Col xs={12} sm={6} md={3} lg={3} key={id} className='wha-col'>
+                <div className="count-card text-center">
+                  <h2 className='mb-1'>
+                    {runCount[index] ? (
+                      <CountUp start={0} end={no} duration={2} separator="" />
+                    ) : (
+                      0
+                    )}+
+                  </h2>
+                  <p className='m-0'>{title}</p>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+      <div className="about-wwb">
+        <WorldwideBusiness />
+      </div>
       {/* ================= PHILOSOPHY ================= */}
       <section className="philosophy-section section-padding">
         <Container>
@@ -148,9 +219,6 @@ const About = () => {
           </Row>
         </Container>
       </section>
-      <div className="about-wwb">
-        <WorldwideBusiness />
-      </div>
     </>
   );
 };

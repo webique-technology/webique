@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Container, Tab, Nav, Card, Button, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
-
+import { FaRupeeSign, FaDollarSign } from "react-icons/fa";
 
 import circleYes from "../assets/images/circle-yes.svg"
 
@@ -14,29 +14,37 @@ const priceData = [
         priceTypeData: [
             {
                 priceType: "Basic",
-                price: 200,
-                pricingList: ["limited pages", "limited storage", "14 days free trial"],
+                pricePlan: "Starter Website",
+                priceINR: "12,000",
+                priceUSD: "275",
+                pricingList: ["Up to 6 Pages", "CMS (WordPress)", "Template Based"],
                 priceTypeBtnLink: "#",
                 mostPopular: ""
             },
             {
                 priceType: "Basic Popular",
-                price: 300,
-                pricingList: ["more pages", "more storage", "14 days free trial"],
+                pricePlan: "Business Website",
+                priceINR: "20,000",
+                priceUSD: "350",
+                pricingList: ["Up to 12 Pages", "CMS (WordPress)", "Home + 2 inner page UI"],
                 priceTypeBtnLink: "#",
                 mostPopular: "Most popular"
             },
             {
                 priceType: "Advanced",
-                price: 400,
-                pricingList: ["unlimited pages", "unlimited storage", "30 days free trial"],
+                pricePlan: "Enterprise Website",
+                priceINR: "30,000",
+                priceUSD: "450",
+                pricingList: ["Up to 20 Pages", "CMS (WordPress)", "Home + 6 inner page UI"],
                 priceTypeBtnLink: "#",
                 mostPopular: ""
             },
             {
                 priceType: "Premium",
-                price: 500,
-                pricingList: ["all features", "priority support", "30 days free trial"],
+                pricePlan: "WooCommerce Website",
+                priceINR: "42,000",
+                priceUSD: "600",
+                pricingList: ["6 Pages + 30 Products", "WooCommerce, Shopify", "Payment Getaway"],
                 priceTypeBtnLink: "#",
                 mostPopular: ""
             },
@@ -48,29 +56,37 @@ const priceData = [
         priceTypeData: [
             {
                 priceType: "Basic",
-                price: 250,
-                pricingList: ["limited pages", "limited storage", "14 days free trial"],
+                pricePlan: "Starter Website",
+                priceINR: "18,000",
+                priceUSD: "300",
+                pricingList: ["Up to 6 Pages", "React Bootstrap, Figma", "Homepage UI mockup "],
                 priceTypeBtnLink: "#",
                 mostPopular: ""
             },
             {
                 priceType: "Basic Popular",
-                price: 350,
-                pricingList: ["more pages", "more storage", "14 days free trial"],
+                pricePlan: "Business Website",
+                priceINR: "28,000",
+                priceUSD: "400",
+                pricingList: ["Up to 12 Pages", "React Bootstrap, Figma", "Home + 2 inner page UI"],
                 priceTypeBtnLink: "#",
                 mostPopular: ""
             },
             {
                 priceType: "Advanced",
-                price: 450,
-                pricingList: ["unlimited pages", "unlimited storage", "30 days free trial"],
+                pricePlan: "Enterprise Website",
+                priceINR: "40,000",
+                priceUSD: "550",
+                pricingList: ["Up to 12 Dynamic Pages", "Admin Panel , blogs ", "Home + 4 inner page UI"],
                 priceTypeBtnLink: "#",
                 mostPopular: "Most Popular"
             },
             {
                 priceType: "Premium",
-                price: 600,
-                pricingList: ["all features", "priority support", "30 days free trial"],
+                pricePlan: "WooCommerce Website",
+                priceINR: "60,000",
+                priceUSD: "750",
+                pricingList: ["6 Pages + 30 Products", "Admin panel, API intigration", "Home + 4 inner page UI"],
                 priceTypeBtnLink: "#",
                 mostPopular: ""
             },
@@ -79,6 +95,10 @@ const priceData = [
 ];
 
 const PricingSection = () => {
+    // Assume 'locale' comes from your State or a Context (e.g., 'en-IN' or 'en-US')
+    const [currency, setCurrency] = useState("INR"); // default India
+    const [testCountry, setTestCountry] = useState("");
+
     // make for identifing plan Name and key
     const [subscriptionPlan, setSubscriptionPlan] = useState();
     const [key, setKey] = useState("cms-website");
@@ -121,11 +141,11 @@ const PricingSection = () => {
     //     return () => window.removeEventListener("resize", updateGhost);
     // }, []);
 
-
     const planClick = (selectedPlan) => {
         setSubscriptionPlan(selectedPlan);
         // console.log("Clicked key:", selectedPlan);
     };
+
     const keyClick = (e) => {
         const text = e.target.innerText;
         setKey(text);
@@ -150,7 +170,6 @@ const PricingSection = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, [key]);
 
-
     useEffect(() => {
         const currentTab = navRefs.current[key];
         if (!currentTab) return;
@@ -174,7 +193,6 @@ const PricingSection = () => {
         });
     }, [key, isMobile]);
 
-
     useEffect(() => {
         const currentTab = navRefs.current[key];
         if (currentTab) {
@@ -182,6 +200,50 @@ const PricingSection = () => {
             setGhostStyle({ width: offsetWidth, left: offsetLeft });
         }
     }, [key]);
+
+    // useEffect(() => {
+    //     fetch("https://ipinfo.io/json")
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if (data.country !== "IN") {
+    //                 setCurrency("USD");
+    //             } else {
+    //                 setCurrency("INR");
+    //             }
+
+    //             console.log("Country:", data.country);
+    //         })
+    //         .catch(err => {
+    //             console.error("IP lookup failed:", err);
+    //             // safe fallback
+    //             setCurrency("USD");
+    //         });
+    // }, []);
+
+    const [fetchedCountry, setFetchedCountry] = useState(null);
+
+    // 1️⃣ Fetch real country once
+    useEffect(() => {
+        fetch("https://ipinfo.io/json")
+            .then(res => res.json())
+            .then(data => {
+                setFetchedCountry(data.country); // store real country
+                console.log("Fetched country:", data.country);
+            })
+            .catch(err => {
+                console.error("IP lookup failed:", err);
+                setFetchedCountry("US"); // fallback
+            });
+    }, []);
+
+    // 2️⃣ Determine currency whenever fetchedCountry or testCountry changes
+    useEffect(() => {
+        const country = testCountry || fetchedCountry; // dev override takes priority
+        if (!country) return; // wait for fetch
+        setCurrency(country === "IN" ? "INR" : "USD");
+        console.log("Currency set for country:", country, "=>", country === "IN" ? "INR" : "USD");
+    }, [fetchedCountry, testCountry]);
+
 
     return (
         <section className="section-padding pricing-section">
@@ -239,11 +301,24 @@ const PricingSection = () => {
                                             <Col sm={6} lg={3} key={price.priceType} className="mb-4 px-2 price-card-576">
                                                 <Card className="pricing-card h-100">
                                                     <div className={!price.mostPopular ? "d-none" : "msp-box"}>{price.mostPopular}</div>
-                                                    <Card.Body className="d-flex flex-column gap-4">
-                                                        <Card.Title>{price.priceType}</Card.Title>
+                                                    <Card.Body className="d-flex flex-column gap-3">
+                                                        <Card.Title>{price.pricePlan}</Card.Title>
                                                         <div className="dashed-border d-flex align-items-end">
-                                                            <h2 className="price m-0">${price.price}</h2>
-                                                            <span className="m-0 ps-2">/{price.priceType}</span>
+                                                            {/* <select
+                                                                value={testCountry}
+                                                                onChange={(e) => setTestCountry(e.target.value)}
+                                                            >
+                                                                <option value="">Auto detect</option>
+                                                                <option value="IN">India</option>
+                                                                <option value="US">USA</option>
+                                                                <option value="GB">UK</option>
+                                                            </select> */}
+
+                                                            <h2>
+                                                                {currency === "INR" ? `₹${price.priceINR}` : `$${price.priceUSD}`}
+                                                            </h2>
+
+                                                            {/* <span className="m-0 ps-2">/{price.priceType}</span> */}
                                                         </div>
                                                         <ul className="list-unstyled dashed-border">
                                                             {price.pricingList.map((item, idx) => (
