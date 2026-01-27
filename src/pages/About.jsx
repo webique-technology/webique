@@ -16,9 +16,9 @@ import PhiloThr from "../assets/images/wolf.png";
 import WorldwideBusiness from "../components/WorldwideBusiness";
 
 const AgencyCounter = [
-  { id: 1, no: 500, title: "Satisfied Clients" },
-  { id: 2, no: 150, title: "Project Completed" },
-  { id: 3, no: 5, title: "Years Completed" },
+  { id: 1, no: 180, title: "Satisfied Clients" },
+  { id: 2, no: 125, title: "Project Completed" },
+  { id: 3, no: 3, title: "Years Completed" },
 ];
 
 const About = () => {

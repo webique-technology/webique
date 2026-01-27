@@ -61,31 +61,33 @@
             padding: 4px 16px;
             font-size: $font-size-base1;
         }
-        &.active {
-    color: $primary;
-    font-weight: 600;
-  }
 
-    
+        &.active {
+            color: $primary;
+            font-weight: 600;
+        }
+
+
     }
 
-        button.nav-span {
-            color: $black;
-    font-weight: 500;
-    font-size: 1.125rem;
-    padding: 4px 30px;
-    border: transparent;
-    background: none;
+    button.nav-span {
+        color: $black;
+        font-weight: 500;
+        font-size: 1.125rem;
+        padding: 4px 30px;
+        border: transparent;
+        background: none;
 
         @media(max-width:1213px) {
             padding: 4px 16px;
             font-size: $font-size-base1;
         }
-          &.active {
-    color: $primary;          // or your highlight color
-    font-weight: 600;
-  }
+
+        &.active {
+            color: $primary; // or your highlight color
+            font-weight: 600;
         }
+    }
 
     .dropdown-menu {
         // display: none;
@@ -100,7 +102,7 @@
 
         li {
             margin: 0;
-            padding: 16px;
+            // padding: 16px;
             background: $trinery;
             border-bottom: 1px solid $primary;
             transition: all 0.2s ease;
@@ -108,7 +110,8 @@
 
             a {
                 font-size: $font-size-base1;
-                padding: 0;
+                padding: 16px;
+                display: block;
             }
 
             &:hover {
@@ -259,18 +262,19 @@
             &:hover {
                 color: $white;
             }
+
             &.active {
-    color: $white;
-    font-weight: 600;
-  }
+                color: $white;
+                font-weight: 600;
+            }
         }
 
         &.active {
-    a {
-      color: $primary;      // active text color
-      font-weight: 600;
-    }
-}
+            a {
+                color: $primary; // active text color
+                font-weight: 600;
+            }
+        }
 
     }
 
@@ -391,11 +395,11 @@
 }
 
 .nav-span {
-  cursor: pointer;
-  user-select: none;
+    cursor: pointer;
+    user-select: none;
 }
 
 .nav-span.active {
-  color: $blue;
-  font-weight: 600;
+    color: $blue;
+    font-weight: 600;
 }

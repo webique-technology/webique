@@ -29,7 +29,7 @@ const TopBar = () => (
                     <Link className="m-0 me-4" to='/about'>About</Link>
                     <Link className="m-0" to='/careers'>Career</Link>
                 </Col>
-    
+
             </Row>
         </Container>
     </div>
@@ -89,7 +89,7 @@ const NavigationBar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const isDesktop = useIsDesktop()
-const location = useLocation();
+    const location = useLocation();
     /* body scroll lock */
     useEffect(() => {
         const shouldLockScroll = isDesktop
@@ -132,90 +132,89 @@ const location = useLocation();
                             </div>
 
                             {/* DESKTOP NAV */}
-                         <div className="d-none d-lg-flex justify-content-center">
-  <ul className="navbar-ul">
-    {navLinks.map((item, i) => {
-      const isDropdownActive =
-        item.dropdown.length > 0 &&
-        item.dropdown.some(
-          sub => location.pathname === `/${sub.dropLink}`
-        );
+                            <div className="d-none d-lg-flex justify-content-center">
+                                <ul className="navbar-ul">
+                                    {navLinks.map((item, i) => {
+                                        const isDropdownActive =
+                                            item.dropdown.length > 0 &&
+                                            item.dropdown.some(
+                                                sub => location.pathname === `/${sub.dropLink}`
+                                            );
 
-      return (
-        <li
-          key={i}
-          className={`nav-item ${isDropdownActive ? "active" : ""}`}
-        >
-          {/* 🔹 NORMAL LINKS */}
-          {item.dropdown.length === 0 ? (
-            <NavLink
-              to={item.link}
-              className={({ isActive }) =>
-                `d-flex align-items-center ${isActive ? "active" : ""}`
-              }
-            >
-              {item.name}
-            </NavLink>
-          ) : (
-            /* 🔹 SERVICES (NO NavLink) */
-            <button
-              type="button"
-              className={`d-flex gap-1 align-items-center nav-span ${
-                isDropdownActive ? "active" : ""
-              }`}
-              onClick={() =>
-                setActiveDropdown(
-                  activeDropdown === i ? null : i
-                )
-              }
-            >
-              {item.name}
+                                        return (
+                                            <li
+                                                key={i}
+                                                className={`nav-item ${isDropdownActive ? "active" : ""}`}
+                                            >
+                                                {/* 🔹 NORMAL LINKS */}
+                                                {item.dropdown.length === 0 ? (
+                                                    <NavLink
+                                                        to={item.link}
+                                                        className={({ isActive }) =>
+                                                            `d-flex align-items-center ${isActive ? "active" : ""}`
+                                                        }
+                                                    >
+                                                        {item.name}
+                                                    </NavLink>
+                                                ) : (
+                                                    /* 🔹 SERVICES (NO NavLink) */
+                                                    <button
+                                                        type="button"
+                                                        className={`d-flex gap-1 align-items-center nav-span ${isDropdownActive ? "active" : ""
+                                                            }`}
+                                                        onClick={() =>
+                                                            setActiveDropdown(
+                                                                activeDropdown === i ? null : i
+                                                            )
+                                                        }
+                                                    >
+                                                        {item.name}
 
-              <motion.img
-                src={downArrow}
-                className="down-arrow-nav"
-                alt="Dropdown arrow"
-                animate={{
-                  rotate: activeDropdown === i ? 180 : 0,
-                }}
-                transition={{ duration: 0.3 }}
-              />
-            </button>
-          )}
+                                                        <motion.img
+                                                            src={downArrow}
+                                                            className="down-arrow-nav"
+                                                            alt="Dropdown arrow"
+                                                            animate={{
+                                                                rotate: activeDropdown === i ? 180 : 0,
+                                                            }}
+                                                            transition={{ duration: 0.3 }}
+                                                        />
+                                                    </button>
+                                                )}
 
-          {/* 🔹 DROPDOWN */}
-          <AnimatePresence>
-            {item.dropdown.length > 0 &&
-              activeDropdown === i && (
-                <motion.ul
-                  className="dropdown-menu show"
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                >
-                  {item.dropdown.map((sub, j) => (
-                    <li key={j}>
-                      <NavLink
-                        to={`/${sub.dropLink}`}
-                        className={({ isActive }) =>
-                          isActive ? "active" : ""
-                        }
-                        onClick={() =>
-                          setActiveDropdown(null)
-                        }
-                      >
-                        {sub.dropName}
-                      </NavLink>
-                    </li>
-                  ))}
-                </motion.ul>
-              )}
-          </AnimatePresence>
-        </li>
-      );
-    })}
-  </ul>
-</div>
+                                                {/* 🔹 DROPDOWN */}
+                                                <AnimatePresence>
+                                                    {item.dropdown.length > 0 &&
+                                                        activeDropdown === i && (
+                                                            <motion.ul
+                                                                className="dropdown-menu show"
+                                                                initial={{ opacity: 0, y: 15 }}
+                                                                animate={{ opacity: 1, y: 0 }}
+                                                                exit={{ opacity: 0, y: 10 }}
+                                                            >
+                                                                {item.dropdown.map((sub, j) => (
+                                                                    <li key={j}>
+                                                                        <NavLink
+                                                                            to={`/${sub.dropLink}`}
+                                                                            className={({ isActive }) =>
+                                                                                isActive ? "active" : ""
+                                                                            }
+                                                                            onClick={() =>
+                                                                                setActiveDropdown(null)
+                                                                            }
+                                                                        >
+                                                                            {sub.dropName}
+                                                                        </NavLink>
+                                                                    </li>
+                                                                ))}
+                                                            </motion.ul>
+                                                        )}
+                                                </AnimatePresence>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
 
 
                             {/* RIGHT ACTIONS */}

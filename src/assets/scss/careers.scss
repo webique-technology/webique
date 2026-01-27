@@ -171,10 +171,14 @@
 
   .accordion-body {
     padding: 1rem 0 1.5rem;
+
+    ul {
+      li {
+        list-style-type: disc;
+
+      }
+    }
   }
-
-
-
 
   .custom-arrow {
     width: 32px;

@@ -29,7 +29,7 @@ import { ArrowButtonSlideXY } from '../components/shared/gsapAnimation';
 
 const masnoryData = [
     {
-        desc: "Broker-free platform to buy, sell, or rent directly from verified owners & developers.",
+        desc: "Drop-N-Park is an airport valet parking service designed for a simple and reliable traveler experience. The frontend is built with React, React-Bootstrap, HTML, and SCSS from Figma designs. The platform includes Website, Driver, Customer, and Admin panels. It ensures smooth operations and easy management.",
         title: "Drop-N-park",
         bntLink: "https://dropnpark.com/",
         src: dropNpark,
@@ -37,7 +37,7 @@ const masnoryData = [
         imgScrollClass: "drop-np-scroll"
     },
     {
-        desc: "Showcase Your Project to 10M+ Users",
+        desc: "Balasaheb Borade Group is a clean, professional multi-page static website built with React to represent the main brand and its sub-firms, including the main site and five sub-firm websites with consistent design across all platforms.",
         title: "Balasaheb Borade",
         bntLink: "https://balasahebboradegroup.com/",
         src: balasahebBorade,
@@ -53,7 +53,7 @@ const masnoryData = [
         imgScrollClass: ""
     },
     {
-        desc: "In-App Chat & Call: Talk directly to owners or builders — no 3rd party needed.",
+        desc: "offers customized local and international tour packages for memorable travel experiences. The website was developed in WordPress using Elementor, based on the client-provided Figma design.",
         title: "sanskruti holiday",
         bntLink: "https://sanskrutiholidays.com/",
         src: sanskrutiHoliday,
@@ -61,7 +61,7 @@ const masnoryData = [
         imgScrollClass: "sanskruti-scroll"
     },
     {
-        desc: "Showcase Your Project to 10M+ Users",
+        desc: "Unicorns Hospital needed a professional, user-friendly WordPress website with a clean design to showcase services, doctors, and contact details, ensuring easy access to information and smooth content management.",
         title: "Unicorns Hospital",
         bntLink: "https://unicornshospitals.com/",
         src: unicornHosp,
@@ -69,7 +69,7 @@ const masnoryData = [
         imgScrollClass: "unicorn-scroll"
     },
     {
-        desc: "Exclusive Offers: Get builder-only promotions & limited-time deals.",
+        desc: "CRSMBS NGO is a clean, informative static WordPress website to highlight their social initiatives and services. The simple, user-friendly design presents their mission, programs, and impact making it easy to connect and support.",
         title: "CRSMBS Ngo",
         bntLink: "https://crsmbs.org/",
         src: crsbmsNgo,
@@ -77,7 +77,7 @@ const masnoryData = [
         imgScrollClass: "crsbms-scroll"
     },
     {
-        desc: "Broker-free platform to buy, sell, or rent directly from verified owners & developers.",
+        desc: "Tocken is a digital platform built for buyers, owners, brokers, and developers to manage and explore property-related services. We delivered the frontend in React and additional Admin Panal.",
         title: "Tocken",
         bntLink: "https://tocken.in/",
         src: tockenWeb,
@@ -85,7 +85,7 @@ const masnoryData = [
         imgScrollClass: "tocken-scroll"
     },
     {
-        desc: "No Broker, No Commission: Direct chat with owners/developers. No intermediaries.",
+        desc: "Kalyani Travels required a simple, informative static WordPress website to showcase local tours and travel services. The clean, easy-to-navigate design helps customers explore options quickly and connect with the business.",
         title: "Kalyani Travels",
         bntLink: "https://kalyanitravel.co.in/",
         src: kalyaniTravale,
@@ -93,7 +93,7 @@ const masnoryData = [
         imgScrollClass: "kt-scroll"
     },
     {
-        desc: "Showcase Your Project to 10M+ Users",
+        desc: "Om Mangalam House Keeping is a clean, trustworthy static WordPress website to showcase their housekeeping and security services. The site clearly presents offerings and makes it easy for customers to connect.",
         title: <>Om mangalam <br /> House keeping</>,
         bntLink: "https://ommangalamfacilities.com/",
         src: omMangalam,
@@ -265,7 +265,7 @@ const Portfolio = () => {
 
 
                     {/* <Masonry /> */}
-{/* 
+                    {/* 
                     <svg width="150" height="150" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
                         <path
                             fill="#1886FF"

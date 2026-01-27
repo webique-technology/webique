@@ -16,6 +16,7 @@ import neelkanthalogo from "../assets/images/neelkanth-logo.png"
 import boradeLogo from "../assets/images/balasaheb_Borade-logo.png"
 import sanskrutiLogo from "../assets/images/sanskruti-logo.png"
 import dropNpark from "../assets/images/Drop-n-Park-logo.png"
+import { AnimatedContent, BlurText } from "./shared/TextAnimation";
 
 
 const businessLogo = [
@@ -160,38 +161,56 @@ const WorldwideBusiness = () => {
 
     return (
         <>
-            <section ref={sectionRef} className="chrome-section section-padding worldwide-business">
-                <div className="container position-relative">
-                    <div className="title-count title-light text-center mb-5">
-                        <h2>
-                            Trusted by Businesses <br />
-                            <span className="fst-italic">Worldwide</span>
-                        </h2>
-                        <p>
-                            We collaborate with companies that value thoughtful design,
-                            <br />
-                            dependable development, and measurable digital growth.
-                        </p>
+            <AnimatedContent
+                distance={120}
+                direction="vertical"
+                reverse={false}
+                duration={0.8}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1}
+                threshold={0.1}
+                delay={0}
+            >
+                <section ref={sectionRef} className="chrome-section section-padding worldwide-business">
+                    <div className="container position-relative">
+                        <div className="title-count title-light text-center mb-5">
+                            <h2>
+                                <BlurText
+                                    text="Trusted by Businesses "
+                                    delay={50}
+                                    animateBy="letters"
+                                    direction="bottom"
+                                    className="justify-content-center"
+                                />
+                                <span className="fst-italic">Worldwide</span>
+                            </h2>
+                            <p>
+                                We collaborate with companies that value thoughtful design,
+                                <br />
+                                dependable development, and measurable digital growth.
+                            </p>
+                        </div>
+                        <Row className="row g-4">
+                            {businessLogo.map((value, i) => (
+                                <Col xs={6} sm={4} md={3} lg={2} className="" key={i}>
+                                    <div className="chrome-card">
+                                        <img
+                                            src={value.image}
+                                            alt="logo"
+                                            ref={(el) => (logoRefs.current[i] = el)}
+                                        />
+                                    </div>
+                                </Col>
+                            ))}
+                        </Row>
                     </div>
-                    <Row className="row g-4">
-                        {businessLogo.map((value, i) => (
-                            <Col xs={6} sm={4} md={3} lg={2} className="" key={i}>
-                                <div className="chrome-card">
-                                    <img
-                                        src={value.image}
-                                        alt="logo"
-                                        ref={(el) => (logoRefs.current[i] = el)}
-                                    />
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                </div>
 
-                {/* Overlay */}
-                <div ref={overlayRef} className="chrome-overlay fade-overlay" />
-            </section>
-
+                    {/* Overlay */}
+                    <div ref={overlayRef} className="chrome-overlay fade-overlay" />
+                </section>
+            </AnimatedContent>
         </>
     );
 };

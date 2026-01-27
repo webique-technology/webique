@@ -13,91 +13,9 @@ import stackImgsix from "../assets/images/stack-img-6.png";
 import stackImgsvn from "../assets/images/stack-img-7.png";
 import stackImgegt from "../assets/images/stack-img-8.png";
 import { Link } from "react-router-dom";
+import { BlurText, ScrollFloat } from "./shared/TextAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
-
-// const stackScrollData = [
-//   {
-//     id: 1,
-//     title: "Website Design & Development",
-//     desc: "Custom websites designed to captivate your audience.",
-//     img: stackImg
-//   },
-//   {
-//     id: 2,
-//     title: "UI/UX Design & Brand Identity",
-//     desc: "Design and branding solutions for businesses.",
-//     img: stackImg
-//   },
-//   {
-//     id: 3,
-//     title: "WordPress Development",
-//     desc: "WordPress websites that are fast and responsive.",
-//     img: stackImg
-//   },
-//   {
-//     id: 4,
-//     title: "E-commerce Solutions",
-//     desc: "Online stores that convert visitors into buyers.",
-//     img: stackImg
-//   },
-//   {
-//     id: 5,
-//     title: "SEO Optimization",
-//     desc: "Improve your ranking and visibility online.",
-//     img: stackImg
-//   },
-//   {
-//     id: 6,
-//     title: "Performance Optimization",
-//     desc: "Speed and performance improvements for websites.",
-//     img: stackImg
-//   },
-//   {
-//     id: 7,
-//     title: "Maintenance & Support",
-//     desc: "Ongoing support and website maintenance.",
-//     img: stackImg
-//   },
-//   {
-//     id: 8,
-//     title: "Custom Integrations",
-//     desc: "Custom solutions to connect your tools.",
-//     img: stackImg
-//   },
-// ];
-
-// const stack1 = [
-//   {
-//     id: 1,
-//     title: "Website Design & Development",
-//     desc: "Custom websites designed to captivate your audience.",
-//     img: stackImg,
-//     link: "/custom-website-development"
-//   },
-//   {
-//     id: 2,
-//     title: "UI/UX Design & Brand Identity",
-//     desc: "Design and branding solutions for businesses.",
-//     img: stackImg,
-//     link: "/ui-ux-design"
-//   },
-//   {
-//     id: 3,
-//     title: "WordPress Development",
-//     desc: "WordPress websites that are fast and responsive.",
-//     img: stackImg,
-//     link: "/wordpress"
-//   },
-//   {
-//     id: 4,
-//     title: "E-commerce Solutions",
-//     desc: "Online stores that convert visitors into buyers.",
-//     img: stackImg,
-//     link: "/e-commerce-woocommerce"
-//   },
-// ]
-
 
 const stack1 = [
   {
@@ -130,14 +48,6 @@ const stack1 = [
   },
 ]
 
-
-
-
-
-
-
-
-
 const stack2 = [
   {
     id: 5,
@@ -169,7 +79,6 @@ const stack2 = [
   },
 ]
 
-
 export const StackSlider = () => {
   const wrapperRef = useRef(null);
   const itemsRef = useRef([]);
@@ -178,7 +87,23 @@ export const StackSlider = () => {
     <>
       <section className='stack-scroll section-padding pb-0'>
         <div className="title-content">
-          <h2 className="text-center pb-4">What we offer</h2>
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(2)'
+            scrollStart='center bottom+=50%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            containerClassName="pb-4"
+          >
+            What we offer
+          </ScrollFloat>
+          {/* <BlurText
+              text=""
+              delay={100}
+              animateBy="words"
+              direction="bottom"
+              className="justify-content-center"
+            /> */}
         </div>
         <div className="section-scroll">
           <div className="div-container div1">
@@ -228,12 +153,12 @@ export const StackSlider = () => {
                       </p>
 
                       <div className="stack-img">
-                        
+
                         <Link to={value.link}>
-                        <img
-                          src={value.img}
-                          alt={value.title}
-                        />
+                          <img
+                            src={value.img}
+                            alt={value.title}
+                          />
                         </Link>
                       </div>
                     </div>

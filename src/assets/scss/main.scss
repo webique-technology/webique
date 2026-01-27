@@ -47,7 +47,24 @@
         line-height: 72px;
         font-weight: 700;
         margin: 0;
+        background: -webkit-linear-gradient(-56deg, #C79CFF 5%, #DEC5FF 33%, #6EE5FF 91%);
+        animation: gradientMove 6s ease infinite;
     }
+
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
 
     @media(max-width:1400px) {
         padding: 35px 40px;
@@ -87,8 +104,6 @@
         line-height: 72px;
         font-weight: 700;
         margin: 0;
-
-        background: -webkit-linear-gradient(-56deg, #C79CFF 5%, #DEC5FF 33%, #6EE5FF 91%);
         -webkit-background-clip: text;
         -webkit-text-stroke: 4px transparent;
         color: #ffffff;
@@ -244,57 +259,6 @@
     }
 
 }
-
-// worldwide business
-// .worldwide-business {
-//     background: linear-gradient(0deg, rgba(15, 109, 218, 1) 0%, rgba(8, 58, 116, 1) 100%);
-//     position: relative;
-
-//     .container {
-//         position: relative;
-//         z-index: 2;
-//     }
-
-//     &::before {
-//         content: " ";
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         background-image: url("../images/bussiness-ww-bg.png");
-//         width: 639px;
-//         height: 490px;
-//         z-index: 0;
-//     }
-
-//     h2 {
-//         span {
-//             font-weight: 400;
-//         }
-//     }
-
-//     p {
-//         color: $gray-text;
-//     }
-
-//     .business-logo {
-//         @include flex(row, center, center, 0);
-//         padding: 30px;
-//         border: 1px solid $light;
-//         height: 100%;
-//         border-radius: $radius-xs;
-//         height: 100%;
-//         transition: background 0.3s ease;
-//         background: rgba(255, 255, 255, 0.06);
-//         transform: translateZ(0);
-//         backface-visibility: hidden;
-//     }
-
-//     @media(max-width:768px) {
-//         &::before {
-//             width: 100%;
-//         }
-//     }
-// }
 
 // pricing section
 .pricing-section {
@@ -603,4 +567,53 @@
     @include flex(row, center, center, 0);
     text-decoration: none;
     z-index: 1000;
+}
+
+// text type effect 
+.text-type {
+    display: inline-block;
+    white-space: pre-wrap;
+    color: $primary;
+}
+
+.text-type__cursor {
+    margin-left: 0.25rem;
+    display: inline-block;
+    opacity: 1;
+}
+
+.text-type__cursor--hidden {
+    display: none;
+}
+
+// scroll float
+.scroll-float {
+    overflow: hidden;
+}
+
+.scroll-float-text {
+    display: inline-block;
+    // font-size: ;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.char {
+    display: inline-block;
+}
+
+// scroll reveal
+.scroll-reveal {
+    margin: 20px 0;
+}
+
+.scroll-reveal-text {
+    font-size: clamp(1rem, 4vw, 1rem);
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.word {
+    display: inline-block;
 }

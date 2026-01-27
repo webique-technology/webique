@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import gsap from 'gsap';
 import "../assets/scss/marqueeSlides.scss";
+import { AnimatedContent } from './shared/TextAnimation';
 
 const industryData = [
     "E-Commerce & Shopify",
@@ -61,20 +62,33 @@ const MarqueeRow = ({ items, speed = 20, reverse = false }) => {
 const IndustrySliders = () => {
     return (
         <section className="industery-marquee section-padding pb-0">
-            <Container>
-                <div className="title-count text-center mb-2 mb-md-5">
-                    <h2>Industries We Work With</h2>
-                </div>
-                <div className="marquee-main-container">
-                    <div className="overlay overlay-left"></div>
-                    <div className="overlay overlay-right"></div>
+            <AnimatedContent
+                distance={120}
+                direction="vertical"
+                reverse={false}
+                duration={0.8}
+                ease="power3.out"
+                initialOpacity={0}
+                animateOpacity
+                scale={1}
+                threshold={0.1}
+                delay={0}
+            >
+                <Container>
+                    <div className="title-count text-center mb-2 mb-md-5">
+                        <h2>Industries We Work With</h2>
+                    </div>
+                    <div className="marquee-main-container">
+                        <div className="overlay overlay-left"></div>
+                        <div className="overlay overlay-right"></div>
 
-                    <MarqueeRow items={industryData} speed={20} />
-                    <MarqueeRow items={industryData2} speed={29} reverse />
-                    <MarqueeRow items={industryData} speed={19} />
-                    <MarqueeRow items={industryData2} speed={25} reverse />
-                </div>
-            </Container>
+                        <MarqueeRow items={industryData} speed={20} />
+                        <MarqueeRow items={industryData2} speed={29} reverse />
+                        <MarqueeRow items={industryData} speed={19} />
+                        <MarqueeRow items={industryData2} speed={25} reverse />
+                    </div>
+                </Container>
+            </AnimatedContent>
         </section>
     );
 };

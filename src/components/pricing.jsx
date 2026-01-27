@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useInView } from 'react-intersection-observer';
 import { Link } from "react-router-dom";
 import { Container, Tab, Nav, Card, Button, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { FaRupeeSign, FaDollarSign } from "react-icons/fa";
 
 import circleYes from "../assets/images/circle-yes.svg"
+import { AnimatedContent, BlurText } from "./shared/TextAnimation";
 
 const priceData = [
     // wordpress
@@ -15,20 +16,24 @@ const priceData = [
             {
                 priceType: "Basic",
                 pricePlan: "Starter Website",
-                priceINR: "12,000",
+                priceINR: "11,999",
                 priceUSD: "275",
                 pricingList: ["Up to 6 Pages", "CMS (WordPress)", "Template Based"],
                 priceTypeBtnLink: "#",
-                mostPopular: ""
+                mostPopular: "",
+                delayed: 0.1,
+                duration: 0.7,
             },
             {
                 priceType: "Basic Popular",
                 pricePlan: "Business Website",
-                priceINR: "20,000",
+                priceINR: "19,999",
                 priceUSD: "350",
                 pricingList: ["Up to 12 Pages", "CMS (WordPress)", "Home + 2 inner page UI"],
                 priceTypeBtnLink: "#",
-                mostPopular: "Most popular"
+                mostPopular: "Most popular",
+                delayed: 0.2,
+                duration: 0.8,
             },
             {
                 priceType: "Advanced",
@@ -37,7 +42,9 @@ const priceData = [
                 priceUSD: "450",
                 pricingList: ["Up to 20 Pages", "CMS (WordPress)", "Home + 6 inner page UI"],
                 priceTypeBtnLink: "#",
-                mostPopular: ""
+                mostPopular: "",
+                delayed: 0.3,
+                duration: 0.9,
             },
             {
                 priceType: "Premium",
@@ -46,7 +53,9 @@ const priceData = [
                 priceUSD: "600",
                 pricingList: ["6 Pages + 30 Products", "WooCommerce, Shopify", "Payment Getaway"],
                 priceTypeBtnLink: "#",
-                mostPopular: ""
+                mostPopular: "",
+                delayed: 0.4,
+                duration: 1,
             },
         ],
     },
@@ -61,7 +70,9 @@ const priceData = [
                 priceUSD: "300",
                 pricingList: ["Up to 6 Pages", "React Bootstrap, Figma", "Homepage UI mockup "],
                 priceTypeBtnLink: "#",
-                mostPopular: ""
+                mostPopular: "",
+                delayed: 0.1,
+                duration: 0.7,
             },
             {
                 priceType: "Basic Popular",
@@ -70,7 +81,9 @@ const priceData = [
                 priceUSD: "400",
                 pricingList: ["Up to 12 Pages", "React Bootstrap, Figma", "Home + 2 inner page UI"],
                 priceTypeBtnLink: "#",
-                mostPopular: ""
+                mostPopular: "",
+                delayed: 0.2,
+                duration: 0.8,
             },
             {
                 priceType: "Advanced",
@@ -79,7 +92,9 @@ const priceData = [
                 priceUSD: "550",
                 pricingList: ["Up to 12 Dynamic Pages", "Admin Panel , blogs ", "Home + 4 inner page UI"],
                 priceTypeBtnLink: "#",
-                mostPopular: "Most Popular"
+                mostPopular: "Most Popular",
+                delayed: 0.3,
+                duration: 0.9,
             },
             {
                 priceType: "Premium",
@@ -88,16 +103,40 @@ const priceData = [
                 priceUSD: "750",
                 pricingList: ["6 Pages + 30 Products", "Admin panel, API intigration", "Home + 4 inner page UI"],
                 priceTypeBtnLink: "#",
-                mostPopular: ""
+                mostPopular: "",
+                delayed: 0.4,
+                duration: 1,
             },
         ],
     },
 ];
 
+const fadeUp = {
+    hidden: {
+        y: 120,
+        opacity: 0,
+    },
+    visible: (custom) => ({
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: custom.duration,
+            delay: custom.delay,
+            ease: "easeOut",
+        },
+    }),
+};
+
 const PricingSection = () => {
     // Assume 'locale' comes from your State or a Context (e.g., 'en-IN' or 'en-US')
     const [currency, setCurrency] = useState("INR"); // default India
     const [testCountry, setTestCountry] = useState("");
+
+    // Intersection Observer
+    const [ref, inView] = useInView({
+        triggerOnce: true, // Only trigger once
+        threshold: 0.2,    // 30% of section visible
+    });
 
     // make for identifing plan Name and key
     const [subscriptionPlan, setSubscriptionPlan] = useState();
@@ -246,15 +285,36 @@ const PricingSection = () => {
 
 
     return (
-        <section className="section-padding pricing-section">
+        <section ref={ref} className="section-padding pricing-section">
             <Container>
-                <div className="title-content title-gap align-items-center mb-4">
-                    <h2 className="text-center">Our Affordable Web Design & Development Pricing</h2>
-                    <p className="text-start text-md-center">
-                        Our goal is to make web design affordable for startups, small businesses, and big companies. We help them grow online from the start. Because of our honest work and happy clients, we have received thousands of kind words from around the world.
-                    </p>
-                </div>
-
+                <AnimatedContent
+                    className="position-relative"
+                    distance={120}
+                    direction="vertical"
+                    reverse={false}
+                    duration={0.8}
+                    ease="power3.out"
+                    initialOpacity={0}
+                    animateOpacity
+                    scale={1}
+                    threshold={0.1}
+                    delay={0}
+                >
+                    <div className="title-content title-gap align-items-center mb-4">
+                        <h2 className="text-center">
+                            <BlurText
+                                text=" Our Affordable Web Design & Development Pricing"
+                                delay={10}
+                                animateBy="letters"
+                                direction="bottom"
+                                className="justify-content-center"
+                            />
+                        </h2>
+                        <p className="text-start text-md-center">
+                            Our goal is to make web design affordable for startups, small businesses, and big companies. We help them grow online from the start. Because of our honest work and happy clients, we have received thousands of kind words from around the world.
+                        </p>
+                    </div>
+                </AnimatedContent>
                 <div className="pricing-container d-flex flex-column gap-1 gap-sm-5 align-items-center">
                     <Tab.Container activeKey={key} onSelect={(k) => setKey(k)}>
                         <div className="position-relative mb-4 nav-tab-div">
@@ -299,12 +359,22 @@ const PricingSection = () => {
                                     <Row className="justify-content-center tab-card-576">
                                         {tab.priceTypeData.map((price) => (
                                             <Col sm={6} lg={3} key={price.priceType} className="mb-4 px-2 price-card-576">
-                                                <Card className="pricing-card h-100">
-                                                    <div className={!price.mostPopular ? "d-none" : "msp-box"}>{price.mostPopular}</div>
-                                                    <Card.Body className="d-flex flex-column gap-3">
-                                                        <Card.Title>{price.pricePlan}</Card.Title>
-                                                        <div className="dashed-border d-flex align-items-end">
-                                                            {/* <select
+                                                <motion.div
+                                                    key={`${key}-${tab.servicePriceType}`}
+                                                    variants={fadeUp}
+                                                    initial="hidden"
+                                                    animate={inView ? "visible" : "hidden"}
+                                                    custom={{
+                                                        delay: price.delayed,
+                                                        // duration: price.duration,
+                                                    }}
+                                                >
+                                                    <Card className="pricing-card">
+                                                        <div className={!price.mostPopular ? "d-none" : "msp-box"}>{price.mostPopular}</div>
+                                                        <Card.Body className="d-flex flex-column gap-3">
+                                                            <Card.Title>{price.pricePlan}</Card.Title>
+                                                            <div className="dashed-border d-flex align-items-end">
+                                                                {/* <select
                                                                 value={testCountry}
                                                                 onChange={(e) => setTestCountry(e.target.value)}
                                                             >
@@ -314,34 +384,36 @@ const PricingSection = () => {
                                                                 <option value="GB">UK</option>
                                                             </select> */}
 
-                                                            <h2>
-                                                                {currency === "INR" ? `₹${price.priceINR}` : `$${price.priceUSD}`}
-                                                            </h2>
+                                                                <h2>
+                                                                    {currency === "INR" ? `₹${price.priceINR}` : `$${price.priceUSD}`}
+                                                                </h2>
 
-                                                            {/* <span className="m-0 ps-2">/{price.priceType}</span> */}
-                                                        </div>
-                                                        <ul className="list-unstyled dashed-border">
-                                                            {price.pricingList.map((item, idx) => (
-                                                                <li key={idx} className="text-capitalize d-flex align-items-center">
-                                                                    <img src={!price.mostPopular ? circleYes : "d-none"} alt="" />
-                                                                    <p className="m-0 ms-2">{item}</p>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                        <Button
-                                                            as={Link}
-                                                            to="/pricing"
-                                                            state={{
-                                                                subscriptionPlan: price.priceType,
-                                                                selectedKey: tab.servicePriceType,
-                                                            }}
-                                                            variant="primary"
-                                                            className="w-100 price-card-btn"
-                                                        >
-                                                            Explore
-                                                        </Button>
-                                                    </Card.Body>
-                                                </Card>
+                                                                {/* <span className="m-0 ps-2">/{price.priceType}</span> */}
+                                                            </div>
+                                                            <ul className="list-unstyled dashed-border">
+                                                                {price.pricingList.map((item, idx) => (
+                                                                    <li key={idx} className="text-capitalize d-flex align-items-center">
+                                                                        {/* <img src={!price.mostPopular ? circleYes : "d-none"} alt="" /> */}
+                                                                        <img src={circleYes} alt="circle-yes" />
+                                                                        <p className="m-0 ms-2">{item}</p>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                            <Button
+                                                                as={Link}
+                                                                to="/pricing"
+                                                                state={{
+                                                                    subscriptionPlan: price.priceType,
+                                                                    selectedKey: tab.servicePriceType,
+                                                                }}
+                                                                variant="primary"
+                                                                className="w-100 price-card-btn"
+                                                            >
+                                                                Explore
+                                                            </Button>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </motion.div>
                                             </Col>
                                         ))}
                                     </Row>

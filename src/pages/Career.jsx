@@ -8,37 +8,75 @@ import CaretDn from "../assets/images/caret-down.svg"
 import Accordion from 'react-bootstrap/Accordion';
 import ButtonCall from '../components/ButtonLink'
 
-import mailAnimation from "../assets/lottie-icons/mail-2.json"; 
+import mailAnimation from "../assets/lottie-icons/mail-2.json";
+import { Link } from 'react-router-dom';
+import { ArrowButtonSlideXY } from '../components/shared/gsapAnimation';
 
 
 const jobData = [
   {
     id: 1,
-    title: "Junior UI/UX Fullstack Designer",
-    list1: "Full Time",
-    list2: "Nashik",
-    jobDesc: "Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.",
+    title: "Shopify & WordPress Developer",
+    location: "Nashik",
+    experience: "1–2 Years",
+    jobDesc: "Build, customize, and maintain high-quality websites and eCommerce stores for diverse client requirements.",
+    roleResponsibilities: [
+      "Develop and customize WordPress websites and themes",
+      "Build, customize, and manage Shopify stores and themes",
+      "Implement responsive designs using HTML, CSS & Bootstrap",
+      "Handle basic PHP customization and integrations",
+      "Collaborate with designers to convert UI/UX into functional websites",
+      "Optimize websites for performance, speed, and basic SEO",
+      "Troubleshoot, maintain, and update existing websites"
+    ],
+    requiredSkills: [
+      "Strong experience in WordPress & Shopify development",
+      "HTML, CSS, Bootstrap",
+      "Basic PHP knowledge",
+      "React (Plus)"
+    ]
   },
   {
     id: 2,
-    title: "FullStack (MERN stack) Developer",
-    list1: "Full Time",
-    list2: "Remote",
-    jobDesc: "Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.",
+    title: "Sales & Marketing Executive",
+    location: "Nashik",
+    experience: "0–1 Year",
+    jobDesc: "Lead generation and client communication, supporting marketing and sales campaigns.",
+    roleResponsibilities: [
+      "Lead generation and follow-ups with prospects and clients",
+      "Assist in marketing and sales campaigns",
+      "Maintain basic sales data and reports"
+    ],
+    requiredSkills: [
+      "Strong interest and passion for sales",
+      "Excellent communication skills (English preferred)",
+      "Basic knowledge of MS Excel",
+      "Freshers with a sales-driven mindset are welcome"
+    ]
   },
   {
     id: 3,
-    title: "Backend (php, Python) Developer",
-    list1: "Full Time",
-    list2: "Remote",
-    jobDesc: "Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.",
-  },
-  {
-    id: 4,
-    title: "Frontedn React Developer",
-    list1: "Full Time",
-    list2: "Remote",
-    jobDesc: "Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.",
+    title: "Back-End Developer (PHP / Laravel / Node.js)",
+    location: "Nashik (Work From Office)",
+    experience: "1–3 Years",
+    jobDesc: "Develop scalable web applications and APIs while ensuring high performance and security.",
+    roleResponsibilities: [
+      "Develop and maintain server-side logic using PHP (Laravel) and Node.js",
+      "Build and integrate REST APIs",
+      "Work with databases (MySQL / MongoDB)",
+      "Ensure high performance, security, and scalability of applications",
+      "Collaborate with front-end and UI/UX teams",
+      "Debug, test, and optimize backend code",
+      "Maintain documentation and code standards"
+    ],
+    requiredSkills: [
+      "Strong knowledge of PHP & Laravel",
+      "Experience with Node.js",
+      "Database management: MySQL / MongoDB",
+      "API development & integration",
+      "Basic understanding of Git",
+      "Knowledge of security best practices (Plus)"
+    ]
   },
 ]
 
@@ -67,7 +105,6 @@ const Career = () => {
           <img src={Chairs} alt='career section' className='mb-4 img-fluid' />
         </Container>
       </section>
-
       <section className='section-padding'>
         <Container>
           <div className='position-relative'>
@@ -107,8 +144,8 @@ const Career = () => {
                             <p className="role-tag">OPEN ROLES</p>
                             <h4 className="role-title">{value.title}</h4>
                             <ul className="role-meta">
-                              <li>{value.list1}</li>
-                              <li>{value.list2}</li>
+                              <li>{value.location}</li>
+                              <li>{value.experience}</li>
                             </ul>
                           </div>
                           {/* Custom Arrow */}
@@ -118,8 +155,32 @@ const Career = () => {
                         </div>
                       </Accordion.Header>
                       <Accordion.Body>
-                        <h5>Job Description</h5>
-                        <p>{value.jobDesc}</p>
+                        <div>
+                          <h5>Job Description</h5>
+                          <p>{value.jobDesc}</p>
+                        </div>
+                        <div>
+                          <h5>Role & Responsibilities</h5>
+                          <ul className='ps-4 pb-3'>
+                            {value.roleResponsibilities.map((item, i) => (
+                              <li className='' key={i}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h5>Required Skills</h5>
+                          <ul className='ps-4 pb-3'>
+                            {value.requiredSkills.map((skill, i) => (
+                              <li key={i}>{skill}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <Link to={"mailto:contact@webique.in"} className="secondery-btn">
+                          <span>Apply now</span>
+                          <ArrowButtonSlideXY
+                            link={value.bntLink}
+                          />
+                        </Link>
                       </Accordion.Body>
                     </AccordionItem>
                   )
@@ -160,7 +221,6 @@ const Career = () => {
           </div>
         </Container>
       </section>
-
     </>
   )
 }

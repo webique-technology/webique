@@ -29,10 +29,6 @@ h1 {
 .hero-title {
     font-size: $font-size-primery ;
     line-height: $h1-lh;
-
-    span {
-        color: $primary;
-    }
 }
 
 h2 {
@@ -364,4 +360,54 @@ svg {
 
 .plan-desc {
     font-size: $font-size-base0875;
+}
+
+.h1-text-animation {
+    --i: 0;
+    color: #00000026;
+    position: relative;
+    display: inline-block;
+
+    &::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: $primary;
+        border-right: 3px solid $primary;
+        animation: animate 4s linear infinite;
+        overflow: hidden;
+        white-space: nowrap;
+
+    }
+
+    @keyframes animate {
+
+        0%,
+        10%,
+        100% {
+            width: 0;
+        }
+
+        70%,
+        90% {
+            width: 100%;
+        }
+    }
+}
+
+.secondery-btn {
+    padding: 6px 6px 6px 12px;
+    font-size: $font-size-base1;
+    // line-height: 30px;
+    font-weight: 500;
+    @include flex(row, center, center, 10px);
+    border-radius: $radius-pill;
+    width: fit-content;
+    background: $primary;
+    color: $light;
+    border: none;
+    transition: .5s all ease-in;
+    text-decoration: none;
 }

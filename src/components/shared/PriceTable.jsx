@@ -17,13 +17,13 @@ const PricingPgaeData = [
     plans: [
       {
         pricingPackName: "Starter Website",
-        priceINR: "12,000",
+        priceINR: "11,999",
         priceUSD: "275",
         planType: "Basic"
       },
       {
         pricingPackName: "Business Website",
-        priceINR: "20,000",
+        priceINR: "19,999",
         priceUSD: "350",
         planType: "Basic Popular"
       },
@@ -408,12 +408,6 @@ const PriceTable = ({ initialPlan, initialType }) => {
   }, [fetchedCountry, testCountry]);
 
   // ============= price change  INR to USE through ========================
-
-
-
-
-
-
 
 
   const selectedData =

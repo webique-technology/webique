@@ -23,19 +23,7 @@ import imgFive from "../assets/images/unicorn-web.png";
 import { CurveArrow } from "./shared/gsapAnimation";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
-const heroData = [
-  {
-    id: 1,
-    title:
-      "Digital <span>Design & Development</span> <br/> Aligned With Business Goals",
-    subtitle:
-      "We create custom websites and digital platforms that help businesses establish, scale, and succeed online.",
-    buttons: [
-      { text: "Get In Touch", icon: arrowOne, type: "primary", Link: '/contact' },
-    ]
-  },
-];
+import { TextType } from "./shared/TextAnimation.jsx";
 
 const webImages = [
   { src: imgOne, alt: "Modern website design" },
@@ -99,8 +87,26 @@ const Header = () => {
       {/* content */}
       <Container>
         <div className="hero-content title-gap">
-          <h1 className="hero-title">
-            Digital <span>Design & Development</span> <br /> Aligned With Business Goals
+          <h1 className="hero-title text-center">
+            Website&nbsp;
+            {/* <div className="h1-text-animation" data-text="Design & Development">
+              Design & Development
+            </div> */}
+            <TextType
+              text={["Design & Development", "Security & Maintenance", "Performance & SEO"]}
+              typingSpeed={95}
+              pauseDuration={1500}
+              showCursor
+              cursorCharacter="|"
+              texts={["Design & Development"]}
+              deletingSpeed={50}
+              variableSpeedEnabled={false}
+              variableSpeedMin={60}
+              variableSpeedMax={120}
+              cursorBlinkDuration={0.5}
+            />
+            <br />
+            Aligned With Business Goals
           </h1>
           <p className="d-none d-md-block">
             We create custom websites and digital platforms that help businesses establish, scale, and succeed online.
@@ -111,7 +117,7 @@ const Header = () => {
               {/* <button key={index} className={`hero-btn ${btn.type}`}>
                       {btn.text}
                     </button> */}
-              Get In Touch
+              Start Now
               <img src={arrowOne} alt="arrow" />
             </Link>
           </div>
