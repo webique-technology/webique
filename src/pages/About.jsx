@@ -15,6 +15,9 @@ import PhiloTwo from "../assets/images/eagle.png";
 import PhiloThr from "../assets/images/wolf.png";
 import WorldwideBusiness from "../components/WorldwideBusiness";
 
+import { AnimatedContent, BlurText } from '../components/shared/TextAnimation';
+import useIsDesktop from "../hooks/useIsDeskstop"
+
 const AgencyCounter = [
   { id: 1, no: 180, title: "Satisfied Clients" },
   { id: 2, no: 125, title: "Project Completed" },
@@ -22,6 +25,8 @@ const AgencyCounter = [
 ];
 
 const About = () => {
+  const isDesktop = useIsDesktop();
+
   const [runCount, setRunCount] = useState([false, false, false]);
 
   const strokTextCount = useRef()
@@ -78,25 +83,42 @@ const About = () => {
         <Container>
           <Row>
             <Col md={6} xs={12} className="title-gap">
-              <h2>Our History</h2>
-              <p>Webique Technology has evolved from a small startup to a trusted partner for businesses worldwide. Over the years, we have grown our expertise, expanded our capabilities, and earned a reputation for excellence in web development, design, and consulting services.</p>
-              <p>                      At Webique Technology, we are committed to empowering businesses with cutting-edge web services to thrive in the digital landscape. With a rich legacy of innovation and a passion for technology, we have been at the forefront of delivering tailor-made solutions that drive success for our clients.</p>
+              <AnimatedContent
+                distance={isDesktop ? -180 : 180}
+                direction={isDesktop ? "horizontal" : "vertical"}
+                duration={0.9}
+                delay={isDesktop ? 0.6 : 0.2}
+              // animationBreakpoint={991}
+              >
+                <h2>Our History</h2>
+                <p>Webique Technology has evolved from a small startup to a trusted partner for businesses worldwide. Over the years, we have grown our expertise, expanded our capabilities, and earned a reputation for excellence in web development, design, and consulting services.</p>
+                <p>At Webique Technology, we are committed to empowering businesses with cutting-edge web services to thrive in the digital landscape. With a rich legacy of innovation and a passion for technology, we have been at the forefront of delivering tailor-made solutions that drive success for our clients.</p>
+              </AnimatedContent>
             </Col>
             <Col md={6} xs={12}>
-              <img src={abtImg} alt="about-img" className="img-fluid" />
+              <AnimatedContent
+                distance={180}
+                direction={isDesktop ? "horizontal" : "vertical"}
+                duration={0.9}
+                delay={isDesktop ? 0.6 : 0.2}
+              // animationBreakpoint={991}
+              >
+                <img src={abtImg} alt="about-img" className="img-fluid" />
+              </AnimatedContent>
             </Col>
           </Row>
         </Container>
-      </section>
+      </section >
 
       {/* ================= STACK SECTIONS ================= */}
 
-      <div className="custome-stack-section">
+      < div className="custome-stack-section" >
         {/* ===== VISION ===== */}
-        <div className="div-container div1">
-          <section className="vision-section ">
-
-            <Container>
+        <section className="div-container div1" >
+          <Container>
+            <AnimatedContent
+              className='position-relative'
+            >
               <div className="title-gap text-center align-items-center position-relative z-3">
                 <img src={vIcn} alt="Vision" />
                 <h2>Vision & Mission</h2>
@@ -107,16 +129,17 @@ const About = () => {
                   Our mission is simple yet profound: to leverage the power of technology to transform businesses and enrich lives. We strive to empower organizations with scalable, secure, and innovative web solutions that unlock their full potential and propel them towards sustainable growth.
                 </p>
               </div>
-            </Container>
-          </section>
-        </div>
+            </AnimatedContent>
+          </Container>
+        </section>
 
         {/* ===== EXIST ===== */}
 
-        <div className="div-container div2">
-          <section
-            className="exist-section">
-            <Container>
+        <section className="div-container div2" >
+          <Container>
+            <AnimatedContent
+              className='position-relative'
+            >
               <div className="title-gap text-center align-items-center position-relative z-3">
                 <img src={wWe} alt="Exist" />
                 <h2>Why We Exist?</h2>
@@ -124,15 +147,16 @@ const About = () => {
                   Many businesses struggle with outdated websites, low online visibility, and poor lead conversion. We exist to simplify digital transformation by delivering clean, user-focused design and reliable, future-ready technology. Our approach is driven by strategy and performance, helping brands build a strong digital presence that generates measurable results and long-term growth.
                 </p>
               </div>
-            </Container>
-          </section>
-        </div>
+            </AnimatedContent>
+          </Container>
+        </section>
 
         {/* ===== DIFFERENT ===== */}
-        <div className="div-container div3">
-          <section
-            className="diffrent-section">
-            <Container>
+        < section className="div-container div3" >
+          <Container>
+            <AnimatedContent
+              className='position-relative'
+            >
               <div className="title-gap text-center align-items-center position-relative z-3">
                 <img src={Diff} alt="Different" />
                 <div className="aboutt-text">
@@ -141,16 +165,12 @@ const About = () => {
                 <p className="col-12 col-lg-9 mx-auto text-center">
                   We follow a business-first approach, focusing on outcomes rather than just visuals. Our clean and intuitive UI/UX is thoughtfully aligned with your brand goals to enhance user engagement. Every solution is built with performance, SEO, and scalability in mind to support long-term growth. We believe in transparent pricing and clear processes, ensuring trust at every step.
                 </p>
-                {/* <p>Business-first approach, not just design</p>
-            <p>Clean UI/UX aligned with brand goals</p>
-            <p>Performance, SEO & scalability focused</p>
-            <p>Transparent pricing & process</p>
-            <p>Long-term support mindset</p> */}
               </div>
-            </Container>
-          </section>
-        </div>
-      </div>
+            </AnimatedContent>
+          </Container>
+        </section >
+      </div >
+      {/* ============ counter section ============ */}
       <section className='section-padding'>
         <Container>
           {/* Counter Section */}
@@ -178,6 +198,7 @@ const About = () => {
           </Row>
         </Container>
       </section>
+      {/* ============ world business section ============== */}
       <div className="about-wwb">
         <WorldwideBusiness />
       </div>
@@ -185,36 +206,63 @@ const About = () => {
       <section className="philosophy-section section-padding">
         <Container>
           <div className="title-gap text-center align-items-center">
-            <h2>Our Work Philosophy</h2>
+            <BlurText
+              text="Our Work Philosophy"
+              delay={70}
+              animateBy="words"
+              direction="bottom"
+              className="justify-content-center"
+            />
+            {/* <h2>Our Work Philosophy</h2> */}
             <p className="col-12 col-md-9 mx-auto text-center mb-5">
               We believe great digital outcomes are achieved through a disciplined approach, strategic focus, and flawless execution There three princliples guide every project we deliver.
             </p>
           </div>
-
           <Row className="g-3 g-md-4 tab-card-576">
-            <Col md={4} className="price-card-576">
-              <div className="img-box">
+            <Col sm={4} className="price-card-576">
+              <AnimatedContent
+                distance={180}
+                direction="vertical"
+                duration={0.9}
+                delay={0.1}
+                className='img-box'
+              // animationBreakpoint={991}
+              >
                 <div className="img-wrap">
                   <img src={PhiloOne} alt="Discipline" className="img-fluid" />
                 </div>
                 <h2>Discipline</h2>
-              </div>
+              </AnimatedContent>
             </Col>
-            <Col md={4} className="price-card-576">
-              <div className="img-box">
+            <Col sm={4} className="price-card-576">
+              <AnimatedContent
+                distance={180}
+                direction="vertical"
+                duration={0.9}
+                delay={0.2}
+                className='img-box'
+              // animationBreakpoint={991}
+              >
                 <div className="img-wrap">
                   <img src={PhiloTwo} alt="Focus" className="img-fluid" />
                 </div>
                 <h2>Focus</h2>
-              </div>
+              </AnimatedContent>
             </Col>
-            <Col md={4} className="price-card-576">
-              <div className="img-box">
+            <Col sm={4} className="price-card-576">
+              <AnimatedContent
+                distance={180}
+                direction="vertical"
+                duration={0.9}
+                delay={0.3}
+                className='img-box'
+              // animationBreakpoint={991}
+              >
                 <div className="img-wrap">
                   <img src={PhiloThr} alt="Execution" className="img-fluid" />
                 </div>
                 <h2>Execution</h2>
-              </div>
+              </AnimatedContent>
             </Col>
           </Row>
         </Container>

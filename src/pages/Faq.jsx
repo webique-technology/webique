@@ -1,20 +1,122 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
+import { AnimatedContent, BlurText } from '../components/shared/TextAnimation';
+import useIsDesktop from "../hooks/useIsDeskstop";
+
 import Accordion from 'react-bootstrap/Accordion';
 import '../assets/scss/faq.scss'
+import { desc } from 'motion/react-client';
+
+const FaqAnsData = [
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+    {
+        quest: "",
+        desc: [""],
+        ansTitle: "",
+        list: [""]
+    },
+]
+
 const Faq = () => {
     return (
         <>
             <div className='faq-wrapper section-padding'>
                 <Container>
-                    <Row className='text-center justify-content-center title-gap align-items-center'>
-                        <h2>Your questions answered</h2>
+                    <div className=''>
+                        <BlurText
+                            text="Your questions answered"
+                            delay={70}
+                            animateBy="words"
+                            direction="bottom"
+                            className="justify-content-center"
+                        />
+                        {/* <h2>Your questions answered</h2> */}
                         <p className='w-75'>Yes. We don’t believe in one-size-fits-all pricing. Our website packages are fully customizable based on your business goals, features required, and budget.</p>
-                    </Row>
-
+                    </div>
                     <Row>
-
-
                         <Accordion className="custom-accordion" defaultActiveKey="0" flush >
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>What types of websites do you design?</Accordion.Header>
@@ -40,7 +142,7 @@ const Faq = () => {
                                 <Accordion.Header>How much does a website cost?</Accordion.Header>
                                 <Accordion.Body>
                                     <p><b>Website cost depends on:</b> </p>
-                                    
+
                                     <ul>
                                         <li>Number of pages</li>
                                         <li>Design complexity</li>
@@ -104,7 +206,7 @@ const Faq = () => {
                                 <Accordion.Header>Will I be able to manage the website myself?</Accordion.Header>
                                 <Accordion.Body>
                                     <p>Yes. For WordPress websites, you can easily manage content. We also provide basic training or guidance if needed.
-</p>
+                                    </p>
 
                                 </Accordion.Body>
                             </Accordion.Item>
@@ -207,8 +309,8 @@ const Faq = () => {
                                 </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-               
-               
+
+
 
                     </Row>
                 </Container>

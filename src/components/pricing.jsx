@@ -152,34 +152,6 @@ const PricingSection = () => {
     const navRefs = useRef({});
     const [isMobile, setIsMobile] = useState(false);
 
-    // this code is not wirkin on tab 768 screen and mobile
-
-    // const updateGhost = () => {
-    //     const currentTab = navRefs.current[key];
-    //     if (!currentTab) return;
-
-    //     const mobile = window.innerWidth <= 768;
-    //     setIsMobile(mobile);
-
-    //     setGhostStyle({
-    //         width: currentTab.offsetWidth,
-    //         left: mobile ? 0 : currentTab.offsetLeft,
-    //         top: mobile ? currentTab.offsetTop : 5,
-    //         height: mobile ? currentTab.offsetHeight : "85%",
-    //     });
-    //     console.log("ghost btn click:", currentTab.offsetWidth);
-
-    // };
-
-    // useEffect(() => {
-    //     updateGhost();
-    // }, [key]);
-
-    // useEffect(() => {
-    //     window.addEventListener("resize", updateGhost);
-    //     return () => window.removeEventListener("resize", updateGhost);
-    // }, []);
-
     const planClick = (selectedPlan) => {
         setSubscriptionPlan(selectedPlan);
         // console.log("Clicked key:", selectedPlan);
@@ -240,25 +212,6 @@ const PricingSection = () => {
         }
     }, [key]);
 
-    // useEffect(() => {
-    //     fetch("https://ipinfo.io/json")
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.country !== "IN") {
-    //                 setCurrency("USD");
-    //             } else {
-    //                 setCurrency("INR");
-    //             }
-
-    //             console.log("Country:", data.country);
-    //         })
-    //         .catch(err => {
-    //             console.error("IP lookup failed:", err);
-    //             // safe fallback
-    //             setCurrency("USD");
-    //         });
-    // }, []);
-
     const [fetchedCountry, setFetchedCountry] = useState(null);
 
     // 1️⃣ Fetch real country once
@@ -303,9 +256,9 @@ const PricingSection = () => {
                     <div className="title-content title-gap align-items-center mb-4">
                         <h2 className="text-center">
                             <BlurText
-                                text=" Our Affordable Web Design & Development Pricing"
-                                delay={10}
-                                animateBy="letters"
+                                text="Our Affordable Web Design & Development Pricing"
+                                delay={50}
+                                animateBy="words"
                                 direction="bottom"
                                 className="justify-content-center"
                             />
@@ -371,7 +324,7 @@ const PricingSection = () => {
                                                 >
                                                     <Card className="pricing-card">
                                                         <div className={!price.mostPopular ? "d-none" : "msp-box"}>{price.mostPopular}</div>
-                                                        <Card.Body className="d-flex flex-column gap-3">
+                                                        <Card.Body className="d-flex flex-column gap-3 h-100">
                                                             <Card.Title>{price.pricePlan}</Card.Title>
                                                             <div className="dashed-border d-flex align-items-end">
                                                                 {/* <select

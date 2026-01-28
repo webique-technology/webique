@@ -117,13 +117,13 @@ const ChooseAgencySec = () => {
         >
           <Row className='row-gap-4 d-none d-sm-flex'>
             <Col xs={12} lg={4} className='wo-centent'>
-              <div className='d-flex sub-title'>
+              <div className='d-none d-md-flex sub-title w-100'>
                 <p className='d-flex align-items-center gap-3 mb-2'>
-                  Why Choose Us <span className='title-line'></span>
+                  The reason clients trust us<span className='title-line'></span>
                 </p>
               </div>
               <h2>Why Our Agency</h2>
-              <p className='mb-0 mb-lg-3'>
+              <p className='mb-0 mb-lg-3 text-center text-lg-start'>
                 we don’t just build websites — we build digital experiences that convert visitors into customers. Our approach combines strategic design, modern technology, and long-term support to deliver real business value.
               </p>
               {/* <ScrollReveal
@@ -151,11 +151,11 @@ const ChooseAgencySec = () => {
         {/* Mobile grid */}
         <div className='wo-card-grid d-flex d-sm-none'>
           <div className='wo-centent'>
-            <div className='d-flex sub-title'>
+            {/* <div className='d-flex sub-title'>
               <p className='d-flex align-items-center gap-3 mb-2'>
-                Why Choose Us <span className='title-line'></span>
+                The reason clients trust us<span className='title-line'></span>
               </p>
-            </div>
+            </div> */}
             <h2>Why Our Agency</h2>
             <p className='mb-0 mb-lg-3'>
               we don’t just build websites — we build digital experiences that convert visitors into customers. Our approach combines strategic design, modern technology, and long-term support to deliver real business value.
@@ -190,7 +190,7 @@ const ChooseAgencySec = () => {
           <Row ref={ref} className='p-2 mx-1 mx-md-0 count-row'>
             <Col xs={12} sm={6} md={{ order: 1, span: 3 }} lg={3} className='p-0 strok-box'>
               <div className='strok-text' ref={strokTextCount}>
-                <h2 className='text-uppercase text-center text-md-start'>Fun Facts</h2>
+                <h2 className='text-uppercase text-center m-0 text-md-start'>Fun Facts</h2>
               </div>
             </Col>
 

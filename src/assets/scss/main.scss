@@ -49,6 +49,7 @@
         margin: 0;
         background: -webkit-linear-gradient(-56deg, #C79CFF 5%, #DEC5FF 33%, #6EE5FF 91%);
         animation: gradientMove 6s ease infinite;
+        text-shadow: 2px 2px 4px rgb(0 0 0 / 32%);
     }
 
     @keyframes gradientMove {
@@ -196,15 +197,19 @@
 .why-choose-us {
 
     .wo-centent {
-        @include flex(column, flex-start, center, 15px);
+        @include flex(column, center, center, 15px);
 
         h2 {
             font-size: $font-size-third;
             line-height: 1;
             margin-bottom: 10px;
 
-            @media(max-width:768px) {
+            @media(max-width:992px) {
                 font-size: $font-size-fourth;
+            }
+
+            @media(max-width:992px) {
+                font-size: $font-size-fifth;
             }
         }
     }
@@ -351,6 +356,7 @@
                 p {
                     font-size: $font-size-base0875;
                     line-height: $h5-lh;
+                    white-space: nowrap;
                 }
             }
         }

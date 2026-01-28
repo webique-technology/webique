@@ -15,7 +15,7 @@ import downArrow from "../assets/images/caret-down-bold.svg"
 /* ---------------- topbar ---------------- */
 
 const TopBar = () => (
-    <div className="top-bar d-none d-sm-block">
+    <div className="top-bar d-none d-md-block">
         <Container fluid="xxl">
             <Row>
                 <Col xs={12} sm={9} className="d-flex align-items-center items-center">
@@ -38,7 +38,12 @@ const TopBar = () => (
 /* ---------------- nav links data ---------------- */
 
 const navLinks = [
-    { name: "Home", link: "/", dropdown: [] },
+    {
+        name: "Home",
+        link: "/",
+        dropdown: [],
+        className: ""
+    },
     // { name: "About Us", link: "/about", dropdown: [] },
     {
         name: "Services",
@@ -77,10 +82,44 @@ const navLinks = [
                 dropLink: "branding-support"
             },
         ],
+        className: ""
     },
-    { name: "Pricing", link: "/pricing", dropdown: [] },
-    { name: "Portfolio", link: "/portfolio", dropdown: [] },
-    { name: "Contact", link: "/contact", dropdown: [] },
+    {
+        name: "Pricing",
+        link: "/pricing",
+        dropdown: [],
+        className: ""
+    },
+    {
+        name: "Portfolio",
+        link: "/portfolio",
+        dropdown: [],
+        className: ""
+    },
+    {
+        name: "Contact",
+        link: "/contact",
+        dropdown: [],
+        className: ""
+    },
+    {
+        name: "About",
+        link: "/about",
+        dropdown: [],
+        className: "d-block d-md-none"
+    },
+    {
+        name: "Faq",
+        link: "/faq",
+        dropdown: [],
+        className: "d-block d-md-none"
+    },
+    {
+        name: "Career",
+        link: "/careers",
+        dropdown: [],
+        className: "d-block d-md-none"
+    },
 ];
 
 /* ---------------- navbar ---------------- */
@@ -134,7 +173,7 @@ const NavigationBar = () => {
                             {/* DESKTOP NAV */}
                             <div className="d-none d-lg-flex justify-content-center">
                                 <ul className="navbar-ul">
-                                    {navLinks.map((item, i) => {
+                                    {navLinks.slice(0, 5).map((item, i) => {
                                         const isDropdownActive =
                                             item.dropdown.length > 0 &&
                                             item.dropdown.some(

@@ -11,7 +11,7 @@ import BrandingSupport from "./pages/services/BrandingSupport";
 import WordPress from "./pages/services/WordPress";
 import NavigationBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Contact from "./pages/ContactB";
+import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Faq from "./pages/Faq";
@@ -25,7 +25,7 @@ const AppRoutes = () => {
     return (
         <BrowserRouter>
             <NavigationBar />
-            <ScrollToTop/>
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Home />} />
 

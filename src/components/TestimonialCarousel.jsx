@@ -16,6 +16,7 @@ import img4 from "../assets/images/user1.jpg";
 import img5 from "../assets/images/user2.jpg";
 
 import placeholderImg from "../assets/images/placeholder-img.png"
+import { AnimatedContent } from "./shared/TextAnimation";
 
 const testimonials = [
   {
@@ -66,57 +67,70 @@ const TestimonialCarousel = () => {
   const scrollbarRef = useRef(null);
   return (
     <section className="testimonial-wrap section-padding">
-      <Container>
-        <div className="title-count text-center mb-0 mb-sm-4">
-          <h2 className="mb-5">What Our Clients Say</h2>
-        </div>
-        <Swiper
-          modules={[Autoplay, Scrollbar]}
-          slidesPerView={3}
-          spaceBetween={30}
-          centeredSlides
-          loop
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          scrollbar={{
-            el: ".swiper-scrollbar",
-            draggable: true,
-          }}
-          breakpoints={{
-            0: { slidesPerView: 1.3, spaceBetween: 15 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="testimonial-swiper"
-        >
-          {testimonials.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="testimonial-card">
+      <AnimatedContent
+        distance={120}
+        direction="vertical"
+        reverse={false}
+        duration={0.8}
+        ease="power3.out"
+        initialOpacity={0}
+        animateOpacity
+        scale={1}
+        threshold={0.1}
+        delay={0}
+        className="position-relative"
+      >
+        <Container>
+          <div className="title-count text-center mb-0 mb-sm-4">
+            <h2 className="mb-5">What Our Clients Say</h2>
+          </div>
+          <Swiper
+            modules={[Autoplay, Scrollbar]}
+            slidesPerView={3}
+            spaceBetween={30}
+            centeredSlides
+            loop
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            scrollbar={{
+              el: ".swiper-scrollbar",
+              draggable: true,
+            }}
+            breakpoints={{
+              0: { slidesPerView: 1.3, spaceBetween: 15 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="testimonial-swiper"
+          >
+            {testimonials.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className="testimonial-card">
 
-                <p className="review-text text-center text-sm-start">{item.text}</p>
-                <div className="image-testiomnial-wrap">
-                  <div className="user-img d-none d-sm-block">
-                    <img src={item.img} alt={item.name} />
-                  </div>
-                  <div className="rating-name text-center text-sm-start">
-                    <h4 className="user-name m-0">{item.name}</h4>
-                    <h5 className="designation">{item.designation}</h5>
+                  <p className="review-text text-center text-sm-start">{item.text}</p>
+                  <div className="image-testiomnial-wrap">
+                    <div className="user-img d-none d-sm-block">
+                      <img src={item.img} alt={item.name} />
+                    </div>
+                    <div className="rating-name text-center text-sm-start">
+                      <h4 className="user-name m-0">{item.name}</h4>
+                      <h5 className="designation">{item.designation}</h5>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-        {/* SINGLE DRAGGABLE SCROLLBAR */}
-        <div className="horizontal-line">
+          {/* SINGLE DRAGGABLE SCROLLBAR */}
+          <div className="horizontal-line">
 
-        </div>
-      </Container>
-
+          </div>
+        </Container>
+      </AnimatedContent>
 
     </section>
   );

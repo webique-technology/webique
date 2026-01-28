@@ -12,6 +12,7 @@ import mailAnimation from "../assets/lottie-icons/mail-2.json";
 import { Link } from 'react-router-dom';
 import { ArrowButtonSlideXY } from '../components/shared/gsapAnimation';
 
+import { TextType } from "../components/shared/TextAnimation"
 
 const jobData = [
   {
@@ -101,96 +102,93 @@ const Career = () => {
     <>
       <section className='header-wrap section-padding pb-0 career-head'>
         <Container>
-          <h1 className='hero-title text-capitalize'>We´re <span>hungry</span> for talent</h1>
+
+          <h1 className='hero-title text-capitalize'>
+            We´re&nbsp; <br className='d-block d-sm-none' />
+            <TextType
+              text={["looking", "hungry"]}
+              typingSpeed={95}
+              pauseDuration={1500}
+              showCursor
+              cursorCharacter="|"
+              texts={["Design & Development"]}
+              deletingSpeed={50}
+              variableSpeedEnabled={false}
+              variableSpeedMin={60}
+              variableSpeedMax={120}
+              cursorBlinkDuration={0.5}
+            /> <br className='d-block d-sm-none' />
+            for talent</h1>
           <img src={Chairs} alt='career section' className='mb-4 img-fluid' />
         </Container>
       </section>
       <section className='section-padding'>
         <Container>
           <div className='position-relative'>
-            {/* <Col lg={4} md={4}>
-              <div className='careers-outer'>
-                <h2>OUR  OPEN  ROLES</h2>
-                <div className='career-inner'>
-                  <h4 className='txt-small'>OR CONTACT US WITH</h4>
-                  <p className='txt-email'>contact@webique.in</p>
-                  <ul>
-                    <li><a href='https://www.facebook.com/share/19Bko6nmR5/?mibextid=qi2Omg' target='_blank'><img src={fb} alt='inst' /></a></li>
-                    <li><a href='https://www.instagram.com/webique_tech?igsh=Z2hzNGoya3dtZ2oy' target='_blank'><img src={insta} alt='inst' /></a></li>
-                    <li><a href='https://www.linkedin.com/company/webiquetech' target='_blank'><img src={linkd} alt='inst' /></a></li>
-
-
-
-                  </ul>
-                </div>
-              </div>
-            </Col> */}
-            <div>
-              <Accordion
-                activeKey={accordionNo}
-                onSelect={(eventKey) => setAccordionNo(eventKey)}
-                className="career-accordion"
-              >
-                {jobData.map((value) => {
-                  return (
-                    <AccordionItem
-                      key={value.id}
-                      eventKey={value.id.toString()}
-                      className={accordionNo === value.id.toString() ? "acordian-active-bg" : ""}
-                    >
-                      <Accordion.Header>
-                        <div className="accordion-header-content">
-                          <div className="left">
-                            <p className="role-tag">OPEN ROLES</p>
-                            <h4 className="role-title">{value.title}</h4>
-                            <ul className="role-meta">
-                              <li>{value.location}</li>
-                              <li>{value.experience}</li>
-                            </ul>
-                          </div>
-                          {/* Custom Arrow */}
-                          <span className="custom-arrow">
-                            <span className="caret-dn"><img src={CaretDn} alt="caret-down" /></span>
-                          </span>
-                        </div>
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <div>
-                          <h5>Job Description</h5>
-                          <p>{value.jobDesc}</p>
-                        </div>
-                        <div>
-                          <h5>Role & Responsibilities</h5>
-                          <ul className='ps-4 pb-3'>
-                            {value.roleResponsibilities.map((item, i) => (
-                              <li className='' key={i}>{item}</li>
-                            ))}
+            <Accordion
+              activeKey={accordionNo}
+              onSelect={(eventKey) => setAccordionNo(eventKey)}
+              className="career-accordion"
+            >
+              {jobData.map((value) => {
+                return (
+                  <AccordionItem
+                    key={value.id}
+                    eventKey={value.id.toString()}
+                    className={accordionNo === value.id.toString() ? "acordian-active-bg" : ""}
+                  >
+                    <Accordion.Header>
+                      <div className="accordion-header-content">
+                        <div className="left">
+                          <p className="role-tag">OPEN ROLES</p>
+                          <h4 className="role-title">{value.title}</h4>
+                          <ul className="role-meta">
+                            <li>{value.location}</li>
+                            <li>{value.experience}</li>
                           </ul>
                         </div>
-                        <div>
-                          <h5>Required Skills</h5>
-                          <ul className='ps-4 pb-3'>
-                            {value.requiredSkills.map((skill, i) => (
-                              <li key={i}>{skill}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <Link to={"mailto:contact@webique.in"} className="secondery-btn">
-                          <span>Apply now</span>
-                          <ArrowButtonSlideXY
-                            link={value.bntLink}
-                          />
-                        </Link>
-                      </Accordion.Body>
-                    </AccordionItem>
-                  )
-                })}
-              </Accordion>
-            </div>
+                        {/* Custom Arrow */}
+                        <span className="custom-arrow">
+                          <span className="caret-dn"><img src={CaretDn} alt="caret-down" /></span>
+                        </span>
+                      </div>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      <div>
+                        <h5>Job Description</h5>
+                        <p>{value.jobDesc}</p>
+                      </div>
+                      <div>
+                        <h5>Role & Responsibilities</h5>
+                        <ul className='ps-4 pb-3'>
+                          {value.roleResponsibilities.map((item, i) => (
+                            <li className='' key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h5>Required Skills</h5>
+                        <ul className='ps-4 pb-3'>
+                          {value.requiredSkills.map((skill, i) => (
+                            <li key={i}>{skill}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <Link to={"mailto:contact@webique.in"} className="secondery-btn">
+                        <span>Apply now</span>
+                        <ArrowButtonSlideXY
+                          link={value.bntLink}
+                        />
+                      </Link>
+                    </Accordion.Body>
+                  </AccordionItem>
+                )
+              })}
+            </Accordion>
           </div>
         </Container>
       </section>
-      <section className='opening-section-wrap'>
+      <section className='opening-section-wrap section-padding pt-4'>
         <Container>
           <div className='opening-section title-gap'>
             <h2 className='text-capitalize'>Can't find a maching opening?</h2>

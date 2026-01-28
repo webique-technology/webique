@@ -54,7 +54,6 @@ const Header = () => {
       if (!img) return;
 
       const position = index - swiper.activeIndex;
-
       let y = 0;
 
       if (position === 0) {
@@ -88,23 +87,25 @@ const Header = () => {
       <Container>
         <div className="hero-content title-gap">
           <h1 className="hero-title text-center">
-            Website&nbsp;
-            {/* <div className="h1-text-animation" data-text="Design & Development">
+            <span>
+              Website&nbsp; <br className="d-block d-sm-none" />
+              {/* <div className="h1-text-animation" data-text="Design & Development">
               Design & Development
             </div> */}
-            <TextType
-              text={["Design & Development", "Security & Maintenance", "Performance & SEO"]}
-              typingSpeed={95}
-              pauseDuration={1500}
-              showCursor
-              cursorCharacter="|"
-              texts={["Design & Development"]}
-              deletingSpeed={50}
-              variableSpeedEnabled={false}
-              variableSpeedMin={60}
-              variableSpeedMax={120}
-              cursorBlinkDuration={0.5}
-            />
+              <TextType
+                text={["Design & Development", "Security & Maintenance", "Performance & SEO"]}
+                typingSpeed={95}
+                pauseDuration={1500}
+                showCursor
+                cursorCharacter="|"
+                texts={["Design & Development"]}
+                deletingSpeed={50}
+                variableSpeedEnabled={false}
+                variableSpeedMin={60}
+                variableSpeedMax={120}
+                cursorBlinkDuration={0.5}
+              />
+            </span>
             <br />
             Aligned With Business Goals
           </h1>

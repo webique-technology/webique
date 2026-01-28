@@ -39,12 +39,12 @@
             pointer-events: none;
 
             &.overlay-left {
-                left: 0;
+                left: -5px;
                 background: linear-gradient(to right, #fff 20%, transparent);
             }
 
             &.overlay-right {
-                right: 0;
+                right: -5px;
                 background: linear-gradient(to left, #fff 20%, transparent);
             }
         }

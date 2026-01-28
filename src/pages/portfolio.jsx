@@ -25,7 +25,7 @@ import automation3 from "../assets/images/automation-3.png"
 import automation4 from "../assets/images/automation-4.png"
 import automation5 from "../assets/images/automation-5.png"
 import { ArrowButtonSlideXY } from '../components/shared/gsapAnimation';
-
+import { AnimatedContent, BlurText } from '../components/shared/TextAnimation';
 
 const masnoryData = [
     {
@@ -155,7 +155,7 @@ const Portfolio = () => {
             (img) => img?.offsetHeight
         );
 
-        console.log("All image heights:", heights);
+        // console.log("All image heights:", heights);
         // All image heights: (9) [1110, 386, 339, 1172, 1021, 257, 2249, 262, 287]
     }, []);
 
@@ -217,8 +217,15 @@ const Portfolio = () => {
             <section className='section-padding portfolio-page'>
                 <Container>
                     <div className="title-content title-gap align-items-center mb-4">
-                        <h2 className="text-center">Our Work Philosophy</h2>
-                        <p className="text-start text-md-center">
+                        <BlurText
+                            text="Our Work Philosophy"
+                            delay={70}
+                            animateBy="words"
+                            direction="bottom"
+                            className="justify-content-center"
+                        />
+                        {/* <h2 className="text-center">Our Work Philosophy</h2> */}
+                        <p className="text-center">
                             We believe great digital outcomes are achieved through a disciplined approach, strategic focus, and flawless <br className='d-none d-lg-block' /> execution. These three principles guide every project we deliver.
                         </p>
                     </div>
@@ -227,29 +234,32 @@ const Portfolio = () => {
                             {masnoryData.slice(0, visible).map((value, i) => {
                                 const currentIndex = indexRef.current++;
                                 return (
-                                    <div
-                                        className={`blue-box ${value.extraClass}`}
+                                    <AnimatedContent
                                         key={i}
-                                        onMouseEnter={() => handleMouseEnter(currentIndex)}
-                                        onMouseLeave={() => handleMouseLeave(currentIndex)}
                                     >
-                                        <p className='mb-2'>{value.desc}</p>
-                                        <div className="blue-box-content">
-                                            <div className="d-flex justify-content-between align-items-center bbc-top">
-                                                <p className='m-0 p-0'>{value.title}</p>
-                                                {/* <a href={value.bntLink} target='_blank' className={value.bntLink === "" ? "d-none" : "d-block"}>
+                                        <div
+                                            className={`blue-box ${value.extraClass}`}
+                                            onMouseEnter={() => handleMouseEnter(currentIndex)}
+                                            onMouseLeave={() => handleMouseLeave(currentIndex)}
+                                        >
+                                            <p className='mb-2'>{value.desc}</p>
+                                            <div className="blue-box-content">
+                                                <div className="d-flex justify-content-between align-items-center bbc-top">
+                                                    <p className='m-0 p-0'>{value.title}</p>
+                                                    {/* <a href={value.bntLink} target='_blank' className={value.bntLink === "" ? "d-none" : "d-block"}>
                                                     <img src={arrowOne} alt="" />
                                                 </a> */}
-                                                <ArrowButtonSlideXY
-                                                    link={value.bntLink}
-                                                    btnClass={value.bntLink === "" ? "d-none" : "d-block"}
-                                                />
-                                            </div>
-                                            <div className={`bb-img-scroll ${value.imgScrollClass}`}>
-                                                <img src={value.src} alt={value.title} ref={(el) => (imageRefs.current[currentIndex] = el)} />
+                                                    <ArrowButtonSlideXY
+                                                        link={value.bntLink}
+                                                        btnClass={value.bntLink === "" ? "d-none" : "d-block"}
+                                                    />
+                                                </div>
+                                                <div className={`bb-img-scroll ${value.imgScrollClass}`}>
+                                                    <img src={value.src} alt={value.title} ref={(el) => (imageRefs.current[currentIndex] = el)} />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </AnimatedContent>
                                 );
                             })}
                         </div>
@@ -265,23 +275,25 @@ const Portfolio = () => {
 
 
                     {/* <Masonry /> */}
+
+
                     {/* 
                     <svg width="150" height="150" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
                         <path
                             fill="#1886FF"
                             d="M 89.5,68 
-       C 89.8,65.5 93.5,54.5 93.5,42.5 
-       93.5,14.5 70.5,-8.5 42.5,-8.5 
-       14.5,-8.5 -8.5,14.5 -8.5,42.5 
-       -8.5,70.5 14.5,93.5 42.5,93.5 
-       55.5,93.5 67.5,89 76.5,82.5 
-       L 69.5,65 
-       C 58.5,74.5 50.8,77 42.5,77 
-       23.5,77 8,61.5 8,42.5 
-       8,23.5 23.5,8 42.5,8 
-       61.5,8 77,23.5 77,42.5 
-       77,50.2 74.5,57.3 70.5,63 
-       Z"
+                               C 89.8,65.5 93.5,54.5 93.5,42.5 
+                               93.5,14.5 70.5,-8.5 42.5,-8.5 
+                               14.5,-8.5 -8.5,14.5 -8.5,42.5 
+                               -8.5,70.5 14.5,93.5 42.5,93.5 
+                               55.5,93.5 67.5,89 76.5,82.5 
+                               L 69.5,65 
+                               C 58.5,74.5 50.8,77 42.5,77 
+                               23.5,77 8,61.5 8,42.5 
+                               8,23.5 23.5,8 42.5,8 
+                               61.5,8 77,23.5 77,42.5 
+                               77,50.2 74.5,57.3 70.5,63 
+                               Z"
                             transform="translate(8.5, 8.5)"
                             fill-rule="evenodd"
                         />

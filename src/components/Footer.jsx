@@ -62,7 +62,7 @@ const Footer = () => {
             </Col>
             <Col xs={{ order: 4, span: 12 }} md={12} lg={{ order: 1, span: 4 }} className='company-link d-flex align-items-center justify-content-center justify-content-lg-end'>
               <p className='text-center text-lg-end'>
-               Powered by&nbsp;
+                Powered by&nbsp;
                 <a href='https://www.webique.in/' target='_blank' className='text-white'>Webique Technology</a>
               </p>
             </Col>

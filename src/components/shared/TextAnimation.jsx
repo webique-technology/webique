@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState, createElement, useMemo, useCallback
 import { gsap } from 'gsap';
 import { motion } from 'motion/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 gsap.registerPlugin(ScrollTrigger);
 
 import '../../assets/scss/main.scss';
+
 
 // type text animation
 export const TextType = ({
@@ -29,6 +31,8 @@ export const TextType = ({
     reverseMode = false,
     ...props
 }) => {
+    const isMobile = useIsMobile();
+
     const [displayedText, setDisplayedText] = useState('');
     const [currentCharIndex, setCurrentCharIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -259,7 +263,7 @@ export const BlurText = ({
 
                 return (
                     <motion.h2
-                        className="inline-block will-change-[transform,filter,opacity]"
+                        className="inline-block m-0 will-change-[transform,filter,opacity]"
                         key={index}
                         initial={fromSnapshot}
                         animate={inView ? animateKeyframes : fromSnapshot}
@@ -447,6 +451,7 @@ export const ScrollReveal = ({
 // animation content
 export const AnimatedContent = ({
     children,
+    animationBreakpoint,
     container,
     distance = 100,
     direction = 'vertical',
@@ -467,20 +472,28 @@ export const AnimatedContent = ({
     ...props
 }) => {
     const ref = useRef(null);
+    const isMobile = useIsMobile(animationBreakpoint);
 
     useEffect(() => {
+        // stop animation logic on mobile
+        if (isMobile) return;
+
         const el = ref.current;
         if (!el) return;
 
-        let scrollerTarget = container || document.getElementById('snap-main-container') || null;
+        let scrollerTarget =
+            container || document.getElementById('snap-main-container') || null;
 
         if (typeof scrollerTarget === 'string') {
             scrollerTarget = document.querySelector(scrollerTarget);
         }
 
         const axis = direction === 'horizontal' ? 'x' : 'y';
+        // console.log("to check x or y:", axis);
         const offset = reverse ? -distance : distance;
         const startPct = (1 - threshold) * 100;
+
+        // console.log("animate offset:", offset);
 
         gsap.set(el, {
             [axis]: offset,
@@ -493,7 +506,7 @@ export const AnimatedContent = ({
             paused: true,
             delay,
             onComplete: () => {
-                if (onComplete) onComplete();
+                onComplete?.();
                 if (disappearAfter > 0) {
                     gsap.to(el, {
                         [axis]: reverse ? distance : -distance,
@@ -531,6 +544,7 @@ export const AnimatedContent = ({
             tl.kill();
         };
     }, [
+        isMobile, // 👈 IMPORTANT dependency
         container,
         distance,
         direction,
@@ -550,7 +564,12 @@ export const AnimatedContent = ({
     ]);
 
     return (
-        <div ref={ref} className={className} style={{ visibility: 'hidden' }} {...props}>
+        <div
+            ref={ref}
+            className={className}
+            style={{ visibility: isMobile ? 'visible' : 'hidden' }}
+            {...props}
+        >
             {children}
         </div>
     );

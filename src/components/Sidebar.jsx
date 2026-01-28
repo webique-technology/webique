@@ -46,8 +46,8 @@ const ContactCard = ({ img, title, value, type, link }) => {
     type === "phone"
       ? `tel:+91${value}`
       : type === "email"
-      ? `mailto:${value}`
-      : link;
+        ? `mailto:${value}`
+        : link;
 
   return (
     <div className="contact-box d-flex align-items-center gap-4">
@@ -148,9 +148,7 @@ const Sidebar = ({ open, onClose, linkItems }) => {
                       return (
                         <li
                           key={i}
-                          className={`nav-item ${
-                            isDropdownActive ? "active" : ""
-                          }`}
+                          className={`nav-item ${item.className} ${isDropdownActive ? "active" : ""}`}
                         >
                           <NavLink
                             to={item.link}
